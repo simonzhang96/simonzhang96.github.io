@@ -4,18 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>仄克萨语词典 Zeksa Dictionary</title>
-    <style>
+  <style>
     :root {
-      --bg-color: #f9f9fb;
+      --bg-color: #f5f7fa;
       --card-bg: #ffffff;
-      --accent: #4e73df;
-      --text-color: #333;
-      --label-color: #666;
+      --accent: #0078D4;
+      --text-color: #222;
+      --label-color: #555;
+      --shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      --radius: 14px;
     }
 
     body {
-      font-family: "Segoe UI", sans-serif;
-      max-width: 800px;
+      font-family: "Segoe UI", "Noto Sans SC", sans-serif;
+      max-width: 840px;
       margin: auto;
       padding: 2em;
       background: var(--bg-color);
@@ -25,49 +27,53 @@
     h1 {
       text-align: center;
       color: var(--accent);
-      font-size: 2.2rem;
+      font-size: 2.5rem;
       margin-bottom: 1em;
     }
 
     input {
       width: 100%;
-      padding: 12px 15px;
-      font-size: 1rem;
+      padding: 14px 16px;
+      font-size: 1.05rem;
       border: 1px solid #ccc;
-      border-radius: 8px;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      border-radius: var(--radius);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
       transition: border 0.3s;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
 
     input:focus {
       border-color: var(--accent);
       outline: none;
+      box-shadow: 0 0 0 3px rgba(0,120,212,0.15);
     }
 
     .entry {
       background: var(--card-bg);
-      padding: 15px 20px;
-      margin-bottom: 15px;
-      border-radius: 12px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-      transition: transform 0.2s ease;
+      padding: 18px 22px;
+      margin-bottom: 20px;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
     .entry:hover {
-      transform: translateY(-3px);
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(0,0,0,0.08);
     }
 
     .label {
-      font-weight: 600;
+      font-weight: bold;
       color: var(--label-color);
+      display: inline-block;
+      min-width: 5em;
     }
 
     .example {
-      margin-top: 0.5em;
+      margin-top: 0.6em;
       padding-left: 1em;
       font-style: italic;
-      color: #555;
+      color: #444;
     }
 
     #results {
@@ -76,13 +82,16 @@
 
     .no-results {
       text-align: center;
-      color: #888;
+      color: #999;
       font-style: italic;
     }
 
     @media (max-width: 600px) {
       body {
         padding: 1em;
+      }
+      h1 {
+        font-size: 1.8rem;
       }
     }
   </style>
@@ -98,20 +107,30 @@
     async function loadDictionary() {
       const response = await fetch("dict.json");
       dictionary = await response.json();
-      search(); // 显示所有词条
+      search(); // 初始不显示，等用户输入
     }
 
     function search() {
-      const query = document.getElementById("searchBox").value.toLowerCase();
-      const results = dictionary.filter(entry => entry.word.toLowerCase().includes(query));
-  
+      const query = document.getElementById("searchBox").value.trim().toLowerCase();
+      const results = dictionary.filter(entry =>
+        entry.word.toLowerCase().includes(query) ||
+        entry.meaning.includes(query)
+      );
+
       const output = document.getElementById("results");
-      if (query.trim() === "") {
+
+      if (!query) {
         output.innerHTML = "";
-        output.style.display = "none";  // 隐藏结果
+        output.style.display = "none";
         return;
       }
-  
+
+      if (results.length === 0) {
+        output.innerHTML = `<div class="no-results">未找到匹配的词条</div>`;
+        output.style.display = "block";
+        return;
+      }
+
       output.innerHTML = results.map(entry => renderEntry(entry)).join('');
       output.style.display = "block";
     }
