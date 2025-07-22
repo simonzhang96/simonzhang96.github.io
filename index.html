@@ -41,13 +41,15 @@
 
     input {
       width: 100%;
+      max-width: 800px;
       padding: 14px 16px;
       font-size: 1.05rem;
       border: 1px solid #ccc;
       border-radius: var(--radius);
       box-shadow: 0 2px 6px rgba(0,0,0,0.04);
       transition: border 0.3s;
-      margin-bottom: 24px;
+      margin: 0 auto 24px auto;
+      display: block;
     }
 
     input:focus {
@@ -79,14 +81,19 @@
     }
 
     .example {
-      margin-top: 0.6em;
-      padding-left: 1em;
-      font-style: italic;
-      color: #444;
+      background: #f0f4f8;
+      margin-top: 0.8em;
+      padding: 10px 14px;
+      border-radius: 10px;
+      font-style: normal;
+      color: #333;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.04);
     }
 
     #results {
       display: none;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     .no-results {
@@ -157,8 +164,8 @@
           <div><span class="label">相关词:</span> ${entry.related.join(', ') || '—'}</div>
           ${entry.examples.map(ex => `
             <div class="example">
-              例句: ${ex.zeksa}<br>
-              翻译: ${ex.translation}
+              <strong>例句:</strong> ${ex.zeksa}<br>
+              <strong>翻译:</strong> ${ex.translation}
             </div>
           `).join('')}
         </div>
