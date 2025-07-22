@@ -1,31 +1,31 @@
 [
   {
-    "word": "alzomka",
-    "meaning": "你好",
-    "gloss": "人<词缀体> + 连接<词根体>",
-    "pos": "感叹词、名词",
-    "root": "复合词",
+    "word": "aa",
+    "meaning": "啊、啊啊",
+    "gloss": "啊<词根体>",
+    "pos": "感叹词",
+    "root": "单一词",
     "affix": "无",
     "examples": [
       {
-        "zeksa": "alzomka, zeksa!",
-        "translation": "你好，仄克萨！"
+        "zeksa": "aa, besaluvë, ilikom'voh.",
+        "translation": "啊，谢谢，我不知道。"
       }
     ],
-    "related": ["alz", "omka"]
+    "related": ["无"]
   },
 
   {
-    "word": "kargu",
-    "meaning": "山、山脉",
-    "gloss": "山<词根体>",
-    "pos": "名词",
+    "word": "ath",
+    "meaning": "打开、开",
+    "gloss": "打开<词根体>",
+    "pos": "动词",
     "root": "单一词",
-    "affix": "karg-",
+    "affix": "N/A",
     "examples": [
       {
-        "zeksa": "krus'voh läm kargu.",
-        "translation": "我朝着山走去。"
+        "zeksa": "kojath'g kert.",
+        "translation": "你必须打开盒子。"
       }
     ],
     "related": ["无"]
@@ -46,6 +46,24 @@
     ],
     "related": ["无"]
   },
+  
+  {
+    "word": "alzomka",
+    "meaning": "你好",
+    "gloss": "人<词缀体> + 连接<词根体>",
+    "pos": "感叹词、名词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "alzomka, zeksa!",
+        "translation": "你好，仄克萨！"
+      }
+    ],
+    "related": ["alz", "omka"]
+  },
+
+  
   
   {
     "word": "ayariv",
@@ -95,22 +113,24 @@
     "related": ["ayariv", "ayarivd"]
   },
 
+  
+
   {
-    "word": "ath",
-    "meaning": "打开、开",
-    "gloss": "打开<词根体>",
-    "pos": "动词",
+    "word": "kargu",
+    "meaning": "山、山脉",
+    "gloss": "山<词根体>",
+    "pos": "名词",
     "root": "单一词",
-    "affix": "N/A",
+    "affix": "karg-",
     "examples": [
       {
-        "zeksa": "kojath'g kert.",
-        "translation": "你必须打开盒子。"
+        "zeksa": "krus'voh läm kargu.",
+        "translation": "我朝着山走去。"
       }
     ],
     "related": ["无"]
   },
-
+  
   {
     "word": "zeksa",
     "meaning": "仄克萨、仄克萨语、仄克萨文明",
