@@ -5,13 +5,14 @@
     "gloss": "人<词缀体> + 连接<词根体>",
     "pos": "感叹词、名词",
     "root": "复合词",
+    "affix": "无",
     "examples": [
       {
         "zeksa": "alzomka, zeksa!",
         "translation": "你好，仄克萨！"
       }
     ],
-    "related": ["Bajkrus'Voh", "Gemkrus'Voh"]
+    "related": ["alz", "omka"]
   },
   {
     "word": "Jembajkrus'Voh",
