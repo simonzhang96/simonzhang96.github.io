@@ -3,14 +3,12 @@
     "word": "alzomka",
     "meaning": "你好",
     "gloss": "人<词缀体> + 连接<词根体>",
-    "pos": "动词",
-    "root": "krus",
-    "prefixes": [],
+    "pos": "感叹词、名词",
+    "root": "复合词",
     "examples": [
       {
-        "zeksa": "Krus'Voh Nalut",
-        "gloss": "walk-1SG quickly",
-        "translation": "我走得很快"
+        "zeksa": "alzomka, zeksa!",
+        "translation": "你好，仄克萨！"
       }
     ],
     "related": ["Bajkrus'Voh", "Gemkrus'Voh"]
