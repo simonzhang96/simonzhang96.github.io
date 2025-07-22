@@ -45,8 +45,22 @@
       }
     ],
     "related": ["无"]
+  },
+  
+  {
+    "word": "ayariv",
+    "meaning": "真理、事实",
+    "gloss": "真理<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "aya-",
+    "examples": [
+      {
+        "zeksa": "ikom'tsul ayariv omk efí?",
+        "translation": "你知道这个的真相吗？"
+      }
+    ],
+    "related": ["无"]
   }
-  
-  
   
 ]
