@@ -30,6 +30,22 @@
     ],
     "related": ["无"]
   },
+
+  {
+    "word": "alz",
+    "meaning": "人（特指仄克萨人）",
+    "gloss": "人<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "alz-",
+    "examples": [
+      {
+        "zeksa": "ilekj'voh alz, ekj'voh teralz.",
+        "translation": "我不是仄克萨人，我是地球人。"
+      }
+    ],
+    "related": ["无"]
+  },
   
   {
     "word": "Jembajkrus'Voh",
