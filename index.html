@@ -131,8 +131,8 @@
     function search() {
       const query = document.getElementById("searchBox").value.trim().toLowerCase();
       const results = dictionary.filter(entry =>
-        entry.word.toLowerCase().includes(query) ||
-        entry.meaning.includes(query)
+        entry.word.toLowerCase().startsWith(query) ||
+        entry.meaning.startsWith(query)
       );
 
       const output = document.getElementById("results");
