@@ -116,7 +116,7 @@
   <h1>仄克萨语词典</h1>
   <p>在搜索框里输入中文或者仄克萨语，以查询该词的完整信息。</p>
   <hr>
-  <input type="text" id="searchBox" placeholder="输入仄克萨词或中文含义..." oninput="search()">
+  <input type="text" id="searchBox" placeholder="搜索单词或词义..." oninput="search()">
   <div id="results">加载中...</div>
 
   <script>
@@ -125,7 +125,7 @@
     async function loadDictionary() {
       const response = await fetch("dict.json");
       dictionary = await response.json();
-      search(); // 初始不显示，等用户输入
+      search(); 
     }
 
     function search() {
@@ -157,9 +157,10 @@
       return `
         <div class="entry">
           <div><span class="label">词语:</span> ${entry.word}</div>
+          <div><span class="label">词义:</span> ${entry.meaning}</div>
           <div><span class="label">词类:</span> ${entry.pos}</div>
           <div><span class="label">构词类型:</span> ${entry.root}</div>
-          <div><span class="label">词义:</span> ${entry.meaning}</div>
+          <div><span class="label">词缀体:</span> ${entry.affix}</div>
           <div><span class="label">语法注解:</span> ${entry.gloss}</div>
           <div><span class="label">相关词:</span> ${entry.related.join(', ') || '—'}</div>
           ${entry.examples.map(ex => `
