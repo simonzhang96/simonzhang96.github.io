@@ -60,7 +60,23 @@
         "translation": "你知道这个的真相吗？"
       }
     ],
-    "related": ["无"]
+    "related": ["ayarivd", "ayarivw"]
+  },
+
+  {
+    "word": "ayarivd",
+    "meaning": "真实的、实际的",
+    "gloss": "~ + <形容词标记>",
+    "pos": "形容词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "gem'g bertl'tsul ayarivd bho.",
+        "translation": "我想要你说出真实的事情。"
+      }
+    ],
+    "related": ["ayariv", "ayarivw"]
   }
   
 ]
