@@ -109,6 +109,22 @@
       }
     ],
     "related": ["无"]
+  },
+
+  {
+    "word": "zeksa",
+    "meaning": "仄克萨、仄克萨语、仄克萨文明",
+    "gloss": "仄克萨<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "zeks-",
+    "examples": [
+      {
+        "zeksa": "tamia'vohi vohi omk zeksa, sasbertl'vohi zeksa!",
+        "translation": "我们爱我们的仄克萨，让我们说仄克萨语！"
+      }
+    ],
+    "related": ["无"]
   }
   
 ]
