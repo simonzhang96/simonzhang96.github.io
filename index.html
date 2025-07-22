@@ -132,7 +132,7 @@
       const query = document.getElementById("searchBox").value.trim().toLowerCase();
       const results = dictionary.filter(entry =>
         entry.word.toLowerCase().startsWith(query) ||
-        entry.meaning.startsWith(query)
+        entry.meaning.includes(query)
       );
 
       const output = document.getElementById("results");
