@@ -77,6 +77,38 @@
       }
     ],
     "related": ["ayariv", "ayarivw"]
+  },
+
+  {
+    "word": "ayarivw",
+    "meaning": "真实地、实际地",
+    "gloss": "~ + <副词标记>",
+    "pos": "副词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "bertl'afí alz\" ayarivw.",
+        "translation": "那人真诚地说。"
+      }
+    ],
+    "related": ["ayariv", "ayarivd"]
+  },
+
+  {
+    "word": "ath",
+    "meaning": "打开、开",
+    "gloss": "打开<词根体>",
+    "pos": "动词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "kojath'g kert.",
+        "translation": "你必须打开盒子。"
+      }
+    ],
+    "related": ["无"]
   }
   
 ]
