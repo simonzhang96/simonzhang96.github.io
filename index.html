@@ -85,7 +85,7 @@
     let dictionary = [];
 
     async function loadDictionary() {
-      const response = await fetch("dictionary.json");
+      const response = await fetch("dict.json");
       dictionary = await response.json();
       search(); // 显示所有词条
     }
