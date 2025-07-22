@@ -110,18 +110,15 @@
       return `
         <div class="entry">
           <div><span class="label">词语:</span> ${entry.word}</div>
-          <div><span class="label">重音形式:</span> ${entry.accented}</div>
           <div><span class="label">词类:</span> ${entry.pos}</div>
-          <div><span class="label">词根:</span> ${entry.root}</div>
-          <div><span class="label">前缀:</span> ${entry.prefixes.join(', ') || '—'}</div>
+          <div><span class="label">构词类型:</span> ${entry.root}</div>
           <div><span class="label">词义:</span> ${entry.meaning}</div>
-          <div><span class="label">语法注解 (gloss):</span> ${entry.gloss}</div>
+          <div><span class="label">语法注解:</span> ${entry.gloss}</div>
           <div><span class="label">相关词:</span> ${entry.related.join(', ') || '—'}</div>
           ${entry.examples.map(ex => `
             <div class="example">
-              Zeksa: ${ex.zeksa}<br>
-              Gloss: ${ex.gloss}<br>
-              Translation: ${ex.translation}
+              例句: ${ex.zeksa}<br>
+              翻译: ${ex.translation}
             </div>
           `).join('')}
         </div>
