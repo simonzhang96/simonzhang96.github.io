@@ -1,110 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <title>Zeksa Dictionary</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>仄克萨语词典 Zeksa Dictionary</title>
   <style>
     body {
-      font-family: "Segoe UI", sans-serif;
-      max-width: 800px;
+      font-family: "Segoe UI", "Noto Sans SC", sans-serif;
+      max-width: 860px;
       margin: auto;
       padding: 2em;
-      background: #fefefe;
+      background: #f9fafb;
+      color: #1f2937;
     }
+
     h1 {
       text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1em;
     }
+
     input {
       width: 100%;
-      padding: 10px;
-      font-size: 1rem;
-      margin-bottom: 20px;
+      padding: 0.75em;
+      font-size: 1.1rem;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      margin-bottom: 1.5em;
+      transition: box-shadow 0.2s;
     }
+
+    input:focus {
+      box-shadow: 0 0 5px rgba(59, 130, 246, 0.5);
+      outline: none;
+    }
+
     .entry {
-      background: #f4f4f4;
-      padding: 15px;
-      margin-bottom: 15px;
-      border-radius: 10px;
+      background: white;
+      border-radius: 12px;
+      padding: 1.2em;
+      margin-bottom: 1.2em;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
     }
+
     .label {
       font-weight: bold;
+      color: #374151;
     }
+
     .example {
+      background: #f3f4f6;
+      padding: 0.8em;
       margin-top: 0.5em;
-      padding-left: 1em;
+      border-left: 4px solid #60a5fa;
       font-style: italic;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: #111827;
+        color: #f3f4f6;
+      }
+      .entry {
+        background: #1f2937;
+        box-shadow: 0 3px 10px rgba(255, 255, 255, 0.05);
+      }
+      .example {
+        background: #374151;
+      }
+      input {
+        background: #111827;
+        color: #f3f4f6;
+        border: 1px solid #4b5563;
+      }
     }
   </style>
 </head>
 <body>
   <h1>仄克萨语词典 Zeksa Dictionary</h1>
-  <input type="text" id="searchBox" placeholder="在此输入简体中文..." oninput="search()">
-
-  <div id="results"></div>
+  <input type="text" id="searchBox" placeholder="输入仄克萨词或中文含义..." oninput="search()">
+  <div id="results">加载中...</div>
 
   <script>
-    const dictionary = [
-      {
-        word: "Krus'Voh",
-        accented: "Krùs'Vòh",
-        meaning: "I walk",
-        gloss: "walk-1SG",
-        pos: "verb",
-        root: "krus",
-        prefixes: [],
-        examples: [
-          {
-            zeksa: "Krus'Voh Nalut",
-            gloss: "walk-1SG quickly",
-            translation: "I walk quickly"
-          }
-        ],
-        related: ["Bajkrus'Voh", "Gemkrus'Voh"]
-      },
-      {
-        word: "Jembajkrus'Voh",
-        accented: "Jémbajkrùs'Vòh",
-        meaning: "I was walking",
-        gloss: "PST.PROG.walk-1SG",
-        pos: "verb",
-        root: "krus",
-        prefixes: ["jem", "baj"],
-        examples: [],
-        related: ["Krus'Voh", "Bajkrus'Voh"]
-      }
-    ];
+    let dictionary = [];
+
+    async function loadDictionary() {
+      const response = await fetch("dictionary.json");
+      dictionary = await response.json();
+      search(); // 显示所有词条
+    }
 
     function search() {
-      const query = document.getElementById("searchBox").value.toLowerCase();
-      const results = dictionary.filter(entry => entry.word.toLowerCase().includes(query));
+      const query = document.getElementById("searchBox").value.trim().toLowerCase();
+      const results = dictionary.filter(entry =>
+        entry.word.toLowerCase().includes(query) ||
+        entry.meaning.toLowerCase().includes(query)
+      );
+
       const output = document.getElementById("results");
+      if (results.length === 0) {
+        output.innerHTML = "<p>未找到相关词汇。</p>";
+        return;
+      }
+
       output.innerHTML = results.map(entry => renderEntry(entry)).join('');
     }
 
     function renderEntry(entry) {
       return `
         <div class="entry">
-          <div><span class="label">Word:</span> ${entry.word}</div>
-          <div><span class="label">Accented:</span> ${entry.accented}</div>
-          <div><span class="label">Gloss:</span> ${entry.gloss}</div>
-          <div><span class="label">Meaning:</span> ${entry.meaning}</div>
-          <div><span class="label">Part of Speech:</span> ${entry.pos}</div>
-          <div><span class="label">Root:</span> ${entry.root}</div>
-          <div><span class="label">Prefixes:</span> ${entry.prefixes.join(', ') || '—'}</div>
-          <div><span class="label">Related:</span> ${entry.related.join(', ') || '—'}</div>
+          <div><span class="label">词语:</span> ${entry.word}</div>
+          <div><span class="label">重音形式:</span> ${entry.accented}</div>
+          <div><span class="label">词类:</span> ${entry.pos}</div>
+          <div><span class="label">词根:</span> ${entry.root}</div>
+          <div><span class="label">前缀:</span> ${entry.prefixes.join(', ') || '—'}</div>
+          <div><span class="label">词义:</span> ${entry.meaning}</div>
+          <div><span class="label">语法注解 (gloss):</span> ${entry.gloss}</div>
+          <div><span class="label">相关词:</span> ${entry.related.join(', ') || '—'}</div>
           ${entry.examples.map(ex => `
             <div class="example">
-              <div>Zeksa: ${ex.zeksa}</div>
-              <div>Gloss: ${ex.gloss}</div>
-              <div>Translation: ${ex.translation}</div>
+              Zeksa: ${ex.zeksa}<br>
+              Gloss: ${ex.gloss}<br>
+              Translation: ${ex.translation}
             </div>
           `).join('')}
         </div>
       `;
     }
 
-    // Load all entries by default
-    search();
+    loadDictionary();
   </script>
 </body>
 </html>
