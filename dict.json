@@ -14,6 +14,23 @@
     ],
     "related": ["alz", "omka"]
   },
+
+  {
+    "word": "kargu",
+    "meaning": "山、山脉",
+    "gloss": "山<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "karg-",
+    "examples": [
+      {
+        "zeksa": "krus'voh läm kargu.",
+        "translation": "我朝着山走去。"
+      }
+    ],
+    "related": ["无"]
+  },
+  
   {
     "word": "Jembajkrus'Voh",
     "accented": "Jémbajkrùs'Vòh",
