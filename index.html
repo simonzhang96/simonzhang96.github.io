@@ -91,19 +91,18 @@
     }
 
     function search() {
-      const query = document.getElementById("searchBox").value.trim().toLowerCase();
-      const results = dictionary.filter(entry =>
-        entry.word.toLowerCase().includes(query) ||
-        entry.meaning.toLowerCase().includes(query)
-      );
-
+      const query = document.getElementById("searchBox").value.toLowerCase();
+      const results = dictionary.filter(entry => entry.word.toLowerCase().includes(query));
+  
       const output = document.getElementById("results");
-      if (results.length === 0) {
-        output.innerHTML = "<p>未找到相关词汇。</p>";
+      if (query.trim() === "") {
+        output.innerHTML = "";
+        output.style.display = "none";  // 隐藏结果
         return;
       }
-
+  
       output.innerHTML = results.map(entry => renderEntry(entry)).join('');
+      output.style.display = "block";
     }
 
     function renderEntry(entry) {
