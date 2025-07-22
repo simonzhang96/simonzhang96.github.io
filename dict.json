@@ -47,15 +47,6 @@
     "related": ["无"]
   },
   
-  {
-    "word": "Jembajkrus'Voh",
-    "accented": "Jémbajkrùs'Vòh",
-    "meaning": "我当时正在走路",
-    "gloss": "PST.PROG.walk-1SG",
-    "pos": "动词",
-    "root": "krus",
-    "prefixes": ["jem", "baj"],
-    "examples": [],
-    "related": ["Krus'Voh", "Bajkrus'Voh"]
-  }
+  
+  
 ]
