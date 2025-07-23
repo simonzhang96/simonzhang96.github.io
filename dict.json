@@ -79,6 +79,22 @@
     ],
     "related": ["无"]
   },
+  
+  {
+    "word": "alâv",
+    "meaning": "歌唱；音乐、歌曲",
+    "gloss": "歌<词根体>",
+    "pos": "动词、名词",
+    "root": "单一词",
+    "affix": "al-",
+    "examples": [
+      {
+        "zeksa": "bealâv'eral vospw läm voh, siat'voh efí.",
+        "translation": "他会向我温柔地唱歌，我喜欢这样。"
+      }
+    ],
+    "related": ["无"]
+  },
 
   {
     "word": "alz",
@@ -194,6 +210,22 @@
       }
     ],
     "related": ["无"]
+  },
+  
+  {
+    "word": "zoldao",
+    "meaning": "太阳（日）、太阳光",
+    "gloss": "天空<词缀体> - 光<词根体>",
+    "pos": "名词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "bril'zoldao dëm onjod zolde.",
+        "translation": "太阳在高高的天上闪耀。"
+      }
+    ],
+    "related": ["zolde", "ao"]
   }
   
 ]
