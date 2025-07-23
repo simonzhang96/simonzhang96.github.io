@@ -33,18 +33,34 @@
 
   {
     "word": "aod",
-    "meaning": "明亮的、发光的",
-    "gloss": "光<词根体>",
+    "meaning": "明亮的、发光的、有希望的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "jemvi'voh aod ekodu.",
+        "translation": "我看到了充满希望的生命。"
+      }
+    ],
+    "related": ["ao", "aow", "zoldao"]
+  },
+  
+  {
+    "word": "aow",
+    "meaning": "明亮地、光明正大地、真诚地",
+    "gloss": "~ - <副词标记>",
     "pos": "名词",
     "root": "单一词",
     "affix": "ao-",
     "examples": [
       {
-        "zeksa": "trexe, trexe, kuil ao omk ilim.",
-        "translation": "怒斥，怒斥着光明的消逝。"
+        "zeksa": "bertl'eral ayariv aow ku anki.",
+        "translation": "他真诚地和他说出真相。"
       }
     ],
-    "related": ["aod", "aow", "zoldao"]
+    "related": ["aod", "ao", "zoldao"]
   },
 
   
@@ -83,7 +99,7 @@
   {
     "word": "alzomka",
     "meaning": "你好",
-    "gloss": "人<词缀体> + 连接<词根体>",
+    "gloss": "人<词缀体> - 连接<词根体>",
     "pos": "感叹词、名词",
     "root": "复合词",
     "affix": "无",
@@ -117,7 +133,7 @@
   {
     "word": "ayarivd",
     "meaning": "真实的、实际的",
-    "gloss": "~ + <形容词标记>",
+    "gloss": "~ - <形容词标记>",
     "pos": "形容词",
     "root": "单一词",
     "affix": "N/A",
@@ -133,7 +149,7 @@
   {
     "word": "ayarivw",
     "meaning": "真实地、实际地",
-    "gloss": "~ + <副词标记>",
+    "gloss": "~ - <副词标记>",
     "pos": "副词",
     "root": "单一词",
     "affix": "N/A",
