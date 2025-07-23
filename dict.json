@@ -16,6 +16,39 @@
   },
 
   {
+    "word": "ao",
+    "meaning": "光、希望、荣耀",
+    "gloss": "光<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "ao-",
+    "examples": [
+      {
+        "zeksa": "trexe, trexe, kuil ao omk ilim.",
+        "translation": "怒斥，怒斥着光明的消逝。"
+      }
+    ],
+    "related": ["aod", "aow", "zoldao"]
+  },
+
+  {
+    "word": "aod",
+    "meaning": "明亮的、发光的",
+    "gloss": "光<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "ao-",
+    "examples": [
+      {
+        "zeksa": "trexe, trexe, kuil ao omk ilim.",
+        "translation": "怒斥，怒斥着光明的消逝。"
+      }
+    ],
+    "related": ["aod", "aow", "zoldao"]
+  },
+
+  
+  {
     "word": "ath",
     "meaning": "打开、开",
     "gloss": "打开<词根体>",
