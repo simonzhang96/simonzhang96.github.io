@@ -1,2 +1,3 @@
 # simonzhang96.github.io
-# Welcome!
+# This is a Zeksa Dictionary website.
+# Created by Simon.
