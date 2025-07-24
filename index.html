@@ -116,7 +116,7 @@
   <h1>仄克萨语词典</h1>
   <p>在搜索框里输入中文或者仄克萨语，以查询该词的完整信息。</p>
   <p id="word-count" style="text-align: center; font-weight: bold; margin-top: 1em;">
-  本网站已收录<span id="count-number">0</span> 个仄克萨语词汇。</p>
+  本网站已收录 <span id="count-number">0</span> 个仄克萨语词汇。</p>
   <hr>
   <input type="text" id="searchBox" placeholder="搜索单词或词义..." oninput="search()">
   <div id="results">加载中...</div>
@@ -127,6 +127,7 @@
     async function loadDictionary() {
       const response = await fetch("dict.json");
       dictionary = await response.json();
+      document.getElementById("count-number").textContent = dictionary.length;
       search(); 
     }
 
@@ -176,10 +177,6 @@
     }
 
     loadDictionary();
-    document.addEventListener("DOMContentLoaded", function () {
-      const count = dictionary.length;
-      document.getElementById("count-number").textContent = count;
-    });
   </script>
   <img src="zeksa dict website.png" style="display: block; max-width: 100%; height: auto; margin: 1em auto;">
 </body>
