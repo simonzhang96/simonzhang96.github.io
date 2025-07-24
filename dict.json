@@ -177,6 +177,54 @@
     ],
     "related": ["ayariv", "ayarivd"]
   },
+  
+  {
+    "word": "ek",
+    "meaning": "存在（客观上的存在）",
+    "gloss": "生命<词缀体>[单一成词]",
+    "pos": "动词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "ek'afidom nu gaxavo ëv än ekodud mitro.",
+        "translation": "那里有两个水果和一只活着的米特罗。"
+      }
+    ],
+    "related": ["ekodu"]
+  },
+  
+  {
+    "word": "ekodu",
+    "meaning": "生命、活力；活",
+    "gloss": "生命<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "ek-",
+    "examples": [
+      {
+        "zeksa": "jemvi'voh aod ekodu.",
+        "translation": "我看到了充满希望的生命。"
+      }
+    ],
+    "related": ["ekodud", "ekoduw", "ekxe", "ek"]
+  },
+  
+  {
+    "word": "traq",
+    "meaning": "智慧、聪慧",
+    "gloss": "智慧<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "traq-",
+    "examples": [
+      {
+        "zeksa": "siat'voh alz ku traq.",
+        "translation": "我喜欢拥有智慧的人。"
+      }
+    ],
+    "related": ["traqd", "traqw"]
+  },
 
   
 
@@ -226,6 +274,22 @@
       }
     ],
     "related": ["zolde", "ao"]
+  },
+  
+  {
+    "word": "zolde",
+    "meaning": "天空",
+    "gloss": "天空<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "zold-",
+    "examples": [
+      {
+        "zeksa": "bril'zoldao dëm onjod zolde.",
+        "translation": "太阳在高高的天上闪耀。"
+      }
+    ],
+    "related": ["zoldao"]
   }
   
 ]
