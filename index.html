@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Last edited: 5 Aug 2025. -->
 <html lang="zh">
 <head>
   <meta charset="UTF-8" />
@@ -166,7 +167,6 @@
           <div><span class="label">构词类型:</span> ${entry.root}</div>
           <div><span class="label">词缀体:</span> ${entry.affix}</div>
           <div><span class="label">语法注解:</span> ${entry.gloss}</div>
-          <div><span class="label">相关词:</span> ${entry.related.join(', ') || '—'}</div>
           ${entry.examples.map(ex => `
             <div class="example">
               <strong>例句:</strong> ${ex.zeksa}<br>
