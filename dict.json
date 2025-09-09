@@ -132,7 +132,7 @@
   
   {
     "word": "ayariv",
-    "meaning": "真理、事实",
+    "meaning": "真理、事实；仄克萨·阿亚里夫",
     "gloss": "真理<词根体>",
     "pos": "名词",
     "root": "单一词",
@@ -196,7 +196,7 @@
   
   {
     "word": "ekodu",
-    "meaning": "生命、活力；活",
+    "meaning": "生命、活力；活；仄克萨·艾蔻度",
     "gloss": "生命<词根体>",
     "pos": "名词、动词",
     "root": "单一词",
@@ -209,6 +209,22 @@
     ],
     "related": ["ekodud", "ekoduw", "ekxe", "ek"]
   },
+
+  {
+    "word": "drek",
+    "meaning": "地、大地、陆地",
+    "gloss": "陆地<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "drek-",
+    "examples": [
+      {
+        "zeksa": "sasomka'vohi zeksa omk alz ëv drek!",
+        "translation": "让我们将仄克萨的大地和人们连接起来！"
+      }
+    ],
+  },
+
   
   {
     "word": "traq",
