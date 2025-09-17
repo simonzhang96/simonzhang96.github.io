@@ -228,6 +228,22 @@
   },
 
   {
+    "word": "il-",
+    "meaning": "<否定前缀>",
+    "gloss": "死<词根体>",
+    "pos": "动词前缀",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "ilkrusø vospw läm afí bonvid ilpis.",
+        "translation": "不要温和地走进那个良夜。"
+      }
+    ],
+    "related": [""]
+  },
+
+  {
     "word": "ilim",
     "meaning": "死亡、终结；死、杀；仄克萨·易利姆",
     "gloss": "死<词根体>",
