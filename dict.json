@@ -292,6 +292,38 @@
     "related": ["traqd", "traqw"]
   },
 
+  {
+    "word": "traqd",
+    "meaning": "聪明的、智慧的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "gemekj'voh traqd alz dëm zeksa.",
+        "translation": "我想在仄克萨成为一个聪明的人。"
+      }
+    ],
+    "related": [""]
+  },
+
+  {
+    "word": "traqw",
+    "meaning": "智慧、聪慧",
+    "gloss": "智慧<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "traq-",
+    "examples": [
+      {
+        "zeksa": "siat'voh alz ku traq.",
+        "translation": "我喜欢拥有智慧的人。"
+      }
+    ],
+    "related": ["traqd", "traqw"]
+  },
+
   
 
   {
