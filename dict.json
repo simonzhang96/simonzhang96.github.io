@@ -228,6 +228,22 @@
   },
 
   {
+    "word": "ilim",
+    "meaning": "死亡、终结；死、杀；仄克萨·易利姆",
+    "gloss": "死<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "il-",
+    "examples": [
+      {
+        "zeksa": "ekj'ilim alz omk ilpis.",
+        "translation": "死亡是人的夜晚。"
+      }
+    ],
+    "related": [""]
+  },
+
+  {
     "word": "drek",
     "meaning": "地、大地、陆地",
     "gloss": "陆地<词根体>",
