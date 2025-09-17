@@ -277,6 +277,22 @@
     ],
     "related": ["无"]
   },
+
+  {
+    "word": "voh",
+    "meaning": "我（第一人称单数）",
+    "gloss": "我<词根体>",
+    "pos": "代词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "krus'voh läm kargu.",
+        "translation": "我朝着山走去。"
+      }
+    ],
+    "related": ["无"]
+  },
   
   {
     "word": "zeksa",
