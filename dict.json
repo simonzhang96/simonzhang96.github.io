@@ -194,6 +194,22 @@
     ],
     "related": ["ekodu"]
   },
+
+  {
+    "word": "ekj",
+    "meaning": "是",
+    "gloss": "是<词根体>",
+    "pos": "<系>动词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "ekj'voh simón jäq, ëv tsul?",
+        "translation": "我是西蒙_张，你呢？"
+      }
+    ],
+    "related": [""]
+  },
   
   {
     "word": "ekodu",
