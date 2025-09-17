@@ -293,6 +293,22 @@
   },
 
   {
+    "word": "tamia",
+    "meaning": "爱",
+    "gloss": "爱<词根体>",
+    "pos": "动词、名词",
+    "root": "单一词",
+    "affix": "tam-",
+    "examples": [
+      {
+        "zeksa": "tamia'voh vradbertlø zeksa lu alz.",
+        "translation": "我爱能说仄克萨语的人。"
+      }
+    ],
+    "related": [""]
+  },
+
+  {
     "word": "traqd",
     "meaning": "聪明的、智慧的",
     "gloss": "~ - <形容词标记>",
