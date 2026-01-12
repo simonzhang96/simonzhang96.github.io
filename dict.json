@@ -1,5 +1,5 @@
 [
-  
+
   {
     "word": "aa",
     "meaning": "啊、啊啊",
@@ -353,6 +353,22 @@
       {
         "zeksa": "krus'voh läm kargu.",
         "translation": "我朝着山走去。"
+      }
+    ],
+    "related": ["无"]
+  },
+
+  {
+    "word": "krus",
+    "meaning": "走、步行",
+    "gloss": "走<词根体>",
+    "pos": "动词",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "sa, bekrus'vohi läm afí onjod biv.",
+        "translation": "是的，我们将朝着那个高大的树走去。"
       }
     ],
     "related": ["无"]
