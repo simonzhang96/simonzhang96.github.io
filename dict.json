@@ -260,6 +260,22 @@
   },
 
   {
+    "word": "omka",
+    "meaning": "连接；羁绊",
+    "gloss": "连接<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "omk-",
+    "examples": [
+      {
+        "zeksa": "alzomka: omka'g voh, omka'g tsul, omka'g usta.",
+        "translation": "你好：连接我，连接你，连接世间万物。"
+      }
+    ],
+    "related": ["alzomka", "drekomka"]
+  },
+
+  {
     "word": "drek",
     "meaning": "地、大地、陆地",
     "gloss": "陆地<词根体>",
@@ -301,7 +317,7 @@
     "affix": "tam-",
     "examples": [
       {
-        "zeksa": "tamia'voh vradbertlø zeksa lu alz.",
+        "zeksa": "tamia'voh vradbertlø zeksa lun alz.",
         "translation": "我爱能说仄克萨语的人。"
       }
     ],
