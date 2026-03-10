@@ -1,3 +1,3 @@
 # simonzhang96.github.io
-# This is a Zeksa Dictionary website.
+# This Is a Dictionary Website of the Zeksa Language.
 # Created by Simon.
