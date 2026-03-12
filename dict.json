@@ -357,7 +357,7 @@
     "affix": "änt-",
     "examples": [
       {
-        "zeksa": "ilvraddunl'vohi änte tujdëm mäyuqu, kiubeilim'g.",
+        "zeksa": "ilvraddunl'vohi änte cevdëm mäyuqu, kiubeilim'g.",
         "translation": "我们不可以喝大海里的水，这样我们可能会死。"
       }
     ]
@@ -379,6 +379,21 @@
   },
 
   {
+    "word": "polár",
+    "meaning": "数字",
+    "gloss": "数字<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "pol-",
+    "examples": [
+      {
+        "zeksa": "ekj'polár zil, än, nu, hte.",
+        "translation": "数字是零、一、二、三。"
+      }
+    ]
+  },
+
+  {
     "word": "dunl",
     "meaning": "喝、饮用",
     "gloss": "喝<词根体>",
@@ -389,6 +404,36 @@
       {
         "zeksa": "siat'zeksalz dunlø änte tujdëm ekodu, ekj'g vmilod.",
         "translation": "仄克萨人喜欢饮用艾蔻度湖中的水，水是安全的。"
+      }
+    ]
+  },
+
+  {
+    "word": "dëm",
+    "meaning": "在；位于",
+    "gloss": "在<词根体>",
+    "pos": "动词、介词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "destor'voh dëm fiddrek, kojek'efí ilimd-.",
+        "translation": "我在荒原里玩耍，肯定有不对劲的地方。"
+      }
+    ]
+  },
+
+  {
+    "word": "cevdëm",
+    "meaning": "在...之中；位于...之中",
+    "gloss": "中<词根体> - 在<词根体>",
+    "pos": "动词、介词",
+    "root": "复合词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "ilvraddunl'vohi änte cevdëm mäyuqu, kiubeilim'g.",
+        "translation": "我们不可以喝大海里的水，这样我们可能会死。"
       }
     ]
   },
@@ -494,6 +539,21 @@
       {
         "zeksa": "jemviyek'voh tsuli omk tara, pav ilikom'voh ekj'g tsuli omk tara.",
         "translation": "我读了你们的书，但我不知道这是你们的书。"
+      }
+    ]
+  },
+
+  {
+    "word": "tluv",
+    "meaning": "衣服、衣物",
+    "gloss": "衣服<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "tluv-",
+    "examples": [
+      {
+        "zeksa": "ekrumd vi ëv gahrumd tluv.",
+        "translation": "血色的眼睛和充满汗水的衣物。"
       }
     ]
   },
@@ -696,6 +756,22 @@
   },
 
   {
+    "word": "va",
+    "meaning": "颜色",
+    "gloss": "颜色<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "va-",
+    "examples": [
+      {
+        "zeksa": "ekj'kol efí va?",
+        "translation": "这是什么颜色？"
+      }
+    ]
+  },
+
+
+  {
     "word": "fiddrek",
     "meaning": "荒原、荒地、未被连接之地",
     "gloss": "荒凉<词缀体> - 大地<词根体>",
@@ -767,6 +843,37 @@
       {
         "zeksa": "bajao'zoldao dëm onjod zolde.",
         "translation": "太阳正在高高的天上闪耀。"
+      }
+    ]
+  },
+
+  {
+    "word": "zoldva",
+    "meaning": "天空色、蓝色",
+    "gloss": "天空<词缀体> - 颜色<词根体>",
+    "pos": "名词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "siat'voh zolde omk va, zoldva.",
+        "translation": "我喜欢天空的颜色——蓝色。"
+      }
+    ]
+  },
+
+
+  {
+    "word": "cevo",
+    "meaning": "中间、中央、仄克萨·谢沃",
+    "gloss": "中<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "cev-",
+    "examples": [
+      {
+        "zeksa": "dëm'zeksa cevo\" kavzeksmädrek.",
+        "translation": "仄克萨·谢沃在东仄克萨大陆。"
       }
     ]
   },
