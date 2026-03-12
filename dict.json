@@ -60,6 +60,20 @@
     ]
   },
 
+  {
+    "word": "adkev",
+    "meaning": "吃、进食；食物",
+    "gloss": "吃<词根体>",
+    "pos": "动词、名词",
+    "root": "单一词",
+    "affix": "adk-",
+    "examples": [
+      {
+        "zeksa": "ilekj'tamiaø adkevø uka\" bonvid",
+        "translation": "过度喜欢吃肉是不好的。"
+      }
+    ]
+  },
   
   {
     "word": "ath",
@@ -259,6 +273,21 @@
   },
 
   {
+    "word": "dunl",
+    "meaning": "喝、饮用",
+    "gloss": "喝<词根体>",
+    "pos": "动词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "siat'zeksalz dunlø änte tujdëm ekodu, ekj'g vmilod.",
+        "translation": "仄克萨人喜欢饮用艾蔻度湖中的水，水是安全的。"
+      }
+    ]
+  },
+
+  {
     "word": "drek",
     "meaning": "地、大地、陆地",
     "gloss": "陆地<词根体>",
@@ -282,8 +311,8 @@
     "affix": "无",
     "examples": [
       {
-        "zeksa": "sasomka'vohi zeksa omk alz ëv drek!",
-        "translation": "让我们将仄克萨的大地和人们连接起来！"
+        "zeksa": "bekrus'vohi läm afí tsim, drekomka ustalz.",
+        "translation": "再见了，大家，我们将去往那片树林。"
       }
     ]
   },
