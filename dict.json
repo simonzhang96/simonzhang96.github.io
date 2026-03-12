@@ -115,7 +115,7 @@
   
   {
     "word": "alzomka",
-    "meaning": "你好",
+    "meaning": "你好；连接人们",
     "gloss": "人<词缀体> - 连接<词根体>",
     "pos": "感叹词、名词",
     "root": "复合词",
@@ -291,6 +291,21 @@
     "related": [""]
   },
 
+  {
+    "word": "drekomka",
+    "meaning": "再见；连接大地",
+    "gloss": "陆地<词缀体> - 连接<词根体>",
+    "pos": "感叹词、名词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "sasomka'vohi zeksa omk alz ëv drek!",
+        "translation": "让我们将仄克萨的大地和人们连接起来！"
+      }
+    ],
+    "related": ["drek", "omka"]
+  },
   
   {
     "word": "traq",
@@ -424,15 +439,15 @@
   
   {
     "word": "zoldao",
-    "meaning": "太阳（日）、太阳光",
+    "meaning": "太阳（日）、太阳光、佐勒达奥星",
     "gloss": "天空<词缀体> - 光<词根体>",
     "pos": "名词",
     "root": "复合词",
     "affix": "无",
     "examples": [
       {
-        "zeksa": "bril'zoldao dëm onjod zolde.",
-        "translation": "太阳在高高的天上闪耀。"
+        "zeksa": "ekj'zoldao omklon omk anta.",
+        "translation": "佐勒达奥星是欧姆克隆星的母亲。"
       }
     ],
     "related": ["zolde", "ao"]
@@ -447,11 +462,27 @@
     "affix": "zold-",
     "examples": [
       {
-        "zeksa": "bril'zoldao dëm onjod zolde.",
-        "translation": "太阳在高高的天上闪耀。"
+        "zeksa": "bajao'zoldao dëm onjod zolde.",
+        "translation": "太阳正在高高的天上闪耀。"
       }
     ],
     "related": ["zoldao"]
+  },
+
+  {
+    "word": "lumzoldao",
+    "meaning": "星、星星（其他恒星）",
+    "gloss": "小<词缀体> - 天空<词缀体> - 光<词根体>",
+    "pos": "名词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "sasvi'g! lumzoldao! freyad lumzoldao!",
+        "translation": "看！星星！美丽的星星！"
+      }
+    ],
+    "related": ["lumo[d/w]", "zolde", "ao"]
   }
   
 ]
