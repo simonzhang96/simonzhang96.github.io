@@ -121,6 +121,11 @@
   <p>在搜索框里输入中文或者仄克萨语，以查询该词的完整信息。</p>
   <p id="word-count" style="text-align: center; font-weight: bold; margin-top: 1em;">
   本网站已收录 <span id="count-number">0</span> 个仄克萨语词汇。</p>
+  <div id="daily-word" class="entry" style="text-align:center;">
+  <h2 style="color: var(--accent); margin-top:0;">今日单词</h2>
+  <div id="daily-content">加载中...</div>
+  </div>
+  <button onclick="showDailyWord()">换一个</button>
   <hr>
   <input type="text" id="searchBox" placeholder="搜索单词或词义..." oninput="search()">
   <div id="results">加载中...</div>
@@ -132,6 +137,7 @@
       const response = await fetch("dict.json");
       dictionary = await response.json();
       document.getElementById("count-number").textContent = dictionary.length;
+      showDailyWord();
       search(); 
     }
 
@@ -158,6 +164,40 @@
 
       output.innerHTML = results.map(entry => renderEntry(entry)).join('');
       output.style.display = "block";
+    }
+
+    function showDailyWord() {
+
+      const today = new Date()
+    
+      const seed =
+        today.getFullYear() * 10000 +
+        (today.getMonth()+1) * 100 +
+        today.getDate()
+    
+      const index = seed % dictionary.length
+    
+      const word = dictionary[index]
+    
+      const html = `
+        <div style="font-size:1.5rem; margin-bottom:8px;">
+          <strong>${word.word}</strong>
+        </div>
+        <div>
+          <span class="label">词义:</span> ${word.meaning}
+        </div>
+        <div>
+          <span class="label">词类:</span> ${word.pos}
+        </div>
+        ${word.examples?.[0] ? `
+          <div class="example">
+            <strong>例句:</strong> ${word.examples[0].zeksa}<br>
+            <strong>翻译:</strong> ${word.examples[0].translation}
+          </div>
+        ` : ""}
+      `
+
+      document.getElementById("daily-content").innerHTML = html
     }
 
     function renderEntry(entry) {
