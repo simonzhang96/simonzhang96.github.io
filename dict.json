@@ -303,6 +303,22 @@
   },
 
   {
+    "word": "estiár",
+    "meaning": "听闻、聆听",
+    "gloss": "听<词根体>",
+    "pos": "动词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "/gemestiár'voh ayarivd bho!/, bajbertl'anta.",
+        "translation": "「我想听见事实！」妈妈说。"
+      }
+    ]
+  },
+
+
+  {
     "word": "il-",
     "meaning": "<否定前缀>",
     "gloss": "死<词缀体>",
@@ -424,6 +440,21 @@
   },
 
   {
+    "word": "bertl",
+    "meaning": "说、说话；说辞、言语",
+    "gloss": "说<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "bertl-",
+    "examples": [
+      {
+        "zeksa": "/gemestiár'voh ayarivd bho!/, bajbertl'anta.",
+        "translation": "「我想听见事实！」妈妈说。"
+      }
+    ]
+  },
+
+  {
     "word": "biv",
     "meaning": "树木",
     "gloss": "树<词根体>",
@@ -464,6 +495,21 @@
       {
         "zeksa": "pas'tsul bonvid paq?",
         "translation": "你感觉还好吗？"
+      }
+    ]
+  },
+
+  {
+    "word": "bho",
+    "meaning": "东西、事物、事情",
+    "gloss": "事情<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "bho-",
+    "examples": [
+      {
+        "zeksa": "/gemestiár'voh ayarivd bho!/, bajbertl'anta.",
+        "translation": "「我想听见事实！」妈妈说。"
       }
     ]
   },
@@ -885,7 +931,7 @@
     "affix": "meyr-",
     "examples": [
       {
-        "zeksa": "hërahâ zeksa! vohi omk meyra! hërahâ zeksa omklon! vohi omk anthugdrakol",
+        "zeksa": "hërahâ zeksa! vohi omk meyra! hërahâ zeksa omklon! vohi omk anthugdrakol!",
         "translation": "万岁，仄克萨！我们的文明！万岁，仄克萨·欧姆克隆！我们的如母亲般的避风港！"
       }
     ]
@@ -932,6 +978,21 @@
       {
         "zeksa": "ilsiat'voh friniø mäw pav ilikomø usta.",
         "translation": "我不喜欢宏大地写文章又不知道任何事情。"
+      }
+    ]
+  },
+
+  {
+    "word": "mäyuqu",
+    "meaning": "大海、海洋、大洋",
+    "gloss": "大<词缀体> - 湖泊<词根体>",
+    "pos": "名词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "jemkrus'tsul läm lumdalo cevdëm mäyuqu?",
+        "translation": "你去了海中间的小岛吗？"
       }
     ]
   },
@@ -1008,6 +1069,36 @@
       {
         "zeksa": "dëm ouajad fiddrek, jemluvug'hugxe ustad alzrek.",
         "translation": "在长远的荒原上，风暴覆盖了全部的足迹。"
+      }
+    ]
+  },
+
+  {
+    "word": "freya",
+    "meaning": "美丽、艳丽、美妙",
+    "gloss": "美<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "freya-",
+    "examples": [
+      {
+        "zeksa": "ek'ustad freya\" dëm zeksa omklon, ikom'voh.",
+        "translation": "我知道，所有的美好都在仄克萨·欧姆克隆。"
+      }
+    ]
+  },
+
+  {
+    "word": "freyad",
+    "meaning": "美丽的、艳丽的、美妙的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "bajbertl, alâv'afí freyad alz\".",
+        "translation": "那美丽的人正在说话和唱歌。"
       }
     ]
   },
