@@ -119,6 +119,51 @@
       }
     ]
   },
+
+   {
+    "word": "aja",
+    "meaning": "长远、远方",
+    "gloss": "远<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "aj-",
+    "examples": [
+      {
+        "zeksa": "-ek'ayariv dëm aja. ikom'voh efík. -häh! ek'ayariv dëm ustdom!",
+        "translation": "-阿亚里夫在远方。-不是的！阿亚里夫在各处！"
+      }
+    ]
+  },
+
+  {
+    "word": "ajad",
+    "meaning": "远的、远处的",
+    "gloss": "~ - <词缀体>",
+    "pos": "形容词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "ekj'lumdrakol ouajad. saskrus'g! ilzug'vohi teylme!",
+        "translation": "城市是很远的。我们走吧！我们没有时间了！"
+      }
+    ]
+  },
+
+  {
+    "word": "ajkrus",
+    "meaning": "远征、远足、远征精神",
+    "gloss": "远<词缀体> - 行走<词根体>",
+    "pos": "名词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "pav merhaa'g, ek'ayariv dëm efiteyld ajkrus.",
+        "translation": "但是仄克萨人相信，真理存在于此时此刻的远征。"
+      }
+    ]
+  },
   
   {
     "word": "alâv",
@@ -214,7 +259,7 @@
   
   {
     "word": "ek",
-    "meaning": "存在（客观上的存在）",
+    "meaning": "存在（客观上的存在）、居住",
     "gloss": "生命<词缀体>[单一成词]",
     "pos": "动词",
     "root": "单一词",
@@ -260,8 +305,8 @@
   {
     "word": "il-",
     "meaning": "<否定前缀>",
-    "gloss": "死<词根体>",
-    "pos": "动词前缀",
+    "gloss": "死<词缀体>",
+    "pos": "动词前缀、形容词前缀",
     "root": "N/A",
     "affix": "N/A",
     "examples": [
@@ -364,6 +409,21 @@
   },
 
   {
+    "word": "baj / baj-",
+    "meaning": "静止；进行中、正在做某事",
+    "gloss": "进行<词根体> / 进行<词缀体>",
+    "pos": "名词、动词前缀",
+    "root": "单一词",
+    "affix": "baj-",
+    "examples": [
+      {
+        "zeksa": "bajdunl'voh änte cevdëm mäyuqu.",
+        "translation": "我正在喝大海里的水。"
+      }
+    ]
+  },
+
+  {
     "word": "biv",
     "meaning": "树木",
     "gloss": "树<词根体>",
@@ -379,6 +439,81 @@
   },
 
   {
+    "word": "bonvi",
+    "meaning": "美好、美妙之物",
+    "gloss": "好<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "bonv-",
+    "examples": [
+      {
+        "zeksa": "gem'alz bonvi, pav ilekj'efí bonvi\" bonvi teylmew.",
+        "translation": "人们想要美好，但有时这种美好并不美好"
+      }
+    ]
+  },
+
+  {
+    "word": "bonvid",
+    "meaning": "好的、美好的、美妙的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "pas'tsul bonvid paq?",
+        "translation": "你感觉还好吗？"
+      }
+    ]
+  },
+
+  {
+    "word": "pat",
+    "meaning": "父亲、爸爸",
+    "gloss": "父亲<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "pat-",
+    "examples": [
+      {
+        "zeksa": "ekj'pat ëv anta\" patanta. zug'vohi patanta ustaw.",
+        "translation": "爸爸和妈妈是父母。我们都有父母。"
+      }
+    ]
+  },
+
+  {
+    "word": "patanta",
+    "meaning": "父母",
+    "gloss": "父亲<词缀体> - 母亲<词根体>",
+    "pos": "名词",
+    "root": "复合词词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "dëm'koldom vohi omk patanta? ilvradvi'g erali!",
+        "translation": "我们的父母在哪里？我看不到他们！"
+      }
+    ]
+  },
+
+  {
+    "word": "pas",
+    "meaning": "感觉；感受",
+    "gloss": "感觉<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "pas-",
+    "examples": [
+      {
+        "zeksa": "-alzomka! pas'tsul kimd? -ilbonvid...",
+        "translation": "-你好啊！你怎么样？-不怎么样..."
+      }
+    ]
+  },
+  
+  {
     "word": "polár",
     "meaning": "数字",
     "gloss": "数字<词根体>",
@@ -393,6 +528,22 @@
     ]
   },
 
+
+  {
+    "word": "polárd",
+    "meaning": "数字的、可数的、有限的、计数的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "ek'polárd gaxavo\" dëm efidom. kojvasvun'vohi.",
+        "translation": "这里的果子是有限的，我们必须要分享。"
+      }
+    ]
+  },
+  
   {
     "word": "dunl",
     "meaning": "喝、饮用",
@@ -424,16 +575,16 @@
   },
 
   {
-    "word": "cevdëm",
-    "meaning": "在...之中；位于...之中",
-    "gloss": "中<词根体> - 在<词根体>",
-    "pos": "动词、介词",
-    "root": "复合词",
-    "affix": "N/A",
+    "word": "dalo",
+    "meaning": "小岛、岛屿、仄克萨·达洛",
+    "gloss": "岛<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "dal-",
     "examples": [
       {
-        "zeksa": "ilvraddunl'vohi änte cevdëm mäyuqu, kiubeilim'g.",
-        "translation": "我们不可以喝大海里的水，这样我们可能会死。"
+        "zeksa": "ek'voh dalo cevdëm sopzeksmädrék, ilek'g zeksa dalo! ekj'erali iltsolomd!",
+        "translation": "我住在南仄克萨大陆中的小岛，不住在仄克萨·达洛！它们是不同的！"
       }
     ]
   },
@@ -590,6 +741,36 @@
   },
 
   {
+    "word": "kavak",
+    "meaning": "东、东边",
+    "gloss": "东<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "kav-",
+    "examples": [
+      {
+        "zeksa": "vi'voh läm kavak, ouajad.",
+        "translation": "我朝着东边看去，十分遥远。"
+      }
+    ]
+  },
+
+  {
+    "word": "kargu",
+    "meaning": "山、山脉",
+    "gloss": "山<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "karg-",
+    "examples": [
+      {
+        "zeksa": "krus'voh läm kargu.",
+        "translation": "我朝着山走去。"
+      }
+    ]
+  },
+
+  {
     "word": "kargu",
     "meaning": "山、山脉",
     "gloss": "山<词根体>",
@@ -621,11 +802,11 @@
 
   {
     "word": "krus",
-    "meaning": "走、步行",
+    "meaning": "走、步行；行足",
     "gloss": "走<词根体>",
-    "pos": "动词",
-    "root": "N/A",
-    "affix": "N/A",
+    "pos": "动词、动词",
+    "root": "单一词",
+    "affix": "krus-",
     "examples": [
       {
         "zeksa": "sa, bekrus'vohi läm afí onjod biv.",
@@ -739,6 +920,35 @@
     ]
   },
 
+  {
+    "word": "va",
+    "meaning": "颜色",
+    "gloss": "颜色<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "va-",
+    "examples": [
+      {
+        "zeksa": "ekj'kol efí va?",
+        "translation": "这是什么颜色？"
+      }
+    ]
+  },
+
+  {
+    "word": "vasvun",
+    "meaning": "分享、分配；配给",
+    "gloss": "分享<词根体>",
+    "pos": "动词、动词",
+    "root": "单一词",
+    "affix": "vasv-",
+    "examples": [
+      {
+        "zeksa": "kojvasvun'g zah vradekodu'g.",
+        "translation": "为了活下去，我们必须分享。"
+      }
+    ]
+  },
 
   {
     "word": "voh",
@@ -751,21 +961,6 @@
       {
         "zeksa": "krus'voh läm kargu.",
         "translation": "我朝着山走去。"
-      }
-    ]
-  },
-
-  {
-    "word": "va",
-    "meaning": "颜色",
-    "gloss": "颜色<词根体>",
-    "pos": "名词",
-    "root": "单一词",
-    "affix": "va-",
-    "examples": [
-      {
-        "zeksa": "ekj'kol efí va?",
-        "translation": "这是什么颜色？"
       }
     ]
   },
@@ -872,8 +1067,23 @@
     "affix": "cev-",
     "examples": [
       {
-        "zeksa": "dëm'zeksa cevo\" kavzeksmädrek.",
+        "zeksa": "dëm'zeksa cevo\" kavzeksmädrék.",
         "translation": "仄克萨·谢沃在东仄克萨大陆。"
+      }
+    ]
+  },
+
+  {
+    "word": "cevdëm",
+    "meaning": "在...之中；位于...之中",
+    "gloss": "中<词根体> - 在<词根体>",
+    "pos": "动词、介词",
+    "root": "复合词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "ilvraddunl'vohi änte cevdëm mäyuqu, kiubeilim'g.",
+        "translation": "我们不可以喝大海里的水，这样我们可能会死。"
       }
     ]
   },
