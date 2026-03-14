@@ -681,7 +681,7 @@
 
   {
     "word": "tsuli",
-    "meaning": "你们（第二人称单数）",
+    "meaning": "你们（第二人称复数）",
     "gloss": "你们<词根体>",
     "pos": "代词",
     "root": "单一词",
@@ -771,16 +771,16 @@
   },
 
   {
-    "word": "kargu",
-    "meaning": "山、山脉",
-    "gloss": "山<词根体>",
-    "pos": "名词",
+    "word": "kir",
+    "meaning": "矿石、矿物、仄克萨·契尔；挖矿、开采",
+    "gloss": "矿物<词根体>",
+    "pos": "名词、动词",
     "root": "单一词",
-    "affix": "karg-",
+    "affix": "kir-",
     "examples": [
       {
-        "zeksa": "krus'voh läm kargu.",
-        "translation": "我朝着山走去。"
+        "zeksa": "ilsiat'voh kir.",
+        "translation": "我不喜欢采矿。"
       }
     ]
   },
@@ -961,6 +961,21 @@
       {
         "zeksa": "krus'voh läm kargu.",
         "translation": "我朝着山走去。"
+      }
+    ]
+  },
+
+  {
+    "word": "vohi",
+    "meaning": "我们（第一人称复数）",
+    "gloss": "我们<词根体>",
+    "pos": "代词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "ekj'vohi meyra. zug'vohi vmilo ëv bonvi.",
+        "translation": "我们是文明。我们拥有和平和美好。"
       }
     ]
   },
