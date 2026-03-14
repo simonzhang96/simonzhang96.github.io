@@ -115,6 +115,7 @@ button:hover {
 <body>
 
 <h1>仄克萨语词汇测试</h1>
+<hr>
 <p>选择正确的词义。</p>
 
 <div class="entry">
@@ -190,7 +191,15 @@ function checkAnswer(element,choice){
     document.getElementById("result").innerText="✅ 正确！"
   }else{
     element.classList.add("wrong")
-    document.getElementById("result").innerText="❌ 错误"
+
+    // 找到正确答案并高亮
+    options.forEach(o=>{
+      if(o.innerText===answer){
+        o.classList.add("correct")
+      }
+    })
+
+    document.getElementById("result").innerText="❌ 错误！正确答案是： "+answer
   }
 
   showExample()
