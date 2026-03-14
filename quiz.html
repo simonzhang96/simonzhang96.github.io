@@ -1,1 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>仄克萨语词汇测试</title>
 
+<style>
+:root {
+  --bg-color: #f5f7fa;
+  --card-bg: #ffffff;
+  --accent: #0078D4;
+  --text-color: #222;
+  --label-color: #555;
+  --shadow: 0 8px 20px rgba(0,0,0,0.05);
+  --radius: 14px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  max-width: 840px;
+  margin: auto;
+  padding: 2em;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+h1 {
+  text-align: center;
+  color: var(--accent);
+  font-size: 2.5rem;
+}
+
+p {
+  text-align: center;
+}
+
+.entry {
+  background: var(--card-bg);
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 800px;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+}
+
+.word {
+  font-size: 1.8rem;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.option {
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  background: white;
+  transition: all 0.2s;
+}
+
+.option:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.correct {
+  background: #dff5e4;
+  border-color: #2ecc71;
+}
+
+.wrong {
+  background: #ffe4e4;
+  border-color: #e74c3c;
+}
+
+#result {
+  text-align: center;
+  margin-top: 20px;
+  font-weight: bold;
+}
+
+button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 18px;
+  border-radius: var(--radius);
+  border: none;
+  background: var(--accent);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+.example {
+  background: #eaf2fb;
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>仄克萨语词汇测试</h1>
+<p>选择正确的词义。</p>
+
+<div class="entry">
+
+<div class="word" id="word">加载中...</div>
+
+<div class="options" id="options"></div>
+
+<div id="result"></div>
+
+<button onclick="nextQuestion()">下一题</button>
+
+<div id="example"></div>
+
+</div>
+
+<script>
+
+let dictionary=[]
+let answer=""
+let currentEntry=null
+
+async function loadDictionary(){
+  const response=await fetch("dict.json")
+  dictionary=await response.json()
+  nextQuestion()
+}
+
+function nextQuestion(){
+
+  document.getElementById("result").innerText=""
+  document.getElementById("example").innerHTML=""
+
+  const randomWord=dictionary[Math.floor(Math.random()*dictionary.length)]
+  currentEntry=randomWord
+  answer=randomWord.meaning
+
+  document.getElementById("word").innerText=randomWord.word
+
+  let options=[randomWord.meaning]
+
+  while(options.length<4){
+    const wrong=dictionary[Math.floor(Math.random()*dictionary.length)].meaning
+    if(!options.includes(wrong)){
+      options.push(wrong)
+    }
+  }
+
+  options.sort(()=>Math.random()-0.5)
+
+  const container=document.getElementById("options")
+  container.innerHTML=""
+
+  options.forEach(opt=>{
+    const div=document.createElement("div")
+    div.className="option"
+    div.innerText=opt
+
+    div.onclick=()=>checkAnswer(div,opt)
+
+    container.appendChild(div)
+  })
+}
+
+function checkAnswer(element,choice){
+
+  const options=document.querySelectorAll(".option")
+
+  options.forEach(o=>o.onclick=null)
+
+  if(choice===answer){
+    element.classList.add("correct")
+    document.getElementById("result").innerText="✅ 正确!"
+  }else{
+    element.classList.add("wrong")
+    document.getElementById("result").innerText="❌ 错误!"
+  }
+
+  showExample()
+}
+
+function showExample(){
+
+  if(!currentEntry.examples) return
+
+  const html=currentEntry.examples.map(ex=>`
+  <div class="example">
+  <strong>例句:</strong> ${ex.zeksa}<br>
+  <strong>翻译:</strong> ${ex.translation}
+  </div>
+  `).join("")
+
+  document.getElementById("example").innerHTML=html
+}
+
+loadDictionary()
+
+</script>
+
+</body>
+</html>
