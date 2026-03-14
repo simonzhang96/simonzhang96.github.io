@@ -665,6 +665,37 @@
   },
 
   {
+    "word": "teylme",
+    "meaning": "时间、时刻、时光",
+    "gloss": "时间<词根体>",
+    "pos": "动词",
+    "root": "单一词",
+    "affix": "teyl-",
+    "examples": [
+      {
+        "zeksa": "irehát! ilzug'vohi teylme!",
+        "translation": "注意！我们没有时间了！"
+      }
+    ]
+  },
+
+
+  {
+    "word": "tsalë",
+    "meaning": "西、西边",
+    "gloss": "西<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "tsal-",
+    "examples": [
+      {
+        "zeksa": "ekj'tsalë ëv kavak \" iltsolomd.",
+        "translation": "东和西是不一样的。"
+      }
+    ]
+  },
+
+  {
     "word": "tsul",
     "meaning": "你（第二人称单数）",
     "gloss": "你<词根体>",
@@ -721,21 +752,6 @@
       {
         "zeksa": "gemekj'voh traqd alz dëm zeksa.",
         "translation": "我想在仄克萨成为一个聪明的人。"
-      }
-    ]
-  },
-
-  {
-    "word": "traqw",
-    "meaning": "智慧、聪慧",
-    "gloss": "智慧<词根体>",
-    "pos": "名词",
-    "root": "单一词",
-    "affix": "traq-",
-    "examples": [
-      {
-        "zeksa": "siat'voh alz ku traq.",
-        "translation": "我喜欢拥有智慧的人。"
       }
     ]
   },
