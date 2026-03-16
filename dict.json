@@ -301,6 +301,36 @@
   },
 
   {
+    "word": "ekpis",
+    "meaning": "早晨、清晨、白天",
+    "gloss": "生<词缀体> - 日子<词根体>",
+    "pos": "名词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "ilwulfu'voh dëm ekpis, ilekj'efí ayarivd.",
+        "translation": "我不在白天睡觉，这是不真实的。"
+      }
+    ]
+  },
+
+  {
+    "word": "ekilpis",
+    "meaning": "黄昏、黎明、晨昏、艾克伊尔皮斯文明",
+    "gloss": "生<词缀体> - 死<词缀体> - 日子<词根体>",
+    "pos": "名词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "ikom'tsul /ekilpis meyra/? jemek'erali dëm zeksa omklon.",
+        "translation": "你知道“艾克伊尔皮斯文明”吗？他们曾在仄克萨·欧姆克隆上。"
+      }
+    ]
+  },
+
+  {
     "word": "estiár",
     "meaning": "听闻、聆听",
     "gloss": "听<词根体>",
@@ -311,6 +341,36 @@
       {
         "zeksa": "/gemestiár'voh ayarivd bho!/, bajbertl'anta.",
         "translation": "「我想听见事实！」妈妈说。"
+      }
+    ]
+  },
+
+  {
+    "word": "eral",
+    "meaning": "他、她、它、祂（第三人称单数）",
+    "gloss": "他<词根体>",
+    "pos": "代词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "bajvi'voh eral omk mitro, ekj'g freyad!",
+        "translation": "我在观察他的米特罗，这是很漂亮的！"
+      }
+    ]
+  },
+
+  {
+    "word": "erali",
+    "meaning": "他们、她们、它们、祂们（第三人称复数）",
+    "gloss": "他们<词根体>",
+    "pos": "代词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "iltamia'voh erali -- voh omk patanta.",
+        "translation": "我不爱他们——我的父母。"
       }
     ]
   },
@@ -326,6 +386,21 @@
       {
         "zeksa": "ilkrusø vospw läm afí bonvid ilpis.",
         "translation": "不要温和地走进那个良夜。"
+      }
+    ]
+  },
+
+  {
+    "word": "ikom",
+    "meaning": "知道、清楚、会",
+    "gloss": "知道<词缀体>",
+    "pos": "动词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "ikom'tsul /ekilpis meyra/? jemek'erali dëm zeksa omklon.",
+        "translation": "你知道“艾克伊尔皮斯文明”吗？他们曾在仄克萨·欧姆克隆上。"
       }
     ]
   },
@@ -356,6 +431,21 @@
       {
         "zeksa": "alzomka: omka'g voh, omka'g tsul, omka'g usta.",
         "translation": "你好：连接我，连接你，连接世间万物。"
+      }
+    ]
+  },
+
+  {
+    "word": "omklon",
+    "meaning": "仄克萨·欧姆克隆",
+    "gloss": "连接<词缀体> - 球体<词根体>",
+    "pos": "名词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "hërahâ zeksa! vohi omk meyra! hërahâ zeksa omklon! vohi omk anthugdrakol!",
+        "translation": "万岁，仄克萨！我们的文明！万岁，仄克萨·欧姆克隆！我们的如母亲般的避风港！"
       }
     ]
   },
@@ -555,6 +645,21 @@
       }
     ]
   },
+
+  {
+    "word": "pis",
+    "meaning": "天、日子",
+    "gloss": "日子<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "pis-",
+    "examples": [
+      {
+        "zeksa": "beilim'pis dëm ilpis.",
+        "translation": "一天将在夜晚消亡。"
+      }
+    ]
+  },
   
   {
     "word": "polár",
@@ -676,20 +781,7 @@
     ]
   },
   
-  {
-    "word": "traq",
-    "meaning": "智慧、聪慧",
-    "gloss": "智慧<词根体>",
-    "pos": "名词",
-    "root": "单一词",
-    "affix": "traq-",
-    "examples": [
-      {
-        "zeksa": "siat'voh alz ku traq.",
-        "translation": "我喜欢拥有智慧的人。"
-      }
-    ]
-  },
+  
 
   {
     "word": "tamia",
@@ -702,6 +794,21 @@
       {
         "zeksa": "tamia'voh vradbertlø zeksa lun alz.",
         "translation": "我爱能说仄克萨语的人。"
+      }
+    ]
+  },
+
+  {
+    "word": "tara",
+    "meaning": "书、书本、书籍",
+    "gloss": "书<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "tar-",
+    "examples": [
+      {
+        "zeksa": "jemviyek'voh afí freyad tara, siat'voh eral.",
+        "translation": "我阅读了那本美丽的书，我喜欢它。"
       }
     ]
   },
@@ -732,6 +839,21 @@
       {
         "zeksa": "ekj'tsalë ëv kavak \" iltsolomd.",
         "translation": "东和西是不一样的。"
+      }
+    ]
+  },
+
+  {
+    "word": "tsolomd",
+    "meaning": "相同的、一样的、辨认不出区别的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "sasyar'tsul lom afí tsolomd drakol.",
+        "translation": "你得回到那个相同的堡垒。"
       }
     ]
   },
@@ -777,6 +899,21 @@
       {
         "zeksa": "ekrumd vi ëv gahrumd tluv.",
         "translation": "血色的眼睛和充满汗水的衣物。"
+      }
+    ]
+  },
+
+  {
+    "word": "traq",
+    "meaning": "智慧、聪慧",
+    "gloss": "智慧<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "traq-",
+    "examples": [
+      {
+        "zeksa": "siat'voh alz ku traq.",
+        "translation": "我喜欢拥有智慧的人。"
       }
     ]
   },
@@ -828,6 +965,21 @@
   },
 
   {
+    "word": "kargonjo",
+    "meaning": "山峰、山顶",
+    "gloss": "山<词缀体> - 高<词根体>",
+    "pos": "名词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "bajdħec'voh dëm kargonjo, alzomka'voh!",
+        "translation": "我正站在山峰上，我正在连接人们！"
+      }
+    ]
+  },
+
+  {
     "word": "kir",
     "meaning": "矿石、矿物、仄克萨·契尔；挖矿、开采",
     "gloss": "矿物<词根体>",
@@ -843,16 +995,46 @@
   },
 
   {
-    "word": "kargonjo",
-    "meaning": "山峰、山顶",
-    "gloss": "山<词缀体> - 高<词根体>",
-    "pos": "名词",
-    "root": "复合词",
-    "affix": "无",
+    "word": "kujlod",
+    "meaning": "坚硬的、坚固的、不易摧毁的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "N/A",
+    "affix": "N/A",
     "examples": [
       {
-        "zeksa": "bajdħec'voh dëm kargonjo, alzomka'voh!",
-        "translation": "我正站在山峰上，我正在连接人们！"
+        "zeksa": "ekj'efí kujlod, häh?",
+        "translation": "这很坚硬，不是吗？"
+      }
+    ]
+  },
+
+  {
+    "word": "kujlow",
+    "meaning": "坚硬地、坚固地、牢不可破地",
+    "gloss": "~ - <副词标记>",
+    "pos": "副词",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "eral omk krusrem, mir'g lumzoldao, omka'g kujlow alz ëv omklon.",
+        "translation": "他们的脚步，像星光，连接起人们和仄克萨·欧姆克隆。"
+      }
+    ]
+  },
+
+  {
+    "word": "konv",
+    "meaning": "摸、抚摸；触碰",
+    "gloss": "碰<词根体>",
+    "pos": "动词、名词",
+    "root": "单一词",
+    "affix": "konv-",
+    "examples": [
+      {
+        "zeksa": "siat'tsul konv eral? ilikom'g.",
+        "translation": "你喜欢摸它吗？我没听说过。"
       }
     ]
   },
@@ -993,6 +1175,21 @@
   },
 
   {
+    "word": "mir",
+    "meaning": "像、宛如、譬如",
+    "gloss": "像<词根体>",
+    "pos": "动词",
+    "root": "单一词",
+    "affix": "mir-",
+    "examples": [
+      {
+        "zeksa": "eral omk krusrem, mir'g lumzoldao, omka'g kujlow alz ëv omklon.",
+        "translation": "他们的脚步，像星光，连接起人们和仄克萨·欧姆克隆。"
+      }
+    ]
+  },
+
+  {
     "word": "va",
     "meaning": "颜色",
     "gloss": "颜色<词根体>",
@@ -1018,6 +1215,21 @@
       {
         "zeksa": "kojvasvun'g zah vradekodu'g.",
         "translation": "为了活下去，我们必须分享。"
+      }
+    ]
+  },
+
+  {
+    "word": "vi",
+    "meaning": "看、观看、观察；眼睛",
+    "gloss": "看<词根体>",
+    "pos": "动词、名词",
+    "root": "单一词",
+    "affix": "vi-",
+    "examples": [
+      {
+        "zeksa": "iljemvi'ajkrusalz yuqu dëm afí dalo øn kavzeksmädrék.",
+        "translation": "远征的人没有看到过在那座岛屿或东仄克萨大陆上的湖泊。"
       }
     ]
   },
@@ -1203,6 +1415,36 @@
   },
 
   {
+    "word": "cupwe",
+    "meaning": "热、热量",
+    "gloss": "热<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "cupw-",
+    "examples": [
+      {
+        "zeksa": "ilvradekodu'alz cevdëm cupwe outeylew.",
+        "translation": "人不能长时间存活在热之中。"
+      }
+    ]
+  },
+
+  {
+    "word": "cupwed",
+    "meaning": "热的、炽热炎热的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "jemkonv'voh cupwed drek, zah bajnuah'voh.",
+        "translation": "我摸了热的地面，所以现在我很疼。"
+      }
+    ]
+  },
+  
+  {
     "word": "hugëf",
     "meaning": "风；刮风",
     "gloss": "风<词根体>",
@@ -1273,6 +1515,21 @@
       {
         "zeksa": "sasvi'g! lumzoldao! freyad lumzoldao!",
         "translation": "看！星星！美丽的星星！"
+      }
+    ]
+  },
+
+  {
+    "word": "yuqu",
+    "meaning": "湖、湖泊",
+    "gloss": "湖<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "yuq-",
+    "examples": [
+      {
+        "zeksa": "mäd yuqu dëm oucupwed zoldao.",
+        "translation": "在炽热阳光下的巨大湖泊。"
       }
     ]
   }
