@@ -120,6 +120,15 @@
         font-size: 1.8rem;
       }
     }
+
+    @font-face {
+      font-family: "ZeksaFont";
+      src: url("./Zeksa 525.ttf") format("truetype");
+    }
+
+    .zeksa {
+      font-family: "ZeksaFont", sans-serif;
+    }
   </style>
 </head>
 <body>
@@ -129,6 +138,7 @@
   本网站已收录 <span id="count-number">0</span> 个仄克萨语词汇。</p>
   <div id="daily-word" class="entry" style="text-align:center;">
   <h2 style="color: var(--accent); margin-top:0;">今日单词</h2>
+  <button onclick="toggleZeksa()" style="display:block;margin:1em auto;">拉丁 - 仄克萨字母</button>
   <div id="daily-content">加载中...</div>
   </div>
   <hr>
@@ -136,6 +146,86 @@
   <div id="results">加载中...</div>
 
   <script>
+    let useZeksa = false;
+    const zeksaMap = {
+      "a": "\uE001",
+      "á": "\uE002",
+      "e": "\uE003",
+      "é": "\uE004",
+      "i": "\uE005",
+      "í": "\uE006",
+      "o": "\uE007",
+      "ó": "\uE008",
+      "u": "\uE009",
+      "ú": "\uE00A",
+      "ä": "\uE00B",
+      "â": "\uE00C",
+      "ë": "\uE00D",
+      "ê": "\uE00E",
+      "ø": "\uE00F",
+      "ô": "\uE010",
+      "b": "\uE011",
+      "p": "\uE012",
+      "d": "\uE013",
+      "t": "\uE014",
+      "g": "\uE015",
+      "k": "\uE016",
+      "m": "\uE017",
+      "n": "\uE018",
+      "q": "\uE019",
+      "v": "\uE01A",
+      "f": "\uE01B",
+      "z": "\uE01C",
+      "s": "\uE01D",
+      "j": "\uE01E",
+      "c": "\uE01F",
+      "x": "\uE020",
+      "ts": "\uE021",
+      "h": "\uE022",
+      "ħ": "\uE023",
+      "l": "\uE024",
+      "r": "\uE025",
+      "w": "\uE026",
+      "y": "\uE027",
+      //THERE'S NO U+E028!!!
+      "0": "\uE029",
+      "1": "\uE02A",
+      "2": "\uE02B",
+      "3": "\uE02C",
+      //U+E024 ~ U+E031 DISQUALIFIED
+      ",": "\uE032",
+      ".": "\uE033",
+      "'": "\uE034",
+      '"': "\uE035",
+      "!": "\uE036",
+      "?": "\uE037",
+      "/": "\uE038"
+      //U+E039 ~ E03B DISQUALIFIED
+    }
+
+    function toZeksa(text) {
+      let result = "";
+      let i = 0;
+    
+      while (i < text.length) {
+        // 优先匹配双字母
+        const twoChar = text.slice(i, i + 2);
+    
+        if (zeksaMap[twoChar]) {
+          result += zeksaMap[twoChar];
+          i += 2;
+          continue;
+        }
+    
+        // 单字母 fallback
+        const oneChar = text[i];
+    
+        result += zeksaMap[oneChar] || oneChar;
+        i += 1;
+      }
+    
+      return result;
+    }
     let dictionary = [];
 
     async function loadDictionary() {
@@ -186,13 +276,13 @@
     
       const html = `
         <div style="font-size:1.5rem; margin-bottom:8px;">
-          <strong>${word.word}</strong>
+          <strong>${useZeksa ? toZeksa(word.word) : word.word}</strong>
         </div>
         <div>${word.meaning}</div>
         <div style="color:#666; font-size:0.95rem;">${word.pos}</div>
         ${word.examples?.[0] ? `
           <div class="example">
-            <strong>例句:</strong> ${word.examples[0].zeksa}<br>
+            <strong>例句:</strong> ${useZeksa ? toZeksa(word.examples[0].zeksa) : word.examples[0].zeksa}<br>
             <strong>翻译:</strong> ${word.examples[0].translation}
           </div>
         ` : ""}
@@ -204,7 +294,7 @@
     function renderEntry(entry) {
       return `
         <div class="entry">
-          <div><span class="label">词语:</span> ${entry.word}</div>
+          <div><span class="label">词语:</span> ${useZeksa ? toZeksa(entry.word) : entry.word}</div>
           <div><span class="label">词义:</span> ${entry.meaning}</div>
           <div><span class="label">词类:</span> ${entry.pos}</div>
           <div><span class="label">构词类型:</span> ${entry.root}</div>
@@ -212,7 +302,7 @@
           <div><span class="label">语法注解:</span> ${entry.gloss}</div>
           ${entry.examples.map(ex => `
             <div class="example">
-              <strong>例句:</strong> ${ex.zeksa}<br>
+              <strong>例句:</strong> ${useZeksa ? toZeksa(ex.zeksa) : ex.zeksa}<br>
               <strong>翻译:</strong> ${ex.translation}
             </div>
           `).join('')}
@@ -225,7 +315,7 @@
   <p style="text-align:center;">
   <a href="quiz.html">进入词汇测试</a>
   </p>
-  <img src="zeksa dict website.png" style="display: block; max-width: 100%; height: auto; margin: 1em auto;">
+  <img src="./zeksa dict website.png" style="display: block; max-width: 100%; height: auto; margin: 1em auto;">
   <small>A Dictionary of the Zeksa Language, Created by Simon Zhang.</small>
 </body>
 </html>
