@@ -114,6 +114,15 @@ button:hover {
   padding: 12px;
   border-radius: 10px;
 }
+
+@font-face {
+  font-family: "ZeksaFont";
+  src: url("./Zeksa 525.ttf") format("truetype");
+}
+
+.zeksa {
+  font-family: "ZeksaFont", sans-serif;
+}
 </style>
 
 </head>
@@ -123,6 +132,7 @@ button:hover {
 <h1>仄克萨语词汇测试</h1>
 <hr>
 <p>选择正确的词义。</p>
+<button onclick="toggleZeksa()" style="display:block; margin:1em auto;">拉丁 - 仄克萨字母</button>
 
 <div class="entry">
 
@@ -139,6 +149,85 @@ button:hover {
 </div>
 
 <script>
+let useZeksa = false;
+
+const zeksaMap = {
+  "a": "\uE001",
+  "á": "\uE002",
+  "e": "\uE003",
+  "é": "\uE004",
+  "i": "\uE005",
+  "í": "\uE006",
+  "o": "\uE007",
+  "ó": "\uE008",
+  "u": "\uE009",
+  "ú": "\uE00A",
+  "ä": "\uE00B",
+  "â": "\uE00C",
+  "ë": "\uE00D",
+  "ê": "\uE00E",
+  "ø": "\uE00F",
+  "ô": "\uE010",
+  "b": "\uE011",
+  "p": "\uE012",
+  "d": "\uE013",
+  "t": "\uE014",
+  "g": "\uE015",
+  "k": "\uE016",
+  "m": "\uE017",
+  "n": "\uE018",
+  "q": "\uE019",
+  "v": "\uE01A",
+  "f": "\uE01B",
+  "z": "\uE01C",
+  "s": "\uE01D",
+  "j": "\uE01E",
+  "c": "\uE01F",
+  "x": "\uE020",
+  "ts": "\uE021",
+  "h": "\uE022",
+  "ħ": "\uE023",
+  "l": "\uE024",
+  "r": "\uE025",
+  "w": "\uE026",
+  "y": "\uE027",
+  "0": "\uE029",
+  "1": "\uE02A",
+  "2": "\uE02B",
+  "3": "\uE02C",
+  ",": "\uE032",
+  ".": "\uE033",
+  "'": "\uE034",
+  '"': "\uE035",
+  "!": "\uE036",
+  "?": "\uE037",
+  "/": "\uE038"
+};
+
+function toZeksa(text) {
+  let result = "";
+  let i = 0;
+
+  while (i < text.length) {
+    // 优先匹配双字母
+    const twoChar = text.slice(i, i + 2);
+    if (zeksaMap[twoChar]) {
+      result += zeksaMap[twoChar];
+      i += 2;
+      continue;
+    }
+
+    const oneChar = text[i];
+    result += zeksaMap[oneChar] || oneChar;
+    i += 1;
+  }
+  return result;
+}
+
+function toggleZeksa() {
+  useZeksa = !useZeksa;
+  renderCurrentQuestion();
+}
 
 let dictionary=[]
 let answer=""
@@ -159,7 +248,12 @@ function nextQuestion(){
   currentEntry=randomWord
   answer=randomWord.meaning
 
-  document.getElementById("word").innerText=randomWord.word
+  document.getElementById("word").innerText = useZeksa ? toZeksa(randomWord.word) : randomWord.word;
+  if(useZeksa){
+    document.getElementById("word").classList.add("zeksa");
+  } else {
+    document.getElementById("word").classList.remove("zeksa");
+  }
 
   let options=[randomWord.meaning]
 
@@ -212,17 +306,16 @@ function checkAnswer(element,choice){
 }
 
 function showExample(){
-
-  if(!currentEntry.examples) return
+  if(!currentEntry.examples) return;
 
   const html=currentEntry.examples.map(ex=>`
-  <div class="example">
-  <strong>例句:</strong> ${ex.zeksa}<br>
-  <strong>翻译:</strong> ${ex.translation}
+  <div class="example ${useZeksa ? "zeksa" : ""}">
+    <strong>例句:</strong> ${useZeksa ? toZeksa(ex.zeksa) : ex.zeksa}<br>
+    <strong>翻译:</strong> ${ex.translation}
   </div>
-  `).join("")
+  `).join("");
 
-  document.getElementById("example").innerHTML=html
+  document.getElementById("example").innerHTML = html;
 }
 
 loadDictionary()
