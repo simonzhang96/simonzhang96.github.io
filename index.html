@@ -281,18 +281,20 @@
       const word = dictionary[index]
     
       const html = `
-        <div style="${useZeksa ? "zeksa" : ""}">
-          <strong>${useZeksa ? toZeksa(word.word) : word.word}</strong>
-        </div>
-        <div>${word.meaning}</div>
-        <div style="color:#666; font-size:0.95rem;">${word.pos}</div>
-        ${word.examples?.[0] ? `
-          <div class="example">
-            <strong>例句:</strong> ${useZeksa ? toZeksa(word.examples[0].zeksa) : word.examples[0].zeksa}<br>
-            <strong>翻译:</strong> ${word.examples[0].translation}
+        <div class="${useZeksa ? "zeksa" : ""}">
+          <div style="font-size:1.5rem; margin-bottom:8px;">
+            <strong>${useZeksa ? toZeksa(word.word) : word.word}</strong>
           </div>
-        ` : ""}
-      `
+          <div>${word.meaning}</div>
+          <div style="color:#666; font-size:0.95rem;">${word.pos}</div>
+          ${word.examples?.[0] ? `
+            <div class="example">
+              <strong>例句:</strong> ${useZeksa ? toZeksa(word.examples[0].zeksa) : word.examples[0].zeksa}<br>
+              <strong>翻译:</strong> ${word.examples[0].translation}
+            </div>
+          ` : ""}
+        </div>
+      `;
 
       document.getElementById("daily-content").innerHTML = html
     }
