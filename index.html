@@ -152,7 +152,7 @@
   <p>在搜索框里输入中文或者仄克萨语，以查询该词的完整信息。</p>
   <p id="word-count" style="text-align: center; font-weight: bold; margin-top: 1em;">
   本网站已收录 <span id="count-number">0</span> 个仄克萨语词汇。</p>
-  <button onclick="toggleZeksa()" style="display:block; margin:1em auto;">拉丁 - 仄克萨字母</button>
+  <button onclick="toggleZeksa()" style="display:block; margin:1em auto;"><strong>拉丁</strong> - 仄克萨字母</button>
   <div id="daily-word" class="entry" style="text-align:center;">
   <h2 style="color: var(--accent); margin-top:0;">今日单词</h2>
   <div id="daily-content">加载中...</div>
@@ -219,8 +219,19 @@
       //U+E039 ~ E03B DISQUALIFIED
     }
 
+    function updateToggleButton() {
+      const btn = document.getElementById("toggle-btn");
+    
+      if (useZeksa) {
+        btn.innerHTML = `拉丁 - <strong>仄克萨字母</strong>`;
+      } else {
+        btn.innerHTML = `<strong>拉丁</strong> - 仄克萨字母`;
+      }
+    }
+
     function toggleZeksa() {
       useZeksa = !useZeksa;
+      updateToggleButton();
       showDailyWord();
       search();
     }
@@ -253,7 +264,10 @@
     async function loadDictionary() {
       const response = await fetch("dict.json");
       dictionary = await response.json();
+    
       document.getElementById("count-number").textContent = dictionary.length;
+    
+      updateToggleButton(); // 初始化按钮状态
       showDailyWord();
       search(); 
     }
