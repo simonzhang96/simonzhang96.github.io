@@ -248,6 +248,7 @@
     
       return result;
     }
+    
     let dictionary = [];
 
     async function loadDictionary() {
@@ -255,8 +256,6 @@
       dictionary = await response.json();
     
       document.getElementById("count-number").textContent = dictionary.length;
-    
-      updateToggleButton(); // 初始化按钮状态
       showDailyWord();
       search(); 
     }
