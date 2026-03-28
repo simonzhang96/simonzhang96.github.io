@@ -331,6 +331,37 @@
   },
 
   {
+    "word": "ekrum",
+    "meaning": "流血；血、血液",
+    "gloss": "生<词缀体> - 液体<词根体>",
+    "pos": "动词、名词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "irehát! jemvi'voh ekrum!",
+        "translation": "注意！我看到了血液！"
+      }
+    ]
+  },
+
+  {
+    "word": "ekrumd",
+    "meaning": "血液的、流血的、血色的(=ekrumvad)",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "ekrumd vi ëv gahrumd tluv.",
+        "translation": "血色的眼睛和充满汗水的衣物。"
+      }
+    ]
+  },
+
+  
+  {
     "word": "estiár",
     "meaning": "听闻、聆听",
     "gloss": "听<词根体>",
@@ -1376,6 +1407,36 @@
     "pos": "名词",
     "root": "复合词",
     "affix": "无",
+    "examples": [
+      {
+        "zeksa": "siat'voh zolde omk va, zoldva.",
+        "translation": "我喜欢天空的颜色——蓝色。"
+      }
+    ]
+  },
+
+  {
+    "word": "zoldvad",
+    "meaning": "天空色的、蓝色的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "zoldvad ayakujlo!",
+        "translation": "蔚蓝档案！*误*"
+      }
+    ]
+  },
+
+  {
+    "word": "siat",
+    "meaning": "喜爱、喜欢；喜爱之物",
+    "gloss": "喜欢<词根体>",
+    "pos": "动词、名词",
+    "root": "单一词",
+    "affix": "siat-",
     "examples": [
       {
         "zeksa": "siat'voh zolde omk va, zoldva.",
