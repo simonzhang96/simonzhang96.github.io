@@ -199,14 +199,6 @@ function toZeksa(text) {
   return result;
 }
 
-if (userInput[i] === currentWord[i]) {
-  if (i > 0 && userInput[i-1] === currentWord[i-1]) {
-    span.className = "correct chain";
-  } else {
-    span.className = "correct";
-  }
-}
-
 // ===== 风暴系统 =====
 function updateStorm(isCorrect) {
   if (isCorrect) {
@@ -266,7 +258,12 @@ function render() {
 
     if (i < userInput.length) {
       if (userInput[i] === char) {
-        span.className = "correct";
+        // 连续正确判断
+        if (i > 0 && userInput[i-1] === currentWord[i-1]) {
+          span.className = "correct chain";
+        } else {
+          span.className = "correct";
+        }
       } else {
         span.className = "wrong";
       }
