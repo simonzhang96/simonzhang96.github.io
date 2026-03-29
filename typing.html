@@ -2,13 +2,10 @@
 <html lang="zh">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>仄克萨语单词练习</title>
+<title>仄克萨连接训练</title>
 
 <style>
 :root {
-  --bg: #f5f7fa;
-  --card: #ffffff;
   --accent: #0078D4;
   --correct: #2ecc71;
   --wrong: #e74c3c;
@@ -16,51 +13,61 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-  background: var(--bg);
   text-align: center;
   padding: 2em;
+  font-family: sans-serif;
+  background: #f5f7fa;
+  transition: background 0.3s;
 }
 
 h1 {
   color: var(--accent);
 }
 
-#wordDisplay {
-  font-size: 2rem;
-  margin: 30px auto;
-  padding: 20px;
-  background: var(--card);
-  border-radius: 12px;
-  max-width: 600px;
+#word {
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  margin-top: 40px;
 }
 
 .correct { color: var(--correct); }
 .wrong { color: var(--wrong); }
 .pending { color: var(--pending); }
 
-input {
-  width: 80%;
-  max-width: 600px;
-  padding: 14px;
-  font-size: 1.2rem;
-  border-radius: 10px;
-  border: 1px solid #ccc;
+/* 风暴层 */
+#storm {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(circle at center, transparent 60%, rgba(0,0,0,0.4));
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
-#meaning {
-  margin-top: 10px;
-  color: #666;
+/* 抖动 */
+.storming #word {
+  animation: shake 0.15s infinite;
 }
 
-button {
-  margin-top: 20px;
-  padding: 10px 18px;
-  border: none;
-  background: var(--accent);
-  color: white;
-  border-radius: 10px;
-  cursor: pointer;
+@keyframes shake {
+  0% { transform: translate(0px, 0px); }
+  25% { transform: translate(1px, -1px); }
+  50% { transform: translate(-1px, 1px); }
+  75% { transform: translate(1px, 1px); }
+  100% { transform: translate(-1px, -1px); }
+}
+
+/* 闪电 */
+.flash {
+  animation: flash 0.15s;
+}
+
+@keyframes flash {
+  from { background: rgba(255,255,255,0.7); }
+  to { background: transparent; }
 }
 
 @font-face {
@@ -76,54 +83,169 @@ button {
 
 <body>
 
-<h1>仄克萨语 · 单词连接</h1>
+<h1>仄克萨连接训练</h1>
 
-<div id="wordDisplay" class="zeksa"></div>
-
-<input id="inputBox" placeholder="输入单词..." autofocus />
-
-<div id="meaning"></div>
-
-<button onclick="nextWord()">下一个</button>
+<div id="word" class="zeksa"></div>
+<div id="storm"></div>
 
 <script>
-let dict = [];
+// ===== 状态 =====
+let dictionary = [];
 let currentWord = "";
+let userInput = "";
+let stormLevel = 0;
 
-const display = document.getElementById("wordDisplay");
-const input = document.getElementById("inputBox");
-const meaning = document.getElementById("meaning");
+// ===== zeksaMap =====
+const zeksaMap = {
+  "a": "\uE001",
+  "á": "\uE002",
+  "e": "\uE003",
+  "é": "\uE004",
+  "i": "\uE005",
+  "í": "\uE006",
+  "o": "\uE007",
+  "ó": "\uE008",
+  "u": "\uE009",
+  "ú": "\uE00A",
+  "ä": "\uE00B",
+  "â": "\uE00C",
+  "ë": "\uE00D",
+  "ê": "\uE00E",
+  "ø": "\uE00F",
+  "ô": "\uE010",
+  "b": "\uE011",
+  "p": "\uE012",
+  "d": "\uE013",
+  "t": "\uE014",
+  "g": "\uE015",
+  "k": "\uE016",
+  "m": "\uE017",
+  "n": "\uE018",
+  "q": "\uE019",
+  "v": "\uE01A",
+  "f": "\uE01B",
+  "z": "\uE01C",
+  "s": "\uE01D",
+  "j": "\uE01E",
+  "c": "\uE01F",
+  "x": "\uE020",
+  "ts": "\uE021",
+  "h": "\uE022",
+  "ħ": "\uE023",
+  "l": "\uE024",
+  "r": "\uE025",
+  "w": "\uE026",
+  "y": "\uE027",
+  //THERE'S NO U+E028!!!
+  "0": "\uE029",
+  "1": "\uE02A",
+  "2": "\uE02B",
+  "3": "\uE02C",
+  //U+E024 ~ U+E031 DISQUALIFIED
+  ",": "\uE032",
+  ".": "\uE033",
+  "'": "\uE034",
+  '"': "\uE035",
+  "!": "\uE036",
+  "?": "\uE037",
+  "/": "\uE038"
+  //U+E039 ~ E03B DISQUALIFIED
+};
 
-// ===== 加载 JSON =====
-fetch("dict.json")
-  .then(res => res.json())
-  .then(data => {
-    dict = data;
-    nextWord();
-  });
+// ===== 输入映射 =====
+const inputMap = {
+  "[": "ä",
+  "]": "ë",
+  "\\": "ø",
+  ";": "ø",
+  "4": "á",
+  "5": "é",
+  "6": "í",
+  "7": "ó",
+  "8": "ú",
+  "9": "â",
+  "0": "ê",
+  "-": "ô",
+  "=": "ħ"
+};
 
-// ===== 随机单词 =====
+// ===== 转仄克萨字体 =====
+function toZeksa(text) {
+  let result = "";
+  let i = 0;
+
+  while (i < text.length) {
+    const two = text.slice(i, i + 2);
+    if (zeksaMap[two]) {
+      result += zeksaMap[two];
+      i += 2;
+    } else {
+      result += zeksaMap[text[i]] || text[i];
+      i++;
+    }
+  }
+  return result;
+}
+
+// ===== 风暴系统 =====
+function updateStorm(isCorrect) {
+  if (isCorrect) {
+    stormLevel -= 5;
+  } else {
+    stormLevel += 15;
+  }
+
+  stormLevel = Math.max(0, Math.min(100, stormLevel));
+
+  const storm = document.getElementById("storm");
+  storm.style.opacity = stormLevel / 100;
+
+  if (stormLevel > 40) {
+    document.body.classList.add("storming");
+  } else {
+    document.body.classList.remove("storming");
+  }
+
+  if (stormLevel > 70 && Math.random() < 0.3) {
+    storm.classList.add("flash");
+    setTimeout(() => storm.classList.remove("flash"), 150);
+  }
+}
+
+// ===== 加载词典 =====
+async function load() {
+  const res = await fetch("dict.json");
+  dictionary = await res.json();
+  nextWord();
+}
+
+// ===== 下一个词 =====
 function nextWord() {
-  const entry = dict[Math.floor(Math.random() * dict.length)];
+  const entry = dictionary[Math.floor(Math.random() * dictionary.length)];
   currentWord = entry.word;
+  userInput = "";
 
-  display.innerHTML = "";
-  input.value = "";
-  meaning.innerText = entry.meaning || "";
+  // 重置风暴
+  stormLevel = 0;
+  document.getElementById("storm").style.opacity = 0;
+  document.body.classList.remove("storming");
 
   render();
 }
 
-// ===== 渲染高亮 =====
+// ===== 渲染 =====
 function render() {
-  display.innerHTML = "";
+  const container = document.getElementById("word");
+  container.innerHTML = "";
 
   for (let i = 0; i < currentWord.length; i++) {
     const span = document.createElement("span");
-    span.innerText = currentWord[i];
+    const char = currentWord[i];
 
-    if (i < input.value.length) {
-      if (input.value[i] === currentWord[i]) {
+    span.innerHTML = toZeksa(char);
+
+    if (i < userInput.length) {
+      if (userInput[i] === char) {
         span.className = "correct";
       } else {
         span.className = "wrong";
@@ -132,18 +254,41 @@ function render() {
       span.className = "pending";
     }
 
-    display.appendChild(span);
+    container.appendChild(span);
   }
 }
 
-// ===== 输入监听 =====
-input.addEventListener("input", () => {
+// ===== 键盘输入 =====
+document.addEventListener("keydown", (e) => {
+  if (e.key.length > 1 && e.key !== "Backspace") return;
+
+  if (e.key === "Backspace") {
+    userInput = userInput.slice(0, -1);
+    render();
+    return;
+  }
+
+  let key = e.key;
+
+  // 输入映射
+  if (inputMap[key]) key = inputMap[key];
+
+  userInput += key;
+
+  // 判断对错
+  const index = userInput.length - 1;
+  const isCorrect = userInput[index] === currentWord[index];
+  updateStorm(isCorrect);
+
   render();
 
-  if (input.value === currentWord) {
-    setTimeout(nextWord, 300);
+  // 完成
+  if (userInput === currentWord) {
+    setTimeout(nextWord, 400);
   }
 });
+
+load();
 </script>
 
 </body>
