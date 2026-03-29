@@ -32,15 +32,21 @@ h1 {
 
 .correct {
   color: var(--correct);
-  text-shadow: 0 0 6px rgba(46,204,113,0.6);
+  text-shadow: 0 0 8px rgba(46, 204, 113, 0.8);
+  animation: glowPulse 1.5s infinite alternate;
 }
 
-/* 连续正确 = 更强光 */
-.chain {
-  text-shadow:
-    0 0 10px rgba(46,204,113,1),
-    0 0 20px rgba(46,204,113,0.9),
-    0 0 30px rgba(46,204,113,0.6);
+@keyframes glowPulse {
+  from {
+    text-shadow:
+      0 0 6px rgba(46,204,113,0.6),
+      0 0 12px rgba(46,204,113,0.4);
+  }
+  to {
+    text-shadow:
+      0 0 12px rgba(46,204,113,1),
+      0 0 24px rgba(46,204,113,0.8);
+  }
 }
 .wrong { color: var(--wrong); }
 .pending { color: var(--pending); }
