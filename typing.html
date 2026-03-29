@@ -2,7 +2,7 @@
 <html lang="zh">
 <head>
 <meta charset="UTF-8">
-<title>仄克萨连接训练</title>
+<title>仄克萨语打字训练</title>
 
 <style>
 :root {
@@ -25,12 +25,23 @@ h1 {
 }
 
 #word {
-  font-size: 2.5rem;
-  letter-spacing: 2px;
-  margin-top: 40px;
+  font-size: 4rem;
+  letter-spacing: 4px;
+  margin-top: 60px;
 }
 
-.correct { color: var(--correct); }
+.correct {
+  color: var(--correct);
+  text-shadow: 0 0 6px rgba(46,204,113,0.6);
+}
+
+/* 连续正确 = 更强光 */
+.chain {
+  text-shadow:
+    0 0 10px rgba(46,204,113,1),
+    0 0 20px rgba(46,204,113,0.9),
+    0 0 30px rgba(46,204,113,0.6);
+}
 .wrong { color: var(--wrong); }
 .pending { color: var(--pending); }
 
@@ -83,9 +94,10 @@ h1 {
 
 <body>
 
-<h1>仄克萨连接训练</h1>
+<h1>仄克萨语打字训练</h1>
 
 <div id="word" class="zeksa"></div>
+<div id="meaning"></div>
 <div id="storm"></div>
 
 <script>
@@ -185,6 +197,14 @@ function toZeksa(text) {
     }
   }
   return result;
+}
+
+if (userInput[i] === currentWord[i]) {
+  if (i > 0 && userInput[i-1] === currentWord[i-1]) {
+    span.className = "correct chain";
+  } else {
+    span.className = "correct";
+  }
 }
 
 // ===== 风暴系统 =====
