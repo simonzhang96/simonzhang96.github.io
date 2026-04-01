@@ -220,17 +220,22 @@
     }
 
     function toggleZeksa() {
-      useZeksa = !useZeksa;
-      const input = document.getElementById("searchBox")
 
+      useZeksa = !useZeksa
+    
+      const body = document.body
+      const input = document.getElementById("searchBox")
+    
       if (useZeksa) {
-        input.value = toZeksa(input.value)
+        body.classList.add("zeksa")
         input.classList.add("zeksa")
       } else {
+        body.classList.remove("zeksa")
         input.classList.remove("zeksa")
       }
-      showDailyWord();
-      search();
+    
+      showDailyWord()
+      search()
     }
 
     function toZeksa(text) {
