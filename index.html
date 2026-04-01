@@ -221,7 +221,14 @@
 
     function toggleZeksa() {
       useZeksa = !useZeksa;
-      document.getElementById("searchBox").value = useZeksa ? toZeksa(document.getElementById("searchBox").value) : document.getElementById("searchBox").value
+      const input = document.getElementById("searchBox")
+
+      if (useZeksa) {
+        input.value = toZeksa(input.value)
+        input.classList.add("zeksa")
+      } else {
+        input.classList.remove("zeksa")
+      }
       showDailyWord();
       search();
     }
