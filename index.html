@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- index.html: last edited at 19 Mar (Thur) 2026. -->
+<!-- index.html: last edited at 1 Apr (Wed) 2026. -->
 <!-- This is a Dictionary Website of the Zeksa Language, Created by Simon Zhang. -->
 <!-- All rights reserved. -->
 <html lang="zh">
@@ -221,6 +221,7 @@
 
     function toggleZeksa() {
       useZeksa = !useZeksa;
+      document.getElementById("searchBox").value = useZeksa ? toZeksa(document.getElementById("searchBox").value) : document.getElementById("searchBox").value
       showDailyWord();
       search();
     }
@@ -261,11 +262,20 @@
     }
 
     function search() {
-      const query = document.getElementById("searchBox").value.trim().toLowerCase();
-      const results = dictionary.filter(entry =>
-        entry.word.toLowerCase().startsWith(query) ||
-        entry.meaning.toLowerCase().includes(query)
-      );
+      let query = document.getElementById("searchBox").value.trim().toLowerCase();
+      if (useZeksa) {
+        query = toZeksa(query);
+      }
+      const results = dictionary.filter(entry => {
+
+        const word = useZeksa ? toZeksa(entry.word.toLowerCase()) : entry.word.toLowerCase()
+      
+        return (
+          word.startsWith(query) ||
+          entry.meaning.toLowerCase().includes(query)
+        )
+
+      });
 
       const output = document.getElementById("results");
 
