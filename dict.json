@@ -49,7 +49,7 @@
     "word": "aow",
     "meaning": "明亮地、光明正大地、真诚地",
     "gloss": "~ - <副词标记>",
-    "pos": "名词",
+    "pos": "副词",
     "root": "单一词",
     "affix": "ao-",
     "examples": [
@@ -1410,7 +1410,7 @@
     "affix": "N/A",
     "examples": [
       {
-        "zeksa": "/bevasvun'voh änte läm tsul./ bertl'vospd alz".",
+        "zeksa": "/bevasvun'voh änte läm tsul./ bertl'vospd alz",
         "translation": "“我会和你分享水的。”温柔的人说。"
       }
     ]
@@ -1480,7 +1480,7 @@
     "word": "vmilod",
     "meaning": "和平的、和善的、友善的",
     "gloss": "~ - <形容词标记>",
-    "pos": "名词",
+    "pos": "形容词",
     "root": "单一词",
     "affix": "vmilo",
     "examples": [
@@ -1792,21 +1792,6 @@
   },
 
   {
-    "word": "lavrín",
-    "meaning": "朋友、知音；做朋友",
-    "gloss": "朋友<词根体>",
-    "pos": "名词、动词",
-    "root": "单一词",
-    "affix": "lavr-",
-    "examples": [
-      {
-        "zeksa": "gemlavrín'voh afí alz.",
-        "translation": "我想和那个人做朋友。"
-      }
-    ]
-  },
-
-  {
     "word": "läm",
     "meaning": "向、对着、朝着、和",
     "gloss": "向<词根体>",
@@ -1895,6 +1880,5 @@
       }
     ]
   }
-  
   
 ]
