@@ -225,6 +225,21 @@
       }
     ]
   },
+
+  {
+    "word": "ayailim",
+    "meaning": "遗忘、忘却",
+    "gloss": "真理<词缀体> - 死亡<词根体>",
+    "pos": "动词",
+    "root": "复合词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "kiuayailim'voh ustad bho!",
+        "translation": "我可能会忘记所有事情！"
+      }
+    ]
+  },
   
   {
     "word": "ayariv",
@@ -997,6 +1012,21 @@
   },
 
   {
+    "word": "gem",
+    "meaning": "需求、欲望；<欲望前缀>",
+    "gloss": "欲望<词根体> / 欲望<词缀体>",
+    "pos": "名词、动词前缀",
+    "root": "单一词",
+    "affix": "gem-",
+    "examples": [
+      {
+        "zeksa": "gemestiár'voh lumzoldao omk freyad aläv",
+        "translation": "我想倾听星星的美妙音乐。"
+      }
+    ]
+  },
+
+  {
     "word": "kavak",
     "meaning": "东、东边",
     "gloss": "东<词根体>",
@@ -1042,6 +1072,21 @@
   },
 
   {
+    "word": "kert",
+    "meaning": "箱子、盒子",
+    "gloss": "箱子<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "kert-",
+    "examples": [
+      {
+        "zeksa": "ek'kol cevdëm afí kert?",
+        "translation": "那个盒子里有什么东西？"
+      }
+    ]
+  },
+
+  {
     "word": "kir",
     "meaning": "矿石、矿物、仄克萨·契尔；挖矿、开采",
     "gloss": "矿物<词根体>",
@@ -1052,6 +1097,36 @@
       {
         "zeksa": "ilsiat'voh kir.",
         "translation": "我不喜欢采矿。"
+      }
+    ]
+  },
+
+  {
+    "word": "kiu",
+    "meaning": "可能、几率；<可能前缀>",
+    "gloss": "可能<词根体> / 可能<词缀体>",
+    "pos": "名词、动词前缀",
+    "root": "单一词",
+    "affix": "kiu-",
+    "examples": [
+      {
+        "zeksa": "kiuayailim'voh ustad bho!",
+        "translation": "我可能会忘记所有事情！"
+      }
+    ]
+  },
+
+  {
+    "word": "koj",
+    "meaning": "义务、需求、命令；<即命令前缀>",
+    "gloss": "命令<词根体> / 命令<词缀体>",
+    "pos": "名词、动词前缀",
+    "root": "单一词",
+    "affix": "koj-",
+    "examples": [
+      {
+        "zeksa": "kojath'g kert.",
+        "translation": "你必须打开盒子。"
       }
     ]
   },
@@ -1335,7 +1410,7 @@
     "affix": "N/A",
     "examples": [
       {
-        "zeksa": "/bevasvun'voh änte läm tsul./ bertl'vospd alz.",
+        "zeksa": "/bevasvun'voh änte läm tsul./ bertl'vospd alz".",
         "translation": "“我会和你分享水的。”温柔的人说。"
       }
     ]
@@ -1382,6 +1457,51 @@
       {
         "zeksa": "ekj'vohi meyra. zug'vohi vmilo ëv bonvi.",
         "translation": "我们是文明。我们拥有和平和美好。"
+      }
+    ]
+  },
+
+  {
+    "word": "vmilo",
+    "meaning": "和平、和善、友善",
+    "gloss": "和平<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "vmilo",
+    "examples": [
+      {
+        "zeksa": "ekj'vohi meyra. zug'vohi vmilo ëv bonvi.",
+        "translation": "我们是文明。我们拥有和平和美好。"
+      }
+    ]
+  },
+
+  {
+    "word": "vmilod",
+    "meaning": "和平的、和善的、友善的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "vmilo",
+    "examples": [
+      {
+        "zeksa": "/bevasvun'voh änte läm tsul./ bertl'vmilod alz\".",
+        "translation": "“我会与你分享水资源的。”友善的人说。"
+      }
+    ]
+  },
+
+  {
+    "word": "vrad",
+    "meaning": "能力、潜力；<能力前缀>",
+    "gloss": "能力<词根体> / 能力<词缀体>",
+    "pos": "名词、动词前缀",
+    "root": "单一词",
+    "affix": "vrad-",
+    "examples": [
+      {
+        "zeksa": "vradayailim'ustalz ilbonvid bho.",
+        "translation": "所有人都可以忘记不好的事情。"
       }
     ]
   },
