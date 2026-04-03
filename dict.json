@@ -164,6 +164,22 @@
       }
     ]
   },
+
+  {
+    "word": "aliya",
+    "meaning": "挚友、好朋友、知音",
+    "gloss": "挚友<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "aliy-",
+    "examples": [
+      {
+        "zeksa": "ekj'simón ëv voh\" oubonvid aliya.",
+        "translation": "我和西蒙是很好的挚友。"
+      }
+    ]
+  },
+
   
   {
     "word": "alâv",
@@ -407,7 +423,7 @@
   },
   
   {
-    "word": "il-",
+    "word": "il",
     "meaning": "<否定前缀>",
     "gloss": "死<词缀体>",
     "pos": "动词前缀、形容词前缀",
@@ -543,8 +559,8 @@
   },
 
   {
-    "word": "baj / baj-",
-    "meaning": "静止；进行中、正在做某事",
+    "word": "baj",
+    "meaning": "静止；<进行前缀>",
     "gloss": "进行<词根体> / 进行<词缀体>",
     "pos": "名词、动词前缀",
     "root": "单一词",
@@ -553,6 +569,21 @@
       {
         "zeksa": "bajdunl'voh änte cevdëm mäyuqu.",
         "translation": "我正在喝大海里的水。"
+      }
+    ]
+  },
+
+  {
+    "word": "be",
+    "meaning": "未来；<未来前缀>",
+    "gloss": "未来<词根体> / 未来<词缀体>",
+    "pos": "名词、动词前缀",
+    "root": "单一词",
+    "affix": "be-",
+    "examples": [
+      {
+        "zeksa": "beadkev'voh gaxavo.",
+        "translation": "我将要吃果子。"
       }
     ]
   },
@@ -1131,6 +1162,21 @@
   },
 
   {
+    "word": "merhaa",
+    "meaning": "相信、信任、认为",
+    "gloss": "N/A",
+    "pos": "动词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "merhaa'g! merhaa'g! merhaa'g!",
+        "translation": "我信！我信！我信！"
+      }
+    ]
+  },
+
+  {
     "word": "meyra",
     "meaning": "文明、组织",
     "gloss": "文明<词根体>",
@@ -1261,6 +1307,51 @@
       {
         "zeksa": "iljemvi'ajkrusalz yuqu dëm afí dalo øn kavzeksmädrék.",
         "translation": "远征的人没有看到过在那座岛屿或东仄克萨大陆上的湖泊。"
+      }
+    ]
+  },
+
+  {
+    "word": "vosp",
+    "meaning": "温柔、柔情、温顺、仄克萨·沃斯",
+    "gloss": "温柔<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "vosp-",
+    "examples": [
+      {
+        "zeksa": "ekj'koldom zeksa vosp? ek'ould vosp dëm afí?",
+        "translation": "仄克萨·沃斯在哪里？那里有许多温柔吗？"
+      }
+    ]
+  },
+
+  {
+    "word": "vospd",
+    "meaning": "温柔的、柔情的、温顺的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "/bevasvun'voh änte läm tsul./ bertl'vospd alz.",
+        "translation": "“我会和你分享水的。”温柔的人说。"
+      }
+    ]
+  },
+
+  {
+    "word": "vospw",
+    "meaning": "温柔地、柔情地、温顺地",
+    "gloss": "~ - <副词标记>",
+    "pos": "副词",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "ilkrusø vospw läm afí bonvid ilpis.",
+        "translation": "不要温和地走进那个良夜。"
       }
     ]
   },
@@ -1446,6 +1537,21 @@
   },
 
   {
+    "word": "jem",
+    "meaning": "过去、刚才；<过去前缀>",
+    "gloss": "过去<词根体> / 过去<词缀体>",
+    "pos": "名词、动词前缀",
+    "root": "单一词",
+    "affix": "jem-",
+    "examples": [
+      {
+        "zeksa": "jembajkrus'voh cevdëm zoldvad drakol.",
+        "translation": "我刚才正在蓝色的堡垒里走路。"
+      }
+    ]
+  },
+
+  {
     "word": "cevo",
     "meaning": "中间、中央、仄克萨·谢沃",
     "gloss": "中<词根体>",
@@ -1536,6 +1642,21 @@
   },
 
   {
+    "word": "lavrín",
+    "meaning": "朋友、知音；做朋友",
+    "gloss": "朋友<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "lavr-",
+    "examples": [
+      {
+        "zeksa": "gemlavrín'voh afí alz.",
+        "translation": "我想和那个人做朋友。"
+      }
+    ]
+  },
+
+  {
     "word": "lek",
     "meaning": "学习、新知道",
     "gloss": "学习<词根体>",
@@ -1546,6 +1667,36 @@
       {
         "zeksa": "bajlek'voh frini polár.",
         "translation": "我在学习写数字。"
+      }
+    ]
+  },
+
+  {
+    "word": "lavrín",
+    "meaning": "朋友、知音；做朋友",
+    "gloss": "朋友<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "lavr-",
+    "examples": [
+      {
+        "zeksa": "gemlavrín'voh afí alz.",
+        "translation": "我想和那个人做朋友。"
+      }
+    ]
+  },
+
+  {
+    "word": "läm",
+    "meaning": "向、对着、朝着、和",
+    "gloss": "向<词根体>",
+    "pos": "介词",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "näg bertl'tsul läm eral, ilbemerhaa'eral.",
+        "translation": "如果你和他说，他不会相信的。"
       }
     ]
   },
@@ -1576,6 +1727,36 @@
       {
         "zeksa": "sasvi'g! lumzoldao! freyad lumzoldao!",
         "translation": "看！星星！美丽的星星！"
+      }
+    ]
+  },
+
+  {
+    "word": "ran",
+    "meaning": "顺序、次序、轮次；排序；第...个",
+    "gloss": "顺序<词根体>",
+    "pos": "名词、动词、数字接尾",
+    "root": "单一词",
+    "affix": "ran-",
+    "examples": [
+      {
+        "zeksa": "änran, duran, hteran...",
+        "translation": "第一、第二、第三..."
+      }
+    ]
+  },
+
+  {
+    "word": "rimis",
+    "meaning": "火、火焰；燃烧、点燃",
+    "gloss": "火<词根体>",
+    "pos": "名词；动词",
+    "root": "单一词",
+    "affix": "rim-",
+    "examples": [
+      {
+        "zeksa": "irehát! ekj'rimis oucupwed! ilvradkonv'g rimis!",
+        "translation": "小心！火焰非常热！你不能触碰火焰！"
       }
     ]
   },
