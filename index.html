@@ -221,24 +221,9 @@
     }
 
     function toggleZeksa() {
-      useZeksa = !useZeksa;          // 切换状态
-    
-      const input = document.getElementById("searchBox");
-    
-      if (useZeksa) {
-        // 当切换为仄克萨模式
-        document.body.classList.add("zeksa");  // 整个页面使用仄克萨字体
-        input.classList.add("zeksa");          // 输入框也使用仄克萨字体
-        input.value = toZeksa(input.value);    // 输入框内容同步转换
-      } else {
-        // 切换回拉丁模式
-        document.body.classList.remove("zeksa");
-        input.classList.remove("zeksa");
-        // 输入框可保留原文字，或者清空根据需求
-      }
-    
-      showDailyWord(); // 刷新今日单词显示
-      search();        // 刷新搜索结果显示
+      useZeksa = !useZeksa;
+      showDailyWord();
+      search();
     }
 
     function toZeksa(text) {
@@ -277,20 +262,11 @@
     }
 
     function search() {
-      let query = document.getElementById("searchBox").value.trim().toLowerCase();
-      if (useZeksa) {
-        query = toZeksa(query);
-      }
-      const results = dictionary.filter(entry => {
-
-        const word = useZeksa ? toZeksa(entry.word.toLowerCase()) : entry.word.toLowerCase()
-      
-        return (
-          word.startsWith(query) ||
-          entry.meaning.toLowerCase().includes(query)
-        )
-
-      });
+      const query = document.getElementById("searchBox").value.trim().toLowerCase();
+      const results = dictionary.filter(entry =>
+        entry.word.toLowerCase().startsWith(query) ||
+        entry.meaning.toLowerCase().includes(query)
+      );
 
       const output = document.getElementById("results");
 
