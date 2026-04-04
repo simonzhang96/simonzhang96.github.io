@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<!-- Zeksa Language Website -->
+<!-- Homepage -->
+<html lang="zh">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>仄克萨 Zeksa</title>
+
+<style>
+:root {
+  --bg-color: #f5f7fa;
+  --card-bg: #ffffff;
+  --accent: #0078D4;
+  --text-color: #222;
+  --label-color: #555;
+  --shadow: 0 8px 20px rgba(0,0,0,0.05);
+  --radius: 14px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  max-width: 900px;
+  margin: auto;
+  padding: 2em;
+  background: var(--bg-color);
+  color: var(--text-color);
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.6rem;
+  color: var(--accent);
+}
+
+h2 {
+  color: var(--accent);
+  margin-top: 0;
+}
+
+p {
+  line-height: 1.6;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 22px 26px;
+  margin: 24px auto;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+}
+
+.button-row {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.button {
+  display: inline-block;
+  margin: 8px;
+  padding: 12px 20px;
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.button:hover {
+  opacity: 0.9;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  color: #666;
+}
+
+@media (max-width: 700px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<h1>仄克萨 Zeksa</h1>
+
+<div class="hero">
+<p>一种来自欧姆克隆星球的语言与文明。</p>
+<p>语言 · 世界观 · 连接</p>
+
+<div class="button-row">
+<a class="button" href="/dictionary">进入词典</a>
+<a class="button" href="/quiz.html">词汇测试</a>
+</div>
+</div>
+
+
+<div class="card">
+<h2>什么是仄克萨？</h2>
+<p>
+仄克萨（Zeksa）是一种人为语言（constructed language），
+也是一个完整的文明世界观。  
+它诞生于欧姆克隆星球，在荒漠、风暴、湖泊与连接之中发展。
+</p>
+
+<p>
+在仄克萨文化中，<strong>连接（Alzom）</strong>是最重要的概念：
+人与人、人与环境、文明与历史之间不断建立联系。
+</p>
+</div>
+
+
+<div class="card">
+<h2>语言特点</h2>
+
+<div class="grid">
+
+<div>
+<strong>语序</strong><br>
+VSO（动词-主语-宾语）
+</div>
+
+<div>
+<strong>类型</strong><br>
+黏着语
+</div>
+
+<div>
+<strong>动词系统</strong><br>
+通过前缀表达时态、体、情态
+</div>
+
+<div>
+<strong>名词</strong><br>
+无格变化、无性
+</div>
+
+</div>
+
+</div>
+
+
+<div class="card">
+<h2>示例句</h2>
+
+<p><strong>Krus’Voh</strong></p>
+<p>我走 / 我前行</p>
+
+<p><strong>Bajkrus’Voh</strong></p>
+<p>我正在走</p>
+
+<p><strong>Gemkrus’Voh</strong></p>
+<p>我想走</p>
+
+</div>
+
+
+<div class="card">
+<h2>欧姆克隆星球</h2>
+
+<p>
+仄克萨文明诞生于行星 <strong>Omklon</strong>。
+</p>
+
+<ul>
+<li>昼夜长度：19.6小时</li>
+<li>一年：52.5天</li>
+<li>恒星：Zoldao（K7V橙矮星）</li>
+</ul>
+
+<p>
+星球上遍布荒漠、风暴与湖泊，
+生命往往只能在“连接之处”生存。
+</p>
+
+</div>
+
+
+<div class="card">
+<h2>探索仄克萨</h2>
+
+<div class="button-row">
+<a class="button" href="/dictionary">词典</a>
+<a class="button" href="/quiz.html">词汇测试</a>
+</div>
+
+</div>
+
+
+<footer>
+<p>Zeksa Language Project</p>
+<p>Created by Simon Zhang</p>
+</footer>
+
+</body>
+</html>
