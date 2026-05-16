@@ -378,7 +378,7 @@
 
   {
     "word": "ekrumd",
-    "meaning": "血液的、流血的、血色的(=ekrumvad)",
+    "meaning": "血液的、流血的、血色的",
     "gloss": "~ - <形容词标记>",
     "pos": "形容词",
     "root": "N/A",
@@ -904,6 +904,22 @@
       }
     ]
   },
+
+  {
+    "word": "tokro",
+    "meaning": "石头、石制物",
+    "gloss": "石头<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "tok-",
+    "examples": [
+      {
+        "zeksa": "gem'voh kujlod tokro yot drakol!",
+        "translation": "为了堡垒，我想要坚硬的石头！"
+      }
+    ]
+  },
+
 
   {
     "word": "tsalë",
