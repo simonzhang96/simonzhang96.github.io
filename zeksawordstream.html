@@ -148,8 +148,15 @@ body::before {
 
   letter-spacing: 0.08em;
 
-  max-width: 700px;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   text-align: center;
+
+  line-height: 1.8;
 }
 
 /* 档案卡 */
@@ -489,7 +496,7 @@ fetch("dict.json")
 
       showWord();
     
-      setInterval(showWord, 2200);
+      setInterval(showWord, 200);
     
     }, 3000);
 
