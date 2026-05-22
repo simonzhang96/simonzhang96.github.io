@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Omklon Lexicon Stream</title>
+
+<style>
+:root {
+  --bg: #060B10;
+  --primary: #8FD3FF;
+  --secondary: #5AA9E6;
+  --text: #D7E7F5;
+  --dim: #7F96A8;
+  --panel: rgba(255,255,255,0.04);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at center, #0B1722 0%, #060B10 60%);
+  color: var(--text);
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "SF Pro Display",
+    "Segoe UI",
+    sans-serif;
+}
+
+/* 扫描线 */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.03),
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+  opacity: 0.15;
+}
+
+/* HUD */
+
+.hud-top {
+  position: absolute;
+  top: 24px;
+  left: 32px;
+
+  font-size: 12px;
+  letter-spacing: 0.25em;
+  color: var(--dim);
+
+  opacity: 0.8;
+}
+
+.hud-bottom {
+  position: absolute;
+  bottom: 24px;
+  right: 32px;
+
+  text-align: right;
+
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  color: var(--dim);
+}
+
+/* 主容器 */
+
+.container {
+  position: absolute;
+  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 2rem;
+}
+
+/* 仄克萨字体 */
+
+@font-face {
+  font-family: "ZeksaFont";
+  src: url("./Zeksa 525.ttf") format("truetype");
+}
+
+.zeksa {
+  font-family: "ZeksaFont";
+  font-size: clamp(5rem, 14vw, 11rem);
+
+  letter-spacing: 0.08em;
+
+  color: var(--primary);
+
+  text-shadow:
+    0 0 8px rgba(143,211,255,0.3),
+    0 0 20px rgba(143,211,255,0.15);
+
+  margin-bottom: 0.4rem;
+
+  animation: pulse 4s ease-in-out infinite;
+}
+
+/* 罗马化 */
+
+.roman {
+  font-size: clamp(1.2rem, 2vw, 2rem);
+
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+
+  color: white;
+
+  opacity: 0.9;
+}
+
+/* 含义 */
+
+.meaning {
+  margin-top: 1rem;
+
+  font-size: 1rem;
+
+  color: var(--dim);
+
+  letter-spacing: 0.08em;
+
+  max-width: 700px;
+  text-align: center;
+}
+
+/* 档案卡 */
+
+.card {
+  padding:
+    2.5rem
+    3rem;
+
+  background: var(--panel);
+
+  border:
+    1px solid rgba(255,255,255,0.08);
+
+  border-radius: 22px;
+
+  backdrop-filter: blur(14px);
+
+  box-shadow:
+    0 0 40px rgba(0,0,0,0.35);
+
+  min-width: min(850px, 90vw);
+
+  position: relative;
+
+  overflow: hidden;
+}
+
+/* 左上角线 */
+
+.card::before {
+  content: "";
+
+  position: absolute;
+
+  top: 18px;
+  left: 18px;
+
+  width: 80px;
+  height: 1px;
+
+  background: rgba(255,255,255,0.25);
+}
+
+/* 右下角线 */
+
+.card::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: 18px;
+  right: 18px;
+
+  width: 80px;
+  height: 1px;
+
+  background: rgba(255,255,255,0.25);
+}
+
+/* 随机噪点 */
+
+.noise {
+  position: absolute;
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.04;
+
+  background-image:
+    radial-gradient(white 0.7px, transparent 0.7px);
+
+  background-size: 8px 8px;
+}
+
+/* glitch */
+
+.glitch {
+  animation: glitch 0.15s linear 2;
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+
+  25% {
+    transform: translate(-2px, 1px);
+  }
+
+  50% {
+    transform: translate(2px, -1px);
+  }
+
+  75% {
+    transform: translate(-1px, 2px);
+  }
+
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.92;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.92;
+  }
+}
+
+/* 淡入 */
+
+.fade {
+  animation: fadein 0.6s ease;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="hud-top">
+  OMKLON ARCHIVE NODE<br>
+  SIGNAL STATUS : STABLE
+</div>
+
+<div class="hud-bottom">
+  STORM INDEX : IV<br>
+  LEXICON STREAM ACTIVE
+</div>
+
+<div class="container">
+  <div class="card fade" id="card">
+
+    <div class="noise"></div>
+
+    <div class="zeksa" id="zeksaWord"></div>
+
+    <div class="roman" id="romanWord"></div>
+
+    <div class="meaning" id="meaning"></div>
+
+  </div>
+</div>
+
+<script>
+/* 映射表 */
+
+const zeksaMap = {
+  "ts": "\uE021",
+
+  "a": "\uE001",
+  "á": "\uE002",
+  "e": "\uE003",
+  "é": "\uE004",
+  "i": "\uE005",
+  "í": "\uE006",
+  "o": "\uE007",
+  "ó": "\uE008",
+  "u": "\uE009",
+  "ú": "\uE00A",
+  "ä": "\uE00B",
+  "â": "\uE00C",
+  "ë": "\uE00D",
+  "ê": "\uE00E",
+  "ø": "\uE00F",
+  "ô": "\uE010",
+
+  "b": "\uE011",
+  "p": "\uE012",
+  "d": "\uE013",
+  "t": "\uE014",
+  "g": "\uE015",
+  "k": "\uE016",
+  "m": "\uE017",
+  "n": "\uE018",
+  "q": "\uE019",
+  "v": "\uE01A",
+  "f": "\uE01B",
+  "z": "\uE01C",
+  "s": "\uE01D",
+  "j": "\uE01E",
+  "c": "\uE01F",
+  "x": "\uE020",
+  "h": "\uE022",
+  "ħ": "\uE023",
+  "l": "\uE024",
+  "r": "\uE025",
+  "w": "\uE026",
+  "y": "\uE027",
+
+  "0": "\uE029",
+  "1": "\uE02A",
+  "2": "\uE02B",
+  "3": "\uE02C",
+
+  ",": "\uE032",
+  ".": "\uE033",
+  "'": "\uE034",
+  '"': "\uE035",
+  "!": "\uE036",
+  "?": "\uE037",
+  "/": "\uE038"
+};
+
+/* 转换 */
+
+function convertToPUA(text) {
+
+  const keys = Object.keys(zeksaMap)
+    .sort((a, b) => b.length - a.length);
+
+  let result = "";
+  let i = 0;
+
+  while (i < text.length) {
+
+    let matched = false;
+
+    for (const key of keys) {
+
+      if (text.startsWith(key, i)) {
+
+        result += zeksaMap[key];
+
+        i += key.length;
+
+        matched = true;
+
+        break;
+      }
+    }
+
+    if (!matched) {
+
+      result += text[i];
+
+      i++;
+    }
+  }
+
+  return result;
+}
+
+/* DOM */
+
+const zeksaWord = document.getElementById("zeksaWord");
+const romanWord = document.getElementById("romanWord");
+const meaning = document.getElementById("meaning");
+const card = document.getElementById("card");
+
+/* 随机HUD */
+
+const statuses = [
+  "SIGNAL STABLE",
+  "ARCHIVE RECOVERED",
+  "NODE SYNCHRONIZED",
+  "REMOTE ACCESS ACTIVE",
+  "STORM INTERFERENCE LOW"
+];
+
+/* 读取JSON */
+
+fetch("dict.json")
+  .then(res => res.json())
+  .then(data => {
+
+    let index = 0;
+
+    function showWord() {
+
+      const entry = data[index];
+
+      const word = entry.word || "";
+      const meaningText = entry.meaning || "";
+
+      zeksaWord.textContent =
+        convertToPUA(word);
+
+      romanWord.textContent =
+        word.toUpperCase();
+
+      meaning.textContent =
+        meaningText;
+
+      /* glitch */
+
+      if (Math.random() < 0.35) {
+
+        card.classList.add("glitch");
+
+        setTimeout(() => {
+          card.classList.remove("glitch");
+        }, 300);
+      }
+
+      /* 随机状态 */
+
+      document.querySelector(".hud-top").innerHTML =
+        `OMKLON ARCHIVE NODE<br>${statuses[Math.floor(Math.random() * statuses.length)]}`;
+
+      /* 淡入 */
+
+      card.classList.remove("fade");
+
+      void card.offsetWidth;
+
+      card.classList.add("fade");
+
+      index++;
+
+      if (index >= data.length) {
+        index = 0;
+      }
+    }
+
+    showWord();
+
+    setInterval(showWord, 2200);
+
+  });
+</script>
+
+</body>
+</html>
