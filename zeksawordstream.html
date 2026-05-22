@@ -101,6 +101,7 @@ body::before {
 
 .zeksa {
   font-family: "ZeksaFont";
+
   font-size: clamp(5rem, 14vw, 11rem);
 
   letter-spacing: 0.08em;
@@ -114,8 +115,15 @@ body::before {
   margin-bottom: 0.4rem;
 
   animation: pulse 4s ease-in-out infinite;
-}
 
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
 /* 罗马化 */
 
 .roman {
@@ -477,7 +485,13 @@ fetch("dict.json")
       }
     }
 
-    showWord();
+    setTimeout(() => {
+
+      showWord();
+    
+      setInterval(showWord, 2200);
+    
+    }, 3000);
 
     setInterval(showWord, 2200);
 
