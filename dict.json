@@ -439,7 +439,7 @@
   
   {
     "word": "il",
-    "meaning": "<否定前缀>",
+    "meaning": "不<否定前缀>",
     "gloss": "死<词缀体>",
     "pos": "动词前缀、形容词前缀",
     "root": "N/A",
@@ -478,6 +478,21 @@
       {
         "zeksa": "ekj'ilim alz omk ilpis.",
         "translation": "死亡是人的夜晚。"
+      }
+    ]
+  },
+
+  {
+    "word": "ou",
+    "meaning": "非常地、特别地、很<特别前缀>",
+    "gloss": "非常<词缀体>",
+    "pos": "动词前缀、形容词前缀",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "oubarsún'tsul dunlø änte, kiuilim'g!",
+        "translation": "你很需要喝水，你可能会死的！"
       }
     ]
   },
@@ -584,6 +599,21 @@
       {
         "zeksa": "bajdunl'voh änte cevdëm mäyuqu.",
         "translation": "我正在喝大海里的水。"
+      }
+    ]
+  },
+
+  {
+    "word": "barsún",
+    "meaning": "需求；需要",
+    "gloss": "需要<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "bars-",
+    "examples": [
+      {
+        "zeksa": "oubarsún'tsul dunlø änte, kiuilim'g!",
+        "translation": "你很需要喝水，你可能会死的！"
       }
     ]
   },
@@ -719,6 +749,21 @@
       {
         "zeksa": "-alzomka! pas'tsul kimd? -ilbonvid...",
         "translation": "-你好啊！你怎么样？-不怎么样..."
+      }
+    ]
+  },
+
+  {
+    "word": "parlón",
+    "meaning": "防守、防护、防御；防守方",
+    "gloss": "防护<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "parl-",
+    "examples": [
+      {
+        "zeksa": "beparlón'voh zeksa ekodu nägvordis'askez!",
+        "translation": "如果阿斯克兹人进攻，我会保卫仄克萨·艾蔻度！"
       }
     ]
   },
@@ -1043,6 +1088,21 @@
   },
 
   {
+    "word": "garnu",
+    "meaning": "得到、收到；取得物",
+    "gloss": "得到<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "garn-",
+    "examples": [
+      {
+        "zeksa": "jemgarnu'voh änte dëm ilcevod vasvomka ranvi.",
+        "translation": "我在偏远配给系统前哨站得到了水。"
+      }
+    ]
+  },
+
+  {
     "word": "kavak",
     "meaning": "东、东边",
     "gloss": "东<词根体>",
@@ -1193,6 +1253,22 @@
   },
 
   {
+    "word": "knaciv",
+    "meaning": "取胜、战胜；成功",
+    "gloss": "成功<词根体>",
+    "pos": "动词、动词",
+    "root": "单一词",
+    "affix": "knac-",
+    "examples": [
+      {
+        "zeksa": "hugxe! beknaciv'vohi!",
+        "translation": "风暴！我们会战胜你的！"
+      }
+    ]
+  },
+
+
+  {
     "word": "krus",
     "meaning": "走、步行；行足",
     "gloss": "走<词根体>",
@@ -1203,6 +1279,51 @@
       {
         "zeksa": "sa, bekrus'vohi läm afí onjod biv.",
         "translation": "是的，我们将朝着那个高大的树走去。"
+      }
+    ]
+  },
+
+  {
+    "word": "mazlurón",
+    "meaning": "勇气、勇士",
+    "gloss": "勇气<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "mazl-",
+    "examples": [
+      {
+        "zeksa": "barsún'vohi mazlurón yot garnu'g vmilo ëv tamia!",
+        "translation": "为了得到和平与爱，我们需要勇气！"
+      }
+    ]
+  },
+
+  {
+    "word": "mazlurónd",
+    "meaning": "勇敢的、英勇的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "mazlurónd vohi.",
+        "translation": "勇敢的我们。"
+      }
+    ]
+  },
+
+  {
+    "word": "mazlurónw",
+    "meaning": "勇敢地、英勇地",
+    "gloss": "~ - <副词标记>",
+    "pos": "副词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "kojvordis'tsuli mazlurónw, näggem'tsuli knaciv!",
+        "translation": "如果你们想要胜利，你们需要英勇地进攻！"
       }
     ]
   },
@@ -1358,6 +1479,52 @@
   },
 
   {
+    "word": "nokro",
+    "meaning": "方式、方法、措施",
+    "gloss": "方式<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "nokr-",
+    "examples": [
+      {
+        "zeksa": "barsún'voh parlnokro! ek'askez afidom!",
+        "translation": "我需要防护措施！阿斯克兹人在那里！"
+      }
+    ]
+  },
+
+  {
+    "word": "nor",
+    "meaning": "窗、窗户",
+    "gloss": "窗户<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "nor-",
+    "examples": [
+      {
+        "zeksa": "ponvath'tsul afí nor, besaluvë.",
+        "translation": "请打开那扇窗户，谢谢。"
+      }
+    ]
+  },
+
+  {
+    "word": "qelw",
+    "meaning": "仍旧、仍然",
+    "gloss": "仍然<词根体> - <副词标记>",
+    "pos": "副词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "ilvradayailim'voh qelw ajkrus omk knaciv.",
+        "translation": "我仍然无法忘记远征的胜利。"
+      }
+    ]
+  },
+
+
+  {
     "word": "va",
     "meaning": "颜色",
     "gloss": "颜色<词根体>",
@@ -1478,6 +1645,21 @@
   },
 
   {
+    "word": "vordis",
+    "meaning": "进攻、攻击；攻击方",
+    "gloss": "攻击<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "vord-",
+    "examples": [
+      {
+        "zeksa": "vordis! zeksmazlurón!",
+        "translation": "进攻！仄克萨勇士！"
+      }
+    ]
+  },
+
+  {
     "word": "vmilo",
     "meaning": "和平、和善、友善",
     "gloss": "和平<词根体>",
@@ -1593,6 +1775,36 @@
       {
         "zeksa": "tamia'vohi vohi omk zeksa, sasbertl'vohi zeksa!",
         "translation": "我们爱我们的仄克萨，让我们说仄克萨语！"
+      }
+    ]
+  },
+
+  {
+    "word": "zenap",
+    "meaning": "门、门户",
+    "gloss": "门<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "zen-",
+    "examples": [
+      {
+        "zeksa": "jemsluvu'voh zenap yot parl.",
+        "translation": "为了防护，我关上了门。"
+      }
+    ]
+  },
+
+  {
+    "word": "zenor",
+    "meaning": "门窗",
+    "gloss": "门<词缀体> - 窗<词根体>",
+    "pos": "名词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "kojilath'g zenor! ekj'hugxe kujlod!",
+        "translation": "不可以打开门窗！风暴很坚固！"
       }
     ]
   },
@@ -1868,16 +2080,47 @@
   },
 
   {
+    "word": "ranvi",
+    "meaning": "系统、可视化操作系统",
+    "gloss": "顺序<词缀体> - 看<词根体>",
+    "pos": "动词",
+    "root": "复合词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "zeksa omklon ilcevod vasvomka ranvi.",
+        "translation": "仄克萨·欧姆克隆偏远配给系统前哨站。"
+      }
+    ]
+  },
+
+
+  {
     "word": "rimis",
     "meaning": "火、火焰；燃烧、点燃",
     "gloss": "火<词根体>",
-    "pos": "名词；动词",
+    "pos": "名词、动词",
     "root": "单一词",
     "affix": "rim-",
     "examples": [
       {
         "zeksa": "irehát! ekj'rimis oucupwed! ilvradkonv'g rimis!",
         "translation": "小心！火焰非常热！你不能触碰火焰！"
+      }
+    ]
+  },
+
+  {
+    "word": "rorjuk",
+    "meaning": "奔跑；跑步",
+    "gloss": "跑步<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "rorj-",
+    "examples": [
+      {
+        "zeksa": "bajrorjuk'voh dëm dalo omk ilcevo.",
+        "translation": "我正在岛屿边缘奔跑。"
       }
     ]
   },
