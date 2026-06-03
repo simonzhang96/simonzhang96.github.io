@@ -13,7 +13,7 @@ document.body.appendChild(renderer.domElement);
 scene.add(new THREE.AmbientLight(0xffffff, 2));
 
 const loader = new THREE.TextureLoader();
-const texture = loader.load("./textures/omklon_map.png");
+const texture = loader.load("./Zeksa-Omklon-Map.png");
 
 const sphere = new THREE.Mesh(
   new THREE.SphereGeometry(1, 64, 64),
