@@ -35,7 +35,7 @@ scene.add(new THREE.AmbientLight(0xffffff, 0.8));
 const textureLoader = new THREE.TextureLoader();
 
 const mapTexture = textureLoader.load(
-"./textures/omklon_map.jpg"
+"./Zeksa-Omklon-Map.png"
 );
 
 const globeGeometry = new THREE.SphereGeometry(
