@@ -1,5 +1,5 @@
-import * as THREE from "https://unpkg.com/three@0.160.0/build/three.module.js";
-import { OrbitControls } from "https://unpkg.com/three@0.160.0/examples/jsm/controls/OrbitControls.js";
+import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.179.1/build/three.module.js";
+import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.179.1/examples/jsm/controls/OrbitControls.js";
 
 console.log("three loaded OK");
 
@@ -21,6 +21,7 @@ document.body.appendChild(renderer.domElement);
 scene.add(new THREE.AmbientLight(0xffffff, 2));
 
 const loader = new THREE.TextureLoader();
+loader.crossOrigin = 'anonymous';
 const texture = loader.load("./Zeksa-Omklon-Map.png");
 
 const sphere = new THREE.Mesh(
@@ -39,3 +40,10 @@ function animate() {
 }
 
 animate();
+
+// 窗口自适应
+window.addEventListener('resize', ()=>{
+  camera.aspect = window.innerWidth/window.innerHeight;
+  camera.updateProjectionMatrix();
+  renderer.setSize(window.innerWidth, window.innerHeight);
+})
