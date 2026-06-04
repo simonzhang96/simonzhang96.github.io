@@ -9,8 +9,9 @@
 <body>
 <script type="module">
   // 直接写在HTML里，不依赖任何本地文件
-  import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.179.1/build/three.module.js";
-  import { OrbitControls } from "https://cdn.jsdelivr.net/npm/three@0.179.1/examples/jsm/controls/OrbitControls.js";
+  import * as THREE from "./three.module.js";
+  import { OrbitControls } from "./OrbitControls.js";
+
 
   const scene = new THREE.Scene();
   const camera = new THREE.PerspectiveCamera(60, window.innerWidth/window.innerHeight, 0.1, 1000);
