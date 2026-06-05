@@ -1148,6 +1148,21 @@
   },
 
   {
+    "word": "kargtokro",
+    "meaning": "岩石、山石",
+    "gloss": "山<词缀体> - 石<词根体>",
+    "pos": "名词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "ilekj'kargtokro kujlod. merhaa'voh ilekj'efidom krazomd.",
+        "translation": "岩石不坚固。我觉得这里不是稳定的。"
+      }
+    ]
+  },
+
+  {
     "word": "kert",
     "meaning": "箱子、盒子",
     "gloss": "箱子<词根体>",
@@ -1256,7 +1271,7 @@
     "word": "knaciv",
     "meaning": "取胜、战胜；成功",
     "gloss": "成功<词根体>",
-    "pos": "动词、动词",
+    "pos": "动词",
     "root": "单一词",
     "affix": "knac-",
     "examples": [
@@ -1267,12 +1282,42 @@
     ]
   },
 
+  {
+    "word": "krazom",
+    "meaning": "使稳定；稳定、稳定态、平静",
+    "gloss": "稳定<词根体>",
+    "pos": "动词、名词",
+    "root": "单一词",
+    "affix": "kraz-",
+    "examples": [
+      {
+        "zeksa": "bajkrazom'voh zenap!",
+        "translation": "我正在把门稳定下来！"
+      }
+    ]
+  },
+
+  {
+    "word": "krazomd",
+    "meaning": "稳定的、平静的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "ilekj'kargtokro kujlod. merhaa'voh ilekj'efidom krazomd.",
+        "translation": "岩石不坚固。我觉得这里不是稳定的。"
+      }
+    ]
+  },
+
 
   {
     "word": "krus",
     "meaning": "走、步行；行足",
     "gloss": "走<词根体>",
-    "pos": "动词、动词",
+    "pos": "动词",
     "root": "单一词",
     "affix": "krus-",
     "examples": [
@@ -1720,6 +1765,21 @@
   },
 
   {
+    "word": "fraza",
+    "meaning": "命名；名字、名词",
+    "gloss": "名字<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "fraz-",
+    "examples": [
+      {
+        "zeksa": "ekj'vohomk fraza\" cyamino ekodu.",
+        "translation": "我的名字叫夏明诺·艾蔻度。"
+      }
+    ]
+  },
+
+  {
     "word": "freya",
     "meaning": "美丽、艳丽、美妙",
     "gloss": "美<词根体>",
@@ -1958,6 +2018,22 @@
       }
     ]
   },
+
+  {
+    "word": "hórdulu",
+    "meaning": "肉肠、香肠",
+    "gloss": "肉肠<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "hord-",
+    "examples": [
+      {
+        "zeksa": "bajadkev'voh eralomk hórdulu.",
+        "translation": "我在吃他的香肠。"
+      }
+    ]
+  },
+
   
   {
     "word": "hugëf",
@@ -2121,6 +2197,21 @@
       {
         "zeksa": "bajrorjuk'voh dëm dalo omk ilcevo.",
         "translation": "我正在岛屿边缘奔跑。"
+      }
+    ]
+  },
+
+  {
+    "word": "yelda",
+    "meaning": "（树）叶子、书页、页面",
+    "gloss": "叶<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "yeld-",
+    "examples": [
+      {
+        "zeksa": "bivomk yelda, taraomk yelda.",
+        "translation": "树的“叶”、书的“页”。"
       }
     ]
   },
