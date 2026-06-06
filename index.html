@@ -401,7 +401,7 @@
           <div><span class="label">词义:</span> ${entry.meaning}</div>
           <div><span class="label">词类:</span> ${entry.pos}</div>
           <div><span class="label">构词类型:</span> ${entry.root}</div>
-          <div><span class="label">词缀体:</span> ${entry.affix}</div>
+          <div><span class="label">词缀体:</span> ${useZeksa ? toZeksa(entry.affix) : entry.affix}</div>
           <div><span class="label">语法注解:</span> ${entry.gloss}</div>
           ${entry.examples.map(ex => `
             <div class="example">
