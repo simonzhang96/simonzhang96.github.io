@@ -144,19 +144,28 @@ small {
 button {
   display: block;
   margin: 20px auto;
-  padding: 10px 18px;
+  padding: 12px 24px;
   border-radius: var(--radius);
   border: none;
   background: var(--accent);
   color: white;
   font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0, 120, 212, 0.15);
 }
-
+    
 button:hover {
-  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 120, 212, 0.25);
+  background: #0066b3;
 }
 
+button:active {
+  transform: translateY(0px);
+}
+  
 .example {
   background: #eaf2fb;
   margin-top: 16px;
