@@ -12,23 +12,35 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <style>
-    :root {
-      --bg-color: #f5f7fa;
-      --card-bg: #ffffff;
-      --accent: #0078D4;
-      --text-color: #222;
-      --label-color: #555;
-      --shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-      --radius: 14px;
+    html, body {
+      min-height: 100%;
+    }
+
+    html {
+      background:
+        linear-gradient(
+          -45deg,
+          #d6ecff,
+          #eaf6ff,
+          #ffd9b0,
+          #ffc98a
+        );
+    
+      background-size: 400% 400%;
+      animation: zeksaGradient 30s ease infinite;
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Segoe UI",
+                   Roboto, "Helvetica Neue", Arial, sans-serif;
+    
       max-width: 840px;
       margin: auto;
       padding: 2em;
-      background: var(--bg-color);
+    
       color: var(--text-color);
+    
+      background: transparent;
     }
 
     h1 {
@@ -74,18 +86,32 @@
     }
 
     .entry {
-      background: var(--card-bg);
+      background: rgba(255, 255, 255, 0.82);
+    
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    
       padding: 15px 20px;
       margin: 30px auto;
       max-width: 800px;
+    
       border-radius: 16px;
-      box-shadow: var(--shadow);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+      box-shadow:
+        0 8px 24px rgba(0,0,0,0.08),
+        0 0 20px rgba(255,255,255,0.15);
+    
+      transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
     .entry:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    
+      box-shadow:
+        0 12px 32px rgba(0,0,0,0.12),
+        0 0 30px rgba(255,255,255,0.25);
     }
 
     .label {
