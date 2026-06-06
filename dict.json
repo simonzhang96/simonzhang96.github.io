@@ -812,6 +812,36 @@
       }
     ]
   },
+
+  {
+    "word": "dalo",
+    "meaning": "小岛、岛屿、仄克萨·达洛",
+    "gloss": "岛<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "dal-",
+    "examples": [
+      {
+        "zeksa": "ek'voh dalo cevdëm sopzeksmädrék, ilek'g zeksa dalo! ekj'erali iltsolomd!",
+        "translation": "我住在南仄克萨大陆中的小岛，不住在仄克萨·达洛！它们是不同的！"
+      }
+    ]
+  },
+
+  {
+    "word": "destor",
+    "meaning": "玩耍、玩乐；游戏",
+    "gloss": "玩耍<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "dest-",
+    "examples": [
+      {
+        "zeksa": "destor'voh dëm fiddrek, kojekj'efí ilimd.",
+        "translation": "我在荒原间玩耍，这一定是不真实的。"
+      }
+    ]
+  },
   
   {
     "word": "dunl",
@@ -839,21 +869,6 @@
       {
         "zeksa": "destor'voh dëm fiddrek, kojek'efí ilimd-.",
         "translation": "我在荒原里玩耍，肯定有不对劲的地方。"
-      }
-    ]
-  },
-
-  {
-    "word": "dalo",
-    "meaning": "小岛、岛屿、仄克萨·达洛",
-    "gloss": "岛<词根体>",
-    "pos": "名词",
-    "root": "单一词",
-    "affix": "dal-",
-    "examples": [
-      {
-        "zeksa": "ek'voh dalo cevdëm sopzeksmädrék, ilek'g zeksa dalo! ekj'erali iltsolomd!",
-        "translation": "我住在南仄克萨大陆中的小岛，不住在仄克萨·达洛！它们是不同的！"
       }
     ]
   },
