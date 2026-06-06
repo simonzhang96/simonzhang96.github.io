@@ -6,23 +6,72 @@
 <title>仄克萨语词汇测试</title>
 
 <style>
+html, body {
+  min-height: 100%;
+}
+
 :root {
-  --bg-color: #f5f7fa;
-  --card-bg: #ffffff;
   --accent: #0078D4;
   --text-color: #222;
   --label-color: #555;
-  --shadow: 0 8px 20px rgba(0,0,0,0.05);
-  --radius: 14px;
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  --radius: 14px; 
+}
+
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100dvh;
+  width: 100dvw;
+  z-index: -1; 
+  pointer-events: none; 
+
+  background:
+    radial-gradient(
+      circle at 20% 30%,
+      rgba(214,236,255,0.8),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(255,201,138,0.7),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at 60% 80%,
+      rgba(234,246,255,0.7),
+      transparent 45%
+    ),
+    linear-gradient(
+      180deg,
+      #eef8ff,
+      #fff4e6
+    );
+
+  animation: drift 25s ease-in-out infinite alternate;
+  background-size: 135% 135%;
+}
+
+html {
+  min-height: 100%;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Segoe UI",
+               Roboto, "Helvetica Neue", Arial, sans-serif;
   max-width: 840px;
   margin: auto;
   padding: 2em;
-  background: var(--bg-color);
+
+  background: transparent; /* 原来是 var(--bg-color) */
   color: var(--text-color);
+}
+
+@keyframes drift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 h1 {
