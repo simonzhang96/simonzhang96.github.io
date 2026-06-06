@@ -17,6 +17,7 @@
     }
 
     html {
+      min-height: 100%;
       background:
         linear-gradient(
           -45deg,
@@ -25,7 +26,6 @@
           #ffd9b0,
           #ffc98a
         );
-    
       background-size: 400% 400%;
       animation: zeksaGradient 30s ease infinite;
     }
@@ -33,14 +33,18 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Segoe UI",
                    Roboto, "Helvetica Neue", Arial, sans-serif;
-    
       max-width: 840px;
       margin: auto;
       padding: 2em;
     
+      background: transparent; /* 原来是 var(--bg-color) */
       color: var(--text-color);
+    }
     
-      background: transparent;
+    @keyframes zeksaGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
 
     h1 {
