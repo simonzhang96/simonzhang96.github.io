@@ -73,6 +73,12 @@
       background: transparent; /* 原来是 var(--bg-color) */
       color: var(--text-color);
     }
+
+    @keyframes drift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
     
     h1 {
       text-align: center;
