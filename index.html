@@ -26,16 +26,30 @@
 
     html {
       min-height: 100%;
+    
       background:
+        radial-gradient(
+          circle at 20% 30%,
+          rgba(214,236,255,0.8),
+          transparent 40%
+        ),
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(255,201,138,0.7),
+          transparent 35%
+        ),
+        radial-gradient(
+          circle at 60% 80%,
+          rgba(234,246,255,0.7),
+          transparent 45%
+        ),
         linear-gradient(
-          -45deg,
-          #d6ecff,
-          #eaf6ff,
-          #ffd9b0,
-          #ffc98a
+          180deg,
+          #eef8ff,
+          #fff4e6
         );
-      background-size: 400% 400%;
-      animation: zeksaGradient 30s ease infinite;
+    
+      animation: drift 25s ease-in-out infinite alternate;
     }
 
     body {
@@ -49,12 +63,6 @@
       color: var(--text-color);
     }
     
-    @keyframes zeksaGradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
     h1 {
       text-align: center;
       color: var(--accent);
