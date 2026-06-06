@@ -24,8 +24,14 @@
       --radius: 14px; 
     }
 
-    html {
-      min-height: 100%;
+    #bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1; 
+      pointer-events: none; 
     
       background:
         radial-gradient(
@@ -50,6 +56,11 @@
         );
     
       animation: drift 25s ease-in-out infinite alternate;
+      background-size: 400% 400%;
+    }
+
+    html {
+      min-height: 100%;
     }
 
     body {
