@@ -1088,6 +1088,66 @@
   },
 
   {
+    "word": "gahom",
+    "meaning": "疲劳、疲惫",
+    "gloss": "疲劳<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "gah-",
+    "examples": [
+      {
+        "zeksa": "ekrumd vi ëv gahrumd tluv.",
+        "translation": "血色的眼睛和充满汗水的衣服。"
+      }
+    ]
+  },
+
+  {
+    "word": "gahrum",
+    "meaning": "汗水",
+    "gloss": "疲劳<词缀体> - 液体<词根体>",
+    "pos": "名词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "ilvraddunl'tsul gahrum, sara.",
+        "translation": "当然，你不可以饮用汗水。"
+      }
+    ]
+  },
+
+  {
+    "word": "gahrumd",
+    "meaning": "劳累的、疲劳的、汗水的、充满汗液的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "ekrumd vi ëv gahrumd tluv.",
+        "translation": "血色的眼睛和充满汗水的衣服。"
+      }
+    ]
+  },
+
+  {
+    "word": "gahrumw",
+    "meaning": "劳累地、疲劳地",
+    "gloss": "~ - <副词标记>",
+    "pos": "副词",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "bertl'afí alz\" gahrumw.",
+        "translation": "那人劳累地说。"
+      }
+    ]
+  },
+  
+  {
     "word": "garnu",
     "meaning": "得到、收到；取得物",
     "gloss": "得到<词根体>",
@@ -1524,6 +1584,21 @@
   },
 
   {
+    "word": "nuah",
+    "meaning": "感到疼痛；疼痛、痛觉",
+    "gloss": "疼痛<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "nuah-",
+    "examples": [
+      {
+        "zeksa": "jemkonv'voh cupwed drek, zah bajnuah'voh.",
+        "translation": "我摸到了很热的地面，所以现在我很疼。"
+      }
+    ]
+  },
+
+  {
     "word": "nokro",
     "meaning": "方式、方法、措施",
     "gloss": "方式<词根体>",
@@ -1930,6 +2005,36 @@
   },
 
   {
+    "word": "sa",
+    "meaning": "是的、对",
+    "gloss": "N/A",
+    "pos": "感叹词",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "sa, ekj'efí vohomk bho.",
+        "translation": "是的，这是我的东西。"
+      }
+    ]
+  },
+
+  {
+    "word": "sara",
+    "meaning": "（强硬地）是的、对、当然",
+    "gloss": "N/A",
+    "pos": "感叹词",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "-kojirehát! -sara!",
+        "translation": "-必须注意！-当然！"
+      }
+    ]
+  },
+
+  {
     "word": "siat",
     "meaning": "喜爱、喜欢；喜爱之物",
     "gloss": "喜欢<词根体>",
@@ -2014,10 +2119,26 @@
     "examples": [
       {
         "zeksa": "jemkonv'voh cupwed drek, zah bajnuah'voh.",
-        "translation": "我摸了热的地面，所以现在我很疼。"
+        "translation": "我摸到了很热的地面，所以现在我很疼。"
       }
     ]
   },
+
+  {
+    "word": "häh",
+    "meaning": "不、不是、不对",
+    "gloss": "N/A",
+    "pos": "感叹词",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "häh, merhaa'tsul kol?",
+        "translation": "不是，你在想什么？"
+      }
+    ]
+  },
+
 
   {
     "word": "hórdulu",
