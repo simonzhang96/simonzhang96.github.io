@@ -141,12 +141,8 @@
       transition:
         transform 0.15s ease-out,
         box-shadow 0.2s ease;
-    
-      transform-origin: center center;
-      will-change: transform;
-      position: relative;
     }
-
+    
     .entry:hover {
       transform: translateY(-3px);
       box-shadow:
@@ -417,22 +413,21 @@
       `;
     }
 
-    document.addEventListener('mousemove', (e) => {
-      const entries = document.querySelectorAll('.entry');
-      entries.forEach(entry => {
-        const rect = entry.getBoundingClientRect();
+    document.querySelectorAll('.entry').forEach(card => {
+      card.addEventListener('mousemove', e => {
+        const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left - rect.width / 2;
         const y = e.clientY - rect.top - rect.height / 2;
-        const moveX = (x / rect.width) * 6; // 强度：数字越小越轻
-        const moveY = (y / rect.height) * 6;
-        entry.style.transform = `translate(${moveX}px, ${moveY - 3}px)`;
-      });
-    });
     
-    document.addEventListener('mouseout', () => {
-      const entries = document.querySelectorAll('.entry');
-      entries.forEach(entry => {
-        entry.style.transform = 'translateY(-3px)';
+        const strength = 5;
+        const moveX = (x / rect.width) * strength;
+        const moveY = (y / rect.height) * strength;
+    
+        card.style.transform = `translate(${moveX}px, ${moveY - 3}px)`;
+      });
+    
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(-3px)';
       });
     });
 
