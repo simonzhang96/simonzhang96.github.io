@@ -8,211 +8,261 @@
 <title>仄克萨 Zeksa</title>
 
 <style>
-:root {
-  --bg-color: #f5f7fa;
-  --card-bg: #ffffff;
-  --accent: #0078D4;
-  --text-color: #222;
-  --label-color: #555;
-  --shadow: 0 8px 20px rgba(0,0,0,0.05);
-  --radius: 14px;
-}
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  max-width: 900px;
-  margin: auto;
-  padding: 2em;
-  background: var(--bg-color);
-  color: var(--text-color);
-}
-
-h1 {
-  text-align: center;
-  font-size: 2.6rem;
-  color: var(--accent);
-}
-
-h2 {
-  color: var(--accent);
-  margin-top: 0;
-}
-
-p {
-  line-height: 1.6;
-}
-
-.hero {
-  text-align: center;
-  margin-bottom: 40px;
-}
-
-.card {
-  background: var(--card-bg);
-  padding: 22px 26px;
-  margin: 24px auto;
-  border-radius: 16px;
-  box-shadow: var(--shadow);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.1);
-}
-
-.button-row {
-  text-align: center;
-  margin-top: 20px;
-}
-
-.button {
-  display: inline-block;
-  margin: 8px;
-  padding: 12px 20px;
-  border-radius: var(--radius);
-  background: var(--accent);
-  color: white;
-  text-decoration: none;
-  font-size: 1rem;
-}
-
-.button:hover {
-  opacity: 0.9;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-
-footer {
-  text-align: center;
-  margin-top: 40px;
-  color: #666;
-}
-
-@media (max-width: 700px) {
-  .grid {
-    grid-template-columns: 1fr;
+  html, body {
+    min-height: 100%;
   }
-}
 
+  :root {
+    --accent: #0078D4;
+    --text-color: #222;
+    --label-color: #555;
+    --shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    --radius: 14px; 
+  }
+
+  #bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100dvh;
+    width: 100dvw;
+    z-index: -1; 
+    pointer-events: none; 
+  
+    background:
+      radial-gradient(
+        circle at 20% 30%,
+        rgba(214,236,255,0.8),
+        transparent 40%
+      ),
+      radial-gradient(
+        circle at 80% 20%,
+        rgba(255,201,138,0.7),
+        transparent 35%
+      ),
+      radial-gradient(
+        circle at 60% 80%,
+        rgba(234,246,255,0.7),
+        transparent 45%
+      ),
+      linear-gradient(
+        180deg,
+        #eef8ff,
+        #fff4e6
+      );
+  
+    animation: drift 15s ease-in-out infinite alternate;
+    background-size: 135% 135%;
+  }
+
+  html {
+    min-height: 100%;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Segoe UI",
+                 Roboto, "Helvetica Neue", Arial, sans-serif;
+    max-width: 840px;
+    margin: auto;
+    padding: 2em;
+  
+    background: transparent; /* 原来是 var(--bg-color) */
+    color: var(--text-color);
+  }
+
+  @keyframes drift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  h1 {
+    text-align: center;
+    color: var(--accent);
+    font-size: 2.5rem;
+  }
+
+  p {
+    text-align: center;
+    margin-bottom: 0.5em;
+  }
+
+  hr {
+    margin-bottom: 1em;
+    margin-top: 0.25em;
+  }
+
+  small {
+    display: block;
+    text-align: center;
+    margin-bottom: 0.5em;
+  }
+
+  input {
+    width: 100%;
+    max-width: 800px;
+    padding: 14px 16px;
+    font-size: 1.05rem;
+    border: 1px solid #ccc;
+    border-radius: var(--radius);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    transition: border 0.3s;
+    margin: 0 auto 24px auto;
+    display: block;
+    box-sizing: border-box;
+  }
+
+  input:focus {
+    border-color: var(--accent);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0,120,212,0.15);
+  }
+
+  .entry {
+    background: rgba(255, 255, 255, 0.6);
+  
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  
+    padding: 15px 20px;
+    margin: 30px auto;
+    max-width: 800px;
+  
+    border-radius: 16px;
+  
+    box-shadow:
+      0 8px 24px rgba(0,0,0,0.08),
+      0 0 20px rgba(255,255,255,0.15);
+  
+    transition:
+      transform 0.15s ease-out,
+      box-shadow 0.2s ease;
+  }
+  
+  .entry:hover {
+    transform: translateY(-3px);
+    box-shadow:
+      0 14px 36px rgba(0,0,0,0.13),
+      0 0 35px rgba(255,255,255,0.25);
+  }
+
+  .label {
+    font-weight: bold;
+    color: var(--label-color);
+    display: inline-block;
+    min-width: 5em;
+  }
+
+  .example {
+    background: #eaf2fb;
+    margin-top: 0.8em;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-style: normal;
+    color: #2c3e50;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  }
+
+  #results {
+    display: none;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .no-results {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+  }
+
+  button {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 24px;
+    border-radius: var(--radius);
+    border: none;
+    background: var(--accent);
+    color: white;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 12px rgba(0, 120, 212, 0.15);
+  }
+  
+  button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 120, 212, 0.25);
+    background: #0066b3;
+  }
+  
+  button:active {
+    transform: translateY(0px);
+  }
+
+  @media (max-width: 600px) {
+    body {
+      padding: 1em;
+    }
+    h1 {
+      font-size: 1.8rem;
+    }
+  }
+
+  @font-face {
+    font-family: "ZeksaFont";
+    src: url("./Zeksa 525.ttf") format("truetype");
+  }
+
+  .zeksa {
+    font-family: "ZeksaFont", sans-serif;
+  }
+
+  .home-panel{
+    max-width:700px;
+
+    min-height:60vh;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+
+    text-align:center;
+
+    margin-top:10vh;
+  }
+  
+  .logo{
+      font-size:5rem;
+      margin-bottom:.5rem;
+  }
+  
 </style>
 </head>
 
 <body>
+<div id="bg"></div>
 
-<h1>仄克萨 Zeksa</h1>
+<div class="entry home-panel">
 
-<div class="hero">
-<p>一种来自欧姆克隆星球的语言与文明。</p>
-<p>语言 · 世界观 · 连接</p>
-
-<div class="button-row">
-<a class="button" href="/dictionary">进入词典</a>
-<a class="button" href="/quiz.html">词汇测试</a>
-</div>
+<div class="zeksa logo">
+    Alzomka
 </div>
 
+<h1>Zeksa</h1>
 
-<div class="card">
-<h2>什么是仄克萨？</h2>
 <p>
-仄克萨（Zeksa）是一种人为语言（constructed language），
-也是一个完整的文明世界观。  
-它诞生于欧姆克隆星球，在荒漠、风暴、湖泊与连接之中发展。
+    Across deserts and storms,
+    we remain connected.
 </p>
 
-<p>
-在仄克萨文化中，<strong>连接（Alzom）</strong>是最重要的概念：
-人与人、人与环境、文明与历史之间不断建立联系。
-</p>
-</div>
-
-
-<div class="card">
-<h2>语言特点</h2>
-
-<div class="grid">
-
-<div>
-<strong>语序</strong><br>
-VSO（动词-主语-宾语）
-</div>
-
-<div>
-<strong>类型</strong><br>
-黏着语
-</div>
-
-<div>
-<strong>动词系统</strong><br>
-通过前缀表达时态、体、情态
-</div>
-
-<div>
-<strong>名词</strong><br>
-无格变化、无性
-</div>
-
-</div>
-
-</div>
-
-
-<div class="card">
-<h2>示例句</h2>
-
-<p><strong>Krus’Voh</strong></p>
-<p>我走 / 我前行</p>
-
-<p><strong>Bajkrus’Voh</strong></p>
-<p>我正在走</p>
-
-<p><strong>Gemkrus’Voh</strong></p>
-<p>我想走</p>
-
-</div>
-
-
-<div class="card">
-<h2>欧姆克隆星球</h2>
+<hr>
 
 <p>
-仄克萨文明诞生于行星 <strong>Omklon</strong>。
-</p>
-
-<ul>
-<li>昼夜长度：19.6小时</li>
-<li>一年：52.5天</li>
-<li>恒星：Zoldao（K7V橙矮星）</li>
-</ul>
-
-<p>
-星球上遍布荒漠、风暴与湖泊，
-生命往往只能在“连接之处”生存。
+    Dictionary · World · Script
 </p>
 
 </div>
-
-
-<div class="card">
-<h2>探索仄克萨</h2>
-
-<div class="button-row">
-<a class="button" href="/dictionary">词典</a>
-<a class="button" href="/quiz.html">词汇测试</a>
-</div>
-
-</div>
-
-
-<footer>
-<p>Zeksa Language Project</p>
-<p>Created by Simon Zhang</p>
-</footer>
-
 </body>
 </html>
