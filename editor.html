@@ -160,14 +160,12 @@ pre {
 
 <script>
 let dict = [];
-// 防重复点击锁
 let isLoading = false;
 
 const OWNER = "simonzhang96";
 const REPO = "simonzhang96.github.io";
 const PATH = "dict.json";
 
-/* 字母表与排序规则 */
 const ALPHABET = [
   "a","á","e","é","i","í",
   "o","ó","u","ú",
@@ -180,7 +178,6 @@ const ALPHABET = [
 const ORDER = {};
 ALPHABET.forEach((c, i) => ORDER[c] = i);
 
-// 分词排序
 function tokenize(word) {
   word = word.toLowerCase();
   let res = [];
@@ -207,7 +204,6 @@ function compare(a, b) {
   return 0;
 }
 
-// 标准 UTF-8 转 Base64（替代废弃 unescape）
 function utf8ToBase64(str) {
   return btoa(unescape(encodeURIComponent(str)));
 }
@@ -215,7 +211,6 @@ function base64ToUtf8(b64) {
   return decodeURIComponent(escape(atob(b64.replace(/\s/g, ''))));
 }
 
-// Token 管理
 function saveToken() {
   const t = document.getElementById("token").value.trim();
   if (!t) { alert("请输入 GitHub Token"); return; }
@@ -226,7 +221,7 @@ function getToken() {
   return localStorage.getItem("gh_token") || "";
 }
 
-// 加载词典
+// 加载词典（已改为 token 授权）
 async function loadDict() {
   if (isLoading) return;
   const token = getToken();
@@ -239,7 +234,10 @@ async function loadDict() {
 
   try {
     const res = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${PATH}`, {
-      headers: { Authorization: `Bearer ${token}` }
+      headers: { 
+        // 修复：改用 token 前缀，不再用 Bearer
+        Authorization: `token ${token}` 
+      }
     });
 
     if (!res.ok) throw new Error(`请求失败 ${res.status}`);
@@ -257,7 +255,7 @@ async function loadDict() {
   }
 }
 
-// 添加并提交词条
+// 提交词条（已改为 token 授权）
 async function addWord() {
   if (isLoading) return;
   if (!Array.isArray(dict)) { alert("请先加载词典文件"); return; }
@@ -293,22 +291,20 @@ async function addWord() {
   document.getElementById("out").innerText = "正在提交...";
 
   try {
-    // 获取文件 SHA
     const fileRes = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${PATH}`, {
-      headers: { Authorization: `Bearer ${token}` }
+      headers: { Authorization: `token ${token}` }
     });
     if (!fileRes.ok) throw new Error("获取文件信息失败");
     const fileData = await fileRes.json();
     const sha = fileData.sha;
 
-    // 标准编码提交
     const jsonStr = JSON.stringify(dict, null, 2);
     const content = utf8ToBase64(jsonStr);
 
     const commitRes = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${PATH}`, {
       method: "PUT",
       headers: {
-        Authorization: `Bearer ${token}`,
+        Authorization: `token ${token}`,
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
@@ -321,7 +317,6 @@ async function addWord() {
     if (!commitRes.ok) throw new Error("提交到 GitHub 失败");
     document.getElementById("out").innerText = `✅ 提交成功：${newEntry.word}\n当前总计：${dict.length} 条`;
 
-    // 清空输入框
     document.querySelectorAll("input:not(#token)").forEach(el => el.value = "");
   } catch (err) {
     document.getElementById("out").innerText = `❌ 提交失败：${err.message}`;
@@ -332,7 +327,6 @@ async function addWord() {
   }
 }
 
-// 页面初始化
 window.onload = () => {
   const token = getToken();
   if (token) {
