@@ -1,0 +1,2242 @@
+[
+  {
+    "word": "aa",
+    "meaning": "啊、啊啊",
+    "gloss": "啊<词根体>",
+    "pos": "感叹词",
+    "root": "单一词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "aa, besaluvë, ilikom'voh.",
+        "translation": "啊，谢谢，我不知道。"
+      }
+    ]
+  },
+  {
+    "word": "aod",
+    "meaning": "明亮的、发光的、有希望的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "jemvi'voh aod ekodu.",
+        "translation": "我看到了充满希望的生活。"
+      }
+    ]
+  },
+  {
+    "word": "aow",
+    "meaning": "明亮地、光明正大地、真诚地",
+    "gloss": "~ - <副词标记>",
+    "pos": "副词",
+    "root": "单一词",
+    "affix": "ao-",
+    "examples": [
+      {
+        "zeksa": "bertl'eral ayariv aow ku anki.",
+        "translation": "他真诚地和安吉说出真相。"
+      }
+    ]
+  },
+  {
+    "word": "ao",
+    "meaning": "光、希望、荣耀、仄克萨·奥",
+    "gloss": "光<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "ao-",
+    "examples": [
+      {
+        "zeksa": "trexe, trexe, kuil ao omk ilim.",
+        "translation": "怒斥，怒斥着光明的消逝。"
+      }
+    ]
+  },
+  {
+    "word": "adkev",
+    "meaning": "吃、进食；食物",
+    "gloss": "吃<词根体>",
+    "pos": "动词、名词",
+    "root": "单一词",
+    "affix": "adk-",
+    "examples": [
+      {
+        "zeksa": "ilekj'tamiaø adkevø uka\" bonvid",
+        "translation": "过度喜欢吃肉是不好的。"
+      }
+    ]
+  },
+  {
+    "word": "ath",
+    "meaning": "打开、开",
+    "gloss": "打开<词根体>",
+    "pos": "动词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "kojath'g kert.",
+        "translation": "你必须打开盒子。"
+      }
+    ]
+  },
+  {
+    "word": "anta",
+    "meaning": "母亲、妈妈",
+    "gloss": "母亲<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "ant-",
+    "examples": [
+      {
+        "zeksa": "tamia'voh voh omk anta.",
+        "translation": "我爱我的母亲。"
+      }
+    ]
+  },
+  {
+    "word": "anthugdrakol",
+    "meaning": "母亲般的风暴避风港（多用于形容仄克萨·欧姆克隆）",
+    "gloss": "母亲<词缀体> - 风<词缀体> - 堡垒<词根体>",
+    "pos": "名词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "hërahâ zeksa! vohi omk meyra! hërahâ zeksa omklon! vohi omk anthugdrakol!",
+        "translation": "万岁，仄克萨！我们的文明！万岁，仄克萨·欧姆克隆！我们的如母亲般的避风港！"
+      }
+    ]
+  },
+  {
+    "word": "ajad",
+    "meaning": "远的、远处的",
+    "gloss": "~ - <词缀体>",
+    "pos": "形容词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "ekj'lumdrakol ouajad. saskrus'g! ilzug'vohi teylme!",
+        "translation": "城市是很远的。我们走吧！我们没有时间了！"
+      }
+    ]
+  },
+  {
+    "word": "aja",
+    "meaning": "长远、远方",
+    "gloss": "远<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "aj-",
+    "examples": [
+      {
+        "zeksa": "-ek'ayariv dëm aja. ikom'voh efík. -häh! ek'ayariv dëm ustdom!",
+        "translation": "-阿亚里夫在远方。-不是的！阿亚里夫在各处！"
+      }
+    ]
+  },
+  {
+    "word": "ajkrus",
+    "meaning": "远征、远足、远征精神",
+    "gloss": "远<词缀体> - 行走<词根体>",
+    "pos": "名词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "pav merhaa'g, ek'ayariv dëm efiteyld ajkrus.",
+        "translation": "但是仄克萨人相信，真理存在于此时此刻的远征。"
+      }
+    ]
+  },
+  {
+    "word": "aliya",
+    "meaning": "挚友、好朋友、知音",
+    "gloss": "挚友<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "aliy-",
+    "examples": [
+      {
+        "zeksa": "ekj'simón ëv voh\" oubonvid aliya.",
+        "translation": "我和西蒙是很好的挚友。"
+      }
+    ]
+  },
+  {
+    "word": "alâv",
+    "meaning": "歌唱；音乐、歌曲",
+    "gloss": "歌<词根体>",
+    "pos": "动词、名词",
+    "root": "单一词",
+    "affix": "al-",
+    "examples": [
+      {
+        "zeksa": "bealâv'eral vospw läm voh, siat'voh efí.",
+        "translation": "他会向我温柔地唱歌，我喜欢这样。"
+      }
+    ]
+  },
+  {
+    "word": "alzomka",
+    "meaning": "你好；连接人们",
+    "gloss": "人<词缀体> - 连接<词根体>",
+    "pos": "感叹词、名词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "alzomka, zeksa!",
+        "translation": "你好，仄克萨！"
+      }
+    ]
+  },
+  {
+    "word": "alz",
+    "meaning": "人（特指仄克萨人）",
+    "gloss": "人<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "alz-",
+    "examples": [
+      {
+        "zeksa": "ilekj'voh alz, ekj'voh teralz.",
+        "translation": "我不是仄克萨人，我是地球人。"
+      }
+    ]
+  },
+  {
+    "word": "ayailim",
+    "meaning": "遗忘、忘却",
+    "gloss": "真理<词缀体> - 死亡<词根体>",
+    "pos": "动词",
+    "root": "复合词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "kiuayailim'voh ustad bho!",
+        "translation": "我可能会忘记所有事情！"
+      }
+    ]
+  },
+  {
+    "word": "ayarivd",
+    "meaning": "真实的、实际的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "gem'g bertl'tsul ayarivd bho.",
+        "translation": "我想要你说出真实的事情。"
+      }
+    ]
+  },
+  {
+    "word": "ayarivw",
+    "meaning": "真实地、实际地",
+    "gloss": "~ - <副词标记>",
+    "pos": "副词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "bertl'afí alz\" ayarivw.",
+        "translation": "那人真诚地说。"
+      }
+    ]
+  },
+  {
+    "word": "ayariv",
+    "meaning": "真理、事实；仄克萨·阿亚里夫",
+    "gloss": "真理<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "aya-",
+    "examples": [
+      {
+        "zeksa": "ikom'tsul ayariv omk efí?",
+        "translation": "你知道这个的真相吗？"
+      }
+    ]
+  },
+  {
+    "word": "ekilpis",
+    "meaning": "黄昏、黎明、晨昏、艾克伊尔皮斯文明",
+    "gloss": "生<词缀体> - 死<词缀体> - 日子<词根体>",
+    "pos": "名词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "ikom'tsul /ekilpis meyra/? jemek'erali dëm zeksa omklon.",
+        "translation": "你知道“艾克伊尔皮斯文明”吗？他们曾在仄克萨·欧姆克隆上。"
+      }
+    ]
+  },
+  {
+    "word": "ekodu",
+    "meaning": "生命、活力、生活；活；仄克萨·艾蔻度",
+    "gloss": "生命<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "ek-",
+    "examples": [
+      {
+        "zeksa": "jemvi'voh aod ekodu.",
+        "translation": "我看到了充满希望的生命。"
+      }
+    ]
+  },
+  {
+    "word": "ekpis",
+    "meaning": "早晨、清晨、白天",
+    "gloss": "生<词缀体> - 日子<词根体>",
+    "pos": "名词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "ilwulfu'voh dëm ekpis, ilekj'efí ayarivd.",
+        "translation": "我不在白天睡觉，这是不真实的。"
+      }
+    ]
+  },
+  {
+    "word": "ekj",
+    "meaning": "是",
+    "gloss": "是<词根体>",
+    "pos": "<系>动词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "ekj'voh simón jäq, ëv tsul?",
+        "translation": "我是西蒙_张，你呢？"
+      }
+    ]
+  },
+  {
+    "word": "ekrumd",
+    "meaning": "血液的、流血的、血色的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "ekrumd vi ëv gahrumd tluv.",
+        "translation": "血色的眼睛和充满汗水的衣物。"
+      }
+    ]
+  },
+  {
+    "word": "ekrum",
+    "meaning": "流血；血、血液",
+    "gloss": "生<词缀体> - 液体<词根体>",
+    "pos": "动词、名词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "irehát! jemvi'voh ekrum!",
+        "translation": "注意！我看到了血液！"
+      }
+    ]
+  },
+  {
+    "word": "ek",
+    "meaning": "存在（客观上的存在）、居住",
+    "gloss": "生命<词缀体>[单一成词]",
+    "pos": "动词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "ek'afidom nu gaxavo ëv än ekodud mitro.",
+        "translation": "那里有两个水果和一只活着的米特罗。"
+      }
+    ]
+  },
+  {
+    "word": "estiár",
+    "meaning": "听闻、聆听",
+    "gloss": "听<词根体>",
+    "pos": "动词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "/gemestiár'voh ayarivd bho!/, bajbertl'anta.",
+        "translation": "「我想听见事实！」妈妈说。"
+      }
+    ]
+  },
+  {
+    "word": "erali",
+    "meaning": "他们、她们、它们、祂们（第三人称复数）",
+    "gloss": "他们<词根体>",
+    "pos": "代词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "iltamia'voh erali -- voh omk patanta.",
+        "translation": "我不爱他们——我的父母。"
+      }
+    ]
+  },
+  {
+    "word": "eral",
+    "meaning": "他、她、它、祂（第三人称单数）",
+    "gloss": "他<词根体>",
+    "pos": "代词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "bajvi'voh eral omk mitro, ekj'g freyad!",
+        "translation": "我在观察他的米特罗，这是很漂亮的！"
+      }
+    ]
+  },
+  {
+    "word": "ikom",
+    "meaning": "知道、清楚、会",
+    "gloss": "知道<词缀体>",
+    "pos": "动词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "ikom'tsul /ekilpis meyra/? jemek'erali dëm zeksa omklon.",
+        "translation": "你知道“艾克伊尔皮斯文明”吗？他们曾在仄克萨·欧姆克隆上。"
+      }
+    ]
+  },
+  {
+    "word": "ilim",
+    "meaning": "死亡、终结；死、杀；仄克萨·易利姆",
+    "gloss": "死<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "il-",
+    "examples": [
+      {
+        "zeksa": "ekj'ilim alz omk ilpis.",
+        "translation": "死亡是人的夜晚。"
+      }
+    ]
+  },
+  {
+    "word": "il",
+    "meaning": "不<否定前缀>",
+    "gloss": "死<词缀体>",
+    "pos": "动词前缀、形容词前缀",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "ilkrusø vospw läm afí bonvid ilpis.",
+        "translation": "不要温和地走进那个良夜。"
+      }
+    ]
+  },
+  {
+    "word": "ou",
+    "meaning": "非常地、特别地、很<特别前缀>",
+    "gloss": "非常<词缀体>",
+    "pos": "动词前缀、形容词前缀",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "oubarsún'tsul dunlø änte, kiuilim'g!",
+        "translation": "你很需要喝水，你可能会死的！"
+      }
+    ]
+  },
+  {
+    "word": "omka",
+    "meaning": "连接；羁绊、仄克萨·欧姆卡",
+    "gloss": "连接<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "omk-",
+    "examples": [
+      {
+        "zeksa": "alzomka: omka'g voh, omka'g tsul, omka'g usta.",
+        "translation": "你好：连接我，连接你，连接世间万物。"
+      }
+    ]
+  },
+  {
+    "word": "omklon",
+    "meaning": "仄克萨·欧姆克隆",
+    "gloss": "连接<词缀体> - 球体<词根体>",
+    "pos": "名词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "hërahâ zeksa! vohi omk meyra! hërahâ zeksa omklon! vohi omk anthugdrakol!",
+        "translation": "万岁，仄克萨！我们的文明！万岁，仄克萨·欧姆克隆！我们的如母亲般的避风港！"
+      }
+    ]
+  },
+  {
+    "word": "ustad",
+    "meaning": "全体的，全部的、完整的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "dëm ouajad fiddrek, jemluvug'hugxe ustad alzrek.",
+        "translation": "在长远的荒原上，风暴覆盖了全部的足迹。"
+      }
+    ]
+  },
+  {
+    "word": "ustaw",
+    "meaning": "全体地，全部地、完整地",
+    "gloss": "~ - <副词标记>",
+    "pos": "副词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "beadkev'voh tsul ustaw.",
+        "translation": "我会 devour you utterly *慌*。"
+      }
+    ]
+  },
+  {
+    "word": "usta",
+    "meaning": "全体，全部",
+    "gloss": "全部<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "ust-",
+    "examples": [
+      {
+        "zeksa": "ilsiat'voh friniø mäw pav ilikomø usta.",
+        "translation": "我不喜欢宏大地写文章又不知道任何事情。"
+      }
+    ]
+  },
+  {
+    "word": "änte",
+    "meaning": "水、水资源",
+    "gloss": "水<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "änt-",
+    "examples": [
+      {
+        "zeksa": "ilvraddunl'vohi änte cevdëm mäyuqu, kiubeilim'g.",
+        "translation": "我们不可以喝大海里的水，这样我们可能会死。"
+      }
+    ]
+  },
+  {
+    "word": "baj",
+    "meaning": "静止；<进行前缀>",
+    "gloss": "进行<词根体> / 进行<词缀体>",
+    "pos": "名词、动词前缀",
+    "root": "单一词",
+    "affix": "baj-",
+    "examples": [
+      {
+        "zeksa": "bajdunl'voh änte cevdëm mäyuqu.",
+        "translation": "我正在喝大海里的水。"
+      }
+    ]
+  },
+  {
+    "word": "barsún",
+    "meaning": "需求；需要",
+    "gloss": "需要<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "bars-",
+    "examples": [
+      {
+        "zeksa": "oubarsún'tsul dunlø änte, kiuilim'g!",
+        "translation": "你很需要喝水，你可能会死的！"
+      }
+    ]
+  },
+  {
+    "word": "bertl",
+    "meaning": "说、说话；说辞、言语",
+    "gloss": "说<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "bertl-",
+    "examples": [
+      {
+        "zeksa": "/gemestiár'voh ayarivd bho!/, bajbertl'anta.",
+        "translation": "「我想听见事实！」妈妈说。"
+      }
+    ]
+  },
+  {
+    "word": "be",
+    "meaning": "未来；<未来前缀>",
+    "gloss": "未来<词根体> / 未来<词缀体>",
+    "pos": "名词、动词前缀",
+    "root": "单一词",
+    "affix": "be-",
+    "examples": [
+      {
+        "zeksa": "beadkev'voh gaxavo.",
+        "translation": "我将要吃果子。"
+      }
+    ]
+  },
+  {
+    "word": "biv",
+    "meaning": "树木",
+    "gloss": "树<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "biv-",
+    "examples": [
+      {
+        "zeksa": "biv ëv bivyelda... ilvradadkev'vohi erali.",
+        "translation": "树和树叶... 我们不能吃掉它们。"
+      }
+    ]
+  },
+  {
+    "word": "bonvid",
+    "meaning": "好的、美好的、美妙的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "pas'tsul bonvid paq?",
+        "translation": "你感觉还好吗？"
+      }
+    ]
+  },
+  {
+    "word": "bonvi",
+    "meaning": "美好、美妙之物",
+    "gloss": "好<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "bonv-",
+    "examples": [
+      {
+        "zeksa": "gem'alz bonvi, pav ilekj'efí bonvi\" bonvi teylmew.",
+        "translation": "人们想要美好，但有时这种美好并不美好"
+      }
+    ]
+  },
+  {
+    "word": "bho",
+    "meaning": "东西、事物、事情",
+    "gloss": "事情<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "bho-",
+    "examples": [
+      {
+        "zeksa": "/gemestiár'voh ayarivd bho!/, bajbertl'anta.",
+        "translation": "「我想听见事实！」妈妈说。"
+      }
+    ]
+  },
+  {
+    "word": "patanta",
+    "meaning": "父母",
+    "gloss": "父亲<词缀体> - 母亲<词根体>",
+    "pos": "名词",
+    "root": "复合词词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "dëm'koldom vohi omk patanta? ilvradvi'g erali!",
+        "translation": "我们的父母在哪里？我看不到他们！"
+      }
+    ]
+  },
+  {
+    "word": "pat",
+    "meaning": "父亲、爸爸",
+    "gloss": "父亲<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "pat-",
+    "examples": [
+      {
+        "zeksa": "ekj'pat ëv anta\" patanta. zug'vohi patanta ustaw.",
+        "translation": "爸爸和妈妈是父母。我们都有父母。"
+      }
+    ]
+  },
+  {
+    "word": "pas",
+    "meaning": "感觉；感受",
+    "gloss": "感觉<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "pas-",
+    "examples": [
+      {
+        "zeksa": "-alzomka! pas'tsul kimd? -ilbonvid...",
+        "translation": "-你好啊！你怎么样？-不怎么样..."
+      }
+    ]
+  },
+  {
+    "word": "parlón",
+    "meaning": "防守、防护、防御；防守方",
+    "gloss": "防护<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "parl-",
+    "examples": [
+      {
+        "zeksa": "beparlón'voh zeksa ekodu nägvordis'askez!",
+        "translation": "如果阿斯克兹人进攻，我会保卫仄克萨·艾蔻度！"
+      }
+    ]
+  },
+  {
+    "word": "pis",
+    "meaning": "天、日子",
+    "gloss": "日子<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "pis-",
+    "examples": [
+      {
+        "zeksa": "beilim'pis dëm ilpis.",
+        "translation": "一天将在夜晚消亡。"
+      }
+    ]
+  },
+  {
+    "word": "polárd",
+    "meaning": "数字的、可数的、有限的、计数的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "ek'polárd gaxavo\" dëm efidom. kojvasvun'vohi.",
+        "translation": "这里的果子是有限的，我们必须要分享。"
+      }
+    ]
+  },
+  {
+    "word": "polár",
+    "meaning": "数字",
+    "gloss": "数字<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "pol-",
+    "examples": [
+      {
+        "zeksa": "ekj'polár zil, än, nu, hte.",
+        "translation": "数字是零、一、二、三。"
+      }
+    ]
+  },
+  {
+    "word": "prenats",
+    "meaning": "拜访、参拜",
+    "gloss": "拜访<词根体>",
+    "pos": "动词",
+    "root": "单纯词",
+    "affix": "pren-",
+    "examples": [
+      {
+        "zeksa": "gemprenats'eral ajkrusteylme, cunekj'g kmavalz.",
+        "translation": "他想拜访远征时代，因为他是一名派送员。"
+      }
+    ]
+  },
+  {
+    "word": "dalo",
+    "meaning": "小岛、岛屿、仄克萨·达洛",
+    "gloss": "岛<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "dal-",
+    "examples": [
+      {
+        "zeksa": "ek'voh dalo cevdëm sopzeksmädrék, ilek'g zeksa dalo! ekj'erali iltsolomd!",
+        "translation": "我住在南仄克萨大陆中的小岛，不住在仄克萨·达洛！它们是不同的！"
+      }
+    ]
+  },
+  {
+    "word": "destor",
+    "meaning": "玩耍、玩乐；游戏",
+    "gloss": "玩耍<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "dest-",
+    "examples": [
+      {
+        "zeksa": "destor'voh dëm fiddrek, kojekj'efí ilimd.",
+        "translation": "我在荒原间玩耍，这一定是不真实的。"
+      }
+    ]
+  },
+  {
+    "word": "dunl",
+    "meaning": "喝、饮用",
+    "gloss": "喝<词根体>",
+    "pos": "动词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "siat'zeksalz dunlø änte tujdëm ekodu, ekj'g vmilod.",
+        "translation": "仄克萨人喜欢饮用艾蔻度湖中的水，水是安全的。"
+      }
+    ]
+  },
+  {
+    "word": "dëm",
+    "meaning": "在；位于",
+    "gloss": "在<词根体>",
+    "pos": "动词、介词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "destor'voh dëm fiddrek, kojek'efí ilimd-.",
+        "translation": "我在荒原里玩耍，肯定有不对劲的地方。"
+      }
+    ]
+  },
+  {
+    "word": "dħec",
+    "meaning": "站立、直立",
+    "gloss": "站<词根体>",
+    "pos": "动词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "kojdħec! kojdħec! kojdħec!",
+        "translation": "站起来！站起来！站起来！"
+      }
+    ]
+  },
+  {
+    "word": "drekomka",
+    "meaning": "再见；连接大地",
+    "gloss": "陆地<词缀体> - 连接<词根体>",
+    "pos": "感叹词、名词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "bekrus'vohi läm afí tsim, drekomka ustalz.",
+        "translation": "再见了，大家，我们将去往那片草原。"
+      }
+    ]
+  },
+  {
+    "word": "drek",
+    "meaning": "地、大地、陆地",
+    "gloss": "陆地<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "drek-",
+    "examples": [
+      {
+        "zeksa": "sasomka'vohi zeksa omk alz ëv drek!",
+        "translation": "让我们将仄克萨的大地和人们连接起来！"
+      }
+    ]
+  },
+  {
+    "word": "tamia",
+    "meaning": "爱",
+    "gloss": "爱<词根体>",
+    "pos": "动词、名词",
+    "root": "单一词",
+    "affix": "tam-",
+    "examples": [
+      {
+        "zeksa": "tamia'voh vradbertlø zeksa lun alz.",
+        "translation": "我爱能说仄克萨语的人。"
+      }
+    ]
+  },
+  {
+    "word": "tara",
+    "meaning": "书、书本、书籍",
+    "gloss": "书<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "tar-",
+    "examples": [
+      {
+        "zeksa": "jemviyek'voh afí freyad tara, siat'voh eral.",
+        "translation": "我阅读了那本美丽的书，我喜欢它。"
+      }
+    ]
+  },
+  {
+    "word": "teylme",
+    "meaning": "时间、时刻、时光",
+    "gloss": "时间<词根体>",
+    "pos": "动词",
+    "root": "单一词",
+    "affix": "teyl-",
+    "examples": [
+      {
+        "zeksa": "irehát! ilzug'vohi teylme!",
+        "translation": "注意！我们没有时间了！"
+      }
+    ]
+  },
+  {
+    "word": "tokro",
+    "meaning": "石头、石制物",
+    "gloss": "石头<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "tok-",
+    "examples": [
+      {
+        "zeksa": "gem'voh kujlod tokro yot drakol!",
+        "translation": "为了堡垒，我想要坚硬的石头！"
+      }
+    ]
+  },
+  {
+    "word": "tluv",
+    "meaning": "衣服、衣物",
+    "gloss": "衣服<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "tluv-",
+    "examples": [
+      {
+        "zeksa": "ekrumd vi ëv gahrumd tluv.",
+        "translation": "血色的眼睛和充满汗水的衣物。"
+      }
+    ]
+  },
+  {
+    "word": "traqd",
+    "meaning": "聪明的、智慧的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "gemekj'voh traqd alz dëm zeksa.",
+        "translation": "我想在仄克萨成为一个聪明的人。"
+      }
+    ]
+  },
+  {
+    "word": "traq",
+    "meaning": "智慧、聪慧",
+    "gloss": "智慧<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "traq-",
+    "examples": [
+      {
+        "zeksa": "siat'voh alz ku traq.",
+        "translation": "我喜欢拥有智慧的人。"
+      }
+    ]
+  },
+  {
+    "word": "gahom",
+    "meaning": "疲劳、疲惫",
+    "gloss": "疲劳<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "gah-",
+    "examples": [
+      {
+        "zeksa": "ekrumd vi ëv gahrumd tluv.",
+        "translation": "血色的眼睛和充满汗水的衣服。"
+      }
+    ]
+  },
+  {
+    "word": "gahrumd",
+    "meaning": "劳累的、疲劳的、汗水的、充满汗液的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "ekrumd vi ëv gahrumd tluv.",
+        "translation": "血色的眼睛和充满汗水的衣服。"
+      }
+    ]
+  },
+  {
+    "word": "gahrumw",
+    "meaning": "劳累地、疲劳地",
+    "gloss": "~ - <副词标记>",
+    "pos": "副词",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "bertl'afí alz\" gahrumw.",
+        "translation": "那人劳累地说。"
+      }
+    ]
+  },
+  {
+    "word": "gahrum",
+    "meaning": "汗水",
+    "gloss": "疲劳<词缀体> - 液体<词根体>",
+    "pos": "名词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "ilvraddunl'tsul gahrum, sara.",
+        "translation": "当然，你不可以饮用汗水。"
+      }
+    ]
+  },
+  {
+    "word": "garnu",
+    "meaning": "得到、收到；取得物",
+    "gloss": "得到<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "garn-",
+    "examples": [
+      {
+        "zeksa": "jemgarnu'voh änte dëm ilcevod vasvomka ranvi.",
+        "translation": "我在偏远配给系统前哨站得到了水。"
+      }
+    ]
+  },
+  {
+    "word": "gem",
+    "meaning": "需求、欲望；<欲望前缀>",
+    "gloss": "欲望<词根体> / 欲望<词缀体>",
+    "pos": "名词、动词前缀",
+    "root": "单一词",
+    "affix": "gem-",
+    "examples": [
+      {
+        "zeksa": "gemestiár'voh lumzoldao omk freyad aläv",
+        "translation": "我想倾听星星的美妙音乐。"
+      }
+    ]
+  },
+  {
+    "word": "kavak",
+    "meaning": "东、东边",
+    "gloss": "东<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "kav-",
+    "examples": [
+      {
+        "zeksa": "vi'voh läm kavak, ouajad.",
+        "translation": "我朝着东边看去，十分遥远。"
+      }
+    ]
+  },
+  {
+    "word": "kargonjo",
+    "meaning": "山峰、山顶",
+    "gloss": "山<词缀体> - 高<词根体>",
+    "pos": "名词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "bajdħec'voh dëm kargonjo, alzomka'voh!",
+        "translation": "我正站在山峰上，我正在连接人们！"
+      }
+    ]
+  },
+  {
+    "word": "kargu",
+    "meaning": "山、山脉",
+    "gloss": "山<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "karg-",
+    "examples": [
+      {
+        "zeksa": "krus'voh läm kargu.",
+        "translation": "我朝着山走去。"
+      }
+    ]
+  },
+  {
+    "word": "kargtokro",
+    "meaning": "岩石、山石",
+    "gloss": "山<词缀体> - 石<词根体>",
+    "pos": "名词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "ilekj'kargtokro kujlod. merhaa'voh ilekj'efidom krazomd.",
+        "translation": "岩石不坚固。我觉得这里不是稳定的。"
+      }
+    ]
+  },
+  {
+    "word": "kert",
+    "meaning": "箱子、盒子",
+    "gloss": "箱子<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "kert-",
+    "examples": [
+      {
+        "zeksa": "ek'kol cevdëm afí kert?",
+        "translation": "那个盒子里有什么东西？"
+      }
+    ]
+  },
+  {
+    "word": "kiu",
+    "meaning": "可能、几率；<可能前缀>",
+    "gloss": "可能<词根体> / 可能<词缀体>",
+    "pos": "名词、动词前缀",
+    "root": "单一词",
+    "affix": "kiu-",
+    "examples": [
+      {
+        "zeksa": "kiuayailim'voh ustad bho!",
+        "translation": "我可能会忘记所有事情！"
+      }
+    ]
+  },
+  {
+    "word": "kir",
+    "meaning": "矿石、矿物、仄克萨·契尔；挖矿、开采",
+    "gloss": "矿物<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "kir-",
+    "examples": [
+      {
+        "zeksa": "ilsiat'voh kir.",
+        "translation": "我不喜欢采矿。"
+      }
+    ]
+  },
+  {
+    "word": "konv",
+    "meaning": "摸、抚摸；触碰",
+    "gloss": "碰<词根体>",
+    "pos": "动词、名词",
+    "root": "单一词",
+    "affix": "konv-",
+    "examples": [
+      {
+        "zeksa": "siat'tsul konv eral? ilikom'g.",
+        "translation": "你喜欢摸它吗？我没听说过。"
+      }
+    ]
+  },
+  {
+    "word": "koj",
+    "meaning": "义务、需求、命令；<即命令前缀>",
+    "gloss": "命令<词根体> / 命令<词缀体>",
+    "pos": "名词、动词前缀",
+    "root": "单一词",
+    "affix": "koj-",
+    "examples": [
+      {
+        "zeksa": "kojath'g kert.",
+        "translation": "你必须打开盒子。"
+      }
+    ]
+  },
+  {
+    "word": "kujlod",
+    "meaning": "坚硬的、坚固的、不易摧毁的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "ekj'efí kujlod, häh?",
+        "translation": "这很坚硬，不是吗？"
+      }
+    ]
+  },
+  {
+    "word": "kujlow",
+    "meaning": "坚硬地、坚固地、牢不可破地",
+    "gloss": "~ - <副词标记>",
+    "pos": "副词",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "eral omk krusrem, mir'g lumzoldao, omka'g kujlow alz ëv omklon.",
+        "translation": "他们的脚步，像星光，连接起人们和仄克萨·欧姆克隆。"
+      }
+    ]
+  },
+  {
+    "word": "kmavas",
+    "meaning": "派送、递送、运输；物流",
+    "gloss": "派送<词根体>",
+    "pos": "动词、名词",
+    "root": "单纯词",
+    "affix": "kmav-",
+    "examples": [
+      {
+        "zeksa": "bajkmavas'voh gaxavo ëv uka läm lumdrakol.",
+        "translation": "我正在给城市派送蔬果和肉。"
+      }
+    ]
+  },
+  {
+    "word": "knaciv",
+    "meaning": "取胜、战胜；成功",
+    "gloss": "成功<词根体>",
+    "pos": "动词",
+    "root": "单一词",
+    "affix": "knac-",
+    "examples": [
+      {
+        "zeksa": "hugxe! beknaciv'vohi!",
+        "translation": "风暴！我们会战胜你的！"
+      }
+    ]
+  },
+  {
+    "word": "krazomd",
+    "meaning": "稳定的、平静的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "ilekj'kargtokro kujlod. merhaa'voh ilekj'efidom krazomd.",
+        "translation": "岩石不坚固。我觉得这里不是稳定的。"
+      }
+    ]
+  },
+  {
+    "word": "krazom",
+    "meaning": "使稳定；稳定、稳定态、平静",
+    "gloss": "稳定<词根体>",
+    "pos": "动词、名词",
+    "root": "单一词",
+    "affix": "kraz-",
+    "examples": [
+      {
+        "zeksa": "bajkrazom'voh zenap!",
+        "translation": "我正在把门稳定下来！"
+      }
+    ]
+  },
+  {
+    "word": "krus",
+    "meaning": "走、步行；行足",
+    "gloss": "走<词根体>",
+    "pos": "动词",
+    "root": "单一词",
+    "affix": "krus-",
+    "examples": [
+      {
+        "zeksa": "sa, bekrus'vohi läm afí onjod biv.",
+        "translation": "是的，我们将朝着那个高大的树走去。"
+      }
+    ]
+  },
+  {
+    "word": "mazlurónd",
+    "meaning": "勇敢的、英勇的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "mazlurónd vohi.",
+        "translation": "勇敢的我们。"
+      }
+    ]
+  },
+  {
+    "word": "mazlurónw",
+    "meaning": "勇敢地、英勇地",
+    "gloss": "~ - <副词标记>",
+    "pos": "副词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "kojvordis'tsuli mazlurónw, näggem'tsuli knaciv!",
+        "translation": "如果你们想要胜利，你们需要英勇地进攻！"
+      }
+    ]
+  },
+  {
+    "word": "mazlurón",
+    "meaning": "勇气、勇士",
+    "gloss": "勇气<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "mazl-",
+    "examples": [
+      {
+        "zeksa": "barsún'vohi mazlurón yot garnu'g vmilo ëv tamia!",
+        "translation": "为了得到和平与爱，我们需要勇气！"
+      }
+    ]
+  },
+  {
+    "word": "marvad",
+    "meaning": "周期性的、重复的、一样的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "irehát! ilekj'hugxe marvad dëm afí fiddrek!",
+        "translation": "小心！在荒原，风暴不是周期一样的！"
+      }
+    ]
+  },
+  {
+    "word": "marvaw",
+    "meaning": "周期性地、重复地、一样地",
+    "gloss": "~ - <副词标记>",
+    "pos": "副词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "bajlek'lumcyamino zeksa marvaw, besaluvë!",
+        "translation": "小夏明诺正在周期地学习仄克萨语，多么令人欣慰！"
+      }
+    ]
+  },
+  {
+    "word": "marva",
+    "meaning": "轮回、仄克萨年",
+    "gloss": "轮回<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "marv-",
+    "examples": [
+      {
+        "zeksa": "jemlek'voh novd marva, zah ikom'voh aya-.",
+        "translation": "我习得了新的轮回，为了知道真理。"
+      }
+    ]
+  },
+  {
+    "word": "merhaa",
+    "meaning": "相信、信任、认为",
+    "gloss": "N/A",
+    "pos": "动词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "merhaa'g! merhaa'g! merhaa'g!",
+        "translation": "我信！我信！我信！"
+      }
+    ]
+  },
+  {
+    "word": "meyra",
+    "meaning": "文明、组织",
+    "gloss": "文明<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "meyr-",
+    "examples": [
+      {
+        "zeksa": "hërahâ zeksa! vohi omk meyra! hërahâ zeksa omklon! vohi omk anthugdrakol!",
+        "translation": "万岁，仄克萨！我们的文明！万岁，仄克萨·欧姆克隆！我们的如母亲般的避风港！"
+      }
+    ]
+  },
+  {
+    "word": "mir",
+    "meaning": "像、宛如、譬如",
+    "gloss": "像<词根体>",
+    "pos": "动词",
+    "root": "单一词",
+    "affix": "mir-",
+    "examples": [
+      {
+        "zeksa": "eral omk krusrem, mir'g lumzoldao, omka'g kujlow alz ëv omklon.",
+        "translation": "他们的脚步，像星光，连接起人们和仄克萨·欧姆克隆。"
+      }
+    ]
+  },
+  {
+    "word": "mäd",
+    "meaning": "宏伟的、巨大的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "ekj'omklon mäd. jemajkrus'zeksalz läm ustad drek.",
+        "translation": "仄克萨·欧姆克隆非常大。仄克萨人曾经远征至全部的土地。"
+      }
+    ]
+  },
+  {
+    "word": "mäw",
+    "meaning": "宏伟地",
+    "gloss": "~ - <副词标记>",
+    "pos": "副词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "ilsiat'voh friniø mäw pav ilikomø usta.",
+        "translation": "我不喜欢宏大地写文章又不知道任何事情。"
+      }
+    ]
+  },
+  {
+    "word": "mäyuqu",
+    "meaning": "大海、海洋、大洋",
+    "gloss": "大<词缀体> - 湖泊<词根体>",
+    "pos": "名词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "jemkrus'tsul läm lumdalo cevdëm mäyuqu?",
+        "translation": "你去了海中间的小岛吗？"
+      }
+    ]
+  },
+  {
+    "word": "mä",
+    "meaning": "宏伟、巨大",
+    "gloss": "大<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "mä-",
+    "examples": [
+      {
+        "zeksa": "mä ëv aja. ekj'vohi oulumod.",
+        "translation": "宏大与长远。我们是微小的。"
+      }
+    ]
+  },
+  {
+    "word": "nokro",
+    "meaning": "方式、方法、措施",
+    "gloss": "方式<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "nokr-",
+    "examples": [
+      {
+        "zeksa": "barsún'voh parlnokro! ek'askez afidom!",
+        "translation": "我需要防护措施！阿斯克兹人在那里！"
+      }
+    ]
+  },
+  {
+    "word": "nor",
+    "meaning": "窗、窗户",
+    "gloss": "窗户<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "nor-",
+    "examples": [
+      {
+        "zeksa": "ponvath'tsul afí nor, besaluvë.",
+        "translation": "请打开那扇窗户，谢谢。"
+      }
+    ]
+  },
+  {
+    "word": "nuah",
+    "meaning": "感到疼痛；疼痛、痛觉",
+    "gloss": "疼痛<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "nuah-",
+    "examples": [
+      {
+        "zeksa": "jemkonv'voh cupwed drek, zah bajnuah'voh.",
+        "translation": "我摸到了很热的地面，所以现在我很疼。"
+      }
+    ]
+  },
+  {
+    "word": "qelw",
+    "meaning": "仍旧、仍然",
+    "gloss": "仍然<词根体> - <副词标记>",
+    "pos": "副词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "ilvradayailim'voh qelw ajkrus omk knaciv.",
+        "translation": "我仍然无法忘记远征的胜利。"
+      }
+    ]
+  },
+  {
+    "word": "vasvun",
+    "meaning": "分享、分配；配给",
+    "gloss": "分享<词根体>",
+    "pos": "动词、动词",
+    "root": "单一词",
+    "affix": "vasv-",
+    "examples": [
+      {
+        "zeksa": "kojvasvun'g zah vradekodu'g.",
+        "translation": "为了活下去，我们必须分享。"
+      }
+    ]
+  },
+  {
+    "word": "va",
+    "meaning": "颜色",
+    "gloss": "颜色<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "va-",
+    "examples": [
+      {
+        "zeksa": "ekj'kol efí va?",
+        "translation": "这是什么颜色？"
+      }
+    ]
+  },
+  {
+    "word": "vi",
+    "meaning": "看、观看、观察；眼睛",
+    "gloss": "看<词根体>",
+    "pos": "动词、名词",
+    "root": "单一词",
+    "affix": "vi-",
+    "examples": [
+      {
+        "zeksa": "iljemvi'ajkrusalz yuqu dëm afí dalo øn kavzeksmädrék.",
+        "translation": "远征的人没有看到过在那座岛屿或东仄克萨大陆上的湖泊。"
+      }
+    ]
+  },
+  {
+    "word": "vospd",
+    "meaning": "温柔的、柔情的、温顺的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "/bevasvun'voh änte läm tsul./ bertl'vospd alz",
+        "translation": "“我会和你分享水的。”温柔的人说。"
+      }
+    ]
+  },
+  {
+    "word": "vospw",
+    "meaning": "温柔地、柔情地、温顺地",
+    "gloss": "~ - <副词标记>",
+    "pos": "副词",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "ilkrusø vospw läm afí bonvid ilpis.",
+        "translation": "不要温和地走进那个良夜。"
+      }
+    ]
+  },
+  {
+    "word": "vosp",
+    "meaning": "温柔、柔情、温顺、仄克萨·沃斯",
+    "gloss": "温柔<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "vosp-",
+    "examples": [
+      {
+        "zeksa": "ekj'koldom zeksa vosp? ek'ould vosp dëm afí?",
+        "translation": "仄克萨·沃斯在哪里？那里有许多温柔吗？"
+      }
+    ]
+  },
+  {
+    "word": "vohi",
+    "meaning": "我们（第一人称复数）",
+    "gloss": "我们<词根体>",
+    "pos": "代词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "ekj'vohi meyra. zug'vohi vmilo ëv bonvi.",
+        "translation": "我们是文明。我们拥有和平和美好。"
+      }
+    ]
+  },
+  {
+    "word": "voh",
+    "meaning": "我（第一人称单数）",
+    "gloss": "我<词根体>",
+    "pos": "代词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "krus'voh läm kargu.",
+        "translation": "我朝着山走去。"
+      }
+    ]
+  },
+  {
+    "word": "vordis",
+    "meaning": "进攻、攻击；攻击方",
+    "gloss": "攻击<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "vord-",
+    "examples": [
+      {
+        "zeksa": "vordis! zeksmazlurón!",
+        "translation": "进攻！仄克萨勇士！"
+      }
+    ]
+  },
+  {
+    "word": "vmilod",
+    "meaning": "和平的、和善的、友善的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "单一词",
+    "affix": "vmilo",
+    "examples": [
+      {
+        "zeksa": "/bevasvun'voh änte läm tsul./ bertl'vmilod alz\".",
+        "translation": "“我会与你分享水资源的。”友善的人说。"
+      }
+    ]
+  },
+  {
+    "word": "vmilo",
+    "meaning": "和平、和善、友善",
+    "gloss": "和平<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "vmilo",
+    "examples": [
+      {
+        "zeksa": "ekj'vohi meyra. zug'vohi vmilo ëv bonvi.",
+        "translation": "我们是文明。我们拥有和平和美好。"
+      }
+    ]
+  },
+  {
+    "word": "vrad",
+    "meaning": "能力、潜力；<能力前缀>",
+    "gloss": "能力<词根体> / 能力<词缀体>",
+    "pos": "名词、动词前缀",
+    "root": "单一词",
+    "affix": "vrad-",
+    "examples": [
+      {
+        "zeksa": "vradayailim'ustalz ilbonvid bho.",
+        "translation": "所有人都可以忘记不好的事情。"
+      }
+    ]
+  },
+  {
+    "word": "fiddrek",
+    "meaning": "荒原、荒地、未被连接之地",
+    "gloss": "荒凉<词缀体> - 大地<词根体>",
+    "pos": "名词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "dëm ouajad fiddrek, jemluvug'hugxe ustad alzrek.",
+        "translation": "在长远的荒原上，风暴覆盖了全部的足迹。"
+      }
+    ]
+  },
+  {
+    "word": "fraza",
+    "meaning": "命名；名字、名词",
+    "gloss": "名字<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "fraz-",
+    "examples": [
+      {
+        "zeksa": "ekj'vohomk fraza\" cyamino ekodu.",
+        "translation": "我的名字叫夏明诺·艾蔻度。"
+      }
+    ]
+  },
+  {
+    "word": "freyad",
+    "meaning": "美丽的、艳丽的、美妙的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "bajbertl, alâv'afí freyad alz\".",
+        "translation": "那美丽的人正在说话和唱歌。"
+      }
+    ]
+  },
+  {
+    "word": "freya",
+    "meaning": "美丽、艳丽、美妙",
+    "gloss": "美<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "freya-",
+    "examples": [
+      {
+        "zeksa": "ek'ustad freya\" dëm zeksa omklon, ikom'voh.",
+        "translation": "我知道，所有的美好都在仄克萨·欧姆克隆。"
+      }
+    ]
+  },
+  {
+    "word": "frini",
+    "meaning": "写字、写作；文章",
+    "gloss": "写作<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "frin-",
+    "examples": [
+      {
+        "zeksa": "beviyek'vohi tsul omk frini, besaluvë.",
+        "translation": "感谢。我们会阅读你的文章的。"
+      }
+    ]
+  },
+  {
+    "word": "zeksa",
+    "meaning": "仄克萨、仄克萨语、仄克萨文明",
+    "gloss": "仄克萨<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "zeks-",
+    "examples": [
+      {
+        "zeksa": "tamia'vohi vohi omk zeksa, sasbertl'vohi zeksa!",
+        "translation": "我们爱我们的仄克萨，让我们说仄克萨语！"
+      }
+    ]
+  },
+  {
+    "word": "zenap",
+    "meaning": "门、门户",
+    "gloss": "门<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "zen-",
+    "examples": [
+      {
+        "zeksa": "jemsluvu'voh zenap yot parl.",
+        "translation": "为了防护，我关上了门。"
+      }
+    ]
+  },
+  {
+    "word": "zenor",
+    "meaning": "门窗",
+    "gloss": "门<词缀体> - 窗<词根体>",
+    "pos": "名词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "kojilath'g zenor! ekj'hugxe kujlod!",
+        "translation": "不可以打开门窗！风暴很坚固！"
+      }
+    ]
+  },
+  {
+    "word": "zoldao",
+    "meaning": "太阳（日）、太阳光、佐勒达奥星",
+    "gloss": "天空<词缀体> - 光<词根体>",
+    "pos": "名词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "ekj'zoldao omklon omk anta.",
+        "translation": "佐勒达奥星是欧姆克隆星的母亲。"
+      }
+    ]
+  },
+  {
+    "word": "zolde",
+    "meaning": "天空",
+    "gloss": "天空<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "zold-",
+    "examples": [
+      {
+        "zeksa": "bajao'zoldao dëm onjod zolde.",
+        "translation": "太阳正在高高的天上闪耀。"
+      }
+    ]
+  },
+  {
+    "word": "zoldvad",
+    "meaning": "天空色的、蓝色的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "zoldvad ayakujlo!",
+        "translation": "蔚蓝档案！*误*"
+      }
+    ]
+  },
+  {
+    "word": "zoldva",
+    "meaning": "天空色、蓝色",
+    "gloss": "天空<词缀体> - 颜色<词根体>",
+    "pos": "名词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "siat'voh zolde omk va, zoldva.",
+        "translation": "我喜欢天空的颜色——蓝色。"
+      }
+    ]
+  },
+  {
+    "word": "sara",
+    "meaning": "（强硬地）是的、对、当然",
+    "gloss": "N/A",
+    "pos": "感叹词",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "-kojirehát! -sara!",
+        "translation": "-必须注意！-当然！"
+      }
+    ]
+  },
+  {
+    "word": "sa",
+    "meaning": "是的、对",
+    "gloss": "N/A",
+    "pos": "感叹词",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "sa, ekj'efí vohomk bho.",
+        "translation": "是的，这是我的东西。"
+      }
+    ]
+  },
+  {
+    "word": "siat",
+    "meaning": "喜爱、喜欢；喜爱之物",
+    "gloss": "喜欢<词根体>",
+    "pos": "动词、名词",
+    "root": "单一词",
+    "affix": "siat-",
+    "examples": [
+      {
+        "zeksa": "siat'voh zolde omk va, zoldva.",
+        "translation": "我喜欢天空的颜色——蓝色。"
+      }
+    ]
+  },
+  {
+    "word": "silono",
+    "meaning": "瀑布、壮丽美妙的景观",
+    "gloss": "瀑布<词根体>",
+    "pos": "名词",
+    "root": "单纯词",
+    "affix": "sil-",
+    "examples": [
+      {
+        "zeksa": "jemprenats'voh läm silono dëm sopzeksmädrék.",
+        "translation": "我拜访过南仄克萨大陆的瀑布。"
+      }
+    ]
+  },
+  {
+    "word": "jem",
+    "meaning": "过去、刚才；<过去前缀>",
+    "gloss": "过去<词根体> / 过去<词缀体>",
+    "pos": "名词、动词前缀",
+    "root": "单一词",
+    "affix": "jem-",
+    "examples": [
+      {
+        "zeksa": "jembajkrus'voh cevdëm zoldvad drakol.",
+        "translation": "我刚才正在蓝色的堡垒里走路。"
+      }
+    ]
+  },
+  {
+    "word": "cevo",
+    "meaning": "中间、中央、仄克萨·谢沃",
+    "gloss": "中<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "cev-",
+    "examples": [
+      {
+        "zeksa": "dëm'zeksa cevo\" kavzeksmädrék.",
+        "translation": "仄克萨·谢沃在东仄克萨大陆。"
+      }
+    ]
+  },
+  {
+    "word": "cevdëm",
+    "meaning": "在...之中；位于...之中",
+    "gloss": "中<词根体> - 在<词根体>",
+    "pos": "动词、介词",
+    "root": "复合词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "ilvraddunl'vohi änte cevdëm mäyuqu, kiubeilim'g.",
+        "translation": "我们不可以喝大海里的水，这样我们可能会死。"
+      }
+    ]
+  },
+  {
+    "word": "cupwed",
+    "meaning": "热的、炽热炎热的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "jemkonv'voh cupwed drek, zah bajnuah'voh.",
+        "translation": "我摸到了很热的地面，所以现在我很疼。"
+      }
+    ]
+  },
+  {
+    "word": "cupwe",
+    "meaning": "热、热量",
+    "gloss": "热<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "cupw-",
+    "examples": [
+      {
+        "zeksa": "ilvradekodu'alz cevdëm cupwe outeylew.",
+        "translation": "人不能长时间存活在热之中。"
+      }
+    ]
+  },
+  {
+    "word": "tsalë",
+    "meaning": "西、西边",
+    "gloss": "西<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "tsal-",
+    "examples": [
+      {
+        "zeksa": "ekj'tsalë ëv kavak \" iltsolomd.",
+        "translation": "东和西是不一样的。"
+      }
+    ]
+  },
+  {
+    "word": "tsolomd",
+    "meaning": "相同的、一样的、辨认不出区别的",
+    "gloss": "~ - <形容词标记>",
+    "pos": "形容词",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "sasyar'tsul lom afí tsolomd drakol.",
+        "translation": "你得回到那个相同的堡垒。"
+      }
+    ]
+  },
+  {
+    "word": "tsuli",
+    "meaning": "你们（第二人称复数）",
+    "gloss": "你们<词根体>",
+    "pos": "代词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "jemviyek'voh tsuli omk tara, pav ilikom'voh ekj'g tsuli omk tara.",
+        "translation": "我读了你们的书，但我不知道这是你们的书。"
+      }
+    ]
+  },
+  {
+    "word": "tsul",
+    "meaning": "你（第二人称单数）",
+    "gloss": "你<词根体>",
+    "pos": "代词",
+    "root": "单一词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "ekj'tsul kolalz paq? ayailim'g tsul.",
+        "translation": "你是谁来着？我把你忘了。"
+      }
+    ]
+  },
+  {
+    "word": "hórdulu",
+    "meaning": "肉肠、香肠",
+    "gloss": "肉肠<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "hord-",
+    "examples": [
+      {
+        "zeksa": "bajadkev'voh eralomk hórdulu.",
+        "translation": "我在吃他的香肠。"
+      }
+    ]
+  },
+  {
+    "word": "hugëf",
+    "meaning": "风；刮风",
+    "gloss": "风<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "hug-",
+    "examples": [
+      {
+        "zeksa": "hugëf! irehát! kiuhugxe!",
+        "translation": "风！注意！有可能会刮沙尘暴！"
+      }
+    ]
+  },
+  {
+    "word": "hugxe",
+    "meaning": "风暴、沙尘暴；刮沙尘暴",
+    "gloss": "风<词缀体> - 疯狂<词根体>",
+    "pos": "名词、动词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "dëm ouajad fiddrek, jemluvug'hugxe ustad alzrek.",
+        "translation": "在长远的荒原上，风暴覆盖了全部的足迹。"
+      }
+    ]
+  },
+  {
+    "word": "häh",
+    "meaning": "不、不是、不对",
+    "gloss": "N/A",
+    "pos": "感叹词",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "häh, merhaa'tsul kol?",
+        "translation": "不是，你在想什么？"
+      }
+    ]
+  },
+  {
+    "word": "lavrín",
+    "meaning": "朋友、知音；做朋友",
+    "gloss": "朋友<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "lavr-",
+    "examples": [
+      {
+        "zeksa": "gemlavrín'voh afí alz.",
+        "translation": "我想和那个人做朋友。"
+      }
+    ]
+  },
+  {
+    "word": "lek",
+    "meaning": "学习、新知道",
+    "gloss": "学习<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "lek-",
+    "examples": [
+      {
+        "zeksa": "bajlek'voh frini polár.",
+        "translation": "我在学习写数字。"
+      }
+    ]
+  },
+  {
+    "word": "lumzoldao",
+    "meaning": "星、星星（其他恒星）",
+    "gloss": "小<词缀体> - 天空<词缀体> - 光<词根体>",
+    "pos": "名词",
+    "root": "复合词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "sasvi'g! lumzoldao! freyad lumzoldao!",
+        "translation": "看！星星！美丽的星星！"
+      }
+    ]
+  },
+  {
+    "word": "luvug",
+    "meaning": "覆盖、下雪；积层",
+    "gloss": "覆盖<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "luv-",
+    "examples": [
+      {
+        "zeksa": "calór ilbeluvug dëm ayariv, qelw vradvi'voh!",
+        "translation": "尽管在仄克萨·阿亚里夫不会下雪，我仍然想看雪！"
+      }
+    ]
+  },
+  {
+    "word": "läm",
+    "meaning": "向、对着、朝着、和",
+    "gloss": "向<词根体>",
+    "pos": "介词",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "näg bertl'tsul läm eral, ilbemerhaa'eral.",
+        "translation": "如果你和他说，他不会相信的。"
+      }
+    ]
+  },
+  {
+    "word": "ranvi",
+    "meaning": "系统、可视化操作系统",
+    "gloss": "顺序<词缀体> - 看<词根体>",
+    "pos": "动词",
+    "root": "复合词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "zeksa omklon ilcevod vasvomka ranvi.",
+        "translation": "仄克萨·欧姆克隆偏远配给系统前哨站。"
+      }
+    ]
+  },
+  {
+    "word": "ran",
+    "meaning": "顺序、次序、轮次；排序；第...个",
+    "gloss": "顺序<词根体>",
+    "pos": "名词、动词、数字接尾",
+    "root": "单一词",
+    "affix": "ran-",
+    "examples": [
+      {
+        "zeksa": "änran, duran, hteran...",
+        "translation": "第一、第二、第三..."
+      }
+    ]
+  },
+  {
+    "word": "rimis",
+    "meaning": "火、火焰；燃烧、点燃",
+    "gloss": "火<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "rim-",
+    "examples": [
+      {
+        "zeksa": "irehát! ekj'rimis oucupwed! ilvradkonv'g rimis!",
+        "translation": "小心！火焰非常热！你不能触碰火焰！"
+      }
+    ]
+  },
+  {
+    "word": "rorjuk",
+    "meaning": "奔跑；跑步",
+    "gloss": "跑步<词根体>",
+    "pos": "名词、动词",
+    "root": "单一词",
+    "affix": "rorj-",
+    "examples": [
+      {
+        "zeksa": "bajrorjuk'voh dëm dalo omk ilcevo.",
+        "translation": "我正在岛屿边缘奔跑。"
+      }
+    ]
+  },
+  {
+    "word": "yelda",
+    "meaning": "（树）叶子、书页、页面",
+    "gloss": "叶<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "yeld-",
+    "examples": [
+      {
+        "zeksa": "bivomk yelda, taraomk yelda.",
+        "translation": "树的“叶”、书的“页”。"
+      }
+    ]
+  },
+  {
+    "word": "yuqu",
+    "meaning": "湖、湖泊",
+    "gloss": "湖<词根体>",
+    "pos": "名词",
+    "root": "单一词",
+    "affix": "yuq-",
+    "examples": [
+      {
+        "zeksa": "mäd yuqu dëm oucupwed zoldao.",
+        "translation": "在炽热阳光下的巨大湖泊。"
+      }
+    ]
+  }
+]
