@@ -133,7 +133,10 @@ pre {
 <h1>📘 Zeksa 词典编辑器</h1>
 
 <div class="card">
-  <input id="token" type="password" placeholder="GitHub Token（已隐藏）">
+  <div style="display:flex;gap:8px;align-items:center;">
+    <input id="token" type="password" placeholder="GitHub Token（已隐藏）" style="margin:0;flex:1;">
+    <button onclick="toggleToken()" style="padding:12px;">👁️</button>
+  </div>
   <button id="btnSaveToken" onclick="saveToken()">💾 保存 Token</button>
   <button id="btnLoad" onclick="loadDict()">📥 加载 dict.json</button>
 </div>
@@ -333,6 +336,8 @@ window.onload = () => {
     document.getElementById("token").value = token;
   }
 };
+
+function toggleToken(){const i=document.getElementById("token");i.type=i.type==="password"?"text":"password";}
 </script>
 
 </body>
