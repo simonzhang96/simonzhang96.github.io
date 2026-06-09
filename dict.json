@@ -756,6 +756,20 @@
     ]
   },
   {
+    "word": "prenats",
+    "meaning": "拜访、参拜",
+    "gloss": "拜访<词根体>",
+    "pos": "动词",
+    "root": "单纯词",
+    "affix": "pren-",
+    "examples": [
+      {
+        "zeksa": "gemprenats'eral ajkrusteylme, cunekj'g kmavalz.",
+        "translation": "他想拜访远征时代，因为他是一名派送员。"
+      }
+    ]
+  },
+  {
     "word": "dalo",
     "meaning": "小岛、岛屿、仄克萨·达洛",
     "gloss": "岛<词根体>",
