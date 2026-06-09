@@ -448,6 +448,20 @@
     ]
   },
   {
+    "word": "irehát",
+    "meaning": "小心、注意、警惕",
+    "gloss": "注意<词根体>",
+    "pos": "动词、感叹词",
+    "root": "单纯词",
+    "affix": "ireh-",
+    "examples": [
+      {
+        "zeksa": "irehát! kiubehugxe'g!",
+        "translation": "注意！可能会有风暴！"
+      }
+    ]
+  },
+  {
     "word": "ou",
     "meaning": "非常地、特别地、很<特别前缀>",
     "gloss": "非常<词缀体>",
