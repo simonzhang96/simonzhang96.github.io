@@ -1,220 +1,292 @@
 <!DOCTYPE html>
-<html lang="en">
+<!-- Zeksa Language Homepage - Designed by Simon Zhang -->
+<html lang="zh">
 <head>
-<meta charset="UTF-8">
-<title>Zeksa</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>仄克萨语 | Zeksa Language</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  
+  <!-- 图标库（用于 B站 / 邮箱 图标） -->
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    html, body {
+      min-height: 100%;
+      margin: 0;
+      padding: 0;
+    }
 
-<style>
-html, body {
-  min-height: 100%;
-}
+    :root {
+      --accent: #0078D4;
+      --text-color: #222;
+      --label-color: #555;
+      --shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      --radius: 14px; 
+    }
 
-:root {
-  --accent: #0078D4;
-  --text-color: #222;
-  --label-color: #555;
-  --shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-  --radius: 14px;
-}
+    /* 渐变流动背景（完全沿用你的风格） */
+    #bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100dvh;
+      width: 100dvw;
+      z-index: -1; 
+      pointer-events: none; 
 
-/* 背景 */
-#bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100dvh;
-  width: 100dvw;
-  z-index: -1;
-  pointer-events: none;
+      background:
+        radial-gradient(
+          circle at 20% 30%,
+          rgba(214,236,255,0.8),
+          transparent 40%
+        ),
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(255,201,138,0.7),
+          transparent 35%
+        ),
+        radial-gradient(
+          circle at 60% 80%,
+          rgba(234,246,255,0.7),
+          transparent 45%
+        ),
+        linear-gradient(
+          180deg,
+          #eef8ff,
+          #fff4e6
+        );
 
-  background:
-    radial-gradient(circle at 20% 30%, rgba(214,236,255,0.8), transparent 40%),
-    radial-gradient(circle at 80% 20%, rgba(255,201,138,0.7), transparent 35%),
-    radial-gradient(circle at 60% 80%, rgba(234,246,255,0.7), transparent 45%),
-    linear-gradient(180deg, #eef8ff, #fff4e6);
+      animation: drift 15s ease-in-out infinite alternate;
+      background-size: 135% 135%;
+    }
 
-  animation: drift 15s ease-in-out infinite alternate;
-  background-size: 135% 135%;
-}
+    @keyframes drift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
 
-@keyframes drift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Segoe UI",
+                   Roboto, "Helvetica Neue", Arial, sans-serif;
+      max-width: 840px;
+      margin: 0 auto;
+      padding: 2em;
+      background: transparent;
+      color: var(--text-color);
+      
+      /* 页面整体垂直居中 */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 100vh;
+      gap: 24px;
+    }
 
-/* 全局 */
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Segoe UI",
-               Roboto, "Helvetica Neue", Arial, sans-serif;
+    /* Logo 样式 */
+    .logo {
+      width: 100%;
+      max-width: 240px;
+      height: auto;
+      display: block;
+      margin: 0 auto 10px auto;
+    }
 
-  margin: 0;
-  color: var(--text-color);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
+    h1 {
+      text-align: center;
+      color: var(--accent);
+      font-size: 2.2rem;
+      margin: 0;
+    }
 
-/* 主面板（核心 entry） */
-.entry {
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+    .subtitle {
+      text-align: center;
+      font-size: 1.05rem;
+      color: #555;
+      margin-top: 8px;
+    }
 
-  padding: 40px;
-  border-radius: 16px;
+    /* 沿用你的 .entry 毛玻璃卡片 */
+    .entry {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 24px 28px;
+      margin: 0 auto;
+      max-width: 700px;
+      border-radius: 16px;
+      box-shadow:
+        0 8px 24px rgba(0,0,0,0.08),
+        0 0 20px rgba(255,255,255,0.15);
+      transition: transform 0.15s ease-out, box-shadow 0.2s ease;
+      text-align: left;
+    }
 
-  max-width: 700px;
-  width: 90%;
+    .entry:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 14px 36px rgba(0,0,0,0.13),
+        0 0 35px rgba(255,255,255,0.25);
+    }
 
-  text-align: center;
+    .entry h2 {
+      color: var(--accent);
+      margin-top: 0;
+      font-size: 1.4rem;
+    }
 
-  box-shadow:
-    0 8px 24px rgba(0,0,0,0.08),
-    0 0 20px rgba(255,255,255,0.15);
-}
+    .entry p {
+      line-height: 1.6;
+      font-size: 1rem;
+      margin: 10px 0;
+    }
 
-/* Zeksa 标题 */
-.zeksa {
-  font-family: "ZeksaFont", sans-serif;
-}
+    /* 按钮组（三个主按钮） */
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin: 10px 0;
+    }
 
-.logo {
-  font-size: 4.5rem;
-  margin-bottom: 0.5rem;
-  opacity: 0.9;
-}
+    button {
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      border: none;
+      background: var(--accent);
+      color: white;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 12px rgba(0, 120, 212, 0.15);
+      white-space: nowrap;
+    }
 
-/* 标题 */
-h1 {
-  margin: 0;
-  color: var(--accent);
-  font-size: 2.5rem;
-}
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 120, 212, 0.25);
+      background: #0066b3;
+    }
 
-.subtitle {
-  opacity: 0.75;
-  margin-top: 10px;
-  line-height: 1.6;
-}
+    /* 社交图标 */
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 20px;
+    }
 
-/* 输入框 */
-input {
-  width: 100%;
-  padding: 14px 16px;
-  font-size: 1rem;
-  border-radius: var(--radius);
-  border: 1px solid #ccc;
-  margin-top: 20px;
-}
+    .social-icons a {
+      color: var(--accent);
+      font-size: 24px;
+      transition: 0.2s;
+      text-decoration: none;
+    }
 
-/* 按钮（核心风格） */
-button {
-  display: block;
-  margin: 20px auto;
-  padding: 12px 24px;
-  border-radius: var(--radius);
-  border: none;
-  background: var(--accent);
-  color: white;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.25s ease;
-  box-shadow: 0 4px 12px rgba(0, 120, 212, 0.15);
-}
+    .social-icons a:hover {
+      transform: scale(1.15);
+      color: #0066b3;
+    }
 
-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 120, 212, 0.25);
-  background: #0066b3;
-}
+    /* 仄克萨字体（完全沿用） */
+    @font-face {
+      font-family: "ZeksaFont";
+      src: url("./Zeksa 525.ttf") format("truetype");
+    }
 
-button:active {
-  transform: translateY(0px);
-}
+    .zeksa {
+      font-family: "ZeksaFont", sans-serif;
+    }
 
-/* 今日词 */
-.today-word {
-  margin: 30px 0;
-}
-
-.today-word h2 {
-  margin: 10px 0;
-}
-
-/* 导航按钮 */
-.nav-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 16px;
-}
-
-.nav-buttons button {
-  margin: 0;
-}
-</style>
+    /* 移动端适配 */
+    @media (max-width: 600px) {
+      body {
+        padding: 1.2em;
+      }
+      h1 {
+        font-size: 1.8rem;
+      }
+      .button-group {
+        flex-direction: column;
+        align-items: center;
+      }
+      button {
+        width: 80%;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <div id="bg"></div>
 
-<div id="bg"></div>
+  <!-- Logo -->
+  <img src="./ZeksaLogo.png" class="logo" alt="Zeksa Logo">
+  
+  <h1>仄克萨语 | Zeksa Language</h1>
+  <p class="subtitle">一门由 Simon Zhang 创造的人工语言</p>
 
-<div class="entry">
-
-    <div class="zeksa logo">
-        Alzomka
-    </div>
-
-    <h1>Zeksa</h1>
-
-    <p class="subtitle">
-        Across deserts and storms,<br>
-        we remain connected.
+  <!-- 主介绍卡片 -->
+  <div class="entry">
+    <h2>关于仄克萨语</h2>
+    <p>
+      仄克萨语（Zeksa）是一门结构严谨、发音优美、语法简洁的人造语言。
+      它拥有独立的字母系统、发音规则、词汇体系与语法逻辑，适合用于创作、学习与交流。
     </p>
+    <p>
+      本平台收录了完整的仄克萨语词典、语法说明与词汇练习系统，
+      无论你是初学者还是爱好者，都能在这里系统学习这门语言。
+    </p>
+    <p class="zeksa" style="text-align:center; font-size:1.2rem; margin-top:16px;">
+      Zeksa — 一门美丽的语言
+    </p>
+  </div>
 
-    <input type="text" placeholder="Search vocabulary...">
+  <!-- 三个功能按钮 -->
+  <div class="button-group">
+    <button onclick="window.open('https://simonzhang.art/zeksa','_blank')">仄克萨是什么？</button>
+    <button onclick="window.open('https://simonzhang.art/dictionary','_blank')">词典</button>
+    <button onclick="window.open('https://simonzhang.art/quiz','_blank')">词汇测试</button>
+  </div>
 
-    <div class="today-word">
+  <!-- 社交图标 -->
+  <div class="social-icons">
+    <a href="https://space.bilibili.com/543929703" target="_blank" title="B站">
+      <i class="fa-brands fa-bilibili"></i>
+    </a>
+    <a href="mailto:simonzhang96@icloud.com" title="邮箱">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
+  </div>
 
-        <small>Today's Word</small>
+  <small style="text-align:center; margin-top:10px;">
+    A Dictionary of the Zeksa Language, Created by Simon Zhang.
+  </small>
 
-        <h2 class="zeksa">Alzomka</h2>
-
-        <p><strong>People in connection</strong></p>
-
-        <div class="example">
-            Alzomka.<br>
-            May our connection remain unbroken.
-        </div>
-
-    </div>
-
-    <h2>Explore</h2>
-
-    <div class="nav-buttons">
-
-        <button onclick="location.href='dictionary.html'">
-            Dictionary
-        </button>
-
-        <button onclick="location.href='omklon.html'">
-            Omklon
-        </button>
-
-        <button onclick="location.href='script.html'">
-            Script
-        </button>
-
-        <button onclick="location.href='calendar.html'">
-            Calendar
-        </button>
-
-    </div>
-
-</div>
-
+  <script>
+    // 鼠标悬浮卡片微动效果（沿用你的交互）
+    document.body.addEventListener('mousemove', e => {
+      const card = e.target.closest('.entry');
+      if (!card) return;
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      const strength = 8;
+      const moveX = (x / rect.width) * strength;
+      const moveY = (y / rect.height) * strength;
+      card.style.transform = `translate(${moveX}px, ${moveY - 3}px)`;
+    })
+    
+    document.body.addEventListener('mouseleave', e => {
+      const card = e.target.closest('.entry');
+      if (card) card.style.transform = '';
+    })
+  </script>
 </body>
 </html>
