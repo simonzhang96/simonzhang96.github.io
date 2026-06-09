@@ -194,6 +194,11 @@ async function loadDict(){
 
   const token = getToken();
 
+  if(!token){
+    alert("请先输入 Token");
+    return;
+  }
+
   const res = await fetch(
     `https://api.github.com/repos/${OWNER}/${REPO}/contents/${PATH}`,
     {
@@ -206,21 +211,24 @@ async function loadDict(){
   const data = await res.json();
 
   const binary = atob(data.content);
-  
-  const bytes = Uint8Array.from(binary, c => c.charCodeAt(0));
-  
-  const decoded = new TextDecoder("utf-8").decode(bytes);
-  
-  const dict = JSON.parse(decoded);
 
-  dict = JSON.parse(content);
+  const bytes = Uint8Array.from(binary, c => c.charCodeAt(0));
+
+  const decoded = new TextDecoder("utf-8").decode(bytes);
+
+  // ✔ 关键修复：赋值给全局变量
+  dict = JSON.parse(decoded);
 
   document.getElementById("out").innerText =
     "已加载词条：" + dict.length;
 }
-
+  
 /* ===== 添加词条 ===== */
 async function addWord(){
+  if(!Array.isArray(dict)){
+    alert("请先加载 dict.json");
+    return;
+  }
 
   const token = getToken();
 
@@ -300,6 +308,13 @@ async function addWord(){
 
   console.log(result);
 }
+
+window.onload = () => {
+  const token = getToken();
+  if(token) loadDict();
+};
+
+console.log(dict);
 
 </script>
 
