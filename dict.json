@@ -26,5 +26,19 @@
         "translation": "我希望成为一名勇敢的派送员。"
       }
     ]
+  },
+  {
+    "word": "vumala",
+    "meaning": "欣赏、观赏、感到欣慰",
+    "gloss": "欣赏<词根体>",
+    "pos": "动词",
+    "root": "单纯词",
+    "affix": "vum-",
+    "examples": [
+      {
+        "zeksa": "vumala'voh vmilod ekodu yuqu. ekj'eral oufreyad!",
+        "translation": "我正在欣赏平静的艾蔻度湖。它很美丽！"
+      }
+    ]
   }
 ]
