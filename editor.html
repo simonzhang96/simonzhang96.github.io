@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>Zeksa Dictionary Editor</title>
+
+<style>
+:root{
+  --accent:#0078D4;
+  --radius:14px;
+}
+
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  max-width:900px;
+  margin:auto;
+  padding:2em;
+}
+
+h1{
+  text-align:center;
+  color:var(--accent);
+}
+
+input, textarea{
+  width:100%;
+  padding:10px;
+  margin:6px 0 12px;
+  border:1px solid #ccc;
+  border-radius:10px;
+}
+
+button{
+  padding:12px 18px;
+  margin:10px 0;
+  border:none;
+  border-radius:10px;
+  background:var(--accent);
+  color:white;
+  cursor:pointer;
+}
+
+button:hover{
+  opacity:0.9;
+}
+
+pre{
+  background:#f4f4f4;
+  padding:10px;
+  border-radius:10px;
+  overflow:auto;
+}
+</style>
+</head>
+
+<body>
+
+<h1>📘 Zeksa Dictionary Editor</h1>
+
+<input id="token" placeholder="GitHub Token（首次输入）">
+
+<button onclick="saveToken()">保存 Token</button>
+<button onclick="loadDict()">加载 dict.json</button>
+
+<hr>
+
+<h3>新增词条</h3>
+
+<input id="word" placeholder="word">
+<input id="meaning" placeholder="meaning">
+<input id="gloss" placeholder="gloss">
+<input id="pos" placeholder="pos">
+<input id="root" placeholder="root">
+<input id="affix" placeholder="affix">
+
+<h4>Example</h4>
+<input id="zeksa" placeholder="zeksa sentence">
+<input id="translation" placeholder="translation">
+
+<button onclick="addWord()">添加并提交</button>
+
+<pre id="out">等待操作...</pre>
+
+<script>
+
+let dict = [];
+
+const OWNER = "simonzhang96";
+const REPO = "simonzhang96.github.io";
+const PATH = "dict.json";
+
+/* ===== 仄克萨字母表 ===== */
+const ALPHABET = [
+"a","á","e","é","i","í",
+"o","ó","u","ú",
+"ä","â","ë","ê","ø","ô",
+"b","p",
+"d","t",
+"g","k",
+"m","n",
+"q",
+"v","f",
+"z","s",
+"j","c",
+"x",
+"ts",
+"h","ħ",
+"l","r",
+"w","y"
+];
+
+const ORDER = {};
+ALPHABET.forEach((c,i)=>ORDER[c]=i);
+
+/* ===== Token ===== */
+function tokenize(word){
+  word = word.toLowerCase();
+  let res = [];
+  for(let i=0;i<word.length;i++){
+    if(word.slice(i,i+2)==="ts"){
+      res.push("ts");
+      i++;
+    }else{
+      res.push(word[i]);
+    }
+  }
+  return res;
+}
+
+/* ===== 排序 ===== */
+function compare(a,b){
+  const w1 = tokenize(a.word);
+  const w2 = tokenize(b.word);
+
+  const len = Math.max(w1.length,w2.length);
+
+  for(let i=0;i<len;i++){
+    const p1 = ORDER[w1[i]] ?? 999;
+    const p2 = ORDER[w2[i]] ?? 999;
+    if(p1!==p2) return p1-p2;
+  }
+  return 0;
+}
+
+/* ===== Token ===== */
+function saveToken(){
+  localStorage.setItem("gh_token",document.getElementById("token").value);
+  alert("已保存");
+}
+
+function getToken(){
+  return localStorage.getItem("gh_token");
+}
+
+/* ===== 加载 dict ===== */
+async function loadDict(){
+
+  const token = getToken();
+
+  const res = await fetch(
+    `https://api.github.com/repos/${OWNER}/${REPO}/contents/${PATH}`,
+    {
+      headers:{
+        Authorization:`Bearer ${token}`
+      }
+    }
+  );
+
+  const data = await res.json();
+
+  const content = atob(data.content);
+
+  dict = JSON.parse(content);
+
+  document.getElementById("out").innerText =
+    "已加载词条：" + dict.length;
+}
+
+/* ===== 添加词条 ===== */
+async function addWord(){
+
+  const token = getToken();
+
+  if(!token){
+    alert("先输入 Token");
+    return;
+  }
+
+  const newEntry = {
+    word: document.getElementById("word").value.trim().toLowerCase(),
+    meaning: document.getElementById("meaning").value.trim(),
+    gloss: document.getElementById("gloss").value.trim(),
+    pos: document.getElementById("pos").value.trim(),
+    root: document.getElementById("root").value.trim(),
+    affix: document.getElementById("affix").value.trim(),
+    examples: [
+      {
+        zeksa: document.getElementById("zeksa").value.trim(),
+        translation: document.getElementById("translation").value.trim()
+      }
+    ]
+  };
+
+  /* ===== 去重 ===== */
+  if(dict.some(x=>x.word===newEntry.word)){
+    alert("词条已存在");
+    return;
+  }
+
+  dict.push(newEntry);
+  dict.sort(compare);
+
+  /* ===== 获取 SHA ===== */
+  const fileRes = await fetch(
+    `https://api.github.com/repos/${OWNER}/${REPO}/contents/${PATH}`,
+    {
+      headers:{
+        Authorization:`Bearer ${token}`
+      }
+    }
+  );
+
+  const fileData = await fileRes.json();
+
+  const sha = fileData.sha;
+
+  /* ===== 编码 ===== */
+  const content = btoa(
+    unescape(
+      encodeURIComponent(
+        JSON.stringify(dict,null,2)
+      )
+    )
+  );
+
+  /* ===== 提交 ===== */
+  const commit = await fetch(
+    `https://api.github.com/repos/${OWNER}/${REPO}/contents/${PATH}`,
+    {
+      method:"PUT",
+      headers:{
+        Authorization:`Bearer ${token}`,
+        "Content-Type":"application/json"
+      },
+      body:JSON.stringify({
+        message:`Add word ${newEntry.word}`,
+        content,
+        sha
+      })
+    }
+  );
+
+  const result = await commit.json();
+
+  document.getElementById("out").innerText =
+    "提交成功：" + newEntry.word;
+
+  console.log(result);
+}
+
+</script>
+
+</body>
+</html>
