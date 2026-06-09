@@ -1204,6 +1204,20 @@
     ]
   },
   {
+    "word": "kmavas",
+    "meaning": "派送、递送、运输；物流",
+    "gloss": "派送<词根体>",
+    "pos": "动词、名词",
+    "root": "单纯词",
+    "affix": "kmav-",
+    "examples": [
+      {
+        "zeksa": "bajkmavas'voh gaxavo ëv uka läm lumdrakol.",
+        "translation": "我正在给城市派送蔬果和肉。"
+      }
+    ]
+  },
+  {
     "word": "knaciv",
     "meaning": "取胜、战胜；成功",
     "gloss": "成功<词根体>",
