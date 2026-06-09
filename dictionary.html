@@ -7,26 +7,79 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>仄克萨语词典</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <style>
+    html, body {
+      min-height: 100%;
+    }
+
     :root {
-      --bg-color: #f5f7fa;
-      --card-bg: #ffffff;
       --accent: #0078D4;
       --text-color: #222;
       --label-color: #555;
       --shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-      --radius: 14px;
+      --radius: 14px; 
+    }
+
+    #bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100dvh;
+      width: 100dvw;
+      z-index: -1; 
+      pointer-events: none; 
+    
+      background:
+        radial-gradient(
+          circle at 20% 30%,
+          rgba(214,236,255,0.8),
+          transparent 40%
+        ),
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(255,201,138,0.7),
+          transparent 35%
+        ),
+        radial-gradient(
+          circle at 60% 80%,
+          rgba(234,246,255,0.7),
+          transparent 45%
+        ),
+        linear-gradient(
+          180deg,
+          #eef8ff,
+          #fff4e6
+        );
+    
+      animation: drift 15s ease-in-out infinite alternate;
+      background-size: 135% 135%;
+    }
+
+    html {
+      min-height: 100%;
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Segoe UI",
+                   Roboto, "Helvetica Neue", Arial, sans-serif;
       max-width: 840px;
       margin: auto;
       padding: 2em;
-      background: var(--bg-color);
+    
+      background: transparent; /* 原来是 var(--bg-color) */
       color: var(--text-color);
     }
 
+    @keyframes drift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    
     h1 {
       text-align: center;
       color: var(--accent);
@@ -70,18 +123,31 @@
     }
 
     .entry {
-      background: var(--card-bg);
+      background: rgba(255, 255, 255, 0.6);
+    
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    
       padding: 15px 20px;
       margin: 30px auto;
       max-width: 800px;
+    
       border-radius: 16px;
-      box-shadow: var(--shadow);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    
+      box-shadow:
+        0 8px 24px rgba(0,0,0,0.08),
+        0 0 20px rgba(255,255,255,0.15);
+    
+      transition:
+        transform 0.15s ease-out,
+        box-shadow 0.2s ease;
     }
-
+    
     .entry:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+      transform: translateY(-3px);
+      box-shadow:
+        0 14px 36px rgba(0,0,0,0.13),
+        0 0 35px rgba(255,255,255,0.25);
     }
 
     .label {
@@ -116,17 +182,26 @@
     button {
       display: block;
       margin: 20px auto;
-      padding: 10px 18px;
+      padding: 12px 24px;
       border-radius: var(--radius);
       border: none;
       background: var(--accent);
       color: white;
       font-size: 1rem;
+      font-weight: 500;
       cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 12px rgba(0, 120, 212, 0.15);
     }
-
+    
     button:hover {
-      opacity: 0.9;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 120, 212, 0.25);
+      background: #0066b3;
+    }
+    
+    button:active {
+      transform: translateY(0px);
     }
 
     @media (max-width: 600px) {
@@ -149,11 +224,12 @@
   </style>
 </head>
 <body>
+  <div id="bg"></div>
   <h1>仄克萨语词典</h1>
   <p>在搜索框里输入中文或者仄克萨语，以查询该词的完整信息。</p>
   <p id="word-count" style="text-align: center; font-weight: bold; margin-top: 1em;">
   本网站已收录 <span id="count-number">0</span> 个仄克萨语词汇。</p>
-  <button onclick="toggleZeksa()" style="display:block; margin:1em auto;">拉丁 - 仄克萨字母</button>
+  <button onclick="toggleZeksa()">拉丁 - 仄克萨字母</button>
   <div id="daily-word" class="entry" style="text-align:center;">
   <h2 style="color: var(--accent); margin-top:0;">今日单词</h2>
   <div id="daily-content">加载中...</div>
@@ -325,7 +401,7 @@
           <div><span class="label">词义:</span> ${entry.meaning}</div>
           <div><span class="label">词类:</span> ${entry.pos}</div>
           <div><span class="label">构词类型:</span> ${entry.root}</div>
-          <div><span class="label">词缀体:</span> ${entry.affix}</div>
+          <div><span class="label">词缀体:</span> ${useZeksa ? toZeksa(entry.affix) : entry.affix}</div>
           <div><span class="label">语法注解:</span> ${entry.gloss}</div>
           ${entry.examples.map(ex => `
             <div class="example">
@@ -337,12 +413,29 @@
       `;
     }
 
+    document.body.addEventListener('mousemove', e => {
+      const card = e.target.closest('.entry');
+      if (!card) return;
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      const strength = 8;
+      const moveX = (x / rect.width) * strength;
+      const moveY = (y / rect.height) * strength;
+      card.style.transform = `translate(${moveX}px, ${moveY - 3}px)`;
+    })
+    
+    document.body.addEventListener('mouseleave', e => {
+      const card = e.target.closest('.entry');
+      if (card) card.style.transform = '';
+    })
+
     loadDictionary();
   </script>
   <p style="text-align:center;">
   <a href="quiz.html">进入词汇测试</a>
   </p>
-  <img src="./zeksa dict website.png" style="display: block; max-width: 100%; height: auto; margin: 1em auto;">
+  <img src="./ZeksaLogo.png" style="width: 100%; max-width: 220px; height: auto; display: block; margin: 1.4rem auto;">
   <small>A Dictionary of the Zeksa Language, Created by Simon Zhang.</small>
 </body>
 </html>
