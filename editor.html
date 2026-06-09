@@ -5,9 +5,10 @@
 <title>Zeksa Dictionary Editor</title>
 
 <style>
-:root{
-  --accent:#0078D4;
-  --radius:14px;
+:root {
+  --accent: #0078D4;
+  --radius: 14px;
+  --shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
 
 #bg {
@@ -16,30 +17,14 @@
   left: 0;
   height: 100dvh;
   width: 100dvw;
-  z-index: -1; 
-  pointer-events: none; 
+  z-index: -1;
+  pointer-events: none;
 
   background:
-    radial-gradient(
-      circle at 20% 30%,
-      rgba(214,236,255,0.8),
-      transparent 40%
-    ),
-    radial-gradient(
-      circle at 80% 20%,
-      rgba(255,201,138,0.7),
-      transparent 35%
-    ),
-    radial-gradient(
-      circle at 60% 80%,
-      rgba(234,246,255,0.7),
-      transparent 45%
-    ),
-    linear-gradient(
-      180deg,
-      #eef8ff,
-      #fff4e6
-    );
+    radial-gradient(circle at 20% 30%, rgba(214,236,255,0.8), transparent 40%),
+    radial-gradient(circle at 80% 20%, rgba(255,201,138,0.7), transparent 35%),
+    radial-gradient(circle at 60% 80%, rgba(234,246,255,0.7), transparent 45%),
+    linear-gradient(180deg, #eef8ff, #fff4e6);
 
   animation: drift 15s ease-in-out infinite alternate;
   background-size: 135% 135%;
@@ -50,47 +35,94 @@
   100% { background-position: 100% 100%; }
 }
 
-body{
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  max-width:900px;
-  margin:auto;
-  padding:2em;
-}
-
-h1{
-  text-align:center;
-  color:var(--accent);
-}
-
-input, textarea{
-  width:100%;
-  padding:10px;
-  margin:6px 0 12px;
-  border:1px solid #ccc;
-  border-radius:10px;
+* {
   box-sizing: border-box;
 }
 
-button{
-  padding:12px 18px;
-  margin:10px 5px 10px 0;
-  border:none;
-  border-radius:10px;
-  background:var(--accent);
-  color:white;
-  cursor:pointer;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  max-width: 900px;
+  margin: auto;
+  padding: 2em;
+  position: relative;
 }
 
-button:hover{
-  opacity:0.9;
+h1 {
+  text-align: center;
+  color: var(--accent);
+  margin-bottom: 30px;
 }
 
-pre{
-  background:#f4f4f4;
-  padding:10px;
-  border-radius:10px;
-  overflow:auto;
-  min-height: 40px;
+h3, h4 {
+  margin-top: 24px;
+  color: #333;
+}
+
+input {
+  width: 100%;
+  padding: 12px 14px;
+  margin: 6px 0 14px;
+  border: 1px solid #ddd;
+  border-radius: var(--radius);
+  font-size: 15px;
+  transition: border 0.2s;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+button {
+  padding: 12px 20px;
+  margin: 8px 6px 12px 0;
+  border: none;
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: white;
+  cursor: pointer;
+  font-size: 15px;
+  transition: all 0.2s;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button:disabled {
+  background: #94b8e0;
+  cursor: not-allowed;
+  opacity: 0.7;
+  transform: none;
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: #eee;
+  margin: 26px 0;
+}
+
+pre {
+  background: #f9f9f9;
+  padding: 16px;
+  border-radius: var(--radius);
+  overflow: auto;
+  max-height: 280px;
+  box-shadow: var(--shadow);
+  white-space: pre-wrap;
+}
+
+.card {
+  background: white;
+  padding: 22px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 20px;
 }
 </style>
 </head>
@@ -98,69 +130,62 @@ pre{
 <body>
 <div id="bg"></div>
 
-<h1>📘 Zeksa Dictionary Editor</h1>
+<h1>📘 Zeksa 词典编辑器</h1>
 
-<input id="token" placeholder="GitHub Token（首次输入）">
-
-<button onclick="saveToken()">保存 Token</button>
-<button onclick="loadDict()">加载 dict.json</button>
+<div class="card">
+  <input id="token" placeholder="GitHub Token（仅首次需要输入）">
+  <button id="btnSaveToken" onclick="saveToken()">💾 保存 Token</button>
+  <button id="btnLoad" onclick="loadDict()">📥 加载 dict.json</button>
+</div>
 
 <hr>
 
-<h3>新增词条</h3>
+<div class="card">
+  <h3>新增词条</h3>
+  <input id="word" placeholder="word（单词）">
+  <input id="meaning" placeholder="meaning（释义）">
+  <input id="gloss" placeholder="gloss（注解）">
+  <input id="pos" placeholder="pos（词性）">
+  <input id="root" placeholder="root（词根）">
+  <input id="affix" placeholder="affix（词缀）">
 
-<input id="word" placeholder="word（必填）">
-<input id="meaning" placeholder="meaning">
-<input id="gloss" placeholder="gloss">
-<input id="pos" placeholder="pos">
-<input id="root" placeholder="root">
-<input id="affix" placeholder="affix">
+  <h4>例句 Example</h4>
+  <input id="zeksa" placeholder="zeksa sentence（原语例句）">
+  <input id="translation" placeholder="translation（中文翻译）">
 
-<h4>Example</h4>
-<input id="zeksa" placeholder="zeksa sentence">
-<input id="translation" placeholder="translation">
-
-<button onclick="addWord()">添加并提交</button>
+  <button id="btnAdd" onclick="addWord()">✅ 添加并提交到 GitHub</button>
+</div>
 
 <pre id="out">等待操作...</pre>
 
 <script>
 let dict = [];
+// 防重复点击锁
+let isLoading = false;
 
-// 配置你的 GitHub 信息
 const OWNER = "simonzhang96";
 const REPO = "simonzhang96.github.io";
 const PATH = "dict.json";
 
-/* ===== 仄克萨字母表 ===== */
+/* 字母表与排序规则 */
 const ALPHABET = [
-"a","á","e","é","i","í",
-"o","ó","u","ú",
-"ä","â","ë","ê","ø","ô",
-"b","p",
-"d","t",
-"g","k",
-"m","n",
-"q",
-"v","f",
-"z","s",
-"j","c",
-"x",
-"ts",
-"h","ħ",
-"l","r",
-"w","y"
+  "a","á","e","é","i","í",
+  "o","ó","u","ú",
+  "ä","â","ë","ê","ø","ô",
+  "b","p","d","t","g","k",
+  "m","n","q","v","f","z","s",
+  "j","c","x","ts","h","ħ",
+  "l","r","w","y"
 ];
-
 const ORDER = {};
-ALPHABET.forEach((c,i) => ORDER[c] = i);
+ALPHABET.forEach((c, i) => ORDER[c] = i);
 
-/* ===== 分词（支持 ts 双字母） ===== */
-function tokenize(word){
+// 分词排序
+function tokenize(word) {
   word = word.toLowerCase();
   let res = [];
-  for(let i=0; i<word.length; i++){
-    if(word.slice(i, i+2) === "ts"){
+  for (let i = 0; i < word.length; i++) {
+    if (word.slice(i, i + 2) === "ts") {
       res.push("ts");
       i++;
     } else {
@@ -170,155 +195,144 @@ function tokenize(word){
   return res;
 }
 
-/* ===== 自定义词典排序 ===== */
-function compare(a,b){
+function compare(a, b) {
   const w1 = tokenize(a.word);
   const w2 = tokenize(b.word);
   const len = Math.max(w1.length, w2.length);
-
-  for(let i=0; i<len; i++){
+  for (let i = 0; i < len; i++) {
     const p1 = ORDER[w1[i]] ?? 999;
     const p2 = ORDER[w2[i]] ?? 999;
-    if(p1 !== p2) return p1 - p2;
+    if (p1 !== p2) return p1 - p2;
   }
   return 0;
 }
 
-/* ===== Token 存储 ===== */
-function saveToken(){
-  const val = document.getElementById("token").value.trim();
-  if (!val) { alert("请输入 Token"); return; }
-  localStorage.setItem("gh_token", val);
-  alert("Token 已保存");
+// 标准 UTF-8 转 Base64（替代废弃 unescape）
+function utf8ToBase64(str) {
+  return btoa(unescape(encodeURIComponent(str)));
+}
+function base64ToUtf8(b64) {
+  return decodeURIComponent(escape(atob(b64.replace(/\s/g, ''))));
 }
 
-function getToken(){
+// Token 管理
+function saveToken() {
+  const t = document.getElementById("token").value.trim();
+  if (!t) { alert("请输入 GitHub Token"); return; }
+  localStorage.setItem("gh_token", t);
+  alert("✅ Token 已保存");
+}
+function getToken() {
   return localStorage.getItem("gh_token") || "";
 }
 
-/* ===== 加载远程 dict.json ===== */
-async function loadDict(){
+// 加载词典
+async function loadDict() {
+  if (isLoading) return;
   const token = getToken();
-  if(!token){
-    alert("请先输入并保存 GitHub Token");
-    return;
-  }
+  if (!token) { alert("请先输入并保存 Token"); return; }
+
+  isLoading = true;
+  const btn = document.getElementById("btnLoad");
+  btn.disabled = true;
+  document.getElementById("out").innerText = "正在加载...";
 
   try {
-    const res = await fetch(
-      `https://api.github.com/repos/${OWNER}/${REPO}/contents/${PATH}`,
-      { headers: { Authorization: `Bearer ${token}` } }
-    );
+    const res = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${PATH}`, {
+      headers: { Authorization: `Bearer ${token}` }
+    });
 
-    if (!res.ok) throw new Error(`API 错误：${res.status}`);
-    
+    if (!res.ok) throw new Error(`请求失败 ${res.status}`);
     const data = await res.json();
-    const content = atob(data.content.replace(/\n/g, ''));
-    dict = JSON.parse(content);
-    
-    document.getElementById("out").innerText = `✅ 已加载 ${dict.length} 条词条`;
+    const raw = base64ToUtf8(data.content);
+    dict = JSON.parse(raw);
+
+    document.getElementById("out").innerText = `✅ 加载完成，共 ${dict.length} 条词条`;
   } catch (err) {
     document.getElementById("out").innerText = `❌ 加载失败：${err.message}`;
     console.error(err);
+  } finally {
+    isLoading = false;
+    btn.disabled = false;
   }
 }
-  
-/* ===== 添加并提交词条 ===== */
-async function addWord(){
-  // 校验
-  if (!Array.isArray(dict)) {
-    alert("请先加载词典！");
-    return;
-  }
 
-  const wordInput = document.getElementById("word").value.trim();
-  if (!wordInput) {
-    alert("word 不能为空！");
-    return;
-  }
+// 添加并提交词条
+async function addWord() {
+  if (isLoading) return;
+  if (!Array.isArray(dict)) { alert("请先加载词典文件"); return; }
 
   const token = getToken();
-  if (!token) {
-    alert("请先保存 GitHub Token");
-    return;
-  }
+  if (!token) { alert("请先保存 Token"); return; }
 
-  // 构造新词条
+  const getVal = id => document.getElementById(id).value.trim();
+  const wordVal = getVal("word").toLowerCase();
+
+  if (!wordVal) { alert("单词不能为空"); return; }
+  if (dict.some(item => item.word === wordVal)) { alert("⚠️ 该词条已存在"); return; }
+
   const newEntry = {
-    word: wordInput.toLowerCase(),
-    meaning: document.getElementById("meaning").value.trim(),
-    gloss: document.getElementById("gloss").value.trim(),
-    pos: document.getElementById("pos").value.trim(),
-    root: document.getElementById("root").value.trim(),
-    affix: document.getElementById("affix").value.trim(),
-    examples: [
-      {
-        zeksa: document.getElementById("zeksa").value.trim(),
-        translation: document.getElementById("translation").value.trim()
-      }
-    ]
+    word: wordVal,
+    meaning: getVal("meaning"),
+    gloss: getVal("gloss"),
+    pos: getVal("pos"),
+    root: getVal("root"),
+    affix: getVal("affix"),
+    examples: [{
+      zeksa: getVal("zeksa"),
+      translation: getVal("translation")
+    }]
   };
 
-  // 去重
-  if (dict.some(x => x.word === newEntry.word)) {
-    alert(`⚠️ 词条【${newEntry.word}】已存在`);
-    return;
-  }
-
-  // 加入并排序
   dict.push(newEntry);
   dict.sort(compare);
 
-  try {
-    document.getElementById("out").innerText = "⌛ 正在提交到 GitHub...";
+  isLoading = true;
+  const btn = document.getElementById("btnAdd");
+  btn.disabled = true;
+  document.getElementById("out").innerText = "正在提交...";
 
-    // 1. 获取当前文件 SHA
-    const fileRes = await fetch(
-      `https://api.github.com/repos/${OWNER}/${REPO}/contents/${PATH}`,
-      { headers: { Authorization: `Bearer ${token}` } }
-    );
+  try {
+    // 获取文件 SHA
+    const fileRes = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${PATH}`, {
+      headers: { Authorization: `Bearer ${token}` }
+    });
+    if (!fileRes.ok) throw new Error("获取文件信息失败");
     const fileData = await fileRes.json();
     const sha = fileData.sha;
 
-    // 2. 编码 JSON
+    // 标准编码提交
     const jsonStr = JSON.stringify(dict, null, 2);
-    const utf8Bytes = new TextEncoder().encode(jsonStr);
-    const base64Content = btoa(String.fromCharCode(...utf8Bytes));
+    const content = utf8ToBase64(jsonStr);
 
-    // 3. 提交更新
-    const commitRes = await fetch(
-      `https://api.github.com/repos/${OWNER}/${REPO}/contents/${PATH}`,
-      {
-        method: "PUT",
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          message: `Add word: ${newEntry.word}`,
-          content: base64Content,
-          sha: sha
-        })
-      }
-    );
-
-    if (!commitRes.ok) throw new Error(`提交失败 ${commitRes.status}`);
-
-    // 成功
-    document.getElementById("out").innerText = `✅ 提交成功：${newEntry.word}\n词典总数：${dict.length}`;
-    
-    // 清空输入框
-    document.querySelectorAll("input").forEach(inp => {
-      if (inp.id !== "token") inp.value = "";
+    const commitRes = await fetch(`https://api.github.com/repos/${OWNER}/${REPO}/contents/${PATH}`, {
+      method: "PUT",
+      headers: {
+        Authorization: `Bearer ${token}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        message: `Add word: ${newEntry.word}`,
+        content,
+        sha
+      })
     });
 
+    if (!commitRes.ok) throw new Error("提交到 GitHub 失败");
+    document.getElementById("out").innerText = `✅ 提交成功：${newEntry.word}\n当前总计：${dict.length} 条`;
+
+    // 清空输入框
+    document.querySelectorAll("input:not(#token)").forEach(el => el.value = "");
   } catch (err) {
     document.getElementById("out").innerText = `❌ 提交失败：${err.message}`;
     console.error(err);
+  } finally {
+    isLoading = false;
+    btn.disabled = false;
   }
 }
 
-// 页面加载时自动填充 Token
+// 页面初始化
 window.onload = () => {
   const token = getToken();
   if (token) {
