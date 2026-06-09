@@ -1,5 +1,19 @@
 [
   {
+    "word": "pastén",
+    "meaning": "变为、成为",
+    "gloss": "成为<词根体>",
+    "pos": "动词",
+    "root": "单纯词",
+    "affix": "past-",
+    "examples": [
+      {
+        "zeksa": "merhaa'voh pasténø mazlurónd kmavalz.",
+        "translation": "我希望成为一名勇敢的派送员。"
+      }
+    ]
+  },
+  {
     "word": "kmavalz",
     "meaning": "运输工、派送员",
     "gloss": "派送<词缀体> - 人<词根体>",
