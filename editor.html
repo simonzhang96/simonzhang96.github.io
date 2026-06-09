@@ -335,6 +335,7 @@ window.onload = () => {
   if (token) {
     document.getElementById("token").value = token;
   }
+  loadDict();
 };
 
 function toggleToken(){const i=document.getElementById("token");i.type=i.type==="password"?"text":"password";}
