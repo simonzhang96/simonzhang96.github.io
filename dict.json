@@ -588,6 +588,20 @@
     ]
   },
   {
+    "word": "bertlomka",
+    "meaning": "语言、连接的话语",
+    "gloss": "说<词缀体> - 连接<词根体>",
+    "pos": "名词",
+    "root": "合成词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "ekj'zeksa vohiomk meyraomk bertlomka?",
+        "translation": "仄克萨语是我们文明的语言吗？"
+      }
+    ]
+  },
+  {
     "word": "bertl",
     "meaning": "说、说话；说辞、言语",
     "gloss": "说<词根体>",
