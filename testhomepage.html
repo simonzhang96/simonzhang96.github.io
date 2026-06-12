@@ -72,13 +72,21 @@
     body {
       font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Segoe UI",
                    Roboto, "Helvetica Neue", Arial, sans-serif;
+      max-width: 840px;
+      margin: 0 auto;
+    
       display: flex;
       flex-direction: column;
+    
       min-height: 100vh;
     
       justify-content: center;
-    
-      transform: translateY(-30px);
+    }
+
+    body::before {
+      content: "";
+      height: 10vh;
+      flex-shrink: 0;
     }
 
     .logo {
