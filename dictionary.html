@@ -413,22 +413,23 @@
       `;
     }
 
-    const card = document.querySelector('.entry');
-
-    document.addEventListener('mousemove', e => {
+    document.body.addEventListener('mousemove', e => {
+      const card = e.target.closest('.entry');
+      if (!card) return;
       const rect = card.getBoundingClientRect();
-    
       const x = e.clientX - rect.left - rect.width / 2;
       const y = e.clientY - rect.top - rect.height / 2;
+      const strength = 8;
+      const moveX = (x / rect.width) * strength;
+      const moveY = (y / rect.height) * strength;
+      card.style.transform = `translate(${moveX}px, ${moveY - 3}px)`;
+    })
     
-      card.style.transform =
-        `translate(${x * 0.01}px, ${y * 0.01 - 3}px)`;
-    });
+    document.body.addEventListener('mouseleave', e => {
+      const card = e.target.closest('.entry');
+      if (card) card.style.transform = '';
+    })
     
-    document.addEventListener('mouseleave', () => {
-      card.style.transform = '';
-    });
-
     loadDictionary();
   </script>
   <p style="text-align:center;">
