@@ -98,7 +98,7 @@
       max-width: 200px;
       height: auto;
       display: block;
-      margin: 0 auto 10px auto;
+      margin: 0 auto 5px auto;
     }
 
     h1 {
@@ -135,7 +135,7 @@
       font-size: 1.05rem;
       color: #555;
       margin-top: 8px;
-      margin-bottom: 8px;
+      margin-bottom: 18px;
     }
 
     .inside {
@@ -205,7 +205,6 @@
       background: #0066b3;
     }
 
-    /* 社交图标 */
     .social-icons {
       display: flex;
       justify-content: center;
@@ -234,7 +233,6 @@
       font-family: "ZeksaFont", sans-serif;
     }
 
-    /* 移动端适配 */
     @media (max-width: 600px) {
       body {
         padding: 1.2em;
@@ -256,14 +254,10 @@
 
 <body>
   <div id="bg"></div>
-
-  <!-- Logo -->
-  <!-- <img src="./ZeksaLogo.png" class="logo" alt="Zeksa Logo"> -->
   
   <h1>Simon Zhang</h1>
   <p class="subtitle">热爱语言、设计、数码与游戏的 <b>Conlanger</b></p>
-
-  <!-- 主介绍卡片 -->
+  
   <div class="entry">
     <h2>仄克萨是什么？</h2>
     <p>
@@ -289,7 +283,9 @@
     <button onclick="window.open('https://simonzhang.art/quiz','_blank')">词汇测试</button>
   </div>
 
-  <!-- 社交图标 -->
+  <img src="./ZeksaLogo.png" class="logo" alt="Zeksa Logo">
+
+  <!-- icons -->
   <div class="social-icons">
     <a href="https://space.bilibili.com/543929703" target="_blank" title="B站">
       <i class="fa-brands fa-bilibili"></i>
@@ -300,11 +296,11 @@
   </div>
 
   <small style="text-align:center; margin-top:10px;">
-    A Dictionary of the Zeksa Language, Created by Simon Zhang.
+    A simple webpage built by Simon Zhang.
   </small>
 
   <script>
-    // 鼠标悬浮卡片微动效果（沿用你的交互）
+
     document.body.addEventListener('mousemove', e => {
       const card = e.target.closest('.entry');
       if (!card) return;
