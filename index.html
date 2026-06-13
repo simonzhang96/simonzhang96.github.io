@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Simón jäq -->
+<!-- simón jäq -->
 <html lang="zh">
 <head>
   <meta charset="UTF-8" />
@@ -110,7 +110,8 @@
       text-align: center;
       font-size: 2.4rem;
       font-weight: 700;
-    
+
+      /* 低饱和为什么这么灰？ */
       background: linear-gradient(
         90deg,
         #4b8dff,
@@ -234,6 +235,8 @@
       margin-top:32px;
     }
 
+    /* 没啥用的 */
+
     @font-face {
       font-family: "ZeksaFont";
       src: url("./Zeksa 525.ttf") format("truetype");
@@ -334,7 +337,8 @@
   
 
   <script>
-
+    
+    // Special thanks to GPT and Doubao AI.
     document.body.addEventListener('mousemove', e => {
       const card = e.target.closest('.entry');
       if (!card) return;
