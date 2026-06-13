@@ -99,6 +99,7 @@
       height: auto;
       display: block;
       margin: 0 auto 1px auto;
+      animation-delay:.1s;
     }
 
     h1 {
@@ -183,6 +184,7 @@
       gap: 16px;
       justify-content: center;
       margin: 10px 0;
+      animation-delay:.2s;
     }
 
     button {
@@ -210,6 +212,7 @@
       justify-content: center;
       gap: 24px;
       margin-top: 20px;
+      animation-delay:.3s;
     }
 
     .social-icons a {
@@ -231,6 +234,24 @@
 
     .zeksa {
       font-family: "ZeksaFont", sans-serif;
+    }
+
+    @keyframes fadeIn{
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    .entry,
+    .logo,
+    .button-group,
+    .social-icons {
+    
+      opacity:0;
+      transform:translateY(12px);
+    
+      animation:fadeIn .7s ease forwards;
     }
 
     @media (max-width: 600px) {
