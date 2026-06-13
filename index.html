@@ -1,19 +1,23 @@
 <!DOCTYPE html>
-<!-- index.html: last edited at 1 Apr (Wed) 2026. -->
-<!-- This is a Dictionary Website of the Zeksa Language, Created by Simon Zhang. -->
-<!-- All rights reserved. -->
+<!-- Simón jäq -->
 <html lang="zh">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>仄克萨语词典</title>
+  <title>Simon Zhang</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  
+  <!-- icons 4 e-mail and bili -->
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
     html, body {
       min-height: 100%;
+      margin: 0;
+      padding: 0;
     }
 
     :root {
@@ -32,7 +36,7 @@
       width: 100dvw;
       z-index: -1; 
       pointer-events: none; 
-    
+
       background:
         radial-gradient(
           circle at 20% 30%,
@@ -54,24 +58,9 @@
           #eef8ff,
           #fff4e6
         );
-    
+
       animation: drift 15s ease-in-out infinite alternate;
       background-size: 135% 135%;
-    }
-
-    html {
-      min-height: 100%;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Segoe UI",
-                   Roboto, "Helvetica Neue", Arial, sans-serif;
-      max-width: 840px;
-      margin: auto;
-      padding: 2em;
-    
-      background: transparent; /* 原来是 var(--bg-color) */
-      color: var(--text-color);
     }
 
     @keyframes drift {
@@ -79,70 +68,97 @@
       50% { background-position: 100% 50%; }
       100% { background-position: 0% 50%; }
     }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Segoe UI",
+                   Roboto, "Helvetica Neue", Arial, sans-serif;
+      max-width: 840px;
+      margin: 0 auto;
     
-    h1 {
-      text-align: center;
-      color: var(--accent);
-      font-size: 2.5rem;
-    }
-
-    p {
-      text-align: center;
-      margin-bottom: 0.5em;
-    }
-
-    hr {
-      margin-bottom: 1em;
-      margin-top: 0.25em;
-    }
-
-    small {
-      display: block;
-      text-align: center;
-      margin-bottom: 0.5em;
-    }
-
-    input {
-      width: 100%;
-      max-width: 800px;
-      padding: 14px 16px;
-      font-size: 1.05rem;
-      border: 1px solid #ccc;
-      border-radius: var(--radius);
-      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
-      transition: border 0.3s;
-      margin: 0 auto 24px auto;
-      display: block;
+      display: flex;
+      flex-direction: column;
+    
+      min-height: 100vh;
+    
+      justify-content: center;
+    
+      padding-bottom: 12vh;
       box-sizing: border-box;
     }
 
-    input:focus {
-      border-color: var(--accent);
-      outline: none;
-      box-shadow: 0 0 0 3px rgba(0,120,212,0.15);
+    hr {
+      border: 0;
+      height: 1px;
+      background: #ccc;
+      margin: 1rem 0;
+    }
+
+    .logo {
+      width: 100%;
+      max-width: 125px;
+      height: auto;
+      display: block;
+      margin: 0 auto 0px auto;
+      animation-delay:.1s;
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--accent);
+      font-size: 2.2rem;
+      margin: 0;
+      text-align: center;
+      font-size: 2.4rem;
+      font-weight: 700;
+    
+      background: linear-gradient(
+        90deg,
+        #4b8dff,
+        #e9a04d
+      );
+    
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    @keyframes zeksaTitle {
+      from {
+        background-position: 0% 50%;
+      }
+      to {
+        background-position: 100% 50%;
+      }
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 1.05rem;
+      color: #555;
+      margin-top: 8px;
+      margin-bottom: 24px;
+    }
+
+    .inside {
+      color: #4b8dff
     }
 
     .entry {
       background: rgba(255, 255, 255, 0.6);
-    
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-    
-      padding: 15px 20px;
-      margin: 30px auto;
-      max-width: 800px;
-    
+      padding: 24px 28px;
+      margin: 0 auto;
+      margin-bottom: 20px;
+      max-width: 700px;
       border-radius: 16px;
-    
       box-shadow:
         0 8px 24px rgba(0,0,0,0.08),
         0 0 20px rgba(255,255,255,0.15);
-    
-      transition:
-        transform 0.15s ease-out,
-        box-shadow 0.2s ease;
+      transition: transform 0.15s ease-out, box-shadow 0.2s ease;
+      text-align: left;
     }
-    
+
     .entry:hover {
       transform: translateY(-3px);
       box-shadow:
@@ -150,39 +166,29 @@
         0 0 35px rgba(255,255,255,0.25);
     }
 
-    .label {
-      font-weight: bold;
-      color: var(--label-color);
-      display: inline-block;
-      min-width: 5em;
+    .entry h2 {
+      color: var(--accent);
+      margin-top: 0;
+      font-size: 1.4rem;
     }
 
-    .example {
-      background: #eaf2fb;
-      margin-top: 0.8em;
-      padding: 12px 16px;
-      border-radius: 10px;
-      font-style: normal;
-      color: #2c3e50;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    .entry p {
+      line-height: 1.6;
+      font-size: 1rem;
+      margin: 10px 0;
     }
 
-    #results {
-      display: none;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    .no-results {
-      text-align: center;
-      color: #999;
-      font-style: italic;
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin: 12px 0;
+      animation-delay:.2s;
     }
 
     button {
-      display: block;
-      margin: 20px auto;
-      padding: 12px 24px;
+      padding: 14px 28px;
       border-radius: var(--radius);
       border: none;
       background: var(--accent);
@@ -192,25 +198,40 @@
       cursor: pointer;
       transition: all 0.25s ease;
       box-shadow: 0 4px 12px rgba(0, 120, 212, 0.15);
+      white-space: nowrap;
     }
-    
+
     button:hover {
       transform: translateY(-2px);
       box-shadow: 0 6px 16px rgba(0, 120, 212, 0.25);
       background: #0066b3;
     }
-    
-    button:active {
-      transform: translateY(0px);
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 20px;
+      animation-delay:.3s;
     }
 
-    @media (max-width: 600px) {
-      body {
-        padding: 1em;
-      }
-      h1 {
-        font-size: 1.8rem;
-      }
+    .social-icons a {
+      color: var(--accent);
+      font-size: 24px;
+      transition: 0.2s;
+      text-decoration: none;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.15);
+      color: #0066b3;
+    }
+
+    .footer{
+      text-align:center;
+      color:#777;
+      font-size:.9rem;
+      margin-top:32px;
     }
 
     @font-face {
@@ -221,197 +242,98 @@
     .zeksa {
       font-family: "ZeksaFont", sans-serif;
     }
+
+    @keyframes fadeIn{
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    .entry,
+    .logo,
+    .button-group,
+    .social-icons {
+    
+      opacity:0;
+      transform:translateY(12px);
+    
+      animation:fadeIn .7s ease forwards;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1.2em;
+        justify-content:flex-start;
+        padding-top:8vh;
+      }
+      h1 {
+        margin-bottom: 8px;
+        font-size: 1.8rem;
+      }
+      .button-group {
+        flex-direction: column;
+        align-items: center;
+      }
+      button {
+        width: 100%;
+      }
+    }
   </style>
 </head>
+
 <body>
   <div id="bg"></div>
-  <h1>仄克萨语词典</h1>
-  <p>在搜索框里输入中文或者仄克萨语，以查询该词的完整信息。</p>
-  <p id="word-count" style="text-align: center; font-weight: bold; margin-top: 1em;">
-  本网站已收录 <span id="count-number">0</span> 个仄克萨语词汇。</p>
-  <button onclick="toggleZeksa()">拉丁 - 仄克萨字母</button>
-  <div id="daily-word" class="entry" style="text-align:center;">
-  <h2 style="color: var(--accent); margin-top:0;">今日单词</h2>
-  <div id="daily-content">加载中...</div>
+  
+  <h1>Simon Zhang</h1>
+  <p class="subtitle">热爱语言、设计、数码与游戏的 <b>Conlanger</b></p>
+  
+  <div class="entry">
+    <h2>仄克萨是什么？</h2>
+    <p>
+      当然了，仄克萨语是一门由我构建的人造语言。
+      它拥有独立的字母系统、发音规则、词汇体系与语法逻辑。
+    </p>
+    <p>
+      在一个叫做仄克萨·欧姆克隆的地方，风沙掩埋了古老文明的痕迹。无垠的荒漠与碱性的大海曾构成地平线下的一切。
+      而仄克萨人选择探索、远征，
+      将被风暴与距离拆散的星球连接起来，
+      并学会与风暴共存。
+      于是，那些原始湖畔文明间的人们，将彼此之间的羁绊情谊命名为<b>“Alzomka”</b>。
+    </p>
+    <p>
+      这里收录了仄克萨语的词典、语法与文字系统，也记录着这个世界的历史、文化与故事。
+      连接从此开始......
   </div>
-  <hr>
-  <input type="text" id="searchBox" placeholder="搜索单词或词义..." oninput="search()">
-  <div id="results">加载中...</div>
+
+  <!-- <img src="./ZeksaLogo.png" class="logo" alt="Zeksa Logo"> -->
+
+  <!-- 三个功能按钮 -->
+  <div class="button-group">
+    <button onclick="window.open('https://simonzhang.art/zeksa','_blank')">All About Zeksa</button>
+    <button onclick="window.open('https://simonzhang.art/dictionary','_blank')">词典查询</button>
+    <button onclick="window.open('https://simonzhang.art/quiz','_blank')">词汇测试</button>
+  </div>
+
+  
+
+  <!-- icons -->
+  <div class="social-icons">
+    <a href="https://space.bilibili.com/543929703" target="_blank" title="B站">
+      <i class="fa-brands fa-bilibili"></i>
+    </a>
+    <a href="mailto:simonzhang96@icloud.com" title="邮箱">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
+  </div>
+
+  <p class="footer">
+    © 2026 Simon Zhang · Drekomka
+  </p>
+
+  
 
   <script>
-    let useZeksa = true;
-    const zeksaMap = {
-      "a": "\uE001",
-      "á": "\uE002",
-      "e": "\uE003",
-      "é": "\uE004",
-      "i": "\uE005",
-      "í": "\uE006",
-      "o": "\uE007",
-      "ó": "\uE008",
-      "u": "\uE009",
-      "ú": "\uE00A",
-      "ä": "\uE00B",
-      "â": "\uE00C",
-      "ë": "\uE00D",
-      "ê": "\uE00E",
-      "ø": "\uE00F",
-      "ô": "\uE010",
-      "b": "\uE011",
-      "p": "\uE012",
-      "d": "\uE013",
-      "t": "\uE014",
-      "g": "\uE015",
-      "k": "\uE016",
-      "m": "\uE017",
-      "n": "\uE018",
-      "q": "\uE019",
-      "v": "\uE01A",
-      "f": "\uE01B",
-      "z": "\uE01C",
-      "s": "\uE01D",
-      "j": "\uE01E",
-      "c": "\uE01F",
-      "x": "\uE020",
-      "ts": "\uE021",
-      "h": "\uE022",
-      "ħ": "\uE023",
-      "l": "\uE024",
-      "r": "\uE025",
-      "w": "\uE026",
-      "y": "\uE027",
-      //THERE'S NO U+E028!!!
-      "0": "\uE029",
-      "1": "\uE02A",
-      "2": "\uE02B",
-      "3": "\uE02C",
-      //U+E024 ~ U+E031 DISQUALIFIED
-      ",": "\uE032",
-      ".": "\uE033",
-      "'": "\uE034",
-      '"': "\uE035",
-      "!": "\uE036",
-      "?": "\uE037",
-      "/": "\uE038"
-      //U+E039 ~ E03B DISQUALIFIED
-    }
-
-    function toggleZeksa() {
-      useZeksa = !useZeksa;
-      showDailyWord();
-      search();
-    }
-
-    function toZeksa(text) {
-      let result = "";
-      let i = 0;
-    
-      while (i < text.length) {
-        // 优先匹配双字母
-        const twoChar = text.slice(i, i + 2);
-    
-        if (zeksaMap[twoChar]) {
-          result += zeksaMap[twoChar];
-          i += 2;
-          continue;
-        }
-    
-        // 单字母 fallback
-        const oneChar = text[i];
-    
-        result += zeksaMap[oneChar] || oneChar;
-        i += 1;
-      }
-    
-      return result;
-    }
-    
-    let dictionary = [];
-
-    async function loadDictionary() {
-      const response = await fetch("dict.json");
-      dictionary = await response.json();
-    
-      document.getElementById("count-number").textContent = dictionary.length;
-      showDailyWord();
-      search(); 
-    }
-
-    function search() {
-      const query = document.getElementById("searchBox").value.trim().toLowerCase();
-      const results = dictionary.filter(entry =>
-        entry.word.toLowerCase().startsWith(query) ||
-        entry.meaning.toLowerCase().includes(query)
-      );
-
-      const output = document.getElementById("results");
-
-      if (!query) {
-        output.innerHTML = "";
-        output.style.display = "none";
-        return;
-      }
-
-      if (results.length === 0) {
-        output.innerHTML = `<div class="no-results">未找到匹配的词条</div>`;
-        output.style.display = "block";
-        return;
-      }
-
-      output.innerHTML = results.map(entry => renderEntry(entry)).join('');
-      output.style.display = "block";
-    }
-
-    function showDailyWord() {
-
-      const today = new Date()
-    
-      const seed =
-        today.getFullYear() * 10000 +
-        (today.getMonth()+1) * 100 +
-        today.getDate()
-    
-      const index = seed % dictionary.length
-    
-      const word = dictionary[index]
-    
-      const html = `
-        <div class="${useZeksa ? "zeksa" : ""}">
-          <div style="font-size:1.5rem; margin-bottom:8px;">
-            <strong>${useZeksa ? toZeksa(word.word) : word.word}</strong>
-          </div>
-          <div>${word.meaning}</div>
-          <div style="color:#666; font-size:0.95rem;">${word.pos}</div>
-          ${word.examples?.[0] ? `
-            <div class="example">
-              <strong>例句:</strong> ${useZeksa ? toZeksa(word.examples[0].zeksa) : word.examples[0].zeksa}<br>
-              <strong>翻译:</strong> ${word.examples[0].translation}
-            </div>
-          ` : ""}
-        </div>
-      `;
-
-      document.getElementById("daily-content").innerHTML = html
-    }
-
-    function renderEntry(entry) {
-      return `
-        <div class="entry ${useZeksa ? "zeksa" : ""}">
-          <div><span class="label">词语:</span> ${useZeksa ? toZeksa(entry.word) : entry.word}</div>
-          <div><span class="label">词义:</span> ${entry.meaning}</div>
-          <div><span class="label">词类:</span> ${entry.pos}</div>
-          <div><span class="label">构词类型:</span> ${entry.root}</div>
-          <div><span class="label">词缀体:</span> ${useZeksa ? toZeksa(entry.affix) : entry.affix}</div>
-          <div><span class="label">语法注解:</span> ${entry.gloss}</div>
-          ${entry.examples.map(ex => `
-            <div class="example">
-              <strong>例句:</strong> ${useZeksa ? toZeksa(ex.zeksa) : ex.zeksa}<br>
-              <strong>翻译:</strong> ${ex.translation}
-            </div>
-          `).join('')}
-        </div>
-      `;
-    }
 
     document.body.addEventListener('mousemove', e => {
       const card = e.target.closest('.entry');
@@ -429,14 +351,6 @@
       const card = e.target.closest('.entry');
       if (card) card.style.transform = '';
     })
-
-    loadDictionary();
   </script>
-  <p style="text-align:center;">
-  <a href="quiz.html">进入词汇测试</a>
-  </p>
-  <img src="./ZeksaLogo.png" style="width: 100%; max-width: 220px; height: auto; display: block; margin: 1.4rem auto;">
-  <small>A Dictionary of the Zeksa Language, Created by Simon Zhang.</small>
 </body>
 </html>
-<!-- Hope you're having fun learning Zeksa! -->
