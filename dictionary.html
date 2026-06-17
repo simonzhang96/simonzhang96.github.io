@@ -204,12 +204,49 @@
       transform: translateY(0px);
     }
 
+    .home-back-btn {
+      position: fixed;
+      top: 24px;
+      left: 24px;
+      z-index: 999; 
+    }
+    .home-back-btn a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: 50%;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+      color: var(--accent);
+      font-size: 20px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .home-back-btn a:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
     @media (max-width: 600px) {
       body {
         padding: 1em;
       }
       h1 {
         font-size: 1.8rem;
+      }
+      .home-back-btn {
+        top: 16px;
+        left: 16px;
+      }
+      .home-back-btn a {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
       }
     }
 
@@ -225,6 +262,11 @@
 </head>
 <body>
   <div id="bg"></div>
+  <div class="home-back-btn">
+    <a href="/" title="返回主页">
+      <i class="fa-solid fa-house"></i>
+    </a>
+  </div>
   <h1>仄克萨语词典</h1>
   <p>在搜索框里输入中文或者仄克萨语，以查询该词的完整信息。</p>
   <p id="word-count" style="text-align: center; font-weight: bold; margin-top: 1em;">
