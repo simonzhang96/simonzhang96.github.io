@@ -588,6 +588,20 @@
     ]
   },
   {
+    "word": "ø",
+    "meaning": "<直接宾语标记>",
+    "gloss": "<直接宾语标记>",
+    "pos": "标记",
+    "root": "N/A",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "siat'voh vradberlø zeksa alz",
+        "translation": "我喜欢能说仄克萨语的人。"
+      }
+    ]
+  },
+  {
     "word": "baj",
     "meaning": "静止；<进行前缀>",
     "gloss": "进行<词根体> / 进行<词缀体>",
