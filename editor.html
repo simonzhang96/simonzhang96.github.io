@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>仄克萨语词典编辑器</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <style>
 :root {
@@ -130,8 +131,34 @@ pre {
     padding: 1em;
   }
   h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
   }
+  .card {
+    padding: 16px;
+  }
+
+  input {
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  button {
+    width: 100%;
+    margin: 6px 0;
+  }
+
+  .card > div[style*="display:flex"] {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  pre {
+    max-height: 200px;
+    padding: 12px;
+    font-size: 13px;
+  }
+
   .home-back-btn {
     top: 16px;
     left: 16px;
