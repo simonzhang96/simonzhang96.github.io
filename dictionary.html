@@ -233,6 +233,34 @@
       box-shadow: 0 6px 20px rgba(0,0,0,0.15);
     }
 
+    .top-right-btn {
+      position: fixed;
+      top: 24px;
+      right: 24px; 
+      z-index: 9999;
+    }
+    .top-right-btn a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: 50%;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+      color: var(--accent);
+      font-size: 20px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+    .top-right-btn a:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
     @media (max-width: 600px) {
       body {
         padding: 1em;
@@ -245,6 +273,15 @@
         left: 16px;
       }
       .home-back-btn a {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+      }
+      .top-right-btn {
+        top: 16px;
+        right: 16px;
+      }
+      .top-right-btn a {
         width: 38px;
         height: 38px;
         font-size: 18px;
@@ -266,6 +303,11 @@
   <div class="home-back-btn">
     <a href="/" title="返回主页">
       <i class="fa-solid fa-house"></i>
+    </a>
+  </div>
+  <div class="top-right-btn">
+    <a href="https://simonzhang.art/editor" title="编辑器">
+      <i class="fa-solid fa-gear"></i>
     </a>
   </div>
   <h1>仄克萨语词典</h1>
