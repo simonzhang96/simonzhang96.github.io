@@ -84,6 +84,20 @@
     ]
   },
   {
+    "word": "amas",
+    "meaning": "开启、启动、启用",
+    "gloss": "开启<词根体>",
+    "pos": "动词",
+    "root": "单纯词",
+    "affix": "amas-",
+    "examples": [
+      {
+        "zeksa": "kojamasø parlnokro!",
+        "translation": "要启用防护措施！"
+      }
+    ]
+  },
+  {
     "word": "anta",
     "meaning": "母亲、妈妈",
     "gloss": "母亲<词根体>",
