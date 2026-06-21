@@ -560,6 +560,20 @@
     ]
   },
   {
+    "word": "uka",
+    "meaning": "肉、肉类、血肉",
+    "gloss": "肉<词根体>",
+    "pos": "名词",
+    "root": "单纯词",
+    "affix": "uk-",
+    "examples": [
+      {
+        "zeksa": "vradvarzi'g hordulú ku uka.",
+        "translation": "可以用肉来做香肠。"
+      }
+    ]
+  },
+  {
     "word": "ustad",
     "meaning": "全体的，全部的、完整的",
     "gloss": "~ - <形容词标记>",
