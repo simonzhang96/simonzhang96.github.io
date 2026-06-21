@@ -378,6 +378,31 @@ function showExample(){
   document.getElementById("example").innerHTML = html;
 }
 
+document.addEventListener('keydown', function(e) {
+    const opts = Array.from(document.querySelectorAll('.option'));
+    const answered = document.querySelector('.correct,.wrong');
+    if (!answered) {
+        switch(e.key.toLowerCase()) {
+            case 'q':
+                if(opts[0]) opts[0].click();
+                break;
+            case 'w':
+                if(opts[1]) opts[1].click();
+                break;
+            case 'a':
+                if(opts[2]) opts[2].click();
+                break;
+            case 's':
+                if(opts[3]) opts[3].click();
+                break;
+        }
+    }
+    if (e.key === ' ') {
+        e.preventDefault(); 
+        nextQuestion();
+    }
+});
+
 loadDictionary()
 
 </script>
