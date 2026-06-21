@@ -1694,6 +1694,20 @@
     ]
   },
   {
+    "word": "varzi",
+    "meaning": "做、制作、干某事",
+    "gloss": "做<词根体>",
+    "pos": "动词",
+    "root": "varz-",
+    "affix": "varz-",
+    "examples": [
+      {
+        "zeksa": "vradvarzi'g hórdulu ku uka.",
+        "translation": "可以用肉来做香肠。"
+      }
+    ]
+  },
+  {
     "word": "va",
     "meaning": "颜色",
     "gloss": "颜色<词根体>",
