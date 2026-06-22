@@ -2128,6 +2128,20 @@
     ]
   },
   {
+    "word": "sluvu",
+    "meaning": "关闭、闭合",
+    "gloss": "关闭<词根体>",
+    "pos": "动词",
+    "root": "单纯词",
+    "affix": "sluv-",
+    "examples": [
+      {
+        "zeksa": "erpájemsluvu'tsul nor? ekj'g cupwed!",
+        "translation": "你为什么关了窗户？天气很热！"
+      }
+    ]
+  },
+  {
     "word": "jem",
     "meaning": "过去、刚才；<过去前缀>",
     "gloss": "过去<词根体> / 过去<词缀体>",
