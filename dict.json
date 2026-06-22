@@ -742,6 +742,20 @@
     ]
   },
   {
+    "word": "bivmeyra",
+    "meaning": "树林、仄克萨·比夫梅伊拉",
+    "gloss": "树<词缀体> - 文明<词根体>",
+    "pos": "名词",
+    "root": "合成词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "sasparlón'vohi freyad bivmeyra cevdëm zeksa omklon!",
+        "translation": "让我们保护欧姆克隆美丽的森林！"
+      }
+    ]
+  },
+  {
     "word": "biv",
     "meaning": "树木",
     "gloss": "树<词根体>",
