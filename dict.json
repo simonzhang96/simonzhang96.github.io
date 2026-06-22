@@ -1148,6 +1148,20 @@
     ]
   },
   {
+    "word": "traqvarzi",
+    "meaning": "创作、制作、设计；创作成果",
+    "gloss": "智慧<词缀体> - 作<词根体>",
+    "pos": "动词、名词",
+    "root": "合成词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "bajtraqvarzi'erali drakolomk parlnokro kuil ekxe.",
+        "translation": "他们正在设计堡垒应对雷电的防御措施。"
+      }
+    ]
+  },
+  {
     "word": "traq",
     "meaning": "智慧、聪慧",
     "gloss": "智慧<词根体>",
