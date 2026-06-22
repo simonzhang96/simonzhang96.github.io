@@ -784,6 +784,20 @@
     ]
   },
   {
+    "word": "pato",
+    "meaning": "父亲、爸爸",
+    "gloss": "父亲<词根体>",
+    "pos": "名词",
+    "root": "单纯词",
+    "affix": "pat-",
+    "examples": [
+      {
+        "zeksa": "我的父亲是一名远征派送员。",
+        "translation": "ekj'vohomk pat\" ajkruskmavalz."
+      }
+    ]
+  },
+  {
     "word": "pat",
     "meaning": "父亲、爸爸",
     "gloss": "父亲<词根体>",
