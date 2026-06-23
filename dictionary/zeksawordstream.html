@@ -96,7 +96,7 @@ body::before {
 
 @font-face {
   font-family: "ZeksaFont";
-  src: url("./Zeksa 525.ttf") format("truetype");
+  src: url("/Zeksa 525.ttf") format("truetype");
 }
 
 .zeksa {
@@ -439,7 +439,7 @@ const statuses = [
 
 /* 读取JSON */
 
-fetch("dict.json")
+fetch("/dict.json")
   .then(res => res.json())
   .then(data => {
 
