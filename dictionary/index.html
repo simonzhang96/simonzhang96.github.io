@@ -424,7 +424,7 @@
     let dictionary = [];
 
     async function loadDictionary() {
-      const response = await fetch("dict.json");
+      const response = await fetch("/dict.json");
       dictionary = await response.json();
     
       document.getElementById("count-number").textContent = dictionary.length;
