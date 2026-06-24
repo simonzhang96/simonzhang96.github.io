@@ -2548,6 +2548,20 @@
     ]
   },
   {
+    "word": "yalas",
+    "meaning": "使用、利用；应用方式",
+    "gloss": "使用<词根体>",
+    "pos": "动词、名词",
+    "root": "单纯词",
+    "affix": "yalas-",
+    "examples": [
+      {
+        "zeksa": "bajyalas'voh ranvi, pavilvradvi'g ajkrusmetav.",
+        "translation": "我正在使用系统，但是我看不到远征队。"
+      }
+    ]
+  },
+  {
     "word": "yelda",
     "meaning": "（树）叶子、书页、页面",
     "gloss": "叶<词根体>",
