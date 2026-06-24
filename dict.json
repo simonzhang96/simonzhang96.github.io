@@ -1596,6 +1596,20 @@
     ]
   },
   {
+    "word": "metav",
+    "meaning": "团队、组别",
+    "gloss": "团队<词缀体>",
+    "pos": "名词",
+    "root": "单纯词",
+    "affix": "metav-",
+    "examples": [
+      {
+        "zeksa": "ildëm'ajkrusmetav efíd, sasyar'tsuli!",
+        "translation": "远征对不在这里，你们回去吧！"
+      }
+    ]
+  },
+  {
     "word": "merhaa",
     "meaning": "相信、信任、认为",
     "gloss": "N/A",
