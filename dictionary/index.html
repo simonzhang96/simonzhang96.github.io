@@ -464,36 +464,39 @@
       return matrix[b.length][a.length];
     }
 
-    const results = dictionary
-      .map(entry=>{
-      
-          let score=0;
-      
-          let word=entry.word.toLowerCase();
-      
-      
-          if(word===query)
-              score+=100;
-      
-          if(word.startsWith(query))
-              score+=60;
-      
-          if(word.includes(query))
-              score+=40;
-      
-          if(levenshtein(word,query)<=2)
-              score+=20;
-      
-      
-          return {
-              entry,
-              score
-          };
-      
-      })
-      .filter(x=>x.score>0)
-      .sort((a,b)=>b.score-a.score)
-      .map(x=>x.entry);
+    function search() {
+
+      const results = dictionary
+        .map(entry=>{
+        
+            let score=0;
+        
+            let word=entry.word.toLowerCase();
+        
+        
+            if(word===query)
+                score+=100;
+        
+            if(word.startsWith(query))
+                score+=60;
+        
+            if(word.includes(query))
+                score+=40;
+        
+            if(levenshtein(word,query)<=2)
+                score+=20;
+        
+        
+            return {
+                entry,
+                score
+            };
+        
+        })
+        .filter(x=>x.score>0)
+        .sort((a,b)=>b.score-a.score)
+        .map(x=>x.entry);
+    }
 
     function showDailyWord() {
 
