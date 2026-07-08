@@ -465,37 +465,86 @@
     }
 
     function search() {
-
+      const query = document.getElementById("searchBox").value.trim().toLowerCase();
       const results = dictionary
-        .map(entry=>{
-        
-            let score=0;
-        
-            let word=entry.word.toLowerCase();
-        
-        
-            if(word===query)
-                score+=100;
-        
-            if(word.startsWith(query))
-                score+=60;
-        
-            if(word.includes(query))
-                score+=40;
-        
-            if(levenshtein(word,query)<=2)
-                score+=20;
-        
-        
-            return {
-                entry,
-                score
-            };
-        
-        })
-        .filter(x=>x.score>0)
-        .sort((a,b)=>b.score-a.score)
-        .map(x=>x.entry);
+      .map(entry => {
+  
+        let score = 0;
+  
+  
+        const word = entry.word.toLowerCase();
+        const meaning = entry.meaning.toLowerCase();
+        const gloss = entry.gloss?.toLowerCase() || "";
+        const root = entry.root?.toLowerCase() || "";
+        const affix = entry.affix?.toLowerCase() || "";
+  
+  
+        // 完全匹配
+        if (word === query)
+          score += 100;
+  
+  
+        // 开头匹配
+        if (word.startsWith(query))
+          score += 60;
+  
+  
+        // 包含
+        if (word.includes(query))
+          score += 40;
+  
+  
+        // 中文释义
+        if (meaning.includes(query))
+          score += 30;
+  
+  
+        // gloss
+        if (gloss.includes(query))
+          score += 20;
+  
+  
+        // 词根
+        if (root.includes(query))
+          score += 10;
+  
+  
+        // 词缀
+        if (affix.includes(query))
+          score += 10;
+  
+  
+        // 模糊拼写
+        if (levenshtein(word, query) <= 2)
+          score += 15;
+  
+  
+        return {
+          entry,
+          score
+        };
+
+      })
+      .filter(item => item.score > 0)
+      .sort((a,b)=>b.score-a.score)
+      .map(item=>item.entry);
+
+      const output = document.getElementById("results");
+
+      if (!query) {
+        output.innerHTML = "";
+        output.style.display = "none";
+        return;
+      }
+
+      if (results.length === 0) {
+        output.innerHTML = `<div class="no-results">未找到匹配的词条</div>`;
+        output.style.display = "block";
+        return;
+      }
+
+      output.innerHTML = results.map(entry => renderEntry(entry)).join('');
+      output.style.display = "block";
     }
 
     function showDailyWord() {
