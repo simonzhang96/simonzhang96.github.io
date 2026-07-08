@@ -423,107 +423,36 @@
     
     let dictionary = [];
 
-async function loadDictionary() {
-  const response = await fetch("/dict.json");
-  dictionary = await response.json();
-
-  document.getElementById("count-number").textContent = dictionary.length;
-  showDailyWord();
-  search();
-}
-
-// 编辑距离不变，保留原函数
-    function levenshtein(a, b) {
-      const matrix = [];
-      for (let i = 0; i <= b.length; i++) matrix[i] = [i];
-      for (let j = 0; j <= a.length; j++) matrix[0][j] = j;
+    async function loadDictionary() {
+      const response = await fetch("/dict.json");
+      dictionary = await response.json();
     
-      for (let i = 1; i <= b.length; i++) {
-        for (let j = 1; j <= a.length; j++) {
-          matrix[i][j] = b[i - 1] === a[j - 1]
-            ? matrix[i - 1][j - 1]
-            : Math.min(matrix[i - 1][j - 1] + 1, matrix[i][j - 1] + 1, matrix[i - 1][j] + 1);
-        }
-      }
-      return matrix[b.length][a.length];
+      document.getElementById("count-number").textContent = dictionary.length;
+      showDailyWord();
+      search(); 
     }
-    
+
     function search() {
-      const queryRaw = document.getElementById("searchBox").value.trim();
-      const query = queryRaw.toLowerCase();
-      const queryLen = query.length;
+      const query = document.getElementById("searchBox").value.trim().toLowerCase();
+      const results = dictionary.filter(entry =>
+        entry.word.toLowerCase().startsWith(query) ||
+        entry.meaning.toLowerCase().includes(query)
+      );
+
       const output = document.getElementById("results");
-    
+
       if (!query) {
         output.innerHTML = "";
         output.style.display = "none";
         return;
       }
-    
-      const results = dictionary
-        .map(entry => {
-          let score = 0;
-          const word = entry.word.toLowerCase();
-          const meaning = entry.meaning.toLowerCase();
-          const gloss = entry.gloss?.toLowerCase() || "";
-          const root = entry.root?.toLowerCase() || "";
-          const affix = entry.affix?.toLowerCase() || "";
-          const wordLen = word.length;
-    
-          // 1. 单词精准匹配（最高权重）
-          if (word === query) score += 100;
-    
-          // 2. 单词前缀匹配（次高）
-          if (word.startsWith(query)) score += 50;
-    
-          // 3. 单词完整包含（大幅降权，从40→15）
-          if (word.includes(query)) score += 15;
-    
-          // 4. 中文释义包含（降权，30→8）
-          if (meaning.includes(query)) score += 8;
-    
-          // 5. gloss包含（20→5）
-          if (gloss.includes(query)) score += 5;
-    
-          // 6. 词根/词缀包含（10→3，最低权重）
-          if (root.includes(query)) score += 3;
-          if (affix.includes(query)) score += 3;
-    
-          // 7. 关键词多次出现小幅加分
-          const wordHitCount = (word.match(new RegExp(query, "g")) || []).length;
-          const meanHitCount = (meaning.match(new RegExp(query, "g")) || []).length;
-          score += (wordHitCount + meanHitCount) * 2;
-    
-          // 8. 长度差异惩罚：单词和查询长度差距越大，扣分越多
-          const lenDiff = Math.abs(wordLen - queryLen);
-          score -= lenDiff * 2;
-    
-          // 9. 模糊拼写（仅查询长度≥3才生效，短词关闭模糊）
-          if (queryLen >= 3) {
-            // 动态允许编辑距离：3-4字符最多差1，5字符以上最多差2
-            const maxDist = queryLen >= 5 ? 2 : 1;
-            const dist = levenshtein(word, query);
-            if (dist <= maxDist) {
-              // 距离越小加分越高
-              score += (maxDist - dist + 1) * 8;
-            }
-          }
-    
-          return { entry, score };
-        })
-        // 关键：最低展示阈值20，过滤掉弱相关词条
-        .filter(item => item.score >= 20)
-        .sort((a, b) => b.score - a.score)
-        // 限制最多返回50条，避免页面卡顿、结果泛滥
-        .slice(0, 50)
-        .map(item => item.entry);
-    
+
       if (results.length === 0) {
         output.innerHTML = `<div class="no-results">未找到匹配的词条</div>`;
         output.style.display = "block";
         return;
       }
-    
+
       output.innerHTML = results.map(entry => renderEntry(entry)).join('');
       output.style.display = "block";
     }
