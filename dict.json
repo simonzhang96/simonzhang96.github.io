@@ -4,7 +4,7 @@
     "meaning": "啊、啊啊",
     "gloss": "啊<词根体>",
     "pos": "感叹词",
-    "root": "单一词",
+    "root": "单纯词",
     "affix": "无",
     "examples": [
       {
@@ -18,12 +18,12 @@
     "meaning": "明亮的、发光的、有希望的",
     "gloss": "~ - <形容词标记>",
     "pos": "形容词",
-    "root": "单一词",
+    "root": "单纯词",
     "affix": "N/A",
     "examples": [
       {
-        "zeksa": "jemvi'voh aod ekodu.",
-        "translation": "我看到了充满希望的生活。"
+        "zeksa": "ekj'kol afí aod tokro?",
+        "translation": "那个发光的石头是什么？"
       }
     ]
   },
@@ -36,8 +36,8 @@
     "affix": "无",
     "examples": [
       {
-        "zeksa": "-erpápruvin'tsul dëm cupwed a ilomkad lumdalo? -erpasiat'voh zoldaomk va, aova.",
-        "translation": "-你为什么住在又热又断联的小岛上？-因为我喜欢太阳的颜色——黄色。"
+        "zeksa": "-erpápruvin'tsul dëm fidod lumdalo? -erpasiat'voh zoldaomk va dëm efí, aova.",
+        "translation": "-你为什么住在荒芜的小岛上？-因为我喜欢太阳在这里的颜色——黄色。"
       }
     ]
   },
@@ -46,12 +46,12 @@
     "meaning": "明亮地、光明正大地、真诚地",
     "gloss": "~ - <副词标记>",
     "pos": "副词",
-    "root": "单一词",
+    "root": "单纯词",
     "affix": "ao-",
     "examples": [
       {
-        "zeksa": "bertl'eral ayariv aow ku anki.",
-        "translation": "他真诚地和安吉说出真相。"
+        "zeksa": "drekomka'eral aow.",
+        "translation": "他真诚地道别。"
       }
     ]
   },
@@ -60,7 +60,7 @@
     "meaning": "光、希望、荣耀、仄克萨·奥",
     "gloss": "光<词根体>",
     "pos": "名词",
-    "root": "单一词",
+    "root": "单纯词",
     "affix": "ao-",
     "examples": [
       {
@@ -74,12 +74,12 @@
     "meaning": "吃、进食；食物",
     "gloss": "吃<词根体>",
     "pos": "动词、名词",
-    "root": "单一词",
+    "root": "单纯词",
     "affix": "adk-",
     "examples": [
       {
-        "zeksa": "ilekj'tamiaø adkevø uka\" bonvid",
-        "translation": "过度喜欢吃肉是不好的。"
+        "zeksa": "iladkev'g plas tsolomd teylme.",
+        "translation": "人们不在同一时间吃饭。"
       }
     ]
   },
@@ -88,12 +88,12 @@
     "meaning": "打开、开",
     "gloss": "打开<词根体>",
     "pos": "动词",
-    "root": "单一词",
+    "root": "单纯词",
     "affix": "N/A",
     "examples": [
       {
-        "zeksa": "kojath'g kert.",
-        "translation": "你必须打开盒子。"
+        "zeksa": "kojath'g efí kert.",
+        "translation": "你必须打开这盒子。"
       }
     ]
   },
@@ -106,7 +106,7 @@
     "affix": "amas-",
     "examples": [
       {
-        "zeksa": "kojamasø parlnokro!",
+        "zeksa": "kojamas‘g parlnokro!",
         "translation": "要启用防护措施！"
       }
     ]
@@ -116,7 +116,7 @@
     "meaning": "母亲、妈妈",
     "gloss": "母亲<词根体>",
     "pos": "名词",
-    "root": "单一词",
+    "root": "单纯词",
     "affix": "ant-",
     "examples": [
       {
@@ -130,7 +130,7 @@
     "meaning": "母亲般的风暴避风港（多用于形容仄克萨·欧姆克隆）",
     "gloss": "母亲<词缀体> - 风<词缀体> - 堡垒<词根体>",
     "pos": "名词",
-    "root": "复合词",
+    "root": "合成词",
     "affix": "无",
     "examples": [
       {
@@ -158,7 +158,7 @@
     "meaning": "远的、远处的",
     "gloss": "~ - <词缀体>",
     "pos": "形容词",
-    "root": "单一词",
+    "root": "单纯词",
     "affix": "N/A",
     "examples": [
       {
@@ -172,7 +172,7 @@
     "meaning": "长远、远方",
     "gloss": "远<词根体>",
     "pos": "名词",
-    "root": "单一词",
+    "root": "单纯词",
     "affix": "aj-",
     "examples": [
       {
@@ -186,7 +186,7 @@
     "meaning": "远征、远足、远征精神",
     "gloss": "远<词缀体> - 行走<词根体>",
     "pos": "名词",
-    "root": "复合词",
+    "root": "合成词",
     "affix": "无",
     "examples": [
       {
@@ -934,6 +934,20 @@
       {
         "zeksa": "ekj'polár zil, än, nu, hte.",
         "translation": "数字是零、一、二、三。"
+      }
+    ]
+  },
+  {
+    "word": "plas",
+    "meaning": "在、位于（时间）",
+    "gloss": "在<词根体>",
+    "pos": "介词",
+    "root": "单纯词",
+    "affix": "N/A",
+    "examples": [
+      {
+        "zeksa": "iladkev'g plas tsolomd teylme.",
+        "translation": "人们不在同一时间吃饭。"
       }
     ]
   },
