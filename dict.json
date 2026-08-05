@@ -1120,6 +1120,20 @@
     ]
   },
   {
+    "word": "tervam",
+    "meaning": "卖、售卖",
+    "gloss": "卖<词根体>",
+    "pos": "动词",
+    "root": "单纯词",
+    "affix": "terv-",
+    "examples": [
+      {
+        "zeksa": "häh, ilvradtervam'voh vohiomk tluv läm tsul.",
+        "translation": "不，我不能把我们的衣服卖给你。"
+      }
+    ]
+  },
+  {
     "word": "teylme",
     "meaning": "时间、时刻、时光",
     "gloss": "时间<词根体>",
