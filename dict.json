@@ -1260,6 +1260,20 @@
     ]
   },
   {
+    "word": "gekros",
+    "meaning": "工作、劳作；职位",
+    "gloss": "工作<词根体>",
+    "pos": "名词、动词",
+    "root": "单纯词",
+    "affix": "gekr-",
+    "examples": [
+      {
+        "zeksa": "ekj'vohomk gekros\" varzfreya'g alzvarzbertomka.",
+        "translation": "我的工作是创作人造语言。"
+      }
+    ]
+  },
+  {
     "word": "gem",
     "meaning": "需求、欲望；<欲望前缀>",
     "gloss": "欲望<词根体> / 欲望<词缀体>",
