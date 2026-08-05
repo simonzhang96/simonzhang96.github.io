@@ -1,0 +1,187 @@
+KBD	Zeksa	"Zeksa Layout"
+
+COPYRIGHT	"(c) 2026 Simon Zhang"
+
+COMPANY	"Simon Zhang"
+
+DESCRIPT	"Zeksa Keyboard"
+
+LOCALENAME	"qaa-Latn"
+
+LOCALEID	"00002000"
+
+VERSION	1.0
+
+SHIFTSTATE
+
+0	; Column 4
+1	; Column 5 : Shft
+2	; Column 6 : Ctrl
+3	; Column 7 : Shft Ctrl
+6	; Column 8 : Ctrl Alt
+7	; Column 9 : Shft Ctrl Alt
+
+LAYOUT		;an extra '@' at the end is a dead key
+
+//SC	VK_		Cap	0	1	2	3	6	7
+//--	----		----	----	----	----	----	----	----
+
+02	1		0	e02a	e036	0031	-1		-1	// PUA e02a, PUA e036, DIGIT ONE, <none>, <none>, <none>
+-1	-1		0	0031	-1					// DIGIT ONE, <none>
+03	2		0	e02b	e02d	0032	-1		-1	// PUA e02b, PUA e02d, DIGIT TWO, <none>, <none>, <none>
+-1	-1		0	0032	-1					// DIGIT TWO, <none>
+04	3		0	e02c	e02e	0033	-1		-1	// PUA e02c, PUA e02e, DIGIT THREE, <none>, <none>, <none>
+-1	-1		0	0033	-1					// DIGIT THREE, <none>
+05	4		0	e002	e02f	0034	-1		-1	// PUA e002, PUA e02f, DIGIT FOUR, <none>, <none>, <none>
+-1	-1		0	0034	-1					// DIGIT FOUR, <none>
+06	5		0	e004	e030	0035	-1		-1	// PUA e004, PUA e030, DIGIT FIVE, <none>, <none>, <none>
+-1	-1		0	0035	-1					// DIGIT FIVE, <none>
+07	6		0	e006	e031	0036	-1		-1	// PUA e006, PUA e031, DIGIT SIX, <none>, <none>, <none>
+-1	-1		0	0036	-1					// DIGIT SIX, <none>
+08	7		0	e008	0026	0037	-1		-1	// PUA e008, AMPERSAND, DIGIT SEVEN, <none>, <none>, <none>
+-1	-1		0	0037	-1					// DIGIT SEVEN, <none>
+09	8		0	e00a	002a	0038	-1		-1	// PUA e00a, ASTERISK, DIGIT EIGHT, <none>, <none>, <none>
+-1	-1		0	0038	-1					// DIGIT EIGHT, <none>
+0a	9		0	e00c	0028	0039	-1		-1	// PUA e00c, LEFT PARENTHESIS, DIGIT NINE, <none>, <none>, <none>
+-1	-1		0	0039	-1					// DIGIT NINE, <none>
+0b	0		0	e00e	0029	0030	-1		-1	// PUA e00e, RIGHT PARENTHESIS, DIGIT ZERO, <none>, <none>, <none>
+-1	-1		0	0030	-1					// DIGIT ZERO, <none>
+0c	OEM_MINUS	0	e010	005f	002d	-1		-1	// PUA e010, LOW LINE, HYPHEN-MINUS, <none>, <none>, <none>
+-1	-1		0	002d	-1					// HYPHEN-MINUS, <none>
+0d	OEM_PLUS	0	e023	002b	003d	-1		-1	// PUA e023, PLUS SIGN, EQUALS SIGN, <none>, <none>, <none>
+-1	-1		0	003d	-1					// EQUALS SIGN, <none>
+10	Q		1	e019	0051	0071	-1		-1	// PUA e019, LATIN CAPITAL LETTER Q, LATIN SMALL LETTER Q, <none>, <none>, <none>
+11	W		1	e026	0057	0077	-1		-1	// PUA e026, LATIN CAPITAL LETTER W, LATIN SMALL LETTER W, <none>, <none>, <none>
+12	E		1	e003	0045	0065	-1		-1	// PUA e003, LATIN CAPITAL LETTER E, LATIN SMALL LETTER E, <none>, <none>, <none>
+13	R		1	e025	0052	0072	-1		-1	// PUA e025, LATIN CAPITAL LETTER R, LATIN SMALL LETTER R, <none>, <none>, <none>
+14	T		1	e014	0054	0074	-1		-1	// PUA e014, LATIN CAPITAL LETTER T, LATIN SMALL LETTER T, <none>, <none>, <none>
+15	Y		1	e027	0059	0079	-1		-1	// PUA e027, LATIN CAPITAL LETTER Y, LATIN SMALL LETTER Y, <none>, <none>, <none>
+16	U		1	e009	0055	0075	-1		-1	// PUA e009, LATIN CAPITAL LETTER U, LATIN SMALL LETTER U, <none>, <none>, <none>
+17	I		1	e005	0049	0069	-1		-1	// PUA e005, LATIN CAPITAL LETTER I, LATIN SMALL LETTER I, <none>, <none>, <none>
+18	O		1	e007	004f	006f	-1		-1	// PUA e007, LATIN CAPITAL LETTER O, LATIN SMALL LETTER O, <none>, <none>, <none>
+19	P		1	e012	0050	0070	-1		-1	// PUA e012, LATIN CAPITAL LETTER P, LATIN SMALL LETTER P, <none>, <none>, <none>
+1a	OEM_4		0	e00b	e03b	005b	-1		-1	// PUA e00b, PUA e03b, LEFT SQUARE BRACKET, <none>, <none>, <none>
+-1	-1		0	005b	-1					// LEFT SQUARE BRACKET, <none>
+1b	OEM_6		0	e00d	e03b	005d	-1		-1	// PUA e00d, PUA e03b, RIGHT SQUARE BRACKET, <none>, <none>, <none>
+-1	-1		0	005d	-1					// RIGHT SQUARE BRACKET, <none>
+1e	A		1	e001	0041	0061	-1		-1	// PUA e001, LATIN CAPITAL LETTER A, LATIN SMALL LETTER A, <none>, <none>, <none>
+1f	S		1	e01d	0053	0073	-1		-1	// PUA e01d, LATIN CAPITAL LETTER S, LATIN SMALL LETTER S, <none>, <none>, <none>
+20	D		1	e013	0044	0064	-1		-1	// PUA e013, LATIN CAPITAL LETTER D, LATIN SMALL LETTER D, <none>, <none>, <none>
+21	F		1	e01b	0046	0066	-1		-1	// PUA e01b, LATIN CAPITAL LETTER F, LATIN SMALL LETTER F, <none>, <none>, <none>
+22	G		1	e015	0047	0067	-1		-1	// PUA e015, LATIN CAPITAL LETTER G, LATIN SMALL LETTER G, <none>, <none>, <none>
+23	H		1	e022	0048	0068	-1		-1	// PUA e022, LATIN CAPITAL LETTER H, LATIN SMALL LETTER H, <none>, <none>, <none>
+24	J		1	e01e	004a	006a	-1		-1	// PUA e01e, LATIN CAPITAL LETTER J, LATIN SMALL LETTER J, <none>, <none>, <none>
+25	K		1	e016	004b	006b	-1		-1	// PUA e016, LATIN CAPITAL LETTER K, LATIN SMALL LETTER K, <none>, <none>, <none>
+26	L		1	e024	004c	006c	-1		-1	// PUA e024, LATIN CAPITAL LETTER L, LATIN SMALL LETTER L, <none>, <none>, <none>
+27	OEM_1		0	e021	e028	003b	-1		-1	// PUA e021, PUA e028, SEMICOLON, <none>, <none>, <none>
+-1	-1		0	003b	-1					// SEMICOLON, <none>
+28	OEM_7		0	e034	e035	0027	-1		-1	// PUA e034, PUA e035, APOSTROPHE, <none>, <none>, <none>
+-1	-1		0	0027	-1					// APOSTROPHE, <none>
+29	OEM_3		0	e029	007e	0060	-1		-1	// PUA e029, TILDE, GRAVE ACCENT, <none>, <none>, <none>
+-1	-1		0	0060	-1					// GRAVE ACCENT, <none>
+2b	OEM_5		0	e00f	007c	005c	-1		-1	// PUA e00f, VERTICAL LINE, REVERSE SOLIDUS, <none>, <none>, <none>
+-1	-1		0	005c	-1					// REVERSE SOLIDUS, <none>
+2c	Z		1	e01c	005a	007a	-1		-1	// PUA e01c, LATIN CAPITAL LETTER Z, LATIN SMALL LETTER Z, <none>, <none>, <none>
+2d	X		1	e020	0058	0078	-1		-1	// PUA e020, LATIN CAPITAL LETTER X, LATIN SMALL LETTER X, <none>, <none>, <none>
+2e	C		1	e01f	0043	0063	-1		-1	// PUA e01f, LATIN CAPITAL LETTER C, LATIN SMALL LETTER C, <none>, <none>, <none>
+2f	V		1	e01a	0056	0076	-1		-1	// PUA e01a, LATIN CAPITAL LETTER V, LATIN SMALL LETTER V, <none>, <none>, <none>
+30	B		1	e011	0042	0062	-1		-1	// PUA e011, LATIN CAPITAL LETTER B, LATIN SMALL LETTER B, <none>, <none>, <none>
+31	N		1	e018	004e	006e	-1		-1	// PUA e018, LATIN CAPITAL LETTER N, LATIN SMALL LETTER N, <none>, <none>, <none>
+32	M		1	e017	004d	006d	-1		-1	// PUA e017, LATIN CAPITAL LETTER M, LATIN SMALL LETTER M, <none>, <none>, <none>
+33	OEM_COMMA	0	e032	e039	002c	-1		-1	// PUA e032, PUA e039, COMMA, <none>, <none>, <none>
+-1	-1		0	002c	-1					// COMMA, <none>
+34	OEM_PERIOD	0	e033	e03a	002e	-1		-1	// PUA e033, PUA e03a, FULL STOP, <none>, <none>, <none>
+-1	-1		0	002e	-1					// FULL STOP, <none>
+35	OEM_2		0	e038	e037	002f	-1		-1	// PUA e038, PUA e037, SOLIDUS, <none>, <none>, <none>
+-1	-1		0	002f	-1					// SOLIDUS, <none>
+39	SPACE		0	0020	0020	0020	-1		-1	// SPACE, SPACE, SPACE, <none>, <none>, <none>
+53	DECIMAL		0				-1		-1	// <none>, <none>, <none>, <none>, <none>, <none>
+
+KEYNAME
+
+01	Esc
+0e	Backspace
+0f	Tab
+1c	Enter
+1d	Ctrl
+2a	Shift
+36	"Right Shift"
+37	"Num *"
+38	Alt
+39	Space
+3a	"Caps Lock"
+3b	F1
+3c	F2
+3d	F3
+3e	F4
+3f	F5
+40	F6
+41	F7
+42	F8
+43	F9
+44	F10
+45	Pause
+46	"Scroll Lock"
+47	"Num 7"
+48	"Num 8"
+49	"Num 9"
+4a	"Num -"
+4b	"Num 4"
+4c	"Num 5"
+4d	"Num 6"
+4e	"Num +"
+4f	"Num 1"
+50	"Num 2"
+51	"Num 3"
+52	"Num 0"
+53	"Num Del"
+54	"Sys Req"
+57	F11
+58	F12
+7c	F13
+7d	F14
+7e	F15
+7f	F16
+80	F17
+81	F18
+82	F19
+83	F20
+84	F21
+85	F22
+86	F23
+87	F24
+
+KEYNAME_EXT
+
+1c	"Num Enter"
+1d	"Right Ctrl"
+35	"Num /"
+37	"Prnt Scrn"
+38	"Right Alt"
+45	"Num Lock"
+46	Break
+47	Home
+48	Up
+49	"Page Up"
+4b	Left
+4d	Right
+4f	End
+50	Down
+51	"Page Down"
+52	Insert
+53	Delete
+54	<00>
+56	Help
+5b	"Left Windows"
+5c	"Right Windows"
+5d	Application
+
+DESCRIPTIONS
+
+2000	Zeksa
+
+LANGUAGENAMES
+
+2000	Unknown Language (qaa-Latn)
+
+ENDKBD
