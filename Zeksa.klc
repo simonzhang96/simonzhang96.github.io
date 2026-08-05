@@ -1,0 +1,70 @@
+KBD ZEKSA
+
+COPYRIGHT "Simon"
+COMPANY "Zeksa"
+LOCALENAME "en-US"
+VERSION 1.0
+
+SHIFTSTATE
+0
+1
+
+LAYOUT
+
+// Number row
+02    E002    E002    // 4 -> á
+03    E004    E004    // 5 -> é
+04    E006    E006    // 6 -> í
+05    E008    E008    // 7 -> ó
+06    E00A    E00A    // 8 -> ú
+07    E00C    E00C    // 9 -> â
+08    E00E    E00E    // 0 -> ê
+09    E010    E010    // - -> ô
+
+0C    E023    E023    // = -> ħ
+0D    E00F    E00F    // \ -> ø
+
+// QWERTY row
+10    E019    E019    // Q
+11    E026    E026    // W
+12    E003    E003    // E
+13    E025    E025    // R
+14    E014    E014    // T
+15    E027    E027    // Y
+16    E009    E009    // U
+17    E005    E005    // I
+18    E007    E007    // O
+19    E001    E001    // P
+
+1A    E00B    E00B    // [
+1B    E00D    E00D    // ]
+
+// Home row
+1E    E001    E001    // A
+1F    E01D    E01D    // S
+20    E013    E013    // D
+21    E01B    E01B    // F
+22    E015    E015    // G
+23    E022    E022    // H
+24    E01E    E01E    // J
+25    E016    E016    // K
+26    E024    E024    // L
+27    E021    E021    // ; -> ts
+
+// Bottom row
+2C    E027    E027    // Z
+2D    E020    E020    // X
+2E    E01F    E01F    // C
+2F    E012    E012    // V
+30    E011    E011    // B
+31    E018    E018    // N
+32    E017    E017    // M
+
+// Punctuation
+33    E032    E036    // , -> ,   Shift+, -> !
+34    E033    E037    // . -> .   Shift+. -> ?
+35    E038    E038    // / -> /
+
+36    E034    E035    // ' -> '   Shift+' -> "
+
+ENDKBD
