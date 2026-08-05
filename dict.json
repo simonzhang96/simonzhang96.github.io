@@ -252,6 +252,20 @@
     ]
   },
   {
+    "word": "alzvarzbertomka",
+    "meaning": "人造语言、人工语言",
+    "gloss": "人<词缀体> - 制作<词缀体> - 话语<词缀体> - 连接<词根体>",
+    "pos": "名词",
+    "root": "合成词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "zah, ilekj'zeksa alzvarzbertomka dëm zeksa omklon.",
+        "translation": "也就是说，仄克萨语不是仄克萨·欧姆克隆上的人造语言。"
+      }
+    ]
+  },
+  {
     "word": "alz",
     "meaning": "人（特指仄克萨人）",
     "gloss": "人<词根体>",
