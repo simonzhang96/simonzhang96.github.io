@@ -1260,6 +1260,20 @@
     ]
   },
   {
+    "word": "gekralz",
+    "meaning": "工人、操纵员",
+    "gloss": "工作<词缀体> - 人<词根体>",
+    "pos": "名词",
+    "root": "合成词",
+    "affix": "无",
+    "examples": [
+      {
+        "zeksa": "ekj'kolalz gekralz dëm afí?",
+        "translation": "谁是这里的工人？"
+      }
+    ]
+  },
+  {
     "word": "gekros",
     "meaning": "工作、劳作；职位",
     "gloss": "工作<词根体>",
