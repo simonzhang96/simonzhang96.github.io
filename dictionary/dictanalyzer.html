@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>仄克萨语 · 字母频率</title>
+
+  <style>
+    html,
+    body {
+      min-height: 100%;
+    }
+
+    :root {
+      --accent: #0078D4;
+      --text-color: #222;
+      --label-color: #555;
+      --shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      --radius: 14px;
+    }
+
+    #bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100dvh;
+      width: 100dvw;
+      z-index: -1;
+      pointer-events: none;
+
+      background:
+        radial-gradient(
+          circle at 20% 30%,
+          rgba(214, 236, 255, 0.8),
+          transparent 40%
+        ),
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(255, 201, 138, 0.7),
+          transparent 35%
+        ),
+        radial-gradient(
+          circle at 60% 80%,
+          rgba(234, 246, 255, 0.7),
+          transparent 45%
+        ),
+        linear-gradient(
+          180deg,
+          #eef8ff,
+          #fff4e6
+        );
+
+      animation: drift 15s ease-in-out infinite alternate;
+      background-size: 135% 135%;
+    }
+
+    html {
+      min-height: 100%;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Segoe UI",
+        Roboto, "Helvetica Neue", Arial, sans-serif;
+      max-width: 840px;
+      margin: auto;
+      padding: 2em;
+
+      background: transparent;
+      color: var(--text-color);
+    }
+
+    @keyframes drift {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--accent);
+      font-size: 2.5rem;
+    }
+
+    p {
+      text-align: center;
+      margin-bottom: 0.5em;
+    }
+
+    hr {
+      margin-bottom: 1em;
+      margin-top: 0.25em;
+      border: none;
+      border-top: 1px solid rgba(0, 0, 0, 0.12);
+    }
+
+    small {
+      display: block;
+      text-align: center;
+      margin-bottom: 0.5em;
+    }
+
+    .entry {
+      background: rgba(255, 255, 255, 0.6);
+
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+
+      padding: 15px 20px;
+      margin: 30px auto;
+      max-width: 800px;
+
+      border-radius: 16px;
+
+      box-shadow:
+        0 8px 24px rgba(0, 0, 0, 0.08),
+        0 0 20px rgba(255, 255, 255, 0.15);
+
+      transition:
+        transform 0.15s ease-out,
+        box-shadow 0.2s ease;
+    }
+
+    .entry:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 14px 36px rgba(0, 0, 0, 0.13),
+        0 0 35px rgba(255, 255, 255, 0.25);
+    }
+
+    .label {
+      font-weight: bold;
+      color: var(--label-color);
+      display: inline-block;
+      min-width: 5em;
+    }
+
+    #results {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .frequency-entry {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .letter {
+      font-size: 1.6rem;
+      font-weight: 600;
+      min-width: 55px;
+      text-align: center;
+    }
+
+    .frequency-info {
+      flex: 1;
+    }
+
+    .frequency-bar-container {
+      height: 10px;
+      background: rgba(0, 0, 0, 0.07);
+      border-radius: 999px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+
+    .frequency-bar {
+      height: 100%;
+      background: var(--accent);
+      border-radius: 999px;
+      transition: width 0.6s ease;
+    }
+
+    .frequency-number {
+      color: var(--label-color);
+      white-space: nowrap;
+    }
+
+    .no-results {
+      text-align: center;
+      color: #999;
+      font-style: italic;
+    }
+
+    code {
+      background: rgba(0, 0, 0, 0.06);
+      padding: 2px 6px;
+      border-radius: 5px;
+    }
+
+    .footer {
+      text-align: center;
+      color: #777;
+      font-size: 0.9rem;
+      margin-top: 32px;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1em;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .frequency-entry {
+        gap: 10px;
+      }
+
+      .letter {
+        min-width: 40px;
+        font-size: 1.3rem;
+      }
+
+      .frequency-number {
+        font-size: 0.9rem;
+      }
+    }
+
+    @font-face {
+      font-family: "ZeksaFont";
+      src: url("fonts/Zeksa Ajkrus.ttf") format("truetype");
+    }
+
+    .zeksa {
+      font-family: "ZeksaFont", sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="bg"></div>
+
+  <h1>仄克萨语 · 字母频率</h1>
+
+  <p>
+    根据仄克萨语词典中 <code>word</code> 一栏统计各字母的出现频率。
+  </p>
+
+  <small>
+    <span class="zeksa">ts</span> 被视为一个独立字母。
+  </small>
+
+  <hr>
+
+  <p id="status">正在读取词典……</p>
+
+  <!-- 统计概览 -->
+  <div id="summary" style="display:none;">
+
+    <div class="entry">
+      <div>
+        <span class="label">词典词数</span>
+        <span id="word-count">—</span>
+      </div>
+
+      <div>
+        <span class="label">总字母数</span>
+        <span id="letter-count">—</span>
+      </div>
+
+      <div>
+        <span class="label">平均词长</span>
+        <span id="average-length">—</span>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 字母频率 -->
+  <div id="results"></div>
+
+  <p class="footer">
+    Zeksa · 仄克萨语
+  </p>
+
+
+  <script>
+    /*
+     * 仄克萨语字母表
+     *
+     * ts 是一个独立字母，因此必须放在这里。
+     * 如果以后仄克萨增加其他多字符字母，
+     * 也可以直接加入这个数组。
+     */
+
+    const zeksaLetters = [
+      "ts",
+      "a", "b", "c", "d", "e", "f", "g",
+      "h", "i", "j", "k", "l", "m", "n",
+      "o", "p", "q", "r", "s", "t", "u",
+      "v", "w", "x", "y", "z"
+    ];
+
+
+    /*
+     * 将一个仄克萨单词切分成“字母”
+     *
+     * 例如：
+     *
+     * tsak
+     *
+     * 会得到：
+     *
+     * ["ts", "a", "k"]
+     *
+     * 而不是：
+     *
+     * ["t", "s", "a", "k"]
+     */
+
+    function splitZeksaWord(word) {
+
+      const letters = [];
+
+      let i = 0;
+
+      while (i < word.length) {
+
+        // 优先检查 ts
+        if (word.startsWith("ts", i)) {
+          letters.push("ts");
+          i += 2;
+        }
+
+        else {
+          letters.push(word[i]);
+          i += 1;
+        }
+      }
+
+      return letters;
+    }
+
+
+    /*
+     * 读取 dict.json
+     */
+
+    fetch("dict.json")
+
+      .then(response => {
+
+        if (!response.ok) {
+          throw new Error(
+            "无法读取 dict.json（HTTP " + response.status + "）"
+          );
+        }
+
+        return response.json();
+      })
+
+      .then(data => {
+
+        const counter = {};
+
+        let totalLetters = 0;
+        let totalWords = 0;
+
+
+        /*
+         * 初始化所有字母
+         */
+
+        for (const letter of zeksaLetters) {
+          counter[letter] = 0;
+        }
+
+
+        /*
+         * 遍历词典
+         */
+
+        for (const entry of data) {
+
+          if (!entry.word) {
+            continue;
+          }
+
+          const word = String(entry.word).toLowerCase();
+
+          const letters = splitZeksaWord(word);
+
+          totalWords++;
+
+          totalLetters += letters.length;
+
+
+          for (const letter of letters) {
+
+            if (counter[letter] === undefined) {
+              counter[letter] = 0;
+            }
+
+            counter[letter]++;
+          }
+        }
+
+
+        /*
+         * 按出现次数从高到低排序
+         */
+
+        const result = Object.entries(counter)
+          .filter(([letter, count]) => count > 0)
+          .sort((a, b) => b[1] - a[1]);
+
+
+        /*
+         * 更新统计概览
+         */
+
+        document.getElementById("word-count").textContent =
+          totalWords.toLocaleString();
+
+        document.getElementById("letter-count").textContent =
+          totalLetters.toLocaleString();
+
+        document.getElementById("average-length").textContent =
+          totalWords > 0
+            ? (totalLetters / totalWords).toFixed(2)
+            : "0";
+
+
+        document.getElementById("summary").style.display = "block";
+
+
+        /*
+         * 生成字母频率
+         */
+
+        const results = document.getElementById("results");
+
+        if (result.length === 0) {
+
+          results.innerHTML =
+            '<p class="no-results">没有找到任何字母。</p>';
+
+        } else {
+
+          result.forEach(([letter, count]) => {
+
+            const percentage =
+              totalLetters > 0
+                ? (count / totalLetters * 100)
+                : 0;
+
+
+            const entry = document.createElement("div");
+
+            entry.className = "entry";
+
+
+            entry.innerHTML = `
+              <div class="frequency-entry">
+
+                <div class="letter zeksa">
+                  ${letter}
+                </div>
+
+                <div class="frequency-info">
+
+                  <div>
+                    <strong>${percentage.toFixed(2)}%</strong>
+                  </div>
+
+                  <div class="frequency-bar-container">
+                    <div
+                      class="frequency-bar"
+                      style="width: ${percentage}%">
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="frequency-number">
+                  ${count.toLocaleString()} 次
+                </div>
+
+              </div>
+            `;
+
+
+            results.appendChild(entry);
+
+          });
+
+        }
+
+
+        /*
+         * 加载完成
+         */
+
+        document.getElementById("status").textContent =
+          `已分析 ${totalWords.toLocaleString()} 个词。`;
+
+      })
+
+
+      /*
+       * 错误处理
+       */
+
+      .catch(error => {
+
+        console.error(error);
+
+        document.getElementById("status").textContent =
+          "词典读取失败：" + error.message;
+
+      });
+
+  </script>
+
+</body>
+</html>
