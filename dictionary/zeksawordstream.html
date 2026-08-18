@@ -466,11 +466,11 @@ const card = document.getElementById("card");
 /* 随机HUD */
 
 const statuses = [
-  "/",
-  "-",
-  "|",
-  "\\",
-  "·"
+  " ",
+  " ",
+  " ",
+  " ",
+  " "
 ];
 
 /* 读取JSON */
@@ -511,7 +511,7 @@ fetch("/dict.json")
       /* 随机状态 */
 
       document.querySelector(".hud-top").innerHTML =
-        `OMKLON ARCHIVE NODE<br>${statuses[Math.floor(Math.random() * statuses.length)]}`;
+        ` <br>${statuses[Math.floor(Math.random() * statuses.length)]}`;
 
       /* 淡入 */
 
