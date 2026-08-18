@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
 <title>仄克萨语词汇快闪</title>
 
@@ -292,6 +293,35 @@ body::before {
     transform: translateY(0);
   }
 }
+
+.home-back-btn {
+  position: fixed;
+  top: 24px;
+  left: 24px;
+  z-index: 999; 
+}
+.home-back-btn a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 50%;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+  color: var(--accent);
+  font-size: 20px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.home-back-btn a:hover {
+  transform: translateY(-2px);
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
 </style>
 </head>
 
@@ -300,6 +330,12 @@ body::before {
 <div class="hud-top">
   仄克萨语词汇快闪<br>
   SIGNAL STATUS : STABLE
+</div
+
+<div class="home-back-btn">
+  <a href="/dictionary" title="返回上一级">
+    <i class="fa-solid fa-arrow-left"></i>
+  </a>
 </div>
 
 <div class="hud-bottom">
