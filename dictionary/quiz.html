@@ -329,7 +329,7 @@ let answer=""
 let currentEntry=null
 
 async function loadDictionary(){
-  const response=await fetch("dict.json")
+  const response=await fetch("/dict.json")
   dictionary=await response.json()
   nextQuestion()
 }
@@ -441,7 +441,7 @@ document.addEventListener('keydown', function(e) {
 loadDictionary()
 
 </script>
-<img src="./ZeksaLogo.png" style="width: 100%; max-width: 220px; height: auto; display: block; margin: 1.4rem auto;">  
+<img src="/ZeksaLogo.png" style="width: 100%; max-width: 220px; height: auto; display: block; margin: 1.4rem auto;">  
 <small>A Dictionary of the Zeksa Language, Created by Simon Zhang.</small>
 
 </body>
