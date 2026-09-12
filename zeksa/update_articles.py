@@ -107,7 +107,7 @@ def render_cards(articles):
     return '\n'.join(cards)
 
 
-def update(folder, home='tindex.html'):
+def update(folder, home='index.html'):
     home_path = folder / home
     source = home_path.read_text(encoding='utf-8')
     if source.count(START) != 1 or source.count(END) != 1 or source.index(START) > source.index(END):
@@ -127,7 +127,7 @@ def update(folder, home='tindex.html'):
 
 def main():
     parser = argparse.ArgumentParser(description='自动读取同目录文章的标题与简介，更新学习主页。')
-    parser.add_argument('--home', default='tindex.html', help='主页文件名（默认 tindex.html）')
+    parser.add_argument('--home', default='index.html', help='主页文件名（默认 index.html）')
     parser.add_argument('--watch', action='store_true', help='保持运行，自动同步文章的新增、修改和删除')
     args = parser.parse_args()
     if Path(args.home).name != args.home:
