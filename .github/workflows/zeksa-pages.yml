@@ -1,0 +1,47 @@
+name: 更新文章并发布网站
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: zeksa-pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    permissions:
+      contents: read
+      pages: read
+    # 只发布仓库默认分支；不需要手动填写 main 或 master。
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-latest
+    steps:
+      - name: 读取网站文件
+        uses: actions/checkout@v6
+      - name: 自动生成学习文章列表
+        run: python3 zeksa/update_articles.py --home tindex.html
+      - name: 准备 GitHub Pages
+        uses: actions/configure-pages@v5
+      - name: 打包网站
+        uses: actions/upload-pages-artifact@v4
+        with:
+          # 适用于网站 HTML 文件位于仓库根目录的纯静态网站。
+          path: '.'
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 发布网站
+        id: deployment
+        uses: actions/deploy-pages@v4
