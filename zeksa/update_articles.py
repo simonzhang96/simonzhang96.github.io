@@ -75,21 +75,42 @@ def clean(value):
     return re.sub(r'\s+', ' ', value).strip()
 
 
-def collect_articles(folder, home):
+def collect_articles(folder, home, report=None):
     articles = []
     files = sorted(folder.glob('*.html'), key=lambda path: path.name.casefold())
+    def log(message):
+        if report is not None:
+            report(message)
+    log(f'扫描目录：{folder}（仅同目录 .html 文件，共 {len(files)} 个）')
     for file in files:
-        if file.name in {home, 'article-template.html'} or file.is_symlink():
+        if file.name == home:
+            log(f'跳过 {file.name}：这是学习主页。')
+            continue
+        if file.name == 'article-template.html':
+            log(f'跳过 {file.name}：这是模板文件，请另存为新文件名后发布文章。')
+            continue
+        if file.is_symlink():
+            log(f'跳过 {file.name}：这是符号链接。')
             continue
         parser = ArticleParser()
         parser.feed(file.read_text(encoding='utf-8-sig'))
         title = clean(''.join(parser.title))
-        if not parser.is_article or parser.draft or not title or title == '【文章标题】':
+        reasons = []
+        if not parser.is_article:
+            reasons.append('缺少带 article-body 类的 <article> 正文容器')
+        if parser.draft:
+            reasons.append('zeksa-draft 被设为 true')
+        if reasons:
+            log(f'跳过 {file.name}：{"；".join(reasons)}。')
             continue
+        if not title or title == '【文章标题】':
+            title = file.stem
+            log(f'{file.name}：标题尚未填写，暂用文件名 {title}。')
         intro = clean(''.join(parser.intro)) or clean(parser.meta_description)
         if intro == '【文章简介】':
             intro = ''
         articles.append((file.name, title, intro))
+        log(f'已收录 {file.name}：{title}' + ('' if intro else '（未填写简介）'))
     return articles
 
 
@@ -107,12 +128,12 @@ def render_cards(articles):
     return '\n'.join(cards)
 
 
-def update(folder, home='index.html'):
+def update(folder, home='index.html', report=None):
     home_path = folder / home
     source = home_path.read_text(encoding='utf-8')
     if source.count(START) != 1 or source.count(END) != 1 or source.index(START) > source.index(END):
         raise ValueError(f'{home} 中必须有且仅有一对 ARTICLES 标记。')
-    articles = collect_articles(folder, home)
+    articles = collect_articles(folder, home, report=report)
     before, rest = source.split(START, 1)
     _, after = rest.split(END, 1)
     result = before + START + '\n' + render_cards(articles) + '\n      ' + END + after
@@ -129,6 +150,7 @@ def main():
     parser = argparse.ArgumentParser(description='自动读取同目录文章的标题与简介，更新学习主页。')
     parser.add_argument('--home', default='index.html', help='主页文件名（默认 index.html）')
     parser.add_argument('--watch', action='store_true', help='保持运行，自动同步文章的新增、修改和删除')
+    parser.add_argument('--verbose', action='store_true', help='显示每个文件被收录或跳过的原因')
     args = parser.parse_args()
     if Path(args.home).name != args.home:
         parser.error('--home 必须是同目录的 HTML 文件名。')
@@ -138,7 +160,7 @@ def main():
     try:
         while True:
             try:
-                count, changed = update(folder, args.home)
+                count, changed = update(folder, args.home, report=print if args.verbose else None)
                 if first or changed or previous_error:
                     print(f'已同步 {count} 篇文章 → {args.home}', flush=True)
                 previous_error = None
