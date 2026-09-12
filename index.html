@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<!-- simón jäq -->
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Simon Zhang</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  
+  <!-- icons 4 e-mail and bili -->
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    html, body {
+      min-height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --accent: #0078D4;
+      --text-color: #222;
+      --label-color: #555;
+      --shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      --radius: 14px; 
+    }
+
+    #bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100dvh;
+      width: 100dvw;
+      z-index: -1; 
+      pointer-events: none; 
+
+      background:
+        radial-gradient(
+          circle at 20% 30%,
+          rgba(214,236,255,0.8),
+          transparent 40%
+        ),
+        radial-gradient(
+          circle at 80% 20%,
+          rgba(255,201,138,0.7),
+          transparent 35%
+        ),
+        radial-gradient(
+          circle at 60% 80%,
+          rgba(234,246,255,0.7),
+          transparent 45%
+        ),
+        linear-gradient(
+          180deg,
+          #eef8ff,
+          #fff4e6
+        );
+
+      animation: drift 15s ease-in-out infinite alternate;
+      background-size: 135% 135%;
+    }
+
+    @keyframes drift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Segoe UI",
+                   Roboto, "Helvetica Neue", Arial, sans-serif;
+      max-width: 840px;
+      margin: 0 auto;
+    
+      display: flex;
+      flex-direction: column;
+    
+      min-height: 100vh;
+    
+      justify-content: center;
+    
+      padding-bottom: 12vh;
+      box-sizing: border-box;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background: #ccc;
+      margin: 1rem 0;
+    }
+
+    .logo {
+      width: 100%;
+      max-width: 125px;
+      height: auto;
+      display: block;
+      margin: 0 auto 0px auto;
+      animation-delay:.1s;
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--accent);
+      font-size: 2.2rem;
+      margin: 0;
+      text-align: center;
+      font-size: 2.4rem;
+      font-weight: 700;
+
+      /* 低饱和为什么这么灰？ */
+      background: linear-gradient(
+        90deg,
+        #4b8dff,
+        #e9a04d
+      );
+    
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    @keyframes zeksaTitle {
+      from {
+        background-position: 0% 50%;
+      }
+      to {
+        background-position: 100% 50%;
+      }
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 1.05rem;
+      color: #555;
+      margin-top: 8px;
+      margin-bottom: 24px;
+    }
+
+    .inside {
+      color: #4b8dff
+    }
+
+    .entry {
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 24px 28px;
+      margin: 0 auto;
+      margin-bottom: 20px;
+      max-width: 700px;
+      border-radius: 16px;
+      box-shadow:
+        0 8px 24px rgba(0,0,0,0.08),
+        0 0 20px rgba(255,255,255,0.15);
+      transition: transform 0.15s ease-out, box-shadow 0.2s ease;
+      text-align: left;
+    }
+
+    .entry:hover {
+      transform: translateY(-3px);
+      box-shadow:
+        0 14px 36px rgba(0,0,0,0.13),
+        0 0 35px rgba(255,255,255,0.25);
+    }
+
+    .entry h2 {
+      color: var(--accent);
+      margin-top: 0;
+      font-size: 1.4rem;
+    }
+
+    .entry p {
+      line-height: 1.6;
+      font-size: 1rem;
+      margin: 10px 0;
+    }
+
+    .button-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      justify-content: center;
+      margin: 12px 0;
+      animation-delay:.2s;
+    }
+
+    button {
+      padding: 14px 28px;
+      border-radius: var(--radius);
+      border: none;
+      background: var(--accent);
+      color: white;
+      font-size: 1rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      box-shadow: 0 4px 12px rgba(0, 120, 212, 0.15);
+      white-space: nowrap;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 120, 212, 0.25);
+      background: #0066b3;
+    }
+
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-top: 20px;
+      animation-delay:.3s;
+    }
+
+    .social-icons a {
+      color: var(--accent);
+      font-size: 24px;
+      transition: 0.2s;
+      text-decoration: none;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.15);
+      color: #0066b3;
+    }
+
+    .footer{
+      text-align:center;
+      color:#777;
+      font-size:.9rem;
+      margin-top:32px;
+    }
+
+    /* 没啥用的 */
+
+    @font-face {
+      font-family: "ZeksaFont";
+      src: url("./Zeksa 525.ttf") format("truetype");
+    }
+
+    .zeksa {
+      font-family: "ZeksaFont", sans-serif;
+    }
+
+    @keyframes fadeIn{
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    .entry,
+    .logo,
+    .button-group,
+    .social-icons {
+    
+      opacity:0;
+      transform:translateY(12px);
+    
+      animation:fadeIn .7s ease forwards;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 1.2em;
+        justify-content:flex-start;
+        padding-top:8vh;
+      }
+      h1 {
+        margin-bottom: 8px;
+        font-size: 1.8rem;
+      }
+      .button-group {
+        flex-direction: column;
+        align-items: center;
+      }
+      button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="bg"></div>
+  
+  <h1>Simon Zhang</h1>
+  <p class="subtitle">热爱语言、设计、数码与游戏的 <b>Conlanger</b></p>
+  
+  <div class="entry">
+    <h2>仄克萨是什么？</h2>
+    <p>
+      当然了，仄克萨语是一门由我构建的人造语言。
+      它拥有独立的字母系统、发音规则、词汇体系与语法逻辑。
+    </p>
+    <p>
+      在一个叫做仄克萨·欧姆克隆的地方，风沙掩埋了古老文明的痕迹。无垠的荒漠与碱性的大海曾构成地平线下的一切。
+      而仄克萨人选择探索、远征，
+      将被风暴与距离拆散的星球连接起来，
+      并学会与风暴共存。
+      于是，那些原始湖畔文明间的人们，将彼此之间的羁绊情谊命名为<b>“Alzomka”</b>。
+    </p>
+    <p>
+      这里收录了仄克萨语的词典、语法与文字系统，也记录着这个世界的历史、文化与故事。
+      连接从此开始......
+  </div>
+
+  <!-- <img src="./ZeksaLogo.png" class="logo" alt="Zeksa Logo"> -->
+
+  <!-- 三个功能按钮 -->
+  <div class="button-group">
+    <button onclick="window.location.href='https://simonzhang.art/zeksa'">All About Zeksa</button>
+    <button onclick="window.location.href='https://simonzhang.art/dictionary'">词典查询</button>
+    <button onclick="window.location.href='https://simonzhang.art/quiz'">词汇测试</button>
+  </div>
+
+  
+
+  <!-- icons -->
+  <div class="social-icons">
+    <a href="https://space.bilibili.com/543929703" target="_blank" title="B站">
+      <i class="fa-brands fa-bilibili"></i>
+    </a>
+    <a href="mailto:simonzhang96@icloud.com" title="邮箱">
+      <i class="fa-solid fa-envelope"></i>
+    </a>
+  </div>
+
+  <p class="footer">
+    © 2026 Simon Zhang · Drekomka
+  </p>
+
+  
+
+  <script>
+    
+    // Special thanks to GPT and Doubao AI.
+    document.body.addEventListener('mousemove', e => {
+      const card = e.target.closest('.entry');
+      if (!card) return;
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      const strength = 8;
+      const moveX = (x / rect.width) * strength;
+      const moveY = (y / rect.height) * strength;
+      card.style.transform = `translate(${moveX}px, ${moveY - 3}px)`;
+    })
+    
+    document.body.addEventListener('mouseleave', e => {
+      const card = e.target.closest('.entry');
+      if (card) card.style.transform = '';
+    })
+  </script>
+</body>
+</html>
