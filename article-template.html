@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>仄克萨语学习</title>
+  <title>【文章标题】 · 仄克萨语学习</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -147,25 +147,32 @@
 <body>
   <div id="bg" aria-hidden="true"></div>
   <div class="home-back-btn">
-    <a href="/" title="返回主页" aria-label="返回主页">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></svg>
+    <a href="tindex.html" title="返回学习主页" aria-label="返回学习主页">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 5-7 7 7 7M7 12h14"/></svg>
     </a>
   </div>
   <main>
     <header class="page-header">
-      <h1>仄克萨语学习</h1>
-      <p class="intro">点击下方文章，进入学习。</p>
+      <!-- 主页自动读取下方 h1 作为标题、p.intro 作为简介。替换内容，并同步修改 head 中的 title。 -->
+      <h1>【文章标题】</h1>
+      <p class="intro">【文章简介】</p>
     </header>
-    <section class="entry introduction" aria-labelledby="about-zeksa">
-      <h2 id="about-zeksa">关于仄克萨语</h2>
-      <p>仄克萨语有专用的字母，也可以用拉丁字母转写。配套词典支持两种字母的显示切换，并提供词义、词类、构词信息和例句，便于结合学习文章对照查阅。</p>
-    </section>
-    <section aria-label="学习文章">
-      <!-- 此列表由 update_articles.py 从文章中生成，无需手动维护。 -->
-      <!-- ARTICLES:START -->
-      <p class="intro">暂无学习文章。</p>
-      <!-- ARTICLES:END -->
-    </section>
+    <article class="entry article-body" aria-label="文章正文">
+      <!-- 按需复制小节；没有简介或小节标题时可删除对应元素。 -->
+      <h2>【小节标题】</h2>
+      <p>【正文内容】</p>
+
+      <!-- 可选例句样式：需要时取消这段注释并填入实际内容。
+      <div class="example">
+        <p><strong>例句：</strong>【仄克萨语例句】</p>
+        <p><strong>翻译：</strong>【中文翻译】</p>
+      </div>
+      -->
+      <!-- 若填写的是仄克萨字体对应的字形编码，可用 <span class="zeksa">…</span> 包裹；普通拉丁转写不加此类。 -->
+    </article>
+    <nav class="back-link" aria-label="文章导航">
+      <a href="tindex.html">← 返回学习主页</a>
+    </nav>
   </main>
   <footer>
     <img src="/ZeksaLogo.png" class="logo" alt="仄克萨标识">
