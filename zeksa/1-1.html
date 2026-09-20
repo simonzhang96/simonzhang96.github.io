@@ -361,19 +361,13 @@
 
 <script>
 (() => {
-  /* ========= 需要你填写的设置 ========= */
+  /* ========= BV ========= */
 
-  // 填写完整 BV 号，包含开头的 BV。
-  // 从 Bilibili 视频网址中复制即可。
   const BV_ID = "BV1kZe86yEvH";
-
-  // 普通视频保持 1；多分P视频填写对应的集数。
   const VIDEO_PAGE = 1;
+  const INTRO_VERSION = "v2";
 
-  // 如果想让看过弹窗的读者再次看到它，把 v1 改成 v2。
-  const INTRO_VERSION = "v1";
-
-  /* ========= 以下通常不需要修改 ========= */
+  /* ========= Cool ========= */
 
   const dialog = document.getElementById("introVideoDialog");
   const player = document.getElementById("introVideoPlayer");
@@ -427,10 +421,10 @@
     player.src = playerUrl.href;
     player.hidden = false;
     watchButton.hidden = true;
-    skipButton.textContent = "关闭，继续阅读";
+    skipButton.textContent = "关闭";
 
     status.textContent =
-      "若未开始播放，请点击播放器内的播放按钮。 ";
+      "本视频时长约 2 分钟。若未开始播放，请点击播放器内的播放按钮。 ";
 
     // 如果嵌入播放器无法使用，还可以直接去 Bilibili 观看。
     const directLink = document.createElement("a");
