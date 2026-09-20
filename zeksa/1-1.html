@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<!-- 仄克萨语学习 · Created by Simon Zhang. All rights reserved. -->
+<!-- 仄克萨语学习 · Created by Simon Zhang and GPT-6 Astra. All rights reserved. -->
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>【文章标题】 · 仄克萨语学习</title>
+  <title>音形成文 - 辅音篇</title>
   <link rel="icon" type="image/x-icon" href="/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -142,6 +142,137 @@
       .article-link { transition: none; }
       .article-link:hover { transform: none; }
     }
+    .intro-video-dialog {
+    width: min(680px, calc(100% - 32px));
+    max-height: 90vh;
+    max-height: 90dvh;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 24px;
+
+    border: none;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.96);
+    color: #222;
+
+    font-family: inherit;
+    line-height: 1.8;
+
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* 页面遮罩 */
+  .intro-video-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.35);
+  }
+
+  /* 防止文章已有样式覆盖 hidden 属性 */
+  .intro-video-dialog [hidden] {
+    display: none !important;
+  }
+
+  .intro-video-dialog h2 {
+    margin: 0 0 16px;
+    color: #0078D4;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  /* Bilibili 播放器 */
+  .intro-video-player {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 10px;
+    background: #000;
+  }
+
+  /* 给读者看的说明文字 */
+  .intro-video-note {
+    margin: 16px 0;
+    line-height: 1.8;
+    text-align: left;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+  }
+
+  /* 播放提示 */
+  .intro-video-status {
+    margin: 12px 0 0;
+    color: #555;
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  .intro-video-status:empty {
+    display: none;
+  }
+
+  .intro-video-status a {
+    color: #0078D4;
+  }
+
+  /* 底部按钮 */
+  .intro-video-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .intro-video-actions button {
+    margin: 0;
+    padding: 10px 20px;
+    min-height: 44px;
+
+    border: none;
+    border-radius: 14px;
+    background: #0078D4;
+    color: #fff;
+
+    font: inherit;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 120, 212, 0.15);
+  }
+
+  .intro-video-actions button:hover {
+    background: #0066b3;
+  }
+
+  .intro-video-actions .skip-button {
+    background: #eaf2fb;
+    color: #0078D4;
+    box-shadow: none;
+  }
+
+  .intro-video-actions .skip-button:hover {
+    background: #dceafb;
+  }
+
+  .intro-video-dialog button:focus-visible,
+  .intro-video-dialog a:focus-visible {
+    outline: 3px solid #0078D4;
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 600px) {
+    .intro-video-dialog {
+      padding: 20px;
+    }
+
+    .intro-video-dialog h2 {
+      font-size: 1.2rem;
+    }
+
+    .intro-video-actions button {
+      flex: 1;
+    }
+  }
   </style>
 </head>
 <body>
@@ -154,8 +285,8 @@
   <main>
     <header class="page-header">
       <!-- 主页自动读取下方 h1 作为标题、p.intro 作为简介。替换内容，并同步修改 head 中的 title。 -->
-      <h1>1. 1 - 拼读字母</h1>
-      <p class="intro">——到底该如何读懂仄克萨字母？</p>
+      <h1>1. 1 - 拼读辅音</h1>
+      <p class="intro">——”音形成文“</p>
     </header>
     <article class="entry article-body" aria-label="文章正文">
       <!-- 按需复制小节；没有简介或小节标题时可删除对应元素。 -->
@@ -180,5 +311,168 @@
     <img src="/ZeksaLogo.png" class="logo" alt="仄克萨标识">
     <p class="footer">© 2026 Simon Zhang · Drekomka</p>
   </footer>
+  <dialog
+  id="introVideoDialog"
+  class="intro-video-dialog"
+  aria-labelledby="introVideoTitle"
+  aria-describedby="introVideoNote"
+>
+  <!-- 可以修改弹窗标题 -->
+  <h2 id="introVideoTitle">先等等...</h2>
+
+  <!-- 点击“观看视频”之后，才加载 Bilibili 播放器 -->
+  <iframe
+    id="introVideoPlayer"
+    class="intro-video-player"
+    title="介绍视频"
+    allow="autoplay; fullscreen; picture-in-picture"
+    allowfullscreen
+    hidden
+  ></iframe>
+
+  <!-- 在这里填写给读者看的说明文字，可以直接换行 -->
+  <p id="introVideoNote" class="intro-video-note">观看介绍视频可能会有助于理解文章内容。想要观看吗？</p>
+
+  <!-- 播放提示由下方脚本自动填写 -->
+  <p
+    id="introVideoStatus"
+    class="intro-video-status"
+    role="status"
+  ></p>
+
+  <div class="intro-video-actions">
+    <button
+      id="introVideoSkip"
+      class="skip-button"
+      type="button"
+    >
+      跳过
+    </button>
+
+    <button
+      id="introVideoWatch"
+      type="button"
+      autofocus
+    >
+      观看视频
+    </button>
+  </div>
+</dialog>
+
+<script>
+(() => {
+  /* ========= 需要你填写的设置 ========= */
+
+  // 填写完整 BV 号，包含开头的 BV。
+  // 从 Bilibili 视频网址中复制即可。
+  const BV_ID = "BV1kZe86yEvH";
+
+  // 普通视频保持 1；多分P视频填写对应的集数。
+  const VIDEO_PAGE = 1;
+
+  // 如果想让看过弹窗的读者再次看到它，把 v1 改成 v2。
+  const INTRO_VERSION = "v1";
+
+  /* ========= 以下通常不需要修改 ========= */
+
+  const dialog = document.getElementById("introVideoDialog");
+  const player = document.getElementById("introVideoPlayer");
+  const watchButton = document.getElementById("introVideoWatch");
+  const skipButton = document.getElementById("introVideoSkip");
+  const status = document.getElementById("introVideoStatus");
+
+  // 不支持弹窗的浏览器直接显示文章。
+  if (typeof dialog.showModal !== "function") return;
+
+  const videoId = BV_ID.trim();
+
+  // 按文章路径、视频编号、分P和版本分别保存记录。
+  const storageKey = [
+    "zeksa-bilibili-intro",
+    INTRO_VERSION,
+    window.location.pathname,
+    videoId,
+    VIDEO_PAGE
+  ].join(":");
+
+  let hasSeen = false;
+
+  try {
+    hasSeen = localStorage.getItem(storageKey) === "seen";
+  } catch {
+    // 无法使用浏览器存储时，仍然允许观看和跳过。
+  }
+
+  // 点击“观看视频”时加载播放器。
+  watchButton.addEventListener("click", () => {
+    if (!/^BV[0-9a-zA-Z]+$/.test(videoId)) {
+      status.textContent =
+        "视频尚未配置，请在代码中填写正确的 BV 号。";
+      return;
+    }
+
+    const playerUrl = new URL(
+      "https://player.bilibili.com/player.html"
+    );
+
+    playerUrl.searchParams.set("bvid", videoId);
+    playerUrl.searchParams.set("p", String(VIDEO_PAGE));
+
+    // 点击观看后尝试自动播放。
+    playerUrl.searchParams.set("autoplay", "1");
+
+    // 默认关闭弹幕；想开启可以改成 1。
+    playerUrl.searchParams.set("danmaku", "0");
+
+    player.src = playerUrl.href;
+    player.hidden = false;
+    watchButton.hidden = true;
+    skipButton.textContent = "关闭，继续阅读";
+
+    status.textContent =
+      "若未开始播放，请点击播放器内的播放按钮。 ";
+
+    // 如果嵌入播放器无法使用，还可以直接去 Bilibili 观看。
+    const directLink = document.createElement("a");
+
+    directLink.href =
+      "https://www.bilibili.com/video/" +
+      encodeURIComponent(videoId) +
+      "/?p=" + VIDEO_PAGE;
+
+    directLink.textContent = "在 Bilibili 观看";
+    directLink.target = "_blank";
+    directLink.rel = "noopener noreferrer";
+
+    status.appendChild(directLink);
+  });
+
+  // 卸载播放器，避免弹窗关闭后继续播放声音。
+  function unloadPlayer() {
+    player.src = "about:blank";
+    player.hidden = true;
+  }
+
+  // 点击“跳过”或“关闭”。
+  skipButton.addEventListener("click", () => {
+    unloadPlayer();
+    dialog.close();
+  });
+
+  // 通过 Esc 等方式关闭时，也卸载播放器。
+  dialog.addEventListener("close", unloadPlayer);
+
+  // 仅在没有访问记录时自动弹出。
+  if (!hasSeen) {
+    dialog.showModal();
+
+    try {
+      localStorage.setItem(storageKey, "seen");
+    } catch {
+      // 保存失败不影响本次使用。
+    }
+  }
+})();
+</script>
 </body>
 </html>
