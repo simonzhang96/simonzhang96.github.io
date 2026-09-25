@@ -2,6 +2,7 @@
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
 <!--Created by Ukelele version 426 on 2026-04-12 at 9:59 (GMT+8)-->
 <!--Last edited by Ukelele version 426 on 2026-08-18 at 11:06 (GMT+8)-->
+<!--Omklon Latin Keyboard Layout by Simon Zhang-->
 <keyboard group="126" id="-10745" name="Omklon Latin" maxout="2">
     <layouts>
         <layout first="0" last="17" mapSet="ANSI" modifiers="Modifiers"/>
