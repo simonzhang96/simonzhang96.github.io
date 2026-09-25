@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- 仄克萨语学习 · Created by Simon Zhang. All rights reserved. -->
+<!-- 仄克萨语学习 · Created by Simon Zhang and GPT-6 Astra. All rights reserved. -->
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
@@ -9,6 +9,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
       --accent: #0078D4;
@@ -61,14 +62,17 @@
     .intro { text-align: center; margin: 0; color: var(--label-color); }
     .entry {
       display: block;
-      background: rgba(255, 255, 255, 0.6);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+      background: linear-gradient(135deg, rgba(255,255,255,.52), rgba(255,255,255,.26));
+      backdrop-filter: blur(22px) saturate(145%);
+      -webkit-backdrop-filter: blur(22px) saturate(145%);
       padding: 20px 24px;
       margin: 30px auto;
       max-width: 800px;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08), 0 0 20px rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,.72);
+      border-radius: 18px;
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.65),
+        0 8px 28px rgba(61,89,115,.08);
     }
     a { color: var(--accent); }
     a:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
@@ -79,12 +83,19 @@
     }
     .article-link:hover {
       transform: translateY(-3px);
-      box-shadow: 0 14px 36px rgba(0,0,0,0.13), 0 0 35px rgba(255,255,255,0.25);
+      box-shadow:
+        inset 0 1px 0 rgba(255,255,255,.8),
+        0 14px 36px rgba(61,89,115,.12);
     }
     .article-link h2, .introduction h2 { color: var(--accent); font-size: 1.3rem; margin: 0 0 8px; }
     .article-link p, .introduction p { color: var(--label-color); margin: 0; }
     .read-more { display: inline-block; color: var(--accent); margin-top: 12px; font-size: .95rem; }
-    .home-back-btn { position: fixed; top: 24px; left: 24px; z-index: 10; }
+    .home-back-btn {
+      position: fixed;
+      top: 24px;
+      left: 24px;
+      z-index: 999; 
+    }
     .home-back-btn a {
       display: flex;
       align-items: center;
@@ -97,11 +108,15 @@
       border-radius: 50%;
       box-shadow: 0 4px 14px rgba(0,0,0,0.1);
       color: var(--accent);
+      font-size: 20px;
       text-decoration: none;
-      transition: background 0.2s ease;
+      transition: all 0.2s ease;
     }
-    .home-back-btn a:hover { background: rgba(255,255,255,0.95); }
-    .home-back-btn svg { width: 21px; height: 21px; }
+    .home-back-btn a:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,0.95);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
     .article-body { padding: 28px 32px; }
     .article-body h2 { color: var(--accent); font-size: 1.4rem; margin: 1.5em 0 .6em; }
     .article-body h2:first-child { margin-top: 0; }
@@ -133,7 +148,7 @@
       .page-header { margin-top: 64px; }
       h1 { font-size: 1.8rem; }
       .home-back-btn { top: 16px; left: 16px; }
-      .home-back-btn a { width: 38px; height: 38px; }
+      .home-back-btn a { width: 38px; height: 38px; font-size: 18px; }
       .entry { padding: 18px 20px; margin: 24px auto; }
       .article-body { padding: 22px 20px; }
     }
@@ -148,7 +163,7 @@
   <div id="bg" aria-hidden="true"></div>
   <div class="home-back-btn">
     <a href="/" title="返回主页" aria-label="返回主页">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1Z"/></svg>
+      <i class="fa-solid fa-house" aria-hidden="true"></i>
     </a>
   </div>
   <main>
@@ -163,7 +178,11 @@
     <section aria-label="学习文章">
       <!-- 此列表由 update_articles.py 从文章中生成，无需手动维护。 -->
       <!-- ARTICLES:START -->
-      <p class="intro">暂无学习文章。</p>
+      <a class="entry article-link" href="1-1.html">
+        <h2>1. 1 - 拼读辅音</h2>
+        <p>——“音形成文”：如何记住仄克萨字母的辅音字形？</p>
+        <span class="read-more">阅读文章 →</span>
+      </a>
       <!-- ARTICLES:END -->
     </section>
   </main>
