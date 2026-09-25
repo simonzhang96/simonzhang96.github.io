@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="下载仄克萨语学习图片、徽标、字体与键盘布局。">
+  <title>下载中心 · 仄克萨</title>
+  <link rel="icon" href="/favicon.ico">
+  <style>
+    :root { color-scheme: light; --accent: #0078d4; --ink: #29465f; --muted: #61778b; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #eef8ff; color: var(--ink); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif; line-height: 1.65; isolation: isolate; }
+    .background { position: fixed; inset: 0; z-index: -1; pointer-events: none; background: radial-gradient(circle at 20% 30%, rgba(214,236,255,.8), transparent 40%), radial-gradient(circle at 80% 20%, rgba(255,201,138,.7), transparent 35%), radial-gradient(circle at 60% 80%, rgba(234,246,255,.7), transparent 45%), linear-gradient(180deg, #eef8ff, #fff4e6); }
+    a { color: var(--accent); }
+    button, input { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    button { cursor: pointer; }
+    a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    [hidden] { display: none !important; }
+    .home { position: fixed; top: 24px; left: 24px; z-index: 10; display: grid; place-items: center; width: 44px; height: 44px; border-radius: 50%; background: rgba(255,255,255,.7); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); box-shadow: 0 4px 14px rgba(0,0,0,.1); transition: transform .2s, background .2s; }
+    .home:hover { transform: translateY(-2px); background: rgba(255,255,255,.95); }
+    .home svg { width: 20px; height: 20px; }
+    main { max-width: 1060px; padding: 60px 30px 48px; margin: auto; }
+    .page-header { text-align: center; margin-bottom: 32px; }
+    h1 { margin: 0 0 10px; font-size: clamp(2.3rem, 5vw, 3.2rem); font-weight: 650; letter-spacing: -.035em; line-height: 1.3; color: #487eac; }
+    @supports (background-clip: text) or (-webkit-background-clip: text) { h1 span { background: linear-gradient(90deg,#4b8dff,#e9a04d); background-clip: text; -webkit-background-clip: text; color: transparent; } }
+    .intro { margin: 0; color: var(--muted); font-size: .98rem; }
+    .summary { margin: 14px 0 0; color: var(--muted); font-size: .82rem; letter-spacing: .03em; }
+    .toolbar { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-bottom: 32px; }
+    .tabs { display: inline-flex; padding: 5px; gap: 5px; border: 1px solid rgba(255,255,255,.8); border-radius: 18px; background: rgba(255,255,255,.38); box-shadow: 0 4px 18px rgba(61,89,115,.04); }
+    .tab { border: none; padding: 10px 20px; min-height: 44px; border-radius: 13px; background: transparent; color: var(--muted); font-size: .94rem; font-weight: 550; transition: background .2s, color .2s, box-shadow .2s; }
+    .tab[aria-selected="true"] { background: rgba(255,255,255,.88); color: #21679d; box-shadow: 0 3px 12px rgba(61,89,115,.08); }
+    .tab-count { font-size: .75rem; margin-left: 8px; opacity: .75; }
+    .search { display: flex; align-items: center; gap: 10px; width: 272px; min-height: 48px; padding: 0 15px; background: rgba(255,255,255,.48); border: 1px solid rgba(255,255,255,.85); border-radius: 15px; }
+    .search svg { width: 18px; height: 18px; flex: 0 0 auto; color: #7f94a5; }
+    .search input { width: 100%; min-width: 0; padding: 11px 0; border: 0; background: transparent; color: var(--ink); font-size: .9rem; }
+    .search input::placeholder { color: #7d8e9e; }
+    .search:focus-within { outline: 2px solid rgba(0,120,212,.5); outline-offset: 3px; }
+    .search input:focus-visible { outline: none; }
+    .group { margin: 0 0 34px; }
+    .group-heading { display: flex; align-items: baseline; gap: 12px; margin: 0 0 14px; }
+    h2 { font-size: 1.1rem; font-weight: 600; margin: 0; letter-spacing: .015em; }
+    .group-count { color: var(--muted); font-size: .78rem; }
+    .folder-summary { display: flex; align-items: center; gap: 20px; min-height: 116px; padding: 24px; list-style: none; cursor: pointer; border: 1px solid rgba(255,255,255,.72); border-radius: 18px; background: linear-gradient(135deg,rgba(255,255,255,.52),rgba(255,255,255,.26)); backdrop-filter: blur(22px) saturate(145%); -webkit-backdrop-filter: blur(22px) saturate(145%); box-shadow: inset 0 1px 0 rgba(255,255,255,.65),0 8px 28px rgba(61,89,115,.065); transition: background .2s, box-shadow .2s; }
+    .folder-summary::-webkit-details-marker { display: none; }
+    .folder-summary:hover { background: rgba(255,255,255,.62); box-shadow: 0 10px 30px rgba(61,89,115,.1); }
+    .folder-summary:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+    .folder-icon { width: 52px; height: 44px; color: #458dcc; flex-shrink: 0; }
+    .folder-info { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+    .folder-name { font-size: 1.05rem; font-weight: 600; overflow-wrap: anywhere; }
+    .folder-chevron { width: 20px; height: 20px; flex-shrink: 0; margin-left: auto; color: #7890a3; transition: transform .2s; }
+    .resource-folder[open] .folder-chevron { transform: rotate(90deg); }
+    .folder-contents { margin-top: 18px; }
+    .grid { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 18px; }
+    .card { min-width: 0; overflow: hidden; display: flex; flex-direction: column; background: linear-gradient(135deg,rgba(255,255,255,.52),rgba(255,255,255,.26)); backdrop-filter: blur(22px) saturate(145%); -webkit-backdrop-filter: blur(22px) saturate(145%); border: 1px solid rgba(255,255,255,.72); border-radius: 18px; box-shadow: inset 0 1px 0 rgba(255,255,255,.65),0 8px 28px rgba(61,89,115,.065); transition: transform .2s,box-shadow .2s; }
+    .card:hover { transform: translateY(-3px); box-shadow: inset 0 1px 0 rgba(255,255,255,.8),0 12px 32px rgba(61,89,115,.1); }
+    .preview { display: grid; place-items: center; aspect-ratio: 16/9; padding: 14px; background: rgba(255,255,255,.36); border-bottom: 1px solid rgba(255,255,255,.7); overflow: hidden; }
+    .preview img { width: 100%; height: 100%; max-height: 145px; object-fit: contain; transition: transform .25s; }
+    .preview:hover img { transform: scale(1.035); }
+    .card-body { padding: 17px 19px 18px; display: flex; flex: 1; flex-direction: column; }
+    .card h3 { font-size: 1rem; line-height: 1.45; font-weight: 600; margin: 0 0 5px; overflow-wrap: anywhere; }
+    .file-info { margin: 0; color: var(--muted); font-size: .74rem; overflow-wrap: anywhere; }
+    .resource-note { margin: 12px 0 16px; min-height: 2.9em; font-size: .84rem; line-height: 1.65; color: #536a7e; white-space: pre-line; overflow-wrap: anywhere; }
+    .resource-note:empty::before { content: "说明待补充"; color: #8997a4; font-size: .8rem; }
+    .actions { margin-top: auto; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .format { font-size: .66rem; color: #6b8294; font-weight: 600; letter-spacing: .09em; }
+    .download { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 40px; padding: 7px 13px; background: rgba(230,243,255,.7); border: 1px solid rgba(255,255,255,.85); border-radius: 10px; color: #276b9f; text-decoration: none; font-size: .82rem; font-weight: 550; }
+    .download:hover { background: rgba(215,236,255,.9); }
+    .download svg { width: 15px; height: 15px; }
+    .featured .grid { grid-template-columns: 1fr; }
+    .featured .card { flex-direction: row; }
+    .featured .preview { width: 30%; flex-shrink: 0; aspect-ratio: auto; border-bottom: none; border-right: 1px solid rgba(255,255,255,.7); padding: 22px; }
+    .featured .preview img { max-height: 112px; }
+    .featured .card-body { padding: 23px 26px; }
+    .featured .resource-note { min-height: 0; margin: 9px 0 15px; }
+    .font-sample, .keyboard-sample { min-height: 124px; display: flex; align-items: center; justify-content: center; gap: 8px; background: rgba(255,255,255,.28); border-bottom: 1px solid rgba(255,255,255,.7); color: #517ea7; }
+    .font-sample { font-size: 2.35rem; letter-spacing: .09em; line-height: 1.4; padding: 16px; overflow-wrap: anywhere; }
+    .key { display: grid; place-items: center; width: 38px; height: 40px; border-radius: 9px; background: rgba(255,255,255,.75); border: 1px solid rgba(255,255,255,.9); box-shadow: 0 3px 0 rgba(102,132,157,.12); font-size: 1rem; }
+    .empty { padding: 48px 20px; text-align: center; color: var(--muted); }
+    footer { padding: 0 20px 34px; text-align: center; color: #7b8994; font-size: .8rem; }
+    .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+    @media (max-width: 850px) { .grid { grid-template-columns: repeat(2,minmax(0,1fr)); } }
+    @media (max-width: 600px) {
+      main { padding: 84px 18px 32px; }
+      .home { top: 16px; left: 16px; width: 38px; height: 38px; }
+      .page-header { margin-bottom: 26px; }
+      .intro { font-size: .88rem; }
+      .summary { font-size: .74rem; }
+      .toolbar { gap: 12px; margin-bottom: 26px; }
+      .tabs, .search { width: 100%; }
+      .tab { flex: 1; padding: 10px 8px; font-size: .9rem; }
+      .tab-count { margin-left: 5px; }
+      .grid { gap: 13px; }
+      .card-body { padding: 14px; }
+      .card h3 { font-size: .94rem; }
+      .preview { padding: 9px; }
+      .featured .preview { width: 32%; padding: 15px; }
+      .featured .card-body { padding: 18px; }
+      .resource-note { font-size: .8rem; }
+      .actions { gap: 6px; }
+      .download { padding: 7px 10px; }
+      #tools .grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 359px) { .grid { grid-template-columns: 1fr; } }
+    @media (prefers-reduced-motion: no-preference) { .page-header { animation: appear .6s ease backwards; } @keyframes appear { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } } }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition: none !important; } }
+  </style>
+  <!-- FONT_STYLES:START -->
+<style>
+@font-face { font-family: "download-font-1"; src: url("../fonts/Zeksa%20Ajkrus.ttf"); font-display: swap; }
+@font-face { font-family: "download-font-2"; src: url("../fonts/Zeksa%20525.ttf"); font-display: swap; }
+@font-face { font-family: "download-font-3"; src: url("../fonts/Zeksa%20708.ttf"); font-display: swap; }
+</style>
+    <!-- FONT_STYLES:END -->
+</head>
+<body>
+  <div class="background" aria-hidden="true"></div>
+  <a class="home" href="../" aria-label="返回主页" title="返回主页"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2 1 11h3v10h6v-7h4v7h6V11h3L12 2Z"/></svg></a>
+  <main>
+    <header class="page-header">
+      <h1><span>下载中心</span></h1>
+      <p class="intro">学习、书写与创作所需的仄克萨资源。</p>
+      <!-- SUMMARY:START -->
+<p class="summary">25 张图片 · 3 款字体 · 2 个键盘布局</p>
+    <!-- SUMMARY:END -->
+    </header>
+    <div class="toolbar">
+      <div class="tabs" role="tablist" aria-label="资源分类">
+        <button class="tab" id="images-tab" type="button" role="tab" aria-selected="true" aria-controls="images">图片<span class="tab-count" id="images-count"></span></button>
+        <button class="tab" id="tools-tab" type="button" role="tab" aria-selected="false" aria-controls="tools" tabindex="-1">字体 / 键盘布局<span class="tab-count" id="tools-count"></span></button>
+      </div>
+      <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/></svg><span class="sr-only">搜索当前分类中的资源</span><input id="resource-search" type="search" placeholder="搜索名称、文件夹或说明…" autocomplete="off"></label>
+    </div>
+    <p id="search-status" class="sr-only" role="status" aria-live="polite"></p>
+    <!-- CATALOG:START -->
+<section id="images" role="tabpanel" aria-labelledby="images-tab" tabindex="0">
+<section class="group featured"><div class="group-heading"><h2>网站标识</h2><span class="group-count">1 个文件</span></div><div class="grid">
+<article class="card" data-search="仄克萨徽标 zeksalogo.png 网站标识 仄克萨徽标的 png 原图。" data-path="ZeksaLogo.png">
+  <a class="preview" href="../ZeksaLogo.png" target="_blank" rel="noopener" aria-label="查看原图：仄克萨徽标（新窗口）"><img src="../ZeksaLogo.png" alt="仄克萨徽标" loading="lazy" decoding="async"></a>
+  <div class="card-body">
+    <h3>仄克萨徽标</h3>
+    <p class="file-info">ZeksaLogo.png · 224.7 KB</p>
+    <p class="resource-note">仄克萨徽标的 PNG 原图。</p>
+    <div class="actions"><span class="format">PNG</span><a class="download" href="../ZeksaLogo.png" download="ZeksaLogo.png" aria-label="下载：仄克萨徽标"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>下载</a></div>
+  </div>
+</article>
+</div></section>
+<details class="group resource-folder"><summary class="folder-summary"><svg class="folder-icon" viewBox="0 0 48 40" fill="none" aria-hidden="true"><path d="M3 9a5 5 0 0 1 5-5h10l5 5h17a5 5 0 0 1 5 5v19a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9Z" fill="currentColor" opacity=".22"/><path d="M3 16a4 4 0 0 1 4-4h34a4 4 0 0 1 4 4v17a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V16Z" fill="currentColor" opacity=".7"/></svg><span class="folder-info"><span class="folder-name">1.1 拼读辅音</span><span class="group-count">24 个文件</span></span><svg class="folder-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></summary><div class="grid folder-contents">
+<article class="card" data-search="仄克萨字母表 resources/1-1/alphabet.png 1.1 拼读辅音 仄克萨字母总览，配合拼读课程使用。" data-path="resources/1-1/alphabet.png">
+  <a class="preview" href="../resources/1-1/alphabet.png" target="_blank" rel="noopener" aria-label="查看原图：仄克萨字母表（新窗口）"><img src="../resources/1-1/alphabet.png" alt="仄克萨字母表" loading="lazy" decoding="async"></a>
+  <div class="card-body">
+    <h3>仄克萨字母表</h3>
+    <p class="file-info">alphabet.png · 189.4 KB</p>
+    <p class="resource-note">仄克萨字母总览，配合拼读课程使用。</p>
+    <div class="actions"><span class="format">PNG</span><a class="download" href="../resources/1-1/alphabet.png" download="alphabet.png" aria-label="下载：仄克萨字母表"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>下载</a></div>
+  </div>
+</article>
+<article class="card" data-search="b · 字形与发音 resources/1-1/b.png 1.1 拼读辅音 " data-path="resources/1-1/b.png">
+  <a class="preview" href="../resources/1-1/b.png" target="_blank" rel="noopener" aria-label="查看原图：b · 字形与发音（新窗口）"><img src="../resources/1-1/b.png" alt="b · 字形与发音" loading="lazy" decoding="async"></a>
+  <div class="card-body">
+    <h3>b · 字形与发音</h3>
+    <p class="file-info">b.png · 231.8 KB</p>
+    <p class="resource-note"></p>
+    <div class="actions"><span class="format">PNG</span><a class="download" href="../resources/1-1/b.png" download="b.png" aria-label="下载：b · 字形与发音"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>下载</a></div>
+  </div>
+</article>
+<article class="card" data-search="c · 字形与发音 resources/1-1/c.png 1.1 拼读辅音 " data-path="resources/1-1/c.png">
+  <a class="preview" href="../resources/1-1/c.png" target="_blank" rel="noopener" aria-label="查看原图：c · 字形与发音（新窗口）"><img src="../resources/1-1/c.png" alt="c · 字形与发音" loading="lazy" decoding="async"></a>
+  <div class="card-body">
+    <h3>c · 字形与发音</h3>
+    <p class="file-info">c.png · 233.4 KB</p>
+    <p class="resource-note"></p>
+    <div class="actions"><span class="format">PNG</span><a class="download" href="../resources/1-1/c.png" download="c.png" aria-label="下载：c · 字形与发音"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>下载</a></div>
+  </div>
+</article>
+<article class="card" data-search="d · 字形与发音 resources/1-1/d.png 1.1 拼读辅音 " data-path="resources/1-1/d.png">
+  <a class="preview" href="../resources/1-1/d.png" target="_blank" rel="noopener" aria-label="查看原图：d · 字形与发音（新窗口）"><img src="../resources/1-1/d.png" alt="d · 字形与发音" loading="lazy" decoding="async"></a>
+  <div class="card-body">
+    <h3>d · 字形与发音</h3>
+    <p class="file-info">d.png · 188.6 KB</p>
+    <p class="resource-note"></p>
+    <div class="actions"><span class="format">PNG</span><a class="download" href="../resources/1-1/d.png" download="d.png" aria-label="下载：d · 字形与发音"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>下载</a></div>
+  </div>
+</article>
+<article class="card" data-search="f · 字形与发音 resources/1-1/f.png 1.1 拼读辅音 " data-path="resources/1-1/f.png">
+  <a class="preview" href="../resources/1-1/f.png" target="_blank" rel="noopener" aria-label="查看原图：f · 字形与发音（新窗口）"><img src="../resources/1-1/f.png" alt="f · 字形与发音" loading="lazy" decoding="async"></a>
+  <div class="card-body">
+    <h3>f · 字形与发音</h3>
+    <p class="file-info">f.png · 230.8 KB</p>
+    <p class="resource-note"></p>
+    <div class="actions"><span class="format">PNG</span><a class="download" href="../resources/1-1/f.png" download="f.png" aria-label="下载：f · 字形与发音"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>下载</a></div>
+  </div>
+</article>
+<article class="card" data-search="g · 字形与发音 resources/1-1/g.png 1.1 拼读辅音 " data-path="resources/1-1/g.png">
+  <a class="preview" href="../resources/1-1/g.png" target="_blank" rel="noopener" aria-label="查看原图：g · 字形与发音（新窗口）"><img src="../resources/1-1/g.png" alt="g · 字形与发音" loading="lazy" decoding="async"></a>
+  <div class="card-body">
+    <h3>g · 字形与发音</h3>
+    <p class="file-info">g.png · 203.8 KB</p>
+    <p class="resource-note"></p>
+    <div class="actions"><span class="format">PNG</span><a class="download" href="../resources/1-1/g.png" download="g.png" aria-label="下载：g · 字形与发音"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>下载</a></div>
+  </div>
+</article>
+<article class="card" data-search="h · 字形与发音 resources/1-1/h.png 1.1 拼读辅音 " data-path="resources/1-1/h.png">
+  <a class="preview" href="../resources/1-1/h.png" target="_blank" rel="noopener" aria-label="查看原图：h · 字形与发音（新窗口）"><img src="../resources/1-1/h.png" alt="h · 字形与发音" loading="lazy" decoding="async"></a>
+  <div class="card-body">
+    <h3>h · 字形与发音</h3>
+    <p class="file-info">h.png · 309.1 KB</p>
+    <p class="resource-note"></p>
+    <div class="actions"><span class="format">PNG</span><a class="download" href="../resources/1-1/h.png" download="h.png" aria-label="下载：h · 字形与发音"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>下载</a></div>
+  </div>
+</article>
+<article class="card" data-search="j · 字形与发音 resources/1-1/j.png 1.1 拼读辅音 " data-path="resources/1-1/j.png">
+  <a class="preview" href="../resources/1-1/j.png" target="_blank" rel="noopener" aria-label="查看原图：j · 字形与发音（新窗口）"><img src="../resources/1-1/j.png" alt="j · 字形与发音" loading="lazy" decoding="async"></a>
+  <div class="card-body">
+    <h3>j · 字形与发音</h3>
+    <p class="file-info">j.png · 275.2 KB</p>
+    <p class="resource-note"></p>
+    <div class="actions"><span class="format">PNG</span><a class="download" href="../resources/1-1/j.png" download="j.png" aria-label="下载：j · 字形与发音"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>下载</a></div>
+  </div>
+</article>
+<article class="card" data-search="k · 字形与发音 resources/1-1/k.png 1.1 拼读辅音 " data-path="resources/1-1/k.png">
+  <a class="preview" href="../resources/1-1/k.png" target="_blank" rel="noopener" aria-label="查看原图：k · 字形与发音（新窗口）"><img src="../resources/1-1/k.png" alt="k · 字形与发音" loading="lazy" decoding="async"></a>
+  <div class="card-body">
+    <h3>k · 字形与发音</h3>
+    <p class="file-info">k.png · 223.4 KB</p>
+    <p class="resource-note"></p>
+    <div class="actions"><span class="format">PNG</span><a class="download" href="../resources/1-1/k.png" download="k.png" aria-label="下载：k · 字形与发音"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>下载</a></div>
+  </div>
+</article>
+<article class="card" data-search="l · 字形与发音 resources/1-1/l.png 1.1 拼读辅音 " data-path="resources/1-1/l.png">
+  <a class="preview" href="../resources/1-1/l.png" target="_blank" rel="noopener" aria-label="查看原图：l · 字形与发音（新窗口）"><img src="../resources/1-1/l.png" alt="l · 字形与发音" loading="lazy" decoding="async"></a>
+  <div class="card-body">
+    <h3>l · 字形与发音</h3>
+    <p class="file-info">l.png · 268.0 KB</p>
+    <p class="resource-note"></p>
+    <div class="actions"><span class="format">PNG</span><a class="download" href="../resources/1-1/l.png" download="l.png" aria-label="下载：l · 字形与发音"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>下载</a></div>
+  </div>
+</article>
+<article class="card" data-search="m · 字形与发音 resources/1-1/m.png 1.1 拼读辅音 " data-path="resources/1-1/m.png">
+  <a class="preview" href="../resources/1-1/m.png" target="_blank" rel="noopener" aria-label="查看原图：m · 字形与发音（新窗口）"><img src="../resources/1-1/m.png" alt="m · 字形与发音" loading="lazy" decoding="async"></a>
+  <div class="card-body">
+    <h3>m · 字形与发音</h3>
+    <p class="file-info">m.png · 292.2 KB</p>
+    <p class="resource-note"></p>
+    <div class="actions"><span class="format">PNG</span><a class="download" href="../resources/1-1/m.png" download="m.png" aria-label="下载：m · 字形与发音"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>下载</a></div>
+  </div>
+</article>
+<article class="card" data-search="n · 字形与发音 resources/1-1/n.png 1.1 拼读辅音 " data-path="resources/1-1/n.png">
+  <a class="preview" href="../resources/1-1/n.png" target="_blank" rel="noopener" aria-label="查看原图：n · 字形与发音（新窗口）"><img src="../resources/1-1/n.png" alt="n · 字形与发音" loading="lazy" decoding="async"></a>
+  <div class="card-body">
+    <h3>n · 字形与发音</h3>
+    <p class="file-info">n.png · 230.1 KB</p>
+    <p class="resource-note"></p>
+    <div class="actions"><span class="format">PNG</span><a class="download" href="../resources/1-1/n.png" download="n.png" aria-label="下载：n · 字形与发音"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>下载</a></div>
+  </div>
+</article>
+<article class="card" data-search="p · 字形与发音 resources/1-1/p.png 1.1 拼读辅音 " data-path="resources/1-1/p.png">
+  <a class="preview" href="../resources/1-1/p.png" target="_blank" rel="noopener" aria-label="查看原图：p · 字形与发音（新窗口）"><img src="../resources/1-1/p.png" alt="p · 字形与发音" loading="lazy" decoding="async"></a>
+  <div class="card-body">
+    <h3>p · 字形与发音</h3>
+    <p class="file-info">p.png · 253.9 KB</p>
+    <p class="resource-note"></p>
+    <div class="actions"><span class="format">PNG</span><a class="download" href="../resources/1-1/p.png" download="p.png" aria-label="下载：p · 字形与发音"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>下载</a></div>
+  </div>
+</article>
+<article class="card" data-search="q · 字形与发音 resources/1-1/q.png 1.1 拼读辅音 " data-path="resources/1-1/q.png">
+  <a class="preview" href="../resources/1-1/q.png" target="_blank" rel="noopener" aria-label="查看原图：q · 字形与发音（新窗口）"><img src="../resources/1-1/q.png" alt="q · 字形与发音" loading="lazy" decoding="async"></a>
+  <div class="card-body">
+    <h3>q · 字形与发音</h3>
+    <p class="file-info">q.png · 229.6 KB</p>
+    <p class="resource-note"></p>
+    <div class="actions"><span class="format">PNG</span><a class="download" href="../resources/1-1/q.png" download="q.png" aria-label="下载：q · 字形与发音"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>下载</a></div>
+  </div>
+</article>
+<article class="card" data-search="r · 字形与发音 resources/1-1/r.png 1.1 拼读辅音 " data-path="resources/1-1/r.png">
+  <a class="preview" href="../resources/1-1/r.png" target="_blank" rel="noopener" aria-label="查看原图：r · 字形与发音（新窗口）"><img src="../resources/1-1/r.png" alt="r · 字形与发音" loading="lazy" decoding="async"></a>
+  <div class="card-body">
+    <h3>r · 字形与发音</h3>
+    <p class="file-info">r.png · 226.9 KB</p>
+    <p class="resource-note"></p>
+    <div class="actions"><span class="format">PNG</span><a class="download" href="../resources/1-1/r.png" download="r.png" aria-label="下载：r · 字形与发音"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>下载</a></div>
+  </div>
+</article>
+<article class="card" data-search="s · 字形与发音 resources/1-1/s.png 1.1 拼读辅音 " data-path="resources/1-1/s.png">
+  <a class="preview" href="../resources/1-1/s.png" target="_blank" rel="noopener" aria-label="查看原图：s · 字形与发音（新窗口）"><img src="../resources/1-1/s.png" alt="s · 字形与发音" loading="lazy" decoding="async"></a>
+  <div class="card-body">
+    <h3>s · 字形与发音</h3>
+    <p class="file-info">s.png · 313.8 KB</p>
+    <p class="resource-note"></p>
+    <div class="actions"><span class="format">PNG</span><a class="download" href="../resources/1-1/s.png" download="s.png" aria-label="下载：s · 字形与发音"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>下载</a></div>
+  </div>
+</article>
+<article class="card" data-search="t · 字形与发音 resources/1-1/t.png 1.1 拼读辅音 " data-path="resources/1-1/t.png">
+  <a class="preview" href="../resources/1-1/t.png" target="_blank" rel="noopener" aria-label="查看原图：t · 字形与发音（新窗口）"><img src="../resources/1-1/t.png" alt="t · 字形与发音" loading="lazy" decoding="async"></a>
+  <div class="card-body">
+    <h3>t · 字形与发音</h3>
+    <p class="file-info">t.png · 193.3 KB</p>
+    <p class="resource-note"></p>
+    <div class="actions"><span class="format">PNG</span><a class="download" href="../resources/1-1/t.png" download="t.png" aria-label="下载：t · 字形与发音"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>下载</a></div>
+  </div>
+</article>
+<article class="card" data-search="ts · 字形与发音 resources/1-1/ts.png 1.1 拼读辅音 " data-path="resources/1-1/ts.png">
+  <a class="preview" href="../resources/1-1/ts.png" target="_blank" rel="noopener" aria-label="查看原图：ts · 字形与发音（新窗口）"><img src="../resources/1-1/ts.png" alt="ts · 字形与发音" loading="lazy" decoding="async"></a>
+  <div class="card-body">
+    <h3>ts · 字形与发音</h3>
+    <p class="file-info">ts.png · 175.1 KB</p>
+    <p class="resource-note"></p>
+    <div class="actions"><span class="format">PNG</span><a class="download" href="../resources/1-1/ts.png" download="ts.png" aria-label="下载：ts · 字形与发音"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>下载</a></div>
+  </div>
+</article>
+<article class="card" data-search="v · 字形与发音 resources/1-1/v.png 1.1 拼读辅音 " data-path="resources/1-1/v.png">
+  <a class="preview" href="../resources/1-1/v.png" target="_blank" rel="noopener" aria-label="查看原图：v · 字形与发音（新窗口）"><img src="../resources/1-1/v.png" alt="v · 字形与发音" loading="lazy" decoding="async"></a>
+  <div class="card-body">
+    <h3>v · 字形与发音</h3>
+    <p class="file-info">v.png · 273.2 KB</p>
+    <p class="resource-note"></p>
+    <div class="actions"><span class="format">PNG</span><a class="download" href="../resources/1-1/v.png" download="v.png" aria-label="下载：v · 字形与发音"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>下载</a></div>
+  </div>
+</article>
+<article class="card" data-search="w · 字形与发音 resources/1-1/w.png 1.1 拼读辅音 " data-path="resources/1-1/w.png">
+  <a class="preview" href="../resources/1-1/w.png" target="_blank" rel="noopener" aria-label="查看原图：w · 字形与发音（新窗口）"><img src="../resources/1-1/w.png" alt="w · 字形与发音" loading="lazy" decoding="async"></a>
+  <div class="card-body">
+    <h3>w · 字形与发音</h3>
+    <p class="file-info">w.png · 298.2 KB</p>
+    <p class="resource-note"></p>
+    <div class="actions"><span class="format">PNG</span><a class="download" href="../resources/1-1/w.png" download="w.png" aria-label="下载：w · 字形与发音"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>下载</a></div>
+  </div>
+</article>
+<article class="card" data-search="x · 字形与发音 resources/1-1/x.png 1.1 拼读辅音 " data-path="resources/1-1/x.png">
+  <a class="preview" href="../resources/1-1/x.png" target="_blank" rel="noopener" aria-label="查看原图：x · 字形与发音（新窗口）"><img src="../resources/1-1/x.png" alt="x · 字形与发音" loading="lazy" decoding="async"></a>
+  <div class="card-body">
+    <h3>x · 字形与发音</h3>
+    <p class="file-info">x.png · 159.4 KB</p>
+    <p class="resource-note"></p>
+    <div class="actions"><span class="format">PNG</span><a class="download" href="../resources/1-1/x.png" download="x.png" aria-label="下载：x · 字形与发音"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>下载</a></div>
+  </div>
+</article>
+<article class="card" data-search="y · 字形与发音 resources/1-1/y.png 1.1 拼读辅音 " data-path="resources/1-1/y.png">
+  <a class="preview" href="../resources/1-1/y.png" target="_blank" rel="noopener" aria-label="查看原图：y · 字形与发音（新窗口）"><img src="../resources/1-1/y.png" alt="y · 字形与发音" loading="lazy" decoding="async"></a>
+  <div class="card-body">
+    <h3>y · 字形与发音</h3>
+    <p class="file-info">y.png · 234.2 KB</p>
+    <p class="resource-note"></p>
+    <div class="actions"><span class="format">PNG</span><a class="download" href="../resources/1-1/y.png" download="y.png" aria-label="下载：y · 字形与发音"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>下载</a></div>
+  </div>
+</article>
+<article class="card" data-search="辅音音位表 resources/1-1/yinweibiao.png 1.1 拼读辅音 仄克萨语辅音音位一览。" data-path="resources/1-1/yinweibiao.png">
+  <a class="preview" href="../resources/1-1/yinweibiao.png" target="_blank" rel="noopener" aria-label="查看原图：辅音音位表（新窗口）"><img src="../resources/1-1/yinweibiao.png" alt="辅音音位表" loading="lazy" decoding="async"></a>
+  <div class="card-body">
+    <h3>辅音音位表</h3>
+    <p class="file-info">yinweibiao.png · 348.4 KB</p>
+    <p class="resource-note">仄克萨语辅音音位一览。</p>
+    <div class="actions"><span class="format">PNG</span><a class="download" href="../resources/1-1/yinweibiao.png" download="yinweibiao.png" aria-label="下载：辅音音位表"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>下载</a></div>
+  </div>
+</article>
+<article class="card" data-search="z · 字形与发音 resources/1-1/z.png 1.1 拼读辅音 " data-path="resources/1-1/z.png">
+  <a class="preview" href="../resources/1-1/z.png" target="_blank" rel="noopener" aria-label="查看原图：z · 字形与发音（新窗口）"><img src="../resources/1-1/z.png" alt="z · 字形与发音" loading="lazy" decoding="async"></a>
+  <div class="card-body">
+    <h3>z · 字形与发音</h3>
+    <p class="file-info">z.png · 351.3 KB</p>
+    <p class="resource-note"></p>
+    <div class="actions"><span class="format">PNG</span><a class="download" href="../resources/1-1/z.png" download="z.png" aria-label="下载：z · 字形与发音"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>下载</a></div>
+  </div>
+</article>
+</div></details>
+<p class="empty" hidden>没有找到匹配资源，试试其他关键词。</p>
+</section>
+<section id="tools" role="tabpanel" aria-labelledby="tools-tab" tabindex="0">
+<section class="group"><div class="group-heading"><h2>字体</h2><span class="group-count">3 个文件</span></div><div class="grid">
+<article class="card" data-search="zeksa ajkrus fonts/zeksa ajkrus.ttf 字体 网站使用的仄克萨字体，字形映射至 unicode 私用区。" data-path="fonts/Zeksa Ajkrus.ttf">
+  <div class="font-sample" style="font-family: download-font-1, sans-serif;" aria-label="仄克萨字体样张">&#xE01C;&#xE003;&#xE016;&#xE01D;&#xE001;</div>
+  <div class="card-body">
+    <h3>Zeksa Ajkrus</h3>
+    <p class="file-info">Zeksa Ajkrus.ttf · 17.2 KB</p>
+    <p class="resource-note">网站使用的仄克萨字体，字形映射至 Unicode 私用区。</p>
+    <div class="actions"><span class="format">TTF</span><a class="download" href="../fonts/Zeksa%20Ajkrus.ttf" download="Zeksa Ajkrus.ttf" aria-label="下载：Zeksa Ajkrus"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>下载</a></div>
+  </div>
+</article>
+<article class="card" data-search="zeksa 525 fonts/zeksa 525.ttf 字体 仄克萨字体，字形映射至 unicode 私用区。" data-path="fonts/Zeksa 525.ttf">
+  <div class="font-sample" style="font-family: download-font-2, sans-serif;" aria-label="仄克萨字体样张">&#xE01C;&#xE003;&#xE016;&#xE01D;&#xE001;</div>
+  <div class="card-body">
+    <h3>Zeksa 525</h3>
+    <p class="file-info">Zeksa 525.ttf · 14.3 KB</p>
+    <p class="resource-note">仄克萨字体，字形映射至 Unicode 私用区。</p>
+    <div class="actions"><span class="format">TTF</span><a class="download" href="../fonts/Zeksa%20525.ttf" download="Zeksa 525.ttf" aria-label="下载：Zeksa 525"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>下载</a></div>
+  </div>
+</article>
+<article class="card" data-search="zeksa 708 fonts/zeksa 708.ttf 字体 仄克萨字体，字形映射至 unicode 私用区。" data-path="fonts/Zeksa 708.ttf">
+  <div class="font-sample" style="font-family: download-font-3, sans-serif;" aria-label="仄克萨字体样张">&#xE01C;&#xE003;&#xE016;&#xE01D;&#xE001;</div>
+  <div class="card-body">
+    <h3>Zeksa 708</h3>
+    <p class="file-info">Zeksa 708.ttf · 21.7 KB</p>
+    <p class="resource-note">仄克萨字体，字形映射至 Unicode 私用区。</p>
+    <div class="actions"><span class="format">TTF</span><a class="download" href="../fonts/Zeksa%20708.ttf" download="Zeksa 708.ttf" aria-label="下载：Zeksa 708"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>下载</a></div>
+  </div>
+</article>
+</div></section>
+<section class="group"><div class="group-heading"><h2>键盘布局</h2><span class="group-count">2 个文件</span></div><div class="grid">
+<article class="card" data-search="omklon latin keylayout/omklon latin.keylayout 键盘布局 macos 键盘布局文件。" data-path="keylayout/Omklon Latin.keylayout">
+  <div class="keyboard-sample" aria-hidden="true"><span class="key">A</span><span class="key">S</span><span class="key">D</span></div>
+  <div class="card-body">
+    <h3>Omklon Latin</h3>
+    <p class="file-info">Omklon Latin.keylayout · 19.1 KB</p>
+    <p class="resource-note">macOS 键盘布局文件。</p>
+    <div class="actions"><span class="format">KEYLAYOUT</span><a class="download" href="../keylayout/Omklon%20Latin.keylayout" download="Omklon Latin.keylayout" aria-label="下载：Omklon Latin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>下载</a></div>
+  </div>
+</article>
+<article class="card" data-search="zeksa keylayout/zeksa.keylayout 键盘布局 macos 键盘布局文件。" data-path="keylayout/Zeksa.keylayout">
+  <div class="keyboard-sample" aria-hidden="true"><span class="key">Z</span><span class="key">E</span><span class="key">K</span></div>
+  <div class="card-body">
+    <h3>Zeksa</h3>
+    <p class="file-info">Zeksa.keylayout · 30.7 KB</p>
+    <p class="resource-note">macOS 键盘布局文件。</p>
+    <div class="actions"><span class="format">KEYLAYOUT</span><a class="download" href="../keylayout/Zeksa.keylayout" download="Zeksa.keylayout" aria-label="下载：Zeksa"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"/></svg>下载</a></div>
+  </div>
+</article>
+</div></section>
+<p class="empty" hidden>没有找到匹配资源，试试其他关键词。</p>
+</section>
+    <!-- CATALOG:END -->
+  </main>
+  <footer>© 2026 Simon Zhang · Drekomka</footer>
+  <script>
+    const tabs = [...document.querySelectorAll('[role="tab"]')];
+    const panels = [...document.querySelectorAll('[role="tabpanel"]')];
+    const search = document.getElementById('resource-search');
+    function filterResources() {
+      const query = search.value.trim().toLocaleLowerCase();
+      const panel = panels.find(item => !item.hidden);
+      if (!panel) return;
+      let count = 0;
+      panel.querySelectorAll('.card').forEach(card => {
+        card.hidden = !card.dataset.search.includes(query);
+        if (!card.hidden) count++;
+      });
+      panel.querySelectorAll('.group').forEach(group => {
+        const visible = [...group.querySelectorAll('.card')].filter(card => !card.hidden).length;
+        group.hidden = visible === 0;
+        group.querySelector('.group-count').textContent = `${visible} 个文件`;
+        if (group.matches('.resource-folder')) group.open = Boolean(query) && visible > 0;
+      });
+      panel.querySelector('.empty').hidden = count !== 0;
+      document.getElementById('search-status').textContent = query ? `找到 ${count} 个匹配资源` : `当前分类有 ${count} 个资源`;
+    }
+    function selectTab(tab, updateHash = false) {
+      tabs.forEach(item => {
+        const selected = item === tab;
+        item.setAttribute('aria-selected', String(selected));
+        item.tabIndex = selected ? 0 : -1;
+      });
+      panels.forEach(panel => { panel.hidden = panel.id !== tab.getAttribute('aria-controls'); });
+      if (updateHash) history.replaceState(null, '', '#' + tab.getAttribute('aria-controls'));
+      filterResources();
+    }
+    tabs.forEach((tab, index) => {
+      tab.addEventListener('click', () => selectTab(tab, true));
+      tab.addEventListener('keydown', event => {
+        let next;
+        if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+        else if (event.key === 'ArrowLeft') next = (index + tabs.length - 1) % tabs.length;
+        else if (event.key === 'Home') next = 0;
+        else if (event.key === 'End') next = tabs.length - 1;
+        else return;
+        event.preventDefault(); tabs[next].focus(); selectTab(tabs[next], true);
+      });
+    });
+    panels.forEach(panel => { document.getElementById(panel.id + '-count').textContent = panel.querySelectorAll('.card').length; });
+    search.addEventListener('input', filterResources);
+    function selectFromHash() { selectTab(tabs.find(tab => '#' + tab.getAttribute('aria-controls') === location.hash) || tabs[0]); }
+    window.addEventListener('hashchange', selectFromHash);
+    selectFromHash();
+  </script>
+</body>
+</html>
