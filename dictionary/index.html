@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- /dictionary/index.html: last edited on 18 Aug 2026. -->
+<!-- /dictionary/index.html: last edited on 25 Sep 2026. -->
 <!-- This is a Dictionary Website of the Zeksa Language, Created by Simon Zhang. -->
 <!-- All rights reserved. -->
 <html lang="zh">
@@ -131,31 +131,25 @@
     }
 
     .entry {
-      background: rgba(255, 255, 255, 0.6);
-    
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    
+      background: linear-gradient(135deg, rgba(255,255,255,.52), rgba(255,255,255,.26));
+      backdrop-filter: blur(22px) saturate(145%);
+      -webkit-backdrop-filter: blur(22px) saturate(145%);
       padding: 15px 20px;
       margin: 30px auto;
       max-width: 800px;
-    
-      border-radius: 16px;
-    
+      border: 1px solid rgba(255,255,255,.72);
+      border-radius: 18px;
       box-shadow:
-        0 8px 24px rgba(0,0,0,0.08),
-        0 0 20px rgba(255,255,255,0.15);
-    
-      transition:
-        transform 0.15s ease-out,
-        box-shadow 0.2s ease;
+        inset 0 1px 0 rgba(255,255,255,.65),
+        0 8px 28px rgba(61,89,115,.08);
+      transition: transform .15s ease-out, box-shadow .2s ease;
     }
-    
+
     .entry:hover {
       transform: translateY(-3px);
       box-shadow:
-        0 14px 36px rgba(0,0,0,0.13),
-        0 0 35px rgba(255,255,255,0.25);
+        inset 0 1px 0 rgba(255,255,255,.8),
+        0 14px 36px rgba(61,89,115,.12);
     }
 
     .label {
@@ -166,13 +160,16 @@
     }
 
     .example {
-      background: #eaf2fb;
+      background: linear-gradient(120deg, rgba(223,239,253,.42), rgba(255,255,255,.25));
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,.6);
       margin-top: 0.8em;
       padding: 12px 16px;
-      border-radius: 10px;
+      border-radius: 12px;
       font-style: normal;
       color: #2c3e50;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.4);
     }
 
     #results {
@@ -210,6 +207,64 @@
     
     button:active {
       transform: translateY(0px);
+    }
+
+    .alphabet-switch {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      width: min(100%, 304px);
+      height: 52px;
+      padding: 4px;
+      box-sizing: border-box;
+      border-radius: 26px;
+      background: rgba(255,255,255,.7);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.8), 0 4px 14px rgba(0,0,0,.07);
+      font-family: inherit;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .alphabet-switch::before {
+      content: "";
+      position: absolute;
+      top: 4px;
+      bottom: 4px;
+      left: 4px;
+      width: calc((100% - 8px) / 2);
+      border-radius: 22px;
+      background: var(--accent);
+      box-shadow: 0 2px 8px rgba(0,120,212,.2);
+      transition: transform .25s cubic-bezier(.22,1,.36,1);
+    }
+    .alphabet-switch[aria-checked="true"]::before { transform: translateX(100%); }
+    .alphabet-switch > .alphabet-option {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      color: #52718b;
+      white-space: nowrap;
+      font-weight: 400;
+      line-height: 1;
+      transition: color .2s;
+    }
+    .alphabet-symbol { font-size: 22px; }
+    .alphabet-text { font-size: 13px; line-height: 1.4; }
+    .alphabet-switch[aria-checked="false"] .latin-label,
+    .alphabet-switch[aria-checked="true"] .zeksa-label { color: #fff; }
+    .alphabet-switch:hover {
+      transform: none;
+      background: rgba(255,255,255,.9);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.9), 0 5px 16px rgba(0,0,0,.09);
+    }
+    .alphabet-switch:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 4px;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .alphabet-switch, .alphabet-switch::before, .alphabet-switch span { transition: none; }
     }
 
     .footer{
@@ -302,6 +357,11 @@
       }
     }
 
+    /* 与学习页一致，为顶部固定按钮预留标题间距。 */
+    @media (max-width: 760px), (orientation: portrait) {
+      h1 { margin-top: 64px; }
+    }
+
     .flag-counter {
       text-align: center;
     }
@@ -341,7 +401,18 @@
   <p>在搜索框里输入中文或者仄克萨语，以查询该词的完整信息。</p>
   <p id="word-count" style="text-align: center; font-weight: bold; margin-top: 1em;">
   本网站已收录 <span id="count-number">0</span> 个仄克萨语词汇。</p>
-  <button onclick="toggleZeksa()">拉丁 - 仄克萨字母</button>
+  <button type="button" id="alphabet-switch" class="alphabet-switch"
+          role="switch" aria-checked="true" aria-label="使用仄克萨字母"
+          title="切换拉丁字母 / 仄克萨字母" onclick="toggleZeksa()">
+    <span class="alphabet-option latin-label" aria-hidden="true">
+      <span class="alphabet-symbol">A</span>
+      <span class="alphabet-text">拉丁字母</span>
+    </span>
+    <span class="alphabet-option zeksa-label" aria-hidden="true">
+      <span class="alphabet-symbol zeksa">&#xE001;</span>
+      <span class="alphabet-text">仄克萨字母</span>
+    </span>
+  </button>
   <div id="daily-word" class="entry" style="text-align:center;">
   <h2 style="color: var(--accent); margin-top:0;">今日单词</h2>
   <div id="daily-content">加载中...</div>
@@ -410,7 +481,8 @@
 
     function toggleZeksa() {
       useZeksa = !useZeksa;
-      showDailyWord();
+      document.getElementById("alphabet-switch").setAttribute("aria-checked", String(useZeksa));
+      if (dictionary.length) showDailyWord();
       search();
     }
 
