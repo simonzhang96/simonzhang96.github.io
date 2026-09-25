@@ -2,6 +2,7 @@
 <!DOCTYPE keyboard SYSTEM "file://localhost/System/Library/DTDs/KeyboardLayout.dtd">
 <!--Created by Ukelele version 426 on 2025-05-15 at 8:41 (GMT+8)-->
 <!--Last edited by Ukelele version 426 on 2025-05-19 at 8:17 (GMT+8)-->
+<!--Zeksa Keyboard Layout by Simon Zhang-->
 <keyboard group="126" id="-31461" name="Zeksa" maxout="1">
     <layouts>
         <layout first="0" last="17" mapSet="ANSI" modifiers="Modifiers"/>
