@@ -31,9 +31,6 @@
       padding: 64px 24px 14vh;
     }
     h1 {
-      margin: 0; font-size: clamp(3.25rem, 9vw, 7rem);
-      font-weight: 700; line-height: 1.12; letter-spacing: -.055em;
-      text-align: center; color: var(--accent);
       margin: 0;
       font-size: clamp(3.5rem, 8.5vw, 6rem);
       font-weight: 600; line-height: 1.18; letter-spacing: -.035em;
@@ -46,8 +43,6 @@
               drop-shadow(0 10px 16px rgba(76, 112, 153, .12));
     }
     @supports (background-clip: text) or (-webkit-background-clip: text) {
-      h1 {
-        background: linear-gradient(100deg, #4b8dff 10%, #b58f97 58%, #d99342 100%);
       h1 span {
         background: linear-gradient(90deg, #4b8dff, #e9a04d);
         -webkit-background-clip: text; background-clip: text; color: transparent;
@@ -61,15 +56,10 @@
     .subtitle b { font-weight: 600; }
     nav {
       display: flex; justify-content: center; flex-wrap: wrap; gap: 18px;
-      margin-top: 48px;
       margin-top: 40px;
     }
     .nav-link {
       display: inline-flex; align-items: center; justify-content: center;
-      min-height: 64px; padding: 18px 30px; border-radius: 16px;
-      background: var(--accent); color: white; text-decoration: none;
-      font-size: 1.2rem; font-weight: 500; white-space: nowrap;
-      box-shadow: 0 5px 16px rgba(0,120,212,.15);
       min-height: 48px; padding: 12px 22px; border-radius: 13px;
       border: 1px solid rgba(255,255,255,.7);
       background: rgba(255,255,255,.32); color: #426b8d; text-decoration: none;
@@ -79,22 +69,14 @@
       transition: transform .2s, background .2s, box-shadow .2s;
     }
     .nav-link:hover {
-      background: #0066b3; transform: translateY(-3px);
-      box-shadow: 0 8px 22px rgba(0,120,212,.22);
       background: rgba(255,255,255,.6); transform: translateY(-2px);
       box-shadow: inset 0 1px 0 rgba(255,255,255,.8), 0 8px 22px rgba(91,119,144,.09);
     }
-    .contacts { display: flex; justify-content: center; gap: 34px; margin-top: 40px; }
     .contacts { display: flex; justify-content: center; gap: 24px; margin-top: 28px; }
     .contacts a {
-      display: inline-flex; align-items: center; gap: 10px; min-height: 48px;
-      color: var(--accent); text-decoration: none; font-size: 1.05rem;
-      transition: color .2s, transform .2s;
       color: var(--accent); font-size: 24px; line-height: 1.5;
       transition: .2s; text-decoration: none;
     }
-    .contacts a:hover { color: #005a9f; transform: translateY(-2px); }
-    .contacts svg { width: 34px; height: 34px; flex-shrink: 0; }
     .contacts a:hover { transform: scale(1.15); color: #0066b3; }
     a:focus-visible { outline: 3px solid #005a9f; outline-offset: 7px; border-radius: 8px; }
     @keyframes drift {
@@ -121,9 +103,6 @@
     @media (max-width: 600px) {
       main { padding: 56px 24px 10svh; }
       h1 { font-size: clamp(2.5rem, 9vw, 3.5rem); }
-      nav { flex-direction: column; width: min(100%, 320px); margin-top: 36px; gap: 14px; }
-      .nav-link { width: 100%; min-height: 62px; }
-      .contacts { margin-top: 30px; gap: 30px; }
       nav { flex-direction: column; width: min(100%, 280px); margin-top: 32px; gap: 14px; }
       .nav-link { width: 100%; min-height: 48px; }
       .contacts { margin-top: 24px; }
@@ -137,29 +116,17 @@
 <body>
   <div class="background" aria-hidden="true"></div>
   <main>
-    <h1>Simon Zhang</h1>
     <h1><span>Simon Zhang</span></h1>
     <p class="subtitle">热爱语言、设计、数码与游戏的 <b>Conlanger</b></p>
     <nav aria-label="主要导航">
-      <a class="nav-link" href="https://simonzhang.art/zeksa">仄克萨语学习</a>
+      <a class="nav-link" href="https://simonzhang.art/zeksa">All About Zeksa</a>
       <a class="nav-link" href="https://simonzhang.art/dictionary">词典查询</a>
       <a class="nav-link" href="https://simonzhang.art/quiz">词汇测试</a>
     </nav>
     <div class="contacts" aria-label="联系方式">
-      <a href="https://space.bilibili.com/543929703" target="_blank" rel="noopener noreferrer" aria-label="B站（在新标签页打开）">
-        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="m10 3 4 5m8-5-4 5"/><rect x="3" y="8" width="26" height="20" rx="5"/>
-          <path d="M10 15v4m12-4v4m-9 3 3 2 3-2"/>
-        </svg>
-        <span>B站</span>
       <a href="https://space.bilibili.com/543929703" target="_blank" rel="noopener noreferrer" title="B站" aria-label="B站（在新标签页打开）">
         <i class="fa-brands fa-bilibili" aria-hidden="true"></i>
       </a>
-      <a href="mailto:simonzhang96@icloud.com">
-        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <rect x="3" y="6" width="26" height="20" rx="4"/><path d="m4 8 12 10L28 8"/>
-        </svg>
-        <span>邮箱</span>
       <a href="mailto:simonzhang96@icloud.com" title="邮箱" aria-label="邮箱">
         <i class="fa-solid fa-envelope" aria-hidden="true"></i>
       </a>
