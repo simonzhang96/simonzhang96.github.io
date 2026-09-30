@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<!-- 仄克萨语学习 · Created by Simon Zhang, template by GPT-6 Astra. All rights reserved. -->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>音形成文 - 元音篇</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <style>
+    :root {
+      --accent: #0078D4;
+      --text-color: #222;
+      --label-color: #555;
+      --radius: 14px;
+    }
+    * { box-sizing: border-box; }
+    html, body { min-height: 100%; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro", "Segoe UI",
+                   Roboto, "Helvetica Neue", Arial, sans-serif;
+      max-width: 904px;
+      margin: auto;
+      padding: 2em;
+      background: transparent;
+      color: var(--text-color);
+      line-height: 1.8;
+      overflow-wrap: anywhere;
+      isolation: isolate;
+    }
+    #bg {
+      position: fixed;
+      inset: 0;
+      height: 100dvh;
+      width: 100%;
+      z-index: -1;
+      pointer-events: none;
+      background:
+        radial-gradient(circle at 20% 30%, rgba(214,236,255,0.8), transparent 40%),
+        radial-gradient(circle at 80% 20%, rgba(255,201,138,0.7), transparent 35%),
+        radial-gradient(circle at 60% 80%, rgba(234,246,255,0.7), transparent 45%),
+        linear-gradient(180deg, #eef8ff, #fff4e6);
+      animation: drift 15s ease-in-out infinite alternate;
+      background-size: 135% 135%;
+    }
+    @keyframes drift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .page-header { margin: 24px auto 28px; }
+    h1 {
+      text-align: center;
+      color: var(--accent);
+      font-size: 2.5rem;
+      line-height: 1.4;
+      margin: 0 0 16px;
+    }
+    .intro { text-align: center; margin: 0; color: var(--label-color); }
+    .entry {
+      display: block;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 20px 24px;
+      margin: 30px auto;
+      max-width: 800px;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08), 0 0 20px rgba(255,255,255,0.15);
+    }
+    a { color: var(--accent); }
+    a:focus-visible { outline: 3px solid var(--accent); outline-offset: 5px; }
+    .article-link {
+      color: var(--text-color);
+      text-decoration: none;
+      transition: transform 0.15s ease-out, box-shadow 0.2s ease;
+    }
+    .article-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 14px 36px rgba(0,0,0,0.13), 0 0 35px rgba(255,255,255,0.25);
+    }
+    .article-link h2, .introduction h2 { color: var(--accent); font-size: 1.3rem; margin: 0 0 8px; }
+    .article-link p, .introduction p { color: var(--label-color); margin: 0; }
+    .read-more { display: inline-block; color: var(--accent); margin-top: 12px; font-size: .95rem; }
+    .home-back-btn { position: fixed; top: 24px; left: 24px; z-index: 10; }
+    .home-back-btn a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border-radius: 50%;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.1);
+      color: var(--accent);
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+    .home-back-btn a:hover { background: rgba(255,255,255,0.95); }
+    .home-back-btn svg { width: 21px; height: 21px; }
+    .article-body { padding: 28px 32px; }
+    .article-body h2 { color: var(--accent); font-size: 1.4rem; margin: 1.5em 0 .6em; }
+    .article-body h2:first-child { margin-top: 0; }
+    .article-body h3 { font-size: 1.1rem; margin: 1.2em 0 .5em; }
+    .article-body p { text-align: left; margin: .8em 0; }
+    .article-body img { max-width: 100%; height: auto; }
+    .example {
+      background: #eaf2fb;
+      margin-top: 0.8em;
+      padding: 12px 16px;
+      border-radius: 10px;
+      color: #2c3e50;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+    .example p { margin: .3em 0; }
+    .back-link { text-align: center; margin: 24px auto; }
+    .back-link a { text-decoration: none; }
+    .back-link a:hover { text-decoration: underline; }
+    .logo { width: 100%; max-width: 220px; height: auto; display: block; margin: 1.4rem auto; }
+    .footer { text-align: center; color: #777; font-size: .9rem; margin-top: 32px; }
+    @font-face {
+      font-family: "ZeksaFont";
+      src: url("/fonts/Zeksa Ajkrus.ttf") format("truetype");
+      font-display: swap;
+    }
+    .zeksa { font-family: "ZeksaFont", sans-serif; }
+    @media (max-width: 600px) {
+      body { padding: 1em; }
+      .page-header { margin-top: 64px; }
+      h1 { font-size: 1.8rem; }
+      .home-back-btn { top: 16px; left: 16px; }
+      .home-back-btn a { width: 38px; height: 38px; }
+      .entry { padding: 18px 20px; margin: 24px auto; }
+      .article-body { padding: 22px 20px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      #bg { animation: none; }
+      .article-link { transition: none; }
+      .article-link:hover { transform: none; }
+    }
+    .intro-video-dialog {
+    width: min(680px, calc(100% - 32px));
+    max-height: 90vh;
+    max-height: 90dvh;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 24px;
+
+    border: none;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.96);
+    color: #222;
+
+    font-family: inherit;
+    line-height: 1.8;
+
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  /* 页面遮罩 */
+  .intro-video-dialog::backdrop {
+    background: rgba(0, 0, 0, 0.35);
+  }
+
+  /* 防止文章已有样式覆盖 hidden 属性 */
+  .intro-video-dialog [hidden] {
+    display: none !important;
+  }
+
+  .intro-video-dialog h2 {
+    margin: 0 0 16px;
+    color: #0078D4;
+    font-size: 1.4rem;
+    line-height: 1.5;
+    text-align: left;
+  }
+
+  /* Bilibili 播放器 */
+  .intro-video-player {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: none;
+    border-radius: 10px;
+    background: #000;
+  }
+
+  /* 给读者看的说明文字 */
+  .intro-video-note {
+    margin: 16px 0;
+    line-height: 1.8;
+    text-align: left;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+  }
+
+  /* 播放提示 */
+  .intro-video-status {
+    margin: 12px 0 0;
+    color: #555;
+    font-size: 0.9rem;
+    text-align: left;
+  }
+
+  .intro-video-status:empty {
+    display: none;
+  }
+
+  .intro-video-status a {
+    color: #0078D4;
+  }
+
+  /* 底部按钮 */
+  .intro-video-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 20px;
+  }
+
+  .intro-video-actions button {
+    margin: 0;
+    padding: 10px 20px;
+    min-height: 44px;
+
+    border: none;
+    border-radius: 14px;
+    background: #0078D4;
+    color: #fff;
+
+    font: inherit;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 120, 212, 0.15);
+  }
+
+  .intro-video-actions button:hover {
+    background: #0066b3;
+  }
+
+  .intro-video-actions .skip-button {
+    background: #eaf2fb;
+    color: #0078D4;
+    box-shadow: none;
+  }
+
+  .intro-video-actions .skip-button:hover {
+    background: #dceafb;
+  }
+
+  .intro-video-dialog button:focus-visible,
+  .intro-video-dialog a:focus-visible {
+    outline: 3px solid #0078D4;
+    outline-offset: 3px;
+  }
+
+  @media (max-width: 600px) {
+    .intro-video-dialog {
+      padding: 20px;
+    }
+
+    .intro-video-dialog h2 {
+      font-size: 1.2rem;
+    }
+
+    .intro-video-actions button {
+      flex: 1;
+    }
+  }
+  </style>
+</head>
+<body>
+  <div id="bg" aria-hidden="true"></div>
+  <div class="home-back-btn">
+    <a href="/zeksa/index.html" title="返回学习主页" aria-label="返回学习主页">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m14 5-7 7 7 7M7 12h14"/></svg>
+    </a>
+  </div>
+  <main>
+    <header class="page-header">
+      <!-- 主页自动读取下方 h1 作为标题、p.intro 作为简介。替换内容，并同步修改 head 中的 title。 -->
+      <h1>1. 2 - 拼读元音</h1>
+      <p class="intro">——“音形成文”：仄克萨字母是怎么将元音“画”出来的？</p>
+    </header>
+    <article class="entry article-body" aria-label="文章正文">
+      <!-- 按需复制小节；没有简介或小节标题时可删除对应元素。 -->
+      <h2>1. 1. 1 - 认识仄克萨字母</h2>
+      <p><b>仄克萨字母</b>是为书写仄克萨语而设计的一门文字，由 16 个元音字形和 22 个辅音字形组成。</p>
+      <img src="/resources/1-1/alphabet.png" alt="alphabet.png">
+
+      <div class="example">
+        <p><strong>例句：</strong><span class="zeksa"> </span></p>
+        <!-- alzomka, zeksa! -->
+        <p><strong>翻译：</strong>你好，仄克萨！</p>
+      </div>
+
+      <p>如你所见，仄克萨文字属于<b>全音素文字</b>，即每个字母通常都独立对应一个元音或辅音音素。从文字类型学角度分析，这门文字属于<b>特征文字</b>。也就是说，对于仄克萨文字，文字的形状并非任意决定的。通常情况下，文字的形态与其对应音素的发音方式、发音器官布局有着密切的联系。</p>
+      <h2>1. 1. 2 - 辅音音位</h2>
+      <p>仄克萨语的辅音音位表如下：</p>
+      <img src="/resources/1-1/yinweibiao.png" alt="yinweibiao.png">
+      <p>你可以阅读以下关于仄克萨文字 22 个辅音的发音逻辑与特征文字设计的资料，并以此为基础熟记所有辅音字母的形态。</p>
+      <ul>
+        <li style="color: #F0AC9E;">爆破音 - 字形棱角分明、频繁出现直角：</li>
+      </ul>
+      <img src="/resources/1-1/p.png">
+      <img src="/resources/1-1/b.png">
+      <img src="/resources/1-1/t.png">
+      <img src="/resources/1-1/d.png">
+      <img src="/resources/1-1/k.png">
+      <img src="/resources/1-1/g.png">
+      <ul>
+        <li style="color: #D590AE;">鼻音 - 字形常见锐角和曲线：</li>
+      </ul>
+      <img src="/resources/1-1/m.png">
+      <img src="/resources/1-1/n.png">
+      <img src="/resources/1-1/q.png">
+      <ul>
+        <li style="color: #F2C490;">拍音/闪音 - “5”</li>
+      </ul>
+      <img src="/resources/1-1/r.png">
+      <ul>
+        <li style="color: #9CCBC5;">擦音 - 字形容易辨别清浊：</li>
+      </ul>
+      <img src="/resources/1-1/f.png">
+      <img src="/resources/1-1/v.png">
+      <img src="/resources/1-1/s.png">
+      <img src="/resources/1-1/z.png">
+      <img src="/resources/1-1/c.png">
+      <img src="/resources/1-1/j.png">
+      <img src="/resources/1-1/h.png">
+      <ul>
+        <li style="color: #ACE7D8;">塞擦音 - 字形与一些爆破音、擦音字母有联系：</li>
+      </ul>
+      <img src="/resources/1-1/ts.png">
+      <img src="/resources/1-1/x.png">
+      <ul>
+        <li style="color: #A5A6A6;">近音 - 字形与一些元音字母有联系：</li>
+      </ul>
+      <img src="/resources/1-1/w.png">
+      <img src="/resources/1-1/y.png">
+      <ul>
+        <li style="color: #C0BEBA;">边近音 - 字形模拟舌尖与齿龈接触时两边形成的半圆空隙：</li>
+      </ul>
+      <img src="/resources/1-1/l.png">
+      
+      <!-- 若填写的是仄克萨字体对应的字形编码，可用 <span class="zeksa">…</span> 包裹；普通拉丁转写不加此类。 -->
+
+    </article>
+    <nav class="back-link" aria-label="文章导航">
+      <a href="/zeksa/index.html">← 返回学习主页</a>
+    </nav>
+  </main>
+  <footer>
+    <img src="/ZeksaLogo.png" class="logo" alt="仄克萨标识">
+    <p class="footer">© 2026 Simon Zhang · Drekomka</p>
+  </footer>
+  <dialog
+  id="introVideoDialog"
+  class="intro-video-dialog"
+  aria-labelledby="introVideoTitle"
+  aria-describedby="introVideoNote"
+>
+  <!-- 可以修改弹窗标题 -->
+  <h2 id="introVideoTitle">先等等...</h2>
+
+  <!-- 点击“观看视频”之后，才加载 Bilibili 播放器 -->
+  <iframe
+    id="introVideoPlayer"
+    class="intro-video-player"
+    title="介绍视频"
+    allow="autoplay; fullscreen; picture-in-picture"
+    allowfullscreen
+    hidden
+  ></iframe>
+
+  <!-- 在这里填写给读者看的说明文字，可以直接换行 -->
+  <p id="introVideoNote" class="intro-video-note">观看介绍视频可能会有助于理解文章内容。想要观看吗？</p>
+
+  <!-- 播放提示由下方脚本自动填写 -->
+  <p
+    id="introVideoStatus"
+    class="intro-video-status"
+    role="status"
+  ></p>
+
+  <div class="intro-video-actions">
+    <button
+      id="introVideoSkip"
+      class="skip-button"
+      type="button"
+    >
+      跳过
+    </button>
+
+    <button
+      id="introVideoWatch"
+      type="button"
+      autofocus
+    >
+      观看视频
+    </button>
+  </div>
+</dialog>
+
+<script>
+(() => {
+  /* ========= BV ========= */
+
+  const BV_ID = "BV1kZe86yEvH";
+  const VIDEO_PAGE = 1;
+  const INTRO_VERSION = "v2";
+
+  /* ========= Cool ========= */
+
+  const dialog = document.getElementById("introVideoDialog");
+  const player = document.getElementById("introVideoPlayer");
+  const watchButton = document.getElementById("introVideoWatch");
+  const skipButton = document.getElementById("introVideoSkip");
+  const status = document.getElementById("introVideoStatus");
+
+  // 不支持弹窗的浏览器直接显示文章。
+  if (typeof dialog.showModal !== "function") return;
+
+  const videoId = BV_ID.trim();
+
+  // 按文章路径、视频编号、分P和版本分别保存记录。
+  const storageKey = [
+    "zeksa-bilibili-intro",
+    INTRO_VERSION,
+    window.location.pathname,
+    videoId,
+    VIDEO_PAGE
+  ].join(":");
+
+  let hasSeen = false;
+
+  try {
+    hasSeen = localStorage.getItem(storageKey) === "seen";
+  } catch {
+    // 无法使用浏览器存储时，仍然允许观看和跳过。
+  }
+
+  // 点击“观看视频”时加载播放器。
+  watchButton.addEventListener("click", () => {
+    if (!/^BV[0-9a-zA-Z]+$/.test(videoId)) {
+      status.textContent =
+        "视频尚未配置，请在代码中填写正确的 BV 号。";
+      return;
+    }
+
+    const playerUrl = new URL(
+      "https://player.bilibili.com/player.html"
+    );
+
+    playerUrl.searchParams.set("bvid", videoId);
+    playerUrl.searchParams.set("p", String(VIDEO_PAGE));
+
+    // 点击观看后尝试自动播放。
+    playerUrl.searchParams.set("autoplay", "1");
+
+    // 默认关闭弹幕；想开启可以改成 1。
+    playerUrl.searchParams.set("danmaku", "0");
+
+    player.src = playerUrl.href;
+    player.hidden = false;
+    watchButton.hidden = true;
+    skipButton.textContent = "关闭";
+
+    status.textContent =
+      "本视频时长约 2 分钟。若未开始播放，请点击播放器内的播放按钮。 ";
+
+    // 如果嵌入播放器无法使用，还可以直接去 Bilibili 观看。
+    const directLink = document.createElement("a");
+
+    directLink.href =
+      "https://www.bilibili.com/video/" +
+      encodeURIComponent(videoId) +
+      "/?p=" + VIDEO_PAGE;
+
+    directLink.textContent = "在 Bilibili 观看";
+    directLink.target = "_blank";
+    directLink.rel = "noopener noreferrer";
+
+    status.appendChild(directLink);
+  });
+
+  // 卸载播放器，避免弹窗关闭后继续播放声音。
+  function unloadPlayer() {
+    player.src = "about:blank";
+    player.hidden = true;
+  }
+
+  // 点击“跳过”或“关闭”。
+  skipButton.addEventListener("click", () => {
+    unloadPlayer();
+    dialog.close();
+  });
+
+  // 通过 Esc 等方式关闭时，也卸载播放器。
+  dialog.addEventListener("close", unloadPlayer);
+
+  // 仅在没有访问记录时自动弹出。
+  if (!hasSeen) {
+    dialog.showModal();
+
+    try {
+      localStorage.setItem(storageKey, "seen");
+    } catch {
+      // 保存失败不影响本次使用。
+    }
+  }
+})();
+</script>
+</body>
+</html>
