@@ -24,7 +24,7 @@
     <main>
       <form id="submission-form">
         <section class="card" aria-labelledby="basic-title">
-          <div class="section-heading"><span class="step">01</span><div><h2 id="basic-title">你的新词</h2><p>带 * 的是必填项，其余可以慢慢补充。</p></div></div>
+          <div class="section-heading"><span class="step">01</span><div><h2 id="basic-title">你的新词</h2><p>建议用电脑填写。带 * 的是必填项，其余可以慢慢补充。</p></div></div>
           <div class="grid">
             <label>词语 <span class="required">*</span><input name="word" maxlength="80" required spellcheck="false" placeholder="输入仄克萨语词语" autocomplete="off"></label>
             <label>词性 <span class="required">*</span><input name="pos" list="parts-of-speech" maxlength="80" required placeholder="可并列多个词性、注意部分词性的标记"><datalist id="parts-of-speech"><option value="名词"><option value="动词"><option value="形容词"><option value="副词"><option value="代词"><option value="数词"><option value="连词"><option value="介词"><option value="感叹词"><option value="动词、名词"></datalist></label>
@@ -37,12 +37,12 @@
           <label>构词分析 <span class="optional">选填</span><input name="gloss" maxlength="500" placeholder="单纯词：意义 + <词根体>、合成词见详情页"></label>
         </section>
         <section class="card" aria-labelledby="author-title">
-          <div class="section-heading"><span class="step">02</span><div><h2 id="author-title">留下你的灵感</h2><p>选填。我们也想知道这个词背后的故事。</p></div></div>
+          <div class="section-heading"><span class="step">02</span><div><h2 id="author-title">留下你的灵感</h2><p>选填。Simon 也想知道这个词背后的故事。</p></div></div>
           <label>创作者署名<input name="author" maxlength="80" placeholder="昵称即可，留空为匿名" autocomplete="nickname"></label>
           <label>创作说明<textarea name="notes" maxlength="1500" rows="3" placeholder="词源、灵感，或你希望补充的用法……"></textarea></label>
         </section>
         <section class="card submit-card" aria-label="提交投稿">
-          <label class="consent"><input name="consent" type="checkbox" required><span>我同意公开本次投稿内容与署名，供站长查看和挑选收录。请勿填写电话、邮箱等私人信息。</span></label>
+          <label class="consent"><input name="consent" type="checkbox" required><span>我同意公开本次投稿内容与署名，供 Simon 查看和挑选收录。请勿填写电话、邮箱等私人信息。</span></label>
           <p id="service-state" class="service-state" role="status">正在检查投稿通道……</p>
           <button id="submit-button" type="submit" disabled>提交词汇 <span aria-hidden="true">↗</span></button>
           <p id="result" role="status" aria-live="polite" tabindex="-1"></p>
