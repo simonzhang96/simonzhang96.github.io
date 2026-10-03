@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="为仄克萨语创造一个新词。分享你的词语、释义与创作灵感，由 Simon Zhang 挑选收录。">
+  <title>词汇投稿 · 仄克萨语</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%230078d4%22%2F%3E%3Cg%20transform%3D%22translate%284%204%29%22%20fill%3D%22white%22%3E%3Cpath%20d%3D%22M6%202a3%203%200%200%200-3%203v14a3%203%200%200%200%203%203h15v-2H6a1%201%200%200%201%200-2h15V2H6Z%22%2F%3E%3Cpath%20d%3D%22m8%2014%203-8h2l3%208h-2l-.5-1.5h-3L10%2014H8Zm3-3h2l-1-3-1%203Z%22%20fill%3D%22%230078d4%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E">
+  <link rel="stylesheet" href="./submit.css">
+  <script defer src="./submit-config.js"></script>
+  <script defer src="./submit.js"></script>
+</head>
+<body>
+  <div class="background" aria-hidden="true"></div>
+  <div class="page">
+    <nav aria-label="页面导航">
+      <div class="home-back-btn"><a href="/" title="返回主页" aria-label="返回主页"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="m10.6 3.6 1.8 1.8L7 10.8h14v2.4H7l5.4 5.4-1.8 1.8L2.2 12z"/></svg></a></div>
+      <div class="top-right-btn"><a href="/dictionary/" title="词典查询" aria-label="词典查询"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="M6 2a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h15v-2H6a1 1 0 0 1 0-2h15V2H6Zm3.5 3h3l4 10h-2.3l-.8-2.2H9.6L8.8 15H6.5l4-10Zm1.5 2.7-1.2 3.3h2.4L12 7.7Z"/></svg></a></div>
+    </nav>
+    <header>
+      <p class="eyebrow">一起为仄克萨语创造新词</p>
+      <h1>让灵感，成为一个词。</h1>
+      <p class="intro">给一种感受、一个事物，或一个新想法起个名字。<br>把你创造的词语分享在这里，等待下一次词典相遇。</p>
+    </header>
+    <main>
+      <form id="submission-form">
+        <section class="card" aria-labelledby="basic-title">
+          <div class="section-heading"><span class="step">01</span><div><h2 id="basic-title">你的新词</h2><p>带 * 的是必填项，其余可以慢慢补充。</p></div></div>
+          <div class="grid">
+            <label>词语 <span class="required">*</span><input name="word" maxlength="80" required spellcheck="false" placeholder="输入仄克萨语词语" autocomplete="off"></label>
+            <label>词性 <span class="required">*</span><input name="pos" list="parts-of-speech" maxlength="80" required placeholder="选择或输入，如：名词、动词"><datalist id="parts-of-speech"><option value="名词"><option value="动词"><option value="形容词"><option value="副词"><option value="代词"><option value="数词"><option value="连词"><option value="介词"><option value="感叹词"><option value="动词、名词"></datalist></label>
+          </div>
+          <label>中文释义 <span class="required">*</span><textarea name="meaning" maxlength="1000" rows="3" required placeholder="它表达什么？可以写下多个含义。"></textarea></label>
+          <div class="grid">
+            <label>构词类别 <span class="optional">选填</span><input name="root" maxlength="80" list="word-types" placeholder="如：单纯词、合成词"><datalist id="word-types"><option value="单纯词"><option value="合成词"><option value="派生词"></datalist></label>
+            <label>词缀形式 <span class="optional">选填</span><input name="affix" maxlength="100" placeholder="如：ao-；没有可留空" spellcheck="false"></label>
+          </div>
+          <label>构词分析 <span class="optional">选填</span><input name="gloss" maxlength="500" placeholder="如：光&lt;词缀体&gt; - 颜色&lt;词根体&gt;"></label>
+        </section>
+        <section class="card" aria-labelledby="author-title">
+          <div class="section-heading"><span class="step">02</span><div><h2 id="author-title">留下你的灵感</h2><p>选填。我们也想知道这个词背后的故事。</p></div></div>
+          <label>创作者署名<input name="author" maxlength="80" placeholder="昵称即可，留空为匿名" autocomplete="nickname"></label>
+          <label>创作说明<textarea name="notes" maxlength="1500" rows="3" placeholder="词源、灵感，或你希望补充的用法……"></textarea></label>
+        </section>
+        <section class="card submit-card" aria-label="提交投稿">
+          <label class="consent"><input name="consent" type="checkbox" required><span>我同意公开本次投稿内容与署名，供站长查看和挑选收录。请勿填写电话、邮箱等私人信息。</span></label>
+          <p id="service-state" class="service-state" role="status">正在检查投稿通道……</p>
+          <button id="submit-button" type="submit" disabled>提交词汇 <span aria-hidden="true">↗</span></button>
+          <p id="result" role="status" aria-live="polite" tabindex="-1"></p>
+          <noscript><p>请启用 JavaScript 后提交词汇。</p></noscript>
+        </section>
+      </form>
+      <aside>
+        <div class="aside-card"><span class="aside-label">一个词的旅程</span><h2>从你的灵感，<br>到共同的语言。</h2><ol><li><strong>创造与分享</strong><p>写下新词和它的含义。</p></li><li><strong>进入投稿箱</strong><p>成功提交后，内容会被保存。</p></li><li><strong>等待挑选</strong><p>Simon Zhang 查看投稿，并决定是否收录到官方词典。</p></li></ol><p class="aside-note">投稿成功不代表正式收录。<br>你的每一个想法，都可以从这里开始。</p></div>
+        <p class="draft-note" id="draft-note">填写内容会暂存在当前浏览器，提交成功后清除。</p>
+      </aside>
+    </main>
+    <footer>仄克萨语 · Zeksa <span>由你我一起，赋予新意。</span></footer>
+  </div>
+</body>
+</html>
