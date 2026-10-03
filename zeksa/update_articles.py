@@ -75,9 +75,15 @@ def clean(value):
     return re.sub(r'\s+', ' ', value).strip()
 
 
+def article_order(path):
+    # Compare chapter numbers numerically: 1-10 comes before 1-2 in descending order.
+    return tuple((1, int(part)) if part.isdigit() else (0, part.casefold())
+                 for part in re.split(r'(\d+)', path.name))
+
+
 def collect_articles(folder, home, report=None):
     articles = []
-    files = sorted(folder.glob('*.html'), key=lambda path: path.name.casefold())
+    files = sorted(folder.glob('*.html'), key=article_order, reverse=True)
     def log(message):
         if report is not None:
             report(message)
