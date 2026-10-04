@@ -13,5 +13,20 @@
       "notes": "-",
       "submittedAt": "2026-10-03T14:52:23.819Z"
     }
+  },
+  {
+    "word": "test",
+    "meaning": "test",
+    "gloss": "",
+    "pos": "test",
+    "root": "",
+    "affix": "",
+    "examples": [],
+    "_submission": {
+      "id": "703b215a-41b8-481d-9f64-aa998eef080c",
+      "author": "Simon",
+      "notes": "",
+      "submittedAt": "2026-10-04T09:43:01.084Z"
+    }
   }
 ]
