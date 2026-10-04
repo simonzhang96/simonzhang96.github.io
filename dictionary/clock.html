@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#edf5fc">
+  <meta name="description" content="仄克萨四进制时钟与时间词典。以 Ekodu 元时间为原点，呈现 Omklon 的年月日与时分秒。">
+  <title>仄克萨标准时间</title>
+  <link rel="icon" href="/favicon.ico">
+  <link rel="preload" href="/fonts/Zeksa%20Ajkrus.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="./clock.css">
+  <script src="./clock-calendar.js" defer></script>
+  <script src="./clock.js" defer></script>
+</head>
+<body>
+  <div class="atmosphere" aria-hidden="true"></div>
+  <nav class="home-back-btn" aria-label="页面导航"><a href="/dictionary/" title="返回" aria-label="返回"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path fill="currentColor" d="m10.6 3.6 1.8 1.8L7 10.8h14v2.4H7l5.4 5.4-1.8 1.8L2.2 12z"/></svg></a></nav>
+  <main>
+    <section class="clock-section" id="clock" aria-labelledby="clock-heading">
+      <h1 id="clock-heading">仄克萨标准时间</h1>
+      <button type="button" id="alphabet-switch" class="alphabet-switch" role="switch" aria-checked="true" aria-label="使用仄克萨文字" title="切换地球文字 / 仄克萨文字">
+        <span class="alphabet-option latin-label" aria-hidden="true"><span class="alphabet-symbol">A</span><span class="alphabet-text">地球文字</span></span>
+        <span class="alphabet-option zeksa-label" aria-hidden="true"><span class="alphabet-symbol mapped">&#xE001;</span><span class="alphabet-text">仄克萨文字</span></span>
+      </button>
+      <div class="clock-face">
+        <div class="date-block"><p class="date-display mapped" id="zeksa-date" role="text" aria-label="正在计算日期">—</p><p class="field-caption" data-script="marva [lumma/etëf/pis]" aria-label="年、季、月、日">marva [lumma/etëf/pis]</p></div>
+        <div class="time-display mapped" id="zeksa-time" role="timer" aria-live="off" aria-label="正在计算时间">—</div>
+        <div class="time-labels" aria-hidden="true"><span data-script="delm">delm</span><span data-script="lumd">lumd</span><span data-script="gäqi">gäqi</span></div>
+        <div class="day-track" aria-label="本日进度"><div class="track-rule"><span id="day-fill"></span><i id="day-marker"></i></div><div class="track-labels"><span data-script="00">00</span><span data-script="10">10</span><span data-script="20">20</span><span data-script="30">30</span><span data-script="100">100</span></div></div>
+      </div>
+      <div class="earth-line"><span>地球时间 · 北京</span><time id="earth-time">—</time><span class="earth-divider"></span><span id="clock-status">从元时间持续校准</span></div>
+      <p id="font-notice" class="font-notice" hidden>仄克萨字体暂未加载，当前显示四进制读数。</p>
+    </section>
+
+    <section class="lexicon-section" id="lexicon" aria-labelledby="lexicon-heading">
+      <div class="section-heading"><h2 id="lexicon-heading">时间的七个尺度</h2></div>
+      <div class="lexicon" id="word-list">
+        <article class="word-row"><span class="word-type earth-only">年</span><div class="word-name"><h3 data-script="marva" aria-label="marva">marva</h3></div><p class="word-origin" data-script=""></p><div class="word-ratio"><strong data-script="10">10</strong><span data-script="lumma">lumma</span></div></article>
+        <article class="word-row"><span class="word-type earth-only">季</span><div class="word-name"><h3 data-script="lumma" aria-label="lumma">lumma</h3><small data-script="lummarva">lummarva</small></div><p class="word-origin" data-script="lum + marva">lum + marva</p><div class="word-ratio"><strong data-script="10">10</strong><span data-script="etëf">etëf</span></div></article>
+        <article class="word-row"><span class="word-type earth-only">月</span><div class="word-name"><h3 data-script="etëf" aria-label="etëf">etëf</h3></div><p class="word-origin" data-script="metav">metav</p><div class="word-ratio"><strong data-script="100">100</strong><span data-script="pis">pis</span></div></article>
+        <article class="word-row"><span class="word-type earth-only">日</span><div class="word-name"><h3 data-script="pis" aria-label="pis">pis</h3></div><p class="word-origin" data-script=""></p><div class="word-ratio"><strong data-script="100">100</strong><span data-script="delm">delm</span></div></article>
+        <article class="word-row"><span class="word-type earth-only">时</span><div class="word-name"><h3 data-script="delm" aria-label="delm">delm</h3></div><p class="word-origin" data-script="teylme">teylme</p><div class="word-ratio"><strong data-script="1000">1000</strong><span data-script="lumd">lumd</span></div></article>
+        <article class="word-row"><span class="word-type earth-only">分</span><div class="word-name"><h3 data-script="lumd" aria-label="lumd">lumd</h3><small data-script="lumdelm">lumdelm</small></div><p class="word-origin" data-script="lum + delm">lum + delm</p><div class="word-ratio"><strong data-script="1000">1000</strong><span data-script="gäqi">gäqi</span></div></article>
+        <article class="word-row"><span class="word-type earth-only">秒</span><div class="word-name"><h3 data-script="gäqi" aria-label="gäqi">gäqi</h3><small data-script="gvakilim">gvakilim</small></div><p class="word-origin" data-script="gvak + ilim">gvak + ilim</p><div class="word-ratio"><div class="earth-only"><strong>≈ 1.07666</strong><span>地球秒</span></div></div></article>
+      </div>
+      <p class="table-note">单位换算中的整数使用四进制；地球时间使用十进制。日期与时刻各字段从 0 起算。</p>
+    </section>
+
+    <section class="origin-section" id="origin" aria-labelledby="origin-heading">
+      <div class="origin-title"><h2 id="origin-heading">元时间</h2><p>2022年5月25日，北京时间零点。<br>仄克萨年号 1024 的开端。</p></div>
+      <div class="origin-detail"><div class="origin-date">2022.05.25 <span>00:00:00 UTC+8</span></div><div class="origin-equals" aria-hidden="true">↕</div><div class="origin-zeksa" data-script="100000 [0/0/00] [00/000/000]" aria-label="四进制，100000年，0季，0月，00日，00时，000分，000秒"></div></div>
+    </section>
+    <details class="precision"><summary>关于精度与校准</summary><div><p>时钟将当前设备时间与元时间作差，直接换算为仄克萨时间；每次刷新都重新计算，不依靠累加秒数。切回页面或设备唤醒后，会立即重新对齐。</p><p>当前采用固定民用历：1 pis = 70,560地球秒，1 marva = 256 pis。以整数毫秒和精确比例换算，1 gäqi = 2205/2048地球秒。显示精度为一个 gäqi。</p><p>截图中的公转周期约209.07地球日，比256 pis长约4分48秒。该参数已经取整，尚不足以确定置闰规则，因此本版不擅自补日或重置年份。时钟与元时间连续对齐，天文季节校正留待历法规则确定。</p><p>北京时间仅用于确定元时间和地球时间对照；各地访问者看到相同的仄克萨时间。计时准确度取决于设备系统时间，请保持设备自动校时开启。</p></div></details>
+  </main>
+  <footer>© 2026 Simon Zhang · Drekomka</footer>
+  <noscript><p class="noscript">请启用 JavaScript 以显示实时仄克萨时间。时间词典仍可阅读。</p></noscript>
+</body>
+</html>
