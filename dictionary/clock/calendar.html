@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#edf5fc"><meta name="description" content="仄克萨历法：四季、十六月，每月十六日。浏览日期并查看对应的北京时间。"><title>仄克萨历法</title><link rel="icon" href="/favicon.ico"><link rel="preload" href="/fonts/Zeksa%20Ajkrus.ttf" as="font" type="font/ttf" crossorigin><style>@font-face{font-family:Zeksa;src:url('/fonts/Zeksa Ajkrus.ttf') format('truetype');font-display:swap;font-weight:400}
+:root{color-scheme:light;--accent:#0078d4;--ink:#222;--muted:#555;--line:rgba(0,0,0,.12);font-family:-apple-system,BlinkMacSystemFont,'SF Pro','Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;font-synthesis:none}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:32px}body{margin:0;min-height:100vh;background:#eef8ff;color:var(--ink);font-size:16px;line-height:1.65}.atmosphere{position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 20% 30%,rgba(214,236,255,.8),transparent 40%),radial-gradient(circle at 80% 20%,rgba(255,201,138,.7),transparent 35%),radial-gradient(circle at 60% 80%,rgba(234,246,255,.7),transparent 45%),linear-gradient(180deg,#eef8ff,#fff4e6);background-size:135% 135%;animation:drift 15s ease-in-out infinite alternate}
+@keyframes drift{from{background-position:0 50%}to{background-position:100% 50%}}a{color:var(--accent);text-decoration:none}a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:5px}[hidden]{display:none!important}.mapped{font-family:Zeksa,sans-serif;font-weight:400}.home-back-btn{position:fixed;top:24px;left:24px;z-index:999}.home-back-btn a{display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:rgba(255,255,255,.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:50%;box-shadow:0 4px 14px rgba(0,0,0,.1);transition:transform .2s,background .2s,box-shadow .2s}.home-back-btn svg{width:20px;height:20px}.home-back-btn a:hover{transform:translateY(-2px);background:rgba(255,255,255,.95);box-shadow:0 6px 20px rgba(0,0,0,.15)}
+main,footer{width:min(920px,calc(100% - 64px));margin:auto}h1{text-align:center;color:var(--accent);font-size:2.5rem;font-weight:700;line-height:1.35;margin:0 0 24px}h2{color:var(--accent);font-size:1.5rem;font-weight:700;line-height:1.45;margin:0}.clock-section{padding:48px 0 52px;text-align:center}.alphabet-switch{position:relative;display:grid;grid-template-columns:1fr 1fr;width:min(100%,304px);height:52px;padding:4px;margin:0 auto 30px;border:0;box-sizing:border-box;border-radius:26px;background:rgba(255,255,255,.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.8),0 4px 14px rgba(0,0,0,.07);font-family:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}.alphabet-switch::before{content:'';position:absolute;top:4px;bottom:4px;left:4px;width:calc((100% - 8px)/2);border-radius:22px;background:var(--accent);box-shadow:0 2px 8px rgba(0,120,212,.2);transition:transform .25s cubic-bezier(.22,1,.36,1)}.alphabet-switch[aria-checked=true]::before{transform:translateX(100%)}.alphabet-option{position:relative;display:flex;align-items:center;justify-content:center;gap:8px;color:#52718b;white-space:nowrap;font-weight:400;line-height:1;transition:color .2s}.alphabet-symbol{font-size:22px}.alphabet-text{font-size:13px;line-height:1.4}.alphabet-switch[aria-checked=false] .latin-label,.alphabet-switch[aria-checked=true] .zeksa-label{color:#fff}.alphabet-switch:hover{background:rgba(255,255,255,.9);box-shadow:inset 0 0 0 1px rgba(255,255,255,.9),0 5px 16px rgba(0,0,0,.09)}.alphabet-switch:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+
+main{max-width:940px;padding:64px 0 36px}footer{padding:8px 0 28px;text-align:center;font-size:13px;color:#777}button,input{font:inherit}button{cursor:pointer}button:disabled{opacity:.35;cursor:default}button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #0078d4;outline-offset:3px}button{touch-action:manipulation}.panel{background:rgba(255,255,255,.55);border:1px solid rgba(255,255,255,.85);border-radius:22px;box-shadow:0 8px 28px #3d597310;padding:28px}.toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:24px}.year-nav{display:flex;align-items:center;gap:12px}.icon-btn,.quiet-btn{border:1px solid #67819b26;background:#ffffff9c;color:#426c96;border-radius:12px;min-height:40px;padding:7px 14px}.icon-btn{width:40px;padding:7px;font-size:24px;line-height:1}.quiet-btn:hover,.icon-btn:hover{background:white}.year-title{margin:0;font:24px/1.3 ui-monospace,monospace;color:#426c96;min-width:120px;text-align:center}.year-title.mapped{font:34px/1.3 Zeksa}.year-jump{margin:-8px 0 24px;padding:16px;border-radius:12px;background:#e9f2f8;display:flex;align-items:center;gap:10px;flex-wrap:wrap}.year-jump label{font-size:13px}.year-jump input{width:120px;min-height:38px;border:1px solid #97aec0;border-radius:8px;padding:5px 9px;background:white}.error{color:#a52a2a;font-size:13px;margin:0}.seasons{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:28px}.season{border-bottom:2px solid #7998b51f;padding-bottom:10px}.season-title{margin:0 0 8px;font-size:13px;color:#6c7e8b}.season-title.mapped{font-size:21px}.month-list{display:grid;grid-template-columns:repeat(4,1fr);gap:4px}.month-chip{border:0;border-radius:7px;background:transparent;color:#52718b;min-height:32px;padding:3px 0;font-size:13px}.month-chip.mapped{font-size:22px}.month-chip:hover{background:#dcebf4}.month-chip[aria-pressed=true]{background:#0078d4;color:white}.month-toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;gap:8px}.month-title{font-size:17px;font-weight:400;color:#426c96;margin:0}.month-title.mapped{font-size:30px}.legend{display:flex;gap:18px;align-items:center;font-size:12px;color:#6c7e8b;margin-bottom:16px}.legend span{display:flex;align-items:center;gap:6px}.dot{width:7px;height:7px;border-radius:50%;background:#bd884d}.selection-key{width:10px;height:10px;border-radius:3px;background:#0078d4}.days{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px}.day{position:relative;min-height:88px;border:1px solid #7290ab20;border-radius:13px;background:#ffffff6b;color:#426c96;display:flex;align-items:center;justify-content:center;font:25px/1.2 ui-monospace,monospace}.day.mapped{font:40px/1.2 Zeksa}.day:hover{border-color:#0078d477;background:#fff}.day[aria-pressed=true]{background:#0078d4;color:#fff;border-color:#0078d4;box-shadow:0 4px 12px #0078d425}.day.today:after{content:'';position:absolute;bottom:11px;width:6px;height:6px;border-radius:50%;background:#bd884d}.day.today[aria-pressed=true]:after{background:#ffe0a4}.day-detail{margin-top:24px;border-top:1px solid #67819b26;padding-top:20px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:18px}.selected-date{font:18px/1.5 ui-monospace,monospace;color:#426c96;margin:0;overflow-wrap:anywhere}.selected-date.mapped{font:31px/1.5 Zeksa}.detail-label{font-size:12px;color:#72818c;margin:0 0 5px}.earth-range{text-align:right;font-size:13px;font-variant-numeric:tabular-nums;color:#526779}.earth-range time{display:block;white-space:nowrap}.earth-range .between{font-size:11px;color:#8e9aa4}.below{display:flex;justify-content:space-between;gap:18px;margin:18px 4px;font-size:12px;color:#6c7e8b}.below p{margin:0}.note{font-size:13px;color:#6c7e8b;margin:25px 4px 0}.note summary{cursor:pointer;width:fit-content}.note p{line-height:1.9;max-width:700px}.font-notice{text-align:center;font-size:13px;color:#97612b}.arrow-group{display:flex;gap:6px}.year-label.mapped{font-size:20px}.year-label{font-size:12px;color:#708391;text-align:center;margin-top:2px}.calendar-top{margin-bottom:10px}
+@media(max-width:600px){main,footer{width:calc(100% - 32px)}main{padding-top:80px}h1{font-size:1.8rem}.home-back-btn{top:16px;left:16px}.home-back-btn a{width:38px;height:38px}.panel{padding:18px 14px;border-radius:18px}.toolbar{gap:8px;flex-wrap:wrap;margin-bottom:20px}.year-nav{gap:6px}.year-title{font-size:20px;min-width:105px}.year-title.mapped{font-size:29px}.quiet-btn{padding:7px 10px;font-size:13px}.icon-btn{width:34px;min-height:36px}.seasons{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-bottom:22px}.season-title{font-size:11px}.season-title.mapped{font-size:17px}.month-chip{font-size:13px;min-height:36px}.month-chip.mapped{font-size:22px}.days{gap:7px}.day{min-height:68px;font-size:22px}.day.mapped{font-size:32px}.day-detail{grid-template-columns:1fr;gap:12px}.earth-range{text-align:left}.earth-range time{display:inline}.earth-range .between{display:block}.selected-date.mapped{font-size:28px}.below{flex-direction:column;gap:8px}.month-title.mapped{font-size:25px}.alphabet-switch{margin-bottom:25px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.atmosphere{animation:none}.alphabet-switch::before{transition:none}}
+
+.year-status{font-size:11px;color:#8b704e;margin-top:3px;text-align:center}.leap-section{margin-top:18px;padding:16px;border:1px solid #bd884d55;border-radius:13px;background:#fff4e655}.leap-section p{font-size:12px;color:#8b704e;margin:0 0 10px}.leap-day{position:relative;width:100%;min-height:52px;border:1px solid #bd884d55;border-radius:9px;background:#ffffff99;color:#805e38;font-family:inherit;font-size:16px;line-height:1.4}.leap-day[aria-pressed=true]{background:#0078d4;border-color:#0078d4;color:white}.leap-day.today:after{content:'今天';margin-left:12px;font-size:12px}.selected-date.mapped{font-family:Zeksa,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif}
+</style></head>
+<body><div class="atmosphere" aria-hidden="true"></div>
+<nav class="home-back-btn" aria-label="页面导航"><a href="/dictionary/" title="返回" aria-label="返回词典"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m10.6 3.6 1.8 1.8L7 10.8h14v2.4H7l5.4 5.4-1.8 1.8L2.2 12z"/></svg></a></nav>
+<main><h1>仄克萨历法</h1>
+<button type="button" id="alphabet-switch" class="alphabet-switch" role="switch" aria-checked="true" aria-label="使用仄克萨文字" title="切换地球文字 / 仄克萨文字"><span class="alphabet-option latin-label" aria-hidden="true"><span class="alphabet-symbol">A</span><span class="alphabet-text">地球文字</span></span><span class="alphabet-option zeksa-label" aria-hidden="true"><span class="alphabet-symbol mapped">&#xE001;</span><span class="alphabet-text">仄克萨文字</span></span></button>
+<p class="font-notice" id="font-notice" hidden>字体暂未加载，当前显示地球文字。</p>
+<section class="panel" aria-label="日历">
+<div class="toolbar"><div class="year-nav"><button class="icon-btn" id="prev-year" aria-label="上一年">‹</button><div><p class="year-title" id="year-title"></p><div class="year-label" id="year-label">marva</div><div class="year-status" id="year-status"></div></div><button class="icon-btn" id="next-year" aria-label="下一年">›</button></div><div class="arrow-group"><button class="quiet-btn" id="jump-toggle" aria-expanded="false" aria-controls="year-jump">跳转年份</button><button class="quiet-btn" id="today">今天</button></div></div>
+<form id="year-jump" class="year-jump" hidden><label for="year-input">仄克萨年号（十进制）</label><input id="year-input" type="number" min="0" max="9999" step="1" required inputmode="numeric"><button class="quiet-btn" type="submit">前往</button><p class="error" id="year-error" role="alert"></p></form>
+<div class="seasons" id="seasons" aria-label="选择季与月"></div>
+<div class="month-toolbar"><h2 class="month-title" id="month-title" aria-live="polite"></h2><div class="arrow-group"><button class="icon-btn" id="prev-month" aria-label="上一月">‹</button><button class="icon-btn" id="next-month" aria-label="下一月">›</button></div></div>
+<div class="legend"><span><i class="dot" aria-hidden="true"></i>今天</span><span><i class="selection-key" aria-hidden="true"></i>选中日期</span></div>
+<div class="days" id="days" role="group" aria-label="本月的十六日"></div>
+<div id="leap-section" class="leap-section" hidden><p>年末独立日 · 不属于任何季或月</p><button type="button" id="leap-day" class="leap-day" aria-pressed="false">闰日</button></div>
+<div class="day-detail" aria-live="polite"><div><p class="detail-label">所选日期</p><p class="selected-date" id="selected-date"></p></div><div class="earth-range"><p class="detail-label">北京时间 · UTC+8</p><time id="earth-start"></time><span class="between">至（不含结束时刻）</span><time id="earth-end"></time></div></div>
+</section>
+<div class="below"><p id="notation-note"></p><a href="/dictionary/clock">打开仄克萨标准时间 →</a></div>
+<details class="note"><summary>关于这本日历</summary><p>一年 4 季，每季 4 月，每月 16 日；一日为 19.6 地球小时。日历没有星期，方格按日期顺序从左到右、从上到下排列。季、月、日从 0 编号，月份在每一季内重新编号。本段数量为十进制。</p><p>元时间：北京时间 2022 年 5 月 25 日 00:00，对应仄克萨年号 1024 的开端。本页采用平年 256 日、闰年 257 日的民用历。从年号 1024 开始，每连续 256 年，在最后一年的年末增加一个完整的 pis；首个闰年为 1279，之后为 1535、1791……闰日属于该年，不属于任何季或月。元时间之前按相同周期向前推算，因此 1023 年末也有闰日。支持查询十进制年号 0—9999。</p><p>平均年长为 256 + 1/256 个 pis，约合 209.06985677 地球日。闰日的仄克萨语名称尚未确定，两种文字模式暂统一标记为「闰日」。本说明中的数字均为十进制。</p></details>
+<noscript><p>请启用 JavaScript 以浏览日历。</p></noscript></main><footer>© 2026 Simon Zhang · Drekomka</footer>
+<script>/* Zeksa calendar with one intercalary pis at the end of each 256-year cycle.
+ * All durations are exact rational multiples of a pis.
+ * Epoch: 2022-05-25 00:00:00 Asia/Shanghai, year label 1024.
+ * Epoch-relative cycles extend backward using floor division.
+ * Years 1279, 1535, ... end the cycles after epoch year 1024; year 1023
+ * is the preceding proleptic leap year. The leap day belongs to no month/season.
+ */
+(function (root) {
+  'use strict';
+  const EPOCH_MS = Date.parse('2022-05-25T00:00:00+08:00');
+  const EPOCH_YEAR = 1024;
+  const DAY_MS = 70560000;
+  const YEAR_MS = DAY_MS * 256; // Common year only.
+  const CYCLE_YEARS = 256;
+  const CYCLE_DAYS = 65537;
+  const TICKS_PER_DAY = 65536;
+  const zeksaMap = {
+    a:'\uE001',á:'\uE002',e:'\uE003',é:'\uE004',i:'\uE005',í:'\uE006',o:'\uE007',ó:'\uE008',u:'\uE009',ú:'\uE00A',
+    ä:'\uE00B',â:'\uE00C',ë:'\uE00D',ê:'\uE00E',ø:'\uE00F',ô:'\uE010',b:'\uE011',p:'\uE012',d:'\uE013',t:'\uE014',
+    g:'\uE015',k:'\uE016',m:'\uE017',n:'\uE018',q:'\uE019',v:'\uE01A',f:'\uE01B',z:'\uE01C',s:'\uE01D',j:'\uE01E',
+    c:'\uE01F',x:'\uE020',ts:'\uE021',h:'\uE022',ħ:'\uE023',l:'\uE024',r:'\uE025',w:'\uE026',y:'\uE027',
+    '0':'\uE029','1':'\uE02A','2':'\uE02B','3':'\uE02C',',':'\uE032','.':'\uE033',"'":'\uE034','"':'\uE035',
+    '!':'\uE036','?':'\uE037','/':'\uE038','[':'\uE039',']':'\uE03A'
+  };
+  function toPUA(value) {
+    return String(value).normalize('NFC').toLowerCase().replace(/ts|[\s\S]/gu, token => zeksaMap[token] || token);
+  }
+  function base4(number, width = 0) { return number.toString(4).padStart(width, '0'); }
+  function yearStartDay(year) {
+    if (!Number.isSafeInteger(year)) throw new RangeError('Year must be an integer.');
+    const offset = year - EPOCH_YEAR;
+    return offset * 256 + Math.floor(offset / CYCLE_YEARS);
+  }
+  function isLeapYear(year) { return (year - EPOCH_YEAR + 1) % CYCLE_YEARS === 0; }
+  function toUnixMs(year, dayOfYear) {
+    if (!Number.isInteger(dayOfYear) || dayOfYear < 0 || dayOfYear >= (isLeapYear(year) ? 257 : 256)) throw new RangeError('Invalid day of year.');
+    return EPOCH_MS + (yearStartDay(year) + dayOfYear) * DAY_MS;
+  }
+  function fromUnixMs(unixMs) {
+    if (!Number.isSafeInteger(unixMs)) throw new RangeError('Timestamp must be an integer millisecond.');
+    const elapsed = unixMs - EPOCH_MS;
+    const elapsedDays = Math.floor(elapsed / DAY_MS);
+    const remainderMs = elapsed - elapsedDays * DAY_MS;
+    const ticks = Math.floor(remainderMs * TICKS_PER_DAY / DAY_MS);
+    const cycle = Math.floor(elapsedDays / CYCLE_DAYS);
+    const dayInCycle = elapsedDays - cycle * CYCLE_DAYS;
+    const yearInCycle = Math.min(255, Math.floor(dayInCycle / 256));
+    const year = EPOCH_YEAR + cycle * CYCLE_YEARS + yearInCycle;
+    const dayOfYear = dayInCycle - yearInCycle * 256;
+    const leapDay = dayOfYear === 256;
+    const season = leapDay ? null : Math.floor(dayOfYear / 64);
+    const month = leapDay ? null : Math.floor(dayOfYear / 16) % 4;
+    const day = leapDay ? null : dayOfYear % 16;
+    const hour = Math.floor(ticks / 4096);
+    const minute = Math.floor(ticks / 64) % 64;
+    const second = ticks % 64;
+    const date = leapDay ? `${base4(year)} [闰日]` : `${base4(year)} [${base4(season)}/${base4(month)}/${base4(day, 2)}]`;
+    const time = `[${base4(hour, 2)}/${base4(minute, 3)}/${base4(second, 3)}]`;
+    return {year,season,month,day,leapDay,hour,minute,second,date,time,dayOfYear,elapsedDays,ticks,
+      dayProgress: remainderMs / DAY_MS, yearProgress:(dayOfYear + remainderMs / DAY_MS) / (isLeapYear(year) ? 257 : 256)};
+  }
+  const api = { EPOCH_MS,EPOCH_YEAR,DAY_MS,YEAR_MS,TICKS_PER_DAY,zeksaMap,toPUA,base4,fromUnixMs,yearStartDay,isLeapYear,toUnixMs,CYCLE_YEARS,CYCLE_DAYS };
+  root.ZeksaTime = api;
+  if (typeof module !== 'undefined' && module.exports) module.exports = api;
+})(typeof globalThis !== 'undefined' ? globalThis : this);
+</script><script>
+'use strict';
+const Z=window.ZeksaTime;
+const $=id=>document.getElementById(id);
+let now=Z.fromUnixMs(Date.now()),year=now.year,monthIndex=now.leapDay?15:now.season*4+now.month,selectedDay=now.leapDay?16:now.day;
+let useNative=true,fontReady=false;
+const formatter=new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Shanghai',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'});
+const monthButtons=[],dayButtons=[];
+function mapped(el,text){const native=useNative&&fontReady;el.textContent=native?Z.toPUA(text):text;el.classList.toggle('mapped',native);}
+function dayStart(y,m,d){return Z.toUnixMs(y,m*16+d);}
+for(let s=0;s<4;s++){
+ const group=document.createElement('div');group.className='season';
+ const label=document.createElement('p');label.className='season-title';group.append(label);
+ const list=document.createElement('div');list.className='month-list';
+ for(let m=0;m<4;m++){
+  const button=document.createElement('button');button.type='button';button.className='month-chip';button.setAttribute('aria-label',`季编号 ${s}，月编号 ${m}`);
+  button.addEventListener('click',()=>{monthIndex=s*4+m;render();});list.append(button);monthButtons.push(button);
+ }
+ group.append(list);$('seasons').append(group);
+}
+for(let d=0;d<16;d++){
+ const button=document.createElement('button');button.type='button';button.className='day';
+ button.addEventListener('click',()=>{selectedDay=d;renderSelection();});
+ button.addEventListener('keydown',event=>{
+  const delta={ArrowLeft:-1,ArrowRight:1,ArrowUp:-4,ArrowDown:4}[event.key];
+  if(delta===undefined)return;event.preventDefault();selectedDay=Math.max(0,Math.min(15,d+delta));renderSelection();dayButtons[selectedDay].focus();
+ });$('days').append(button);dayButtons.push(button);
+}
+$('leap-day').onclick=()=>{monthIndex=15;selectedDay=16;render();};
+function renderSelection(){
+ $('leap-day').setAttribute('aria-pressed',String(selectedDay===16));
+ dayButtons.forEach((button,d)=>{button.setAttribute('aria-pressed',String(d===selectedDay));});
+ const stamp=dayStart(year,monthIndex,selectedDay),date=Z.fromUnixMs(stamp);
+ mapped($('selected-date'),date.date);
+ $('selected-date').setAttribute('aria-label',date.leapDay?`年号 ${year}，年末闰日；年号为十进制`:`年号 ${year}，季编号 ${date.season}，月编号 ${date.month}，日编号 ${selectedDay}；以上为十进制`);
+ $('earth-start').textContent=formatter.format(stamp);$('earth-start').dateTime=new Date(stamp).toISOString();
+ $('earth-end').textContent=formatter.format(stamp+Z.DAY_MS);$('earth-end').dateTime=new Date(stamp+Z.DAY_MS).toISOString();
+}
+function render(){
+ now=Z.fromUnixMs(Date.now());
+ const native=useNative&&fontReady;
+ const leapYear=Z.isLeapYear(year);
+ if(selectedDay===16&&(!leapYear||monthIndex!==15))selectedDay=15;
+ $('leap-section').hidden=!leapYear;
+ $('year-status').textContent=leapYear?'闰年 · 年末增加一日':'平年';
+ const leapToday=now.leapDay&&now.year===year;
+ $('leap-day').classList.toggle('today',leapToday);
+ if(leapToday)$('leap-day').setAttribute('aria-current','date');else $('leap-day').removeAttribute('aria-current');
+ $('leap-day').setAttribute('aria-label',leapToday?'年末闰日，今天':'年末闰日');
+ $('alphabet-switch').setAttribute('aria-checked',String(useNative));
+ $('alphabet-switch').setAttribute('aria-label',useNative?'使用仄克萨文字':'使用地球文字');
+ mapped($('year-title'),Z.base4(year));mapped($('year-label'),'marva');
+ document.querySelectorAll('.season-title').forEach((el,s)=>mapped(el,`lumma ${Z.base4(s)}`));
+ monthButtons.forEach((el,i)=>{mapped(el,Z.base4(i%4));el.setAttribute('aria-pressed',String(i===monthIndex));});
+ mapped($('month-title'),`${Z.base4(Math.floor(monthIndex/4))} / ${Z.base4(monthIndex%4)} etëf`);
+ $('month-title').setAttribute('aria-label',`季编号 ${Math.floor(monthIndex/4)}，月编号 ${monthIndex%4}`);
+ dayButtons.forEach((el,d)=>{
+  mapped(el,Z.base4(d,2));const today=!now.leapDay&&year===now.year&&monthIndex===now.season*4+now.month&&d===now.day;
+  el.classList.toggle('today',today);if(today)el.setAttribute('aria-current','date');else el.removeAttribute('aria-current');
+  el.setAttribute('aria-label',`日编号 ${d}（四进制 ${Z.base4(d,2)}）${today?'，今天':''}`);
+ });
+ $('prev-year').disabled=year===0;$('next-year').disabled=year===9999;
+ $('prev-month').disabled=year===0&&monthIndex===0;$('next-month').disabled=year===9999&&monthIndex===15;
+ $('notation-note').textContent=native?'日期使用仄克萨四进制；每月 16 日，无星期。':'日期数字为四进制；地球时间及年份输入为十进制。';
+ renderSelection();
+}
+function shiftMonth(delta){const total=year*16+monthIndex+delta;if(total<0||total>=10000*16)return;year=Math.floor(total/16);monthIndex=total%16;render();}
+$('prev-month').onclick=()=>shiftMonth(-1);$('next-month').onclick=()=>shiftMonth(1);
+$('prev-year').onclick=()=>{if(year>0){year--;render();}};$('next-year').onclick=()=>{if(year<9999){year++;render();}};
+$('today').onclick=()=>{now=Z.fromUnixMs(Date.now());year=now.year;monthIndex=now.leapDay?15:now.season*4+now.month;selectedDay=now.leapDay?16:now.day;render();};
+$('alphabet-switch').onclick=()=>{useNative=!useNative;render();};
+$('jump-toggle').onclick=()=>{const open=$('year-jump').hidden;$('year-jump').hidden=!open;$('jump-toggle').setAttribute('aria-expanded',String(open));if(open){$('year-input').value=year;$('year-error').textContent='';$('year-input').focus();}};
+$('year-jump').onsubmit=event=>{event.preventDefault();const input=$('year-input').value;const value=Number(input);if(!input.trim()||!Number.isInteger(value)||value<0||value>9999){$('year-error').textContent='请输入 0—9999 之间的整数年号。';return;}year=value;$('year-jump').hidden=true;$('jump-toggle').setAttribute('aria-expanded','false');render();$('jump-toggle').focus();};
+let rolloverTimer;
+function refreshToday(){render();clearTimeout(rolloverTimer);const current=Z.fromUnixMs(Date.now());const next=Z.EPOCH_MS+(current.elapsedDays+1)*Z.DAY_MS;if(!document.hidden)rolloverTimer=setTimeout(refreshToday,Math.max(50,next-Date.now()+10));}
+document.addEventListener('visibilitychange',refreshToday);window.addEventListener('focus',refreshToday);window.addEventListener('pageshow',refreshToday);
+refreshToday();
+document.fonts.load('32px Zeksa',Z.toPUA('0123etëf')).then(faces=>{fontReady=faces.length>0;$('font-notice').hidden=fontReady;render();}).catch(()=>{$('font-notice').hidden=false;});
+</script></body></html>
