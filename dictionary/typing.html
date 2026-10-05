@@ -1,0 +1,163 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#edf5fc"><meta name="description" content="仄克萨语打字练习：从词典抽取单词与真实例句，练习拼写、重音和输入速度。"><title>仄克萨语打字练习</title><link rel="icon" href="/favicon.ico"><link rel="preload" href="/fonts/Zeksa%20Ajkrus.ttf" as="font" type="font/ttf" crossorigin><style>@font-face{font-family:Zeksa;src:url('/fonts/Zeksa Ajkrus.ttf') format('truetype');font-display:swap;font-weight:400}
+:root{color-scheme:light;--accent:#0078d4;--ink:#222;--muted:#555;--line:rgba(0,0,0,.12);font-family:-apple-system,BlinkMacSystemFont,'SF Pro','Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;font-synthesis:none}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:32px}body{margin:0;min-height:100vh;background:#eef8ff;color:var(--ink);font-size:16px;line-height:1.65}.atmosphere{position:fixed;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(circle at 20% 30%,rgba(214,236,255,.8),transparent 40%),radial-gradient(circle at 80% 20%,rgba(255,201,138,.7),transparent 35%),radial-gradient(circle at 60% 80%,rgba(234,246,255,.7),transparent 45%),linear-gradient(180deg,#eef8ff,#fff4e6);background-size:135% 135%;animation:drift 15s ease-in-out infinite alternate}
+@keyframes drift{from{background-position:0 50%}to{background-position:100% 50%}}a{color:var(--accent);text-decoration:none}a:focus-visible,summary:focus-visible{outline:3px solid var(--accent);outline-offset:5px}[hidden]{display:none!important}.mapped{font-family:Zeksa,sans-serif;font-weight:400}.home-back-btn{position:fixed;top:24px;left:24px;z-index:999}.home-back-btn a{display:flex;align-items:center;justify-content:center;width:44px;height:44px;background:rgba(255,255,255,.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:50%;box-shadow:0 4px 14px rgba(0,0,0,.1);transition:transform .2s,background .2s,box-shadow .2s}.home-back-btn svg{width:20px;height:20px}.home-back-btn a:hover{transform:translateY(-2px);background:rgba(255,255,255,.95);box-shadow:0 6px 20px rgba(0,0,0,.15)}
+main,footer{width:min(920px,calc(100% - 64px));margin:auto}h1{text-align:center;color:var(--accent);font-size:2.5rem;font-weight:700;line-height:1.35;margin:0 0 24px}h2{color:var(--accent);font-size:1.5rem;font-weight:700;line-height:1.45;margin:0}.clock-section{padding:48px 0 52px;text-align:center}.alphabet-switch{position:relative;display:grid;grid-template-columns:1fr 1fr;width:min(100%,304px);height:52px;padding:4px;margin:0 auto 30px;border:0;box-sizing:border-box;border-radius:26px;background:rgba(255,255,255,.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);box-shadow:inset 0 0 0 1px rgba(255,255,255,.8),0 4px 14px rgba(0,0,0,.07);font-family:inherit;cursor:pointer;-webkit-tap-highlight-color:transparent}.alphabet-switch::before{content:'';position:absolute;top:4px;bottom:4px;left:4px;width:calc((100% - 8px)/2);border-radius:22px;background:var(--accent);box-shadow:0 2px 8px rgba(0,120,212,.2);transition:transform .25s cubic-bezier(.22,1,.36,1)}.alphabet-switch[aria-checked=true]::before{transform:translateX(100%)}.alphabet-option{position:relative;display:flex;align-items:center;justify-content:center;gap:8px;color:#52718b;white-space:nowrap;font-weight:400;line-height:1;transition:color .2s}.alphabet-symbol{font-size:22px}.alphabet-text{font-size:13px;line-height:1.4}.alphabet-switch[aria-checked=false] .latin-label,.alphabet-switch[aria-checked=true] .zeksa-label{color:#fff}.alphabet-switch:hover{background:rgba(255,255,255,.9);box-shadow:inset 0 0 0 1px rgba(255,255,255,.9),0 5px 16px rgba(0,0,0,.09)}.alphabet-switch:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+main{width:min(1000px,calc(100% - 64px));padding:65px 0 36px}header{text-align:center}h1{margin-bottom:10px}.intro{font-size:14px;color:#718393;margin:0 0 25px}button,textarea{font:inherit}button{cursor:pointer;touch-action:manipulation}button:disabled{opacity:.4;cursor:not-allowed}button:focus-visible,summary:focus-visible{outline:3px solid #0078d4;outline-offset:4px}.practice{background:rgba(255,255,255,.6);border:1px solid #ffffffd9;border-radius:22px;box-shadow:0 8px 28px #3d597311;padding:24px 32px 16px}.configuration{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;border-bottom:1px solid #6887a51c;padding-bottom:20px}.segment{background:#e5eef5a3;border-radius:12px;padding:4px;display:flex;gap:3px}.segment button,.setting-group button{border:0;color:#748797;background:transparent;border-radius:9px;padding:7px 14px;font-size:14px;white-space:nowrap}.segment button[aria-pressed=true]{background:white;color:#0078d4;box-shadow:0 2px 7px #54708c12}.settings,.setting-group{display:flex;gap:5px;align-items:center}.setting-group button{padding:5px 8px;font-size:13px}.setting-group button[aria-pressed=true]{color:#0078d4;background:#e0edf8}.separated{border-left:1px solid #8aa1b335;margin-left:6px;padding-left:10px}.dashboard{display:flex;align-items:flex-end;justify-content:space-between;padding:28px 0 24px;gap:14px}.live-stats{display:flex;gap:32px}.live-stats>div,.result-grid>div{display:flex;flex-direction:column}.live-stats strong{font-size:28px;font-weight:400;color:#426c96;line-height:1.3;font-variant-numeric:tabular-nums}.live-stats span{font-size:11px;letter-spacing:.04em;color:#7c8d9a;margin-top:3px}#word-progress{font-size:12px;color:#8896a1;margin:0 0 2px;white-space:nowrap}.typing-surface{position:relative;min-height:205px;cursor:text;border-radius:10px}.words-viewport{height:195px;overflow:hidden;scroll-behavior:auto;padding:4px 3px 16px}#words{font:26px/2.35 ui-monospace,SFMono-Regular,Consolas,monospace;color:#8796a4;white-space:pre-wrap;word-break:normal;overflow-wrap:anywhere}#words.mapped{font:38px/1.6 Zeksa,sans-serif}.target-word{display:inline-block;white-space:nowrap}.letter{position:relative}.gap{display:inline;white-space:pre-wrap}.letter.correct{color:#365870}.letter.wrong{color:#b5554c;background:#bf61500c;text-decoration:underline;text-decoration-color:#b5554c77;text-underline-offset:7px}.focused .letter.current:before{content:'';position:absolute;left:-2px;top:8%;height:88%;width:2px;border-radius:2px;background:#c58a49;animation:blink 1s step-end infinite}.focused .letter.partial:before{left:auto;right:-2px}.typing-surface textarea{position:absolute;inset:0;width:100%;height:100%;resize:none;opacity:.01;color:transparent;background:transparent;caret-color:transparent;border:0;padding:0;font-size:16px;z-index:2;outline:none;overflow:hidden}.focus-hint{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;color:#52718b;font-size:14px;background:rgba(242,247,249,.67);backdrop-filter:blur(3px);-webkit-backdrop-filter:blur(3px);border-radius:10px;z-index:3}.focused .focus-hint,.finished .focus-hint{display:none}.progress-track{height:2px;background:#67819b1f;margin-top:16px;overflow:hidden}.progress-track>div{height:100%;width:0;background:#bb8d59;transition:width .2s linear}.practice-footer{display:flex;justify-content:space-between;gap:14px;align-items:center;margin-top:8px}.practice-footer p{font-size:12px;color:#8393a0}.restart{border:0;background:transparent;display:flex;align-items:center;gap:7px;color:#718393;padding:8px 0;font-size:12px}.restart:hover{color:#0078d4}.restart svg{width:16px;height:16px}.translation{font-size:13px;color:#647787;border-top:1px solid #8aa1b326;margin-top:5px;padding:14px 0 7px}.translation summary{cursor:pointer;width:fit-content}.translation p{margin:12px 0 5px;line-height:1.8}.translation small{color:#8896a1}.input-guide{margin:22px 6px 0}.guide-top{display:flex;flex-direction:column;gap:12px}.guide-top p{font-size:12px;color:#7b8b98;margin:0}.special-keys{display:flex;gap:7px;flex-wrap:wrap}.special-key{min-width:38px;height:36px;padding:4px 10px;border-radius:8px;border:1px solid #8ca6bc30;background:#ffffff8c;color:#52718b;box-shadow:0 2px 1px #7992aa0d;font-size:17px}.special-key:hover{color:#0078d4;border-color:#0078d477;background:white}.help{font-size:12px;color:#7b8b98;margin-top:24px}.help summary{cursor:pointer;width:fit-content}.help p{max-width:800px;line-height:1.9}.data-footer{display:flex;flex-wrap:wrap;gap:10px 22px;font-size:11px;color:#8c9aa5;margin-top:18px}.result{background:#ffffff91;border:1px solid white;border-radius:20px;padding:24px 32px;margin-top:22px}.result-header{display:flex;justify-content:space-between;align-items:center;gap:12px}.result-header h2{font-size:18px;font-weight:500}.result-header>span{font-size:12px;color:#8293a1}.result-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:22px 0}.result-grid strong{font-size:34px;font-weight:400;color:#426c96;font-variant-numeric:tabular-nums}.result-grid span{font-size:12px;color:#8b99a4}#mistake-list{font-size:12px;color:#7b8b98;line-height:1.8}.primary{border:0;background:#0078d4;color:white;border-radius:10px;padding:10px 22px;font-size:14px}.primary:hover{background:#0068b9}.error{border-radius:10px;background:#fff0e3;padding:14px 18px;font-size:13px;margin-top:18px;color:#805e3e}.error p{margin-top:0}.error button{background:white;color:#805e3e;border:1px solid #bd884d55;padding:6px 12px;border-radius:6px}.font-notice{text-align:center;color:#976b35;font-size:13px}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}footer{padding:0 0 28px;text-align:center;color:#8393a0;font-size:12px}@keyframes blink{50%{opacity:0}}
+@media(max-width:680px){main{width:calc(100% - 32px);padding-top:80px}h1{font-size:1.8rem}.home-back-btn{top:16px;left:16px}.home-back-btn a{width:38px;height:38px}.practice{padding:18px 16px 12px;border-radius:18px}.configuration{gap:14px;padding-bottom:16px}.settings{gap:2px;flex-wrap:wrap}.setting-group button{padding:5px 7px}.dashboard{padding-top:22px}.live-stats{gap:20px}.live-stats strong{font-size:24px}#word-progress{font-size:10px}.words-viewport{height:180px}.typing-surface{min-height:180px}#words{font-size:21px;line-height:2.5}#words.mapped{font-size:31px;line-height:1.7}.target-word{max-width:100%;white-space:normal;overflow-wrap:anywhere}.practice-footer{gap:8px}.practice-footer p{font-size:11px;max-width:65%}.restart{white-space:nowrap}.result{padding:20px}.result-grid{grid-template-columns:repeat(2,1fr)}.special-keys{gap:6px}.special-key{min-width:35px}.intro{font-size:12px}.help{margin-top:20px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.atmosphere{animation:none}.alphabet-switch::before,.progress-track>div{transition:none}.focused .letter.current:before{animation:none}}
+</style></head>
+<body><div class="atmosphere" aria-hidden="true"></div><nav class="home-back-btn" aria-label="页面导航"><a href="/dictionary/" title="返回词典" aria-label="返回词典"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="m10.6 3.6 1.8 1.8L7 10.8h14v2.4H7l5.4 5.4-1.8 1.8L2.2 12z"/></svg></a></nav>
+<main><header><h1>仄克萨语打字练习</h1><p class="intro">从单词到句子，熟悉每一次落键。</p></header>
+<button type="button" id="alphabet-switch" class="alphabet-switch" role="switch" aria-checked="true" aria-label="使用仄克萨文字" title="切换显示文字"><span class="alphabet-option latin-label" aria-hidden="true"><span class="alphabet-symbol">A</span><span class="alphabet-text">地球文字</span></span><span class="alphabet-option zeksa-label" aria-hidden="true"><span class="alphabet-symbol mapped">&#xE001;</span><span class="alphabet-text">仄克萨文字</span></span></button>
+<p id="font-notice" class="font-notice" hidden>仄克萨字体暂未加载，当前使用拉丁转写显示。</p>
+<section class="practice" aria-label="打字练习"><div class="configuration"><div class="segment" role="group" aria-label="练习模式"><button type="button" data-mode="words" aria-pressed="true">连续单词</button><button type="button" id="sentence-mode" data-mode="sentences" aria-pressed="false">词典例句</button></div><div class="settings"><div id="kind-options" class="setting-group" role="group" aria-label="结束条件"><button type="button" data-kind="time" aria-pressed="true">计时</button><button type="button" data-kind="count" aria-pressed="false">词数</button></div><div id="options-time" class="setting-group separated" role="group" aria-label="练习时长"><button type="button" data-duration="30" aria-pressed="true">30s</button><button type="button" data-duration="60" aria-pressed="false">60s</button><button type="button" data-duration="120" aria-pressed="false">120s</button></div><div id="options-count" class="setting-group separated" role="group" aria-label="练习词数" hidden><button type="button" data-count="25" aria-pressed="true">25</button><button type="button" data-count="50" aria-pressed="false">50</button><button type="button" data-count="100" aria-pressed="false">100</button></div></div></div>
+<div id="error" class="error" role="alert" hidden><p id="error-message"></p><button type="button" id="retry">重新加载词典</button></div>
+<div class="dashboard"><div class="live-stats"><div><strong id="wpm">0</strong><span>WPM</span></div><div><strong id="accuracy">100%</strong><span>准确率</span></div><div><strong id="time">30s</strong><span>时间</span></div></div><p id="word-progress">等待开始</p></div>
+<div class="typing-surface" id="typing-surface"><div class="words-viewport" id="words-viewport"><div id="words" aria-hidden="true"></div></div><textarea id="typing-input" aria-label="打字输入区" aria-describedby="input-help accessible-target" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" inputmode="text" disabled></textarea><span id="accessible-target" class="sr-only"></span><div class="focus-hint" aria-hidden="true">点击这里开始输入</div></div>
+<div class="progress-track" aria-hidden="true"><div id="progress-fill"></div></div>
+<div class="practice-footer"><p id="state" role="status">正在读取词典…</p><button type="button" id="restart" class="restart" title="重练当前文本"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 10a8 8 0 1 1 1 7M4 4v6h6" stroke-linecap="round" stroke-linejoin="round"/></svg>重新开始</button></div>
+<details id="translation-area" class="translation" hidden><summary>查看例句释义</summary><p id="translation"></p><small id="source-word"></small></details>
+</section>
+<section class="result" id="result" aria-labelledby="result-caption" hidden><div class="result-header"><h2 id="result-caption">练习完成</h2><span id="result-time"></span></div><div class="result-grid"><div><strong id="result-wpm">0</strong><span>WPM</span></div><div><strong id="result-accuracy">100%</strong><span>准确率</span></div><div><strong id="result-cpm">0</strong><span>字符 / 分</span></div><div><strong id="result-errors">0</strong><span>误击</span></div></div><p id="mistake-list"></p><button type="button" class="primary" id="next">再来一组</button></section>
+<section class="input-guide" aria-label="输入辅助"><div class="guide-top"><p id="input-help">按拉丁转写输入，也支持仄克萨键盘。重音字母可用下方按钮补入。</p><div id="special-keys" class="special-keys" role="group" aria-label="特殊字符"></div></div><details class="help"><summary>练习规则与统计方式</summary><p>连续单词模式会从词典抽取单词，以空格连接；例句模式保留原句标点，可展开中文释义。输入首个字符开始计时，固定词数或例句按目标字符长度结束。点击「重新开始」可重练同一段文本，完成后可换下一组。</p><p>不区分大小写；重音字母必须对应。弯引号和常见全角标点会转换成对应半角形式。仄克萨字形 ts 对应拉丁转写的两个字符。支持输入法组合输入和退格纠错；切换文字显示不会重置练习，切换练习模式或长度会重新开始。</p><p>WPM 按每 5 个正确字符折算一词，空格及标点也算字符。准确率按累计输入计算，删除错字不会抹去误击记录。时间使用地球秒，统计数值使用十进制；离开输入区或切换标签页不会暂停计时。练习不接受粘贴。</p></details><div class="data-footer"><span id="dictionary-info">词典加载中</span><span id="dictionary-note"></span></div></section>
+<noscript><p>请启用 JavaScript 以加载词典和开始练习。</p></noscript></main><footer>© 2026 Simon Zhang · Drekomka</footer><script>(function(root){
+'use strict';
+const map={
+    a:'\uE001',á:'\uE002',e:'\uE003',é:'\uE004',i:'\uE005',í:'\uE006',o:'\uE007',ó:'\uE008',u:'\uE009',ú:'\uE00A',
+    ä:'\uE00B',â:'\uE00C',ë:'\uE00D',ê:'\uE00E',ø:'\uE00F',ô:'\uE010',b:'\uE011',p:'\uE012',d:'\uE013',t:'\uE014',
+    g:'\uE015',k:'\uE016',m:'\uE017',n:'\uE018',q:'\uE019',v:'\uE01A',f:'\uE01B',z:'\uE01C',s:'\uE01D',j:'\uE01E',
+    c:'\uE01F',x:'\uE020',ts:'\uE021',h:'\uE022',ħ:'\uE023',l:'\uE024',r:'\uE025',w:'\uE026',y:'\uE027',
+    '0':'\uE029','1':'\uE02A','2':'\uE02B','3':'\uE02C',',':'\uE032','.':'\uE033',"'":'\uE034','"':'\uE035',
+    '!':'\uE036','?':'\uE037','/':'\uE038','[':'\uE039',']':'\uE03A'
+  };
+const reverse=Object.fromEntries(Object.entries(map).map(([a,b])=>[b,a]));
+function normalize(text){return Array.from(String(text),c=>reverse[c]??c).join('').normalize('NFC').toLowerCase().replace(/[‘’ʼ]/gu,"'").replace(/[“”]/gu,'"').replace(/。/gu,'.').replace(/，/gu,',').replace(/[\r\n\t\u00a0]/gu,' ');}
+function display(text){return String(text).normalize('NFC').replace(/ts|[\s\S]/gu,c=>map[c]??c);}
+function parseDictionary(data){
+ if(!Array.isArray(data))throw new Error('词典应为词条数组。');
+ const words=new Map(),sentences=new Map();let skipped=0;
+ const valid=text=>text&&/^[\p{Script=Latin}\p{M}\d\s.,!?\/'";:()\[\]—–\-]+$/u.test(text);
+ for(const entry of data){
+  if(!entry||typeof entry!=='object')continue;
+  if(typeof entry.word==='string'){
+   const word=normalize(entry.word).trim();if(valid(word)&&!word.includes(' '))words.set(word,{text:word,meaning:typeof entry.meaning==='string'?entry.meaning:''});
+  }
+  for(const example of Array.isArray(entry.examples)?entry.examples:[]){
+   if(!example||typeof example.zeksa!=='string')continue;
+   const text=normalize(example.zeksa).trim().replace(/\s+/gu,' ');
+   if(valid(text)){if(!sentences.has(text))sentences.set(text,{text,translation:typeof example.translation==='string'?example.translation:'',source:typeof entry.word==='string'?entry.word:''});}else skipped++;
+  }
+ }
+ if(!words.size)throw new Error('词典中没有可用的单词。');
+ return {words:[...words.values()],sentences:[...sentences.values()],skipped};
+}
+function tokens(text,native){const result=[];let i=0;while(i<text.length){const size=native&&text.slice(i,i+2)==='ts'?2:1;result.push({text:text.slice(i,i+size),start:i,end:i+size});i+=size;}return result;}
+function additions(previous,next,target){let a=0,b=0;while(a<previous.length&&a<next.length&&previous[a]===next[a])a++;while(b<previous.length-a&&b<next.length-a&&previous[previous.length-1-b]===next[next.length-1-b])b++;const inserted=next.slice(a,next.length-b);let correct=0;for(let i=0;i<inserted.length;i++)if(inserted[i]===target[a+i])correct++;return{total:inserted.length,correct};}
+function metrics(target,typed,elapsed,total,correctAttempts){let matched=0;for(let i=0;i<typed.length;i++)if(typed[i]===target[i])matched++;const minutes=elapsed>=1000?elapsed/60000:0;return{wpm:minutes?Math.round(matched/5/minutes):0,cpm:minutes?Math.round(matched/minutes):0,accuracy:total?Math.round(correctAttempts/total*100):100,matched,errors:Math.max(0,total-correctAttempts)};}
+const api={map,normalize,display,parseDictionary,tokens,additions,metrics};root.ZeksaTyping=api;if(typeof module!=='undefined')module.exports=api;
+})(typeof globalThis!=='undefined'?globalThis:this);
+</script><script>'use strict';
+const T=window.ZeksaTyping,$=id=>document.getElementById(id);
+let dictionary,mode='words',testKind='time',duration=30,wordCount=25,native=true,fontReady=false;
+let target='',typed='',phase='loading',start=0,elapsed=0,attempts=0,correctAttempts=0,frame=0,composing=false,example=null,lastExample='',wordSpans=[],lastPaintedSecond=-1;
+const input=$('typing-input');
+function sampleWord(last){let item=dictionary.words[Math.floor(Math.random()*dictionary.words.length)];if(dictionary.words.length>1&&item.text===last)item=dictionary.words[(dictionary.words.indexOf(item)+1)%dictionary.words.length];return item.text;}
+function makeWords(count,last=''){const out=[];for(let i=0;i<count;i++){last=sampleWord(last);out.push(last);}return out.join(' ');}
+function buildText(){
+ const fragment=document.createDocumentFragment();wordSpans=[];let position=0;
+ const words=target.split(' ');
+ words.forEach((word,index)=>{
+  const wrap=document.createElement('span');wrap.className='target-word';
+  for(const part of T.tokens(word,native&&fontReady)){
+   const span=document.createElement('span');span.className='letter';span.textContent=native&&fontReady?T.display(part.text):part.text;
+   wrap.append(span);wordSpans.push({el:span,start:position+part.start,end:position+part.end});
+  }
+  fragment.append(wrap);position+=word.length;
+  if(index<words.length-1){const space=document.createElement('span');space.className='letter gap';space.textContent=' ';fragment.append(space);wordSpans.push({el:space,start:position,end:position+1});position++;}
+ });
+ $('words').replaceChildren(fragment);$('words').classList.toggle('mapped',native&&fontReady);
+ $('accessible-target').textContent=target;paint();
+}
+function paint(){
+ let active;
+ for(const item of wordSpans){
+  const taken=typed.slice(item.start,Math.min(typed.length,item.end));
+  const passed=typed.length>=item.end;
+  const wrong=taken&&taken!==target.slice(item.start,item.start+taken.length);
+  item.el.classList.toggle('correct',Boolean(taken)&&!wrong);item.el.classList.toggle('wrong',Boolean(wrong));
+  const current=phase!=='finished'&&typed.length>=item.start&&typed.length<item.end;
+  item.el.classList.toggle('current',current);item.el.classList.toggle('partial',current&&Boolean(taken)&&!passed);if(current)active=item.el;
+ }
+ const currentWord=target.slice(0,typed.length).split(' ').length;
+ $('word-progress').textContent=mode==='sentences'?`${Math.min(typed.length,target.length)} / ${target.length} 字符`:testKind==='count'?`${Math.min(currentWord,wordCount)} / ${wordCount} 词`:`已输入 ${Math.max(0,typed.split(' ').length-1)} 词`;
+ if(active){const box=$('words-viewport'),y=active.getBoundingClientRect().top-box.getBoundingClientRect().top;if(y>box.clientHeight-65||y<0)box.scrollTop+=y-65;}
+ $('progress-fill').style.width=`${testKind==='time'&&mode==='words'?Math.min(100,elapsed/(duration*1000)*100):Math.min(100,typed.length/target.length*100)}%`;
+}
+function readElapsed(){return phase==='running'?performance.now()-start:elapsed;}
+function refreshStats(){const value=T.metrics(target,typed,readElapsed(),attempts,correctAttempts);$('wpm').textContent=value.wpm;$('accuracy').textContent=value.accuracy+'%';const secs=Math.floor(readElapsed()/1000);$('time').textContent=mode==='words'&&testKind==='time'?Math.max(0,duration-secs)+'s':secs+'s';}
+function loop(){if(phase!=='running')return;elapsed=performance.now()-start;if(mode==='words'&&testKind==='time'&&elapsed>=duration*1000){finish(duration*1000);return;}const sec=Math.floor(elapsed/1000);if(sec!==lastPaintedSecond){refreshStats();lastPaintedSecond=sec;}if(mode==='words'&&testKind==='time')$('progress-fill').style.width=`${Math.min(100,elapsed/(duration*1000)*100)}%`;frame=requestAnimationFrame(loop);}
+function finish(finalElapsed=performance.now()-start){if(phase!=='running')return;elapsed=finalElapsed;phase='finished';cancelAnimationFrame(frame);input.disabled=true;$('typing-surface').classList.remove('focused');$('typing-surface').classList.add('finished');const m=T.metrics(target,typed,elapsed,attempts,correctAttempts);$('result').hidden=false;$('result-wpm').textContent=m.wpm;$('result-cpm').textContent=m.cpm;$('result-accuracy').textContent=m.accuracy+'%';$('result-errors').textContent=m.errors;$('result-time').textContent=(elapsed/1000).toFixed(1)+' 秒';$('state').textContent='练习完成';$('result-caption').textContent=mode==='sentences'?'例句练习完成':testKind==='time'?`${duration} 秒练习完成`:`${wordCount} 词练习完成`;
+ const mistakes=[];for(let i=0;i<typed.length;i++)if(typed[i]!==target[i]){mistakes.push(`第 ${i+1} 字符：${target[i]===' '?'空格':target[i]} → ${typed[i]===' '?'空格':typed[i]}`);if(mistakes.length===8)break;}
+ $('mistake-list').textContent=mistakes.length?mistakes.join('；'):m.errors?'最终文本已修正，准确率仍计入之前的误击。':'本次输入没有错字。';
+ refreshStats();paint();$('next').focus({preventScroll:true});$('result').scrollIntoView({block:'nearest',behavior:'smooth'});
+}
+function onInput(){
+ if(composing||phase==='finished'||phase==='loading')return;
+ if(phase==='running'&&mode==='words'&&testKind==='time'&&performance.now()-start>=duration*1000){input.value=typed;finish(duration*1000);return;}
+ let value=T.normalize(input.value);let caret=T.normalize(input.value.slice(0,input.selectionStart)).length;
+ if(value.length===0&&phase==='ready'){typed='';return;}
+ if(phase==='ready'){phase='running';start=performance.now();$('state').textContent='练习中';loop();}
+ if(mode==='words'&&testKind==='time'&&value.length>target.length-180){target+=' '+makeWords(40,target.split(' ').at(-1));buildText();}
+ if(value.length>target.length)value=value.slice(0,target.length);
+ const added=T.additions(typed,value,target);attempts+=added.total;correctAttempts+=added.correct;typed=value;
+ input.value=value;if(caret<value.length)caret=value.length;input.setSelectionRange(caret,caret);
+ paint();refreshStats();
+ if(!(mode==='words'&&testKind==='time')&&typed.length===target.length)finish();
+}
+function reset(keepTarget=false){
+ if(!dictionary)return;cancelAnimationFrame(frame);phase='ready';start=0;elapsed=0;attempts=0;correctAttempts=0;typed='';lastPaintedSecond=-1;composing=false;
+ if(!keepTarget){if(mode==='words'){target=makeWords(testKind==='time'?65:wordCount);example=null;}else{
+  let available=dictionary.sentences.filter(s=>s.text!==lastExample);if(!available.length)available=dictionary.sentences;
+  example=available[Math.floor(Math.random()*available.length)];target=example.text;lastExample=target;
+ }}
+ input.disabled=false;input.value='';$('result').hidden=true;$('typing-surface').classList.remove('finished');$('words-viewport').scrollTop=0;$('state').textContent='输入第一个字符开始';
+ $('translation-area').hidden=mode!=='sentences';$('translation-area').open=false;$('translation').textContent=example?.translation||'这条例句暂未提供释义。';$('source-word').textContent=example?`词条：${example.source}`:'';
+ $('next').textContent=mode==='sentences'?'下一句':'再来一组';$('options-time').hidden=mode!=='words'||testKind!=='time';$('options-count').hidden=mode!=='words'||testKind!=='count';$('kind-options').hidden=mode!=='words';
+ for(const b of document.querySelectorAll('[data-mode]'))b.setAttribute('aria-pressed',String(b.dataset.mode===mode));
+ for(const b of document.querySelectorAll('[data-kind]'))b.setAttribute('aria-pressed',String(b.dataset.kind===testKind));
+ for(const b of document.querySelectorAll('[data-duration]'))b.setAttribute('aria-pressed',String(Number(b.dataset.duration)===duration));
+ for(const b of document.querySelectorAll('[data-count]'))b.setAttribute('aria-pressed',String(Number(b.dataset.count)===wordCount));
+ buildText();refreshStats();
+}
+input.addEventListener('input',onInput);input.addEventListener('compositionstart',()=>{composing=true;});input.addEventListener('compositionend',()=>{composing=false;onInput();});
+input.addEventListener('paste',e=>{e.preventDefault();$('state').textContent='请逐字输入，练习不接受粘贴。';});input.addEventListener('drop',e=>e.preventDefault());
+input.addEventListener('focus',()=>{$('typing-surface').classList.add('focused');});input.addEventListener('blur',()=>{$('typing-surface').classList.remove('focused');if(phase==='running')$('state').textContent='点击文字继续，计时仍在进行';});
+input.addEventListener('keydown',event=>{
+ if(event.isComposing)return;
+ if(event.key==='Escape'){input.blur();return;}
+ if(event.key==='Enter'){event.preventDefault();return;}
+ // Keep the typing caret at the end; Backspace remains available for corrections.
+ if(['ArrowLeft','ArrowRight','ArrowUp','ArrowDown','Home','End'].includes(event.key)){event.preventDefault();input.setSelectionRange(input.value.length,input.value.length);}
+});
+$('typing-surface').addEventListener('click',()=>{if(!input.disabled){input.focus({preventScroll:true});input.setSelectionRange(input.value.length,input.value.length);}});
+$('restart').onclick=()=>{reset(true);input.focus({preventScroll:true});};$('next').onclick=()=>{reset();input.focus({preventScroll:true});};
+for(const b of document.querySelectorAll('[data-mode]'))b.onclick=()=>{if(!dictionary)return;mode=b.dataset.mode;reset();};
+for(const b of document.querySelectorAll('[data-kind]'))b.onclick=()=>{testKind=b.dataset.kind;reset();};
+for(const b of document.querySelectorAll('[data-duration]'))b.onclick=()=>{duration=Number(b.dataset.duration);reset();};
+for(const b of document.querySelectorAll('[data-count]'))b.onclick=()=>{wordCount=Number(b.dataset.count);reset();};
+$('alphabet-switch').onclick=()=>{native=!native;$('alphabet-switch').setAttribute('aria-checked',String(native));$('alphabet-switch').setAttribute('aria-label',native?'使用仄克萨文字':'使用地球文字');if(dictionary)buildText();};
+for(const char of 'áéíóúäâëêøôħ'){
+ const b=document.createElement('button');b.type='button';b.className='special-key';b.textContent=char;b.setAttribute('aria-label',`输入 ${char}`);
+ b.addEventListener('pointerdown',e=>e.preventDefault());b.onclick=()=>{if(input.disabled||composing)return;input.focus({preventScroll:true});input.value+=char;input.setSelectionRange(input.value.length,input.value.length);onInput();};$('special-keys').append(b);
+}
+async function load(){phase='loading';input.disabled=true;$('error').hidden=true;$('state').textContent='正在读取词典…';$('retry').disabled=true;
+ try{const response=await fetch('/dict.json',{cache:'no-cache'});if(!response.ok)throw new Error(`词典请求失败（${response.status}）`);dictionary=T.parseDictionary(await response.json());$('dictionary-info').textContent=`${dictionary.words.length} 个单词 · ${dictionary.sentences.length} 条例句`;$('sentence-mode').disabled=!dictionary.sentences.length;$('dictionary-note').textContent=dictionary.skipped?`已略过 ${dictionary.skipped} 条含非仄克萨正文字符的例句。`:'';reset();}
+ catch(error){dictionary=null;phase='loading';$('error').hidden=false;$('error-message').textContent=location.protocol==='file:'?'请把本文件放到网站 dictionary/ 目录后，通过网站地址访问，以读取 /dict.json。':`${error.message}。请确认网站根目录存在有效的 /dict.json。`;$('state').textContent='词典尚未加载';}
+ finally{$('retry').disabled=false;}
+}
+$('retry').onclick=load;
+document.fonts.load('32px Zeksa',T.display('etëf gäqi ts')).then(faces=>{fontReady=faces.length>0;$('font-notice').hidden=fontReady;if(dictionary)buildText();}).catch(()=>{$('font-notice').hidden=false;});
+document.addEventListener('visibilitychange',()=>{if(!document.hidden&&phase==='running'){cancelAnimationFrame(frame);loop();}});
+load();
+</script></body></html>
