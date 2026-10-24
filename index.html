@@ -1,34 +1,57 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+<!-- Simon Zhang Presents, Special Thanks to GPT-6 Astra. -->
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="description" content="仄克萨语（Zeksa）是一门由 Simon Zhang 创作的人工语言（constructed language / conlang）。">
   <title>Simon Zhang</title>
   <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    :root { color-scheme: light; --accent: #0078d4; }
-    * { box-sizing: border-box; }
-    html, body { margin: 0; min-height: 100%; }
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-      color: #222;
-      background: #eef8ff;
-    }
-    .background {
-      position: fixed; inset: 0; z-index: -1; pointer-events: none;
-      background:
+    :root {
+      color-scheme: light;
+      --accent: #0078d4;
+      --page-gradient:
         radial-gradient(circle at 20% 30%, rgba(214,236,255,.8), transparent 40%),
         radial-gradient(circle at 80% 20%, rgba(255,201,138,.7), transparent 35%),
         radial-gradient(circle at 60% 80%, rgba(234,246,255,.7), transparent 45%),
         linear-gradient(180deg, #eef8ff, #fff4e6);
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      overscroll-behavior-y: none;
+    }
+    html {
+      background-color: #eef8ff;
+      background-image: var(--page-gradient);
+      background-size: 135% 135%;
+      background-repeat: no-repeat;
+      animation: drift 15s ease-in-out infinite alternate;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      color: #222;
+      background: transparent;
+    }
+    .background {
+      position: fixed; inset: 0; z-index: 0; pointer-events: none;
+      background-image: var(--page-gradient);
       background-size: 135% 135%;
       animation: drift 15s ease-in-out infinite alternate;
     }
     main {
+      position: relative; z-index: 1;
       min-height: 100vh; min-height: 100svh;
       display: flex; flex-direction: column; justify-content: center; align-items: center;
+      --content-top: 64px;
+      --content-bottom: 14vh;
       padding: 64px 24px 14vh;
+      padding-top: max(var(--content-top), env(safe-area-inset-top, 0px));
+      padding-right: max(24px, env(safe-area-inset-right, 0px));
+      padding-bottom: max(var(--content-bottom), env(safe-area-inset-bottom, 0px));
+      padding-left: max(24px, env(safe-area-inset-left, 0px));
     }
     h1 {
       margin: 0;
@@ -101,14 +124,20 @@
       main > :focus-within { animation: none; }
     }
     @media (max-width: 600px) {
-      main { padding: 56px 24px 10svh; }
+      main {
+        --content-top: 56px;
+        --content-bottom: 10vh;
+      }
+      @supports (height: 100svh) {
+        main { --content-bottom: 10svh; }
+      }
       h1 { font-size: clamp(2.5rem, 9vw, 3.5rem); }
       nav { flex-direction: column; width: min(100%, 280px); margin-top: 32px; gap: 14px; }
       .nav-link { width: 100%; min-height: 48px; }
       .contacts { margin-top: 24px; }
     }
     @media (prefers-reduced-motion: reduce) {
-      .background { animation: none; }
+      html, .background { animation: none; }
       a { transition: none !important; }
     }
   </style>
